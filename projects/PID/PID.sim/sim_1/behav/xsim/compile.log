@@ -1,0 +1,18 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/LF_LFSR_4bit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'LF_LFSR_4bit'
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/LF_LFSR_8bit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'LF_LFSR_8bit'
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/LF_LFSR_1bit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'LF_LFSR_1bit'
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/addressSelector.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'addressSelector'
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/ROM_gValues.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ROM_gValues'
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/ROM_fValues.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ROM_fValues'
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/boxMullerMultiplier.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'boxMullerMultiplier'
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/boxMullerAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'boxMullerAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'AWGN_TB'

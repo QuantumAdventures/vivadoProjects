@@ -1,0 +1,39 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.812",
+   "Default View_TopLeft":"-437,-10",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk_i -pg 1 -lvl 0 -x 0 -y 50 -defaultsOSRD
+preplace inst LF_LFSR_4bit_0 -pg 1 -lvl 2 -x 320 -y 60 -defaultsOSRD
+preplace inst LF_LFSR_4bit_1 -pg 1 -lvl 2 -x 320 -y 180 -defaultsOSRD
+preplace inst LF_LFSR_4bit_2 -pg 1 -lvl 2 -x 320 -y 300 -defaultsOSRD
+preplace inst LF_LFSR_1bit_0 -pg 1 -lvl 3 -x 640 -y 920 -defaultsOSRD
+preplace inst LF_LFSR_4bit_3 -pg 1 -lvl 2 -x 320 -y 420 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 1 -x 100 -y 210 -defaultsOSRD
+preplace inst LF_LFSR_4bit_4 -pg 1 -lvl 2 -x 320 -y 540 -defaultsOSRD
+preplace inst LF_LFSR_8bit_0 -pg 1 -lvl 2 -x 320 -y 780 -defaultsOSRD
+preplace inst clkDivider_0 -pg 1 -lvl 2 -x 320 -y 670 -defaultsOSRD
+preplace inst ROM_gValues_0 -pg 1 -lvl 3 -x 640 -y 790 -defaultsOSRD
+preplace inst ROM_fValues_0 -pg 1 -lvl 3 -x 640 -y 510 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 100 -y 110 -defaultsOSRD
+preplace inst boxMullerMultiplier_0 -pg 1 -lvl 4 -x 950 -y 530 -defaultsOSRD
+preplace netloc xlconstant_1_dout 1 1 2 190 930 NJ
+preplace netloc LF_LFSR_4bit_0_randomNumber 1 2 1 490 70n
+preplace netloc LF_LFSR_4bit_1_randomNumber 1 2 1 480 190n
+preplace netloc LF_LFSR_4bit_2_randomNumber 1 2 1 460 310n
+preplace netloc LF_LFSR_4bit_3_randomNumber 1 2 1 450 430n
+preplace netloc LF_LFSR_4bit_4_randomNumber 1 2 1 N 550
+preplace netloc LF_LFSR_8bit_0_randomNumber 1 2 1 N 790
+preplace netloc clkDivider_0_clk_o 1 2 1 490 570n
+preplace netloc axis_red_pitaya_adc_0_adc_clk 1 0 4 NJ 50 180 610 470 630 780
+preplace netloc ROM_fValues_0_readOut 1 3 1 N 520
+preplace netloc ROM_gValues_0_readOut 1 3 1 790 540n
+preplace netloc LF_LFSR_1bit_0_randomNumber 1 3 1 800 560n
+preplace netloc xlconstant_0_dout 1 1 1 N 110
+levelinfo -pg 1 0 100 320 640 950 1120
+pagesize -pg 1 -db -bbox -sgen -80 -10 1120 990
+"
+}
+

@@ -1,0 +1,24 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|                  adc_clk |                  adc_clk |                                                            system_i/PID/PID_0/inst/integral_sf_reg[-30]/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__4_i_2_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__7_i_2_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__8_i_3_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__4_i_1_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__7_i_1_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__6_i_2_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                         system_i/biquadFilter/biquadFilter_0/inst/i__carry__6_i_2_psdsp/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__8_i_4_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__3_i_2_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                         system_i/biquadFilter/biquadFilter_0/inst/i__carry__6_i_1_psdsp/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__6_i_4_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__3_i_1_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__4_i_3_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__5_i_4_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__6_i_1_psdsp_1/D|
+|                  adc_clk |                  adc_clk |                                         system_i/biquadFilter/biquadFilter_0/inst/i__carry__7_i_4_psdsp/D|
+|                  adc_clk |                  adc_clk |                                         system_i/biquadFilter/biquadFilter_0/inst/i__carry__5_i_4_psdsp/D|
+|                  adc_clk |                  adc_clk |                                         system_i/biquadFilter/biquadFilter_0/inst/i__carry__8_i_4_psdsp/D|
+|                  adc_clk |                  adc_clk |                                       system_i/biquadFilter/biquadFilter_0/inst/i__carry__5_i_2_psdsp_1/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

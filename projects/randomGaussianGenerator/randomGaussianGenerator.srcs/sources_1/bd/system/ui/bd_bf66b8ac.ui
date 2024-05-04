@@ -1,0 +1,53 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.879348",
+   "Default View_TopLeft":"-223,-10",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk_i -pg 1 -lvl 0 -x 0 -y 70 -defaultsOSRD
+preplace port reset -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus output_o -pg 1 -lvl 5 -x 1340 -y 570 -defaultsOSRD
+preplace inst addressSelector -pg 1 -lvl 1 -x 150 -y 90 -defaultsOSRD
+preplace inst ROM_gValues_0 -pg 1 -lvl 2 -x 470 -y 420 -defaultsOSRD
+preplace inst addressSelector_1 -pg 1 -lvl 1 -x 150 -y 290 -defaultsOSRD
+preplace inst addressSelector_2 -pg 1 -lvl 1 -x 150 -y 440 -defaultsOSRD
+preplace inst addressSelector_3 -pg 1 -lvl 1 -x 150 -y 730 -defaultsOSRD
+preplace inst boxMullerMultiplier_0 -pg 1 -lvl 3 -x 840 -y 80 -defaultsOSRD
+preplace inst boxMullerMultiplier_1 -pg 1 -lvl 3 -x 840 -y 240 -defaultsOSRD
+preplace inst boxMullerMultiplier_2 -pg 1 -lvl 3 -x 840 -y 420 -defaultsOSRD
+preplace inst boxMullerMultiplier_3 -pg 1 -lvl 3 -x 840 -y 720 -defaultsOSRD
+preplace inst ROM_fValues_0 -pg 1 -lvl 2 -x 470 -y 210 -defaultsOSRD
+preplace inst boxMullerAdder_0 -pg 1 -lvl 4 -x 1170 -y 570 -defaultsOSRD
+preplace netloc clk_i_1 1 0 4 30 10 320 50 670 530 NJ
+preplace netloc addressSelector_address_o 1 1 1 310 70n
+preplace netloc addressSelector_randomNumber 1 1 1 300 90n
+preplace netloc ROM_fValues_0_readOut_0 1 2 1 630 70n
+preplace netloc ROM_gValues_0_readOut_0 1 2 1 640 90n
+preplace netloc addressSelector_randomNumber1 1 1 2 NJ 110 N
+preplace netloc addressSelector_1_address_o 1 1 1 270 210n
+preplace netloc addressSelector_1_randomNumber 1 1 1 290 290n
+preplace netloc addressSelector_1_randomNumber1 1 1 2 NJ 310 650
+preplace netloc ROM_fValues_0_readOut_1 1 2 1 680 200n
+preplace netloc ROM_gValues_0_readOut_1 1 2 1 620 250n
+preplace netloc addressSelector_2_address_o 1 1 1 280 230n
+preplace netloc addressSelector_2_randomNumber 1 1 1 N 440
+preplace netloc addressSelector_2_randomNumber1 1 1 2 280J 520 680
+preplace netloc ROM_gValues_0_readOut_2 1 2 1 N 430
+preplace netloc ROM_fValues_0_readOut_2 1 2 1 660 220n
+preplace netloc addressSelector_3_address_o 1 1 1 310 250n
+preplace netloc addressSelector_3_randomNumber 1 1 1 320 460n
+preplace netloc addressSelector_3_randomNumber1 1 1 2 NJ 750 N
+preplace netloc ROM_fValues_0_readOut_3 1 2 1 630 240n
+preplace netloc ROM_gValues_0_readOut_3 1 2 1 620 450n
+preplace netloc boxMullerMultiplier_0_output_o 1 3 1 1000 80n
+preplace netloc boxMullerMultiplier_2_output_o 1 3 1 980 420n
+preplace netloc boxMullerMultiplier_1_output_o 1 3 1 990 240n
+preplace netloc boxMullerMultiplier_3_output_o 1 3 1 990 610n
+preplace netloc xlconstant_1_dout 1 0 1 20 100n
+preplace netloc boxMullerAdder_0_output_o 1 4 1 N 570
+levelinfo -pg 1 0 150 470 840 1170 1340
+pagesize -pg 1 -db -bbox -sgen -80 -10 1490 910
+"
+}
+

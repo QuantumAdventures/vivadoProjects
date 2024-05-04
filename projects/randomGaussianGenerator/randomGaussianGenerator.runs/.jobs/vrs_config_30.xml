@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="system_LF_LFSR_1bit_0_4_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_1bit_0_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_0_8_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_0_8_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_3_3_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_3_3_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_1_3_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_1_3_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_2_3_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_2_3_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_3_6_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_3_6_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_1bit_0_7_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_1bit_0_7_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_8bit_0_4_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_8bit_0_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_ROM_fValues_0_4_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_ROM_fValues_0_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_addressSelector_0_0_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_addressSelector_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_2_6_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_2_6_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_addressSelector_0_3_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_addressSelector_0_3_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_0_11_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_0_11_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_1bit_0_6_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_1bit_0_6_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_8bit_0_6_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_8bit_0_6_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_addressSelector_0_2_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_addressSelector_0_2_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_0_10_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_0_10_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_8bit_0_7_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_8bit_0_7_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_0_9_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_0_9_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_1bit_0_5_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_1bit_0_5_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_8bit_0_5_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_8bit_0_5_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_3_4_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_3_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_2_5_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_2_5_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_3_5_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_3_5_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_addressSelector_0_1_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_addressSelector_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_1_5_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_1_5_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_1_4_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_1_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_ROM_gValues_0_4_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_ROM_gValues_0_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_2_4_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_2_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_boxMullerAdder_0_1_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_boxMullerAdder_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_LF_LFSR_4bit_1_6_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_LF_LFSR_4bit_1_6_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_boxMullerMultiplier_2_0_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_boxMullerMultiplier_2_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_boxMullerMultiplier_0_5_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_boxMullerMultiplier_0_5_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_boxMullerMultiplier_0_4_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_boxMullerMultiplier_0_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_boxMullerMultiplier_1_0_synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/system_boxMullerMultiplier_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/Users/tandeitnik/Documents/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="system_LF_LFSR_1bit_0_4_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_0_8_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_3_3_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_1_3_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_2_3_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_3_6_synth_1"/>
+		<Parent Id="system_LF_LFSR_1bit_0_7_synth_1"/>
+		<Parent Id="system_LF_LFSR_8bit_0_4_synth_1"/>
+		<Parent Id="system_ROM_fValues_0_4_synth_1"/>
+		<Parent Id="system_addressSelector_0_0_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_2_6_synth_1"/>
+		<Parent Id="system_addressSelector_0_3_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_0_11_synth_1"/>
+		<Parent Id="system_LF_LFSR_1bit_0_6_synth_1"/>
+		<Parent Id="system_LF_LFSR_8bit_0_6_synth_1"/>
+		<Parent Id="system_addressSelector_0_2_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_0_10_synth_1"/>
+		<Parent Id="system_LF_LFSR_8bit_0_7_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_0_9_synth_1"/>
+		<Parent Id="system_LF_LFSR_1bit_0_5_synth_1"/>
+		<Parent Id="system_LF_LFSR_8bit_0_5_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_3_4_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_2_5_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_3_5_synth_1"/>
+		<Parent Id="system_addressSelector_0_1_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_1_5_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_1_4_synth_1"/>
+		<Parent Id="system_ROM_gValues_0_4_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_2_4_synth_1"/>
+		<Parent Id="system_boxMullerAdder_0_1_synth_1"/>
+		<Parent Id="system_LF_LFSR_4bit_1_6_synth_1"/>
+		<Parent Id="system_boxMullerMultiplier_2_0_synth_1"/>
+		<Parent Id="system_boxMullerMultiplier_0_5_synth_1"/>
+		<Parent Id="system_boxMullerMultiplier_0_4_synth_1"/>
+		<Parent Id="system_boxMullerMultiplier_1_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

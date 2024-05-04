@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="system_signalSelector_0_1_synth_1" LaunchDir="G:/Meu Drive/redpitaya_guide-master/projects/PLL/PLL.runs/system_signalSelector_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_signalSelector_0_0_synth_1" LaunchDir="G:/Meu Drive/redpitaya_guide-master/projects/PLL/PLL.runs/system_signalSelector_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_comparator_0_0_synth_1" LaunchDir="G:/Meu Drive/redpitaya_guide-master/projects/PLL/PLL.runs/system_comparator_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_phaseDetector_0_0_synth_1" LaunchDir="G:/Meu Drive/redpitaya_guide-master/projects/PLL/PLL.runs/system_phaseDetector_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_NCO_0_0_synth_1" LaunchDir="G:/Meu Drive/redpitaya_guide-master/projects/PLL/PLL.runs/system_NCO_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="G:/Meu Drive/redpitaya_guide-master/projects/PLL/PLL.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="system_signalSelector_0_1_synth_1"/>
+		<Parent Id="system_signalSelector_0_0_synth_1"/>
+		<Parent Id="system_comparator_0_0_synth_1"/>
+		<Parent Id="system_phaseDetector_0_0_synth_1"/>
+		<Parent Id="system_NCO_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

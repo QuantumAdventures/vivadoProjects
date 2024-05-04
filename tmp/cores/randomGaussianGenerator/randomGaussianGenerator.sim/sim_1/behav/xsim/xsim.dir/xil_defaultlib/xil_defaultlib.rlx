@@ -1,0 +1,9 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/tandeitnik/Documents/redpitaya_guide-master/tmp/cores/randomGaussianGenerator/randomGaussianGenerator.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,axi_vip_v1_1_7;processing_system7_vip_v1_0_9;xilinx_vip,,,,,,
+C:/Users/tandeitnik/Documents/redpitaya_guide-master/tmp/cores/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/rndGaussGen2_TB.vhd,1708366670,vhdl,,,,rndgaussgen2_tb,,,,,,,,
+C:/Users/tandeitnik/Documents/redpitaya_guide-master/tmp/cores/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/rndGaussGen_TB.vhd,1708117662,vhdl,,,,rndgaussgen_tb,,,,,,,,
+C:/Users/tandeitnik/Documents/redpitaya_guide-master/tmp/cores/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/rndGaussGen.vhd,1708361131,vhdl,C:/Users/tandeitnik/Documents/redpitaya_guide-master/tmp/cores/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/rndGaussGen_TB.vhd,,,rndgaussgen,,,,,,,,
+C:/Users/tandeitnik/Documents/redpitaya_guide-master/tmp/cores/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/rndGaussGen2.vhd,1708369043,vhdl,C:/Users/tandeitnik/Documents/redpitaya_guide-master/tmp/cores/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/rndGaussGen2_TB.vhd,,,rndgaussgen2,,,,,,,,

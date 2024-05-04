@@ -1,0 +1,16 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,axi_vip_v1_1_7;processing_system7_vip_v1_0_9;xilinx_vip,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd,1710273069,vhdl,,,,awgn_tb,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/integrator_TB.vhd,1709917619,vhdl,,,,integrator_tb,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/LF_LFSR_1bit.vhd,1709667565,vhdl,G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd,,,lf_lfsr_1bit,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/LF_LFSR_4bit.vhd,1709749493,vhdl,G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd,,,lf_lfsr_4bit,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/LF_LFSR_8bit.vhd,1709667592,vhdl,G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd,,,lf_lfsr_8bit,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/ROM_fValues.vhd,1709750044,vhdl,G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd,,,rom_fvalues,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/ROM_gValues.vhd,1709668104,vhdl,G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd,,,rom_gvalues,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/addressSelector.vhd,1709750139,vhdl,G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd,,,addressselector,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/boxMullerAdder.vhd,1710272753,vhdl,G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd,,,boxmulleradder,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/boxMullerMultiplier.vhd,1709674044,vhdl,G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/AWGN_TB.vhd,,,boxmullermultiplier,,,,,,,,
+G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sources_1/new/integrator.vhd,1709917534,vhdl,G:/Meu Drive/redpitaya_guide-master/projects/randomGaussianGenerator/randomGaussianGenerator.srcs/sim_1/new/integrator_TB.vhd,,,integrator,,,,,,,,
