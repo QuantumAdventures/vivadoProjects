@@ -1,0 +1,32 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.25",
+   "Default View_TopLeft":"-326,-146",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk_i -pg 1 -lvl 0 -x 0 -y 30 -defaultsOSRD
+preplace port clkEnable -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port enable_out -pg 1 -lvl 3 -x 620 -y 110 -defaultsOSRD
+preplace portBus input_i -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace portBus output_o -pg 1 -lvl 3 -x 620 -y 140 -defaultsOSRD
+preplace portBus Din -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace inst biquadFilter_0 -pg 1 -lvl 2 -x 450 -y 130 -defaultsOSRD
+preplace inst extract_constants -pg 1 -lvl 1 -x 140 -y 200 -defaultsOSRD
+preplace netloc enable_Dout 1 1 1 270 70n
+preplace netloc gain_a1_Dout 1 1 1 280 130n
+preplace netloc gain_a2_Dout 1 1 1 N 150
+preplace netloc gain_b0_Dout 1 1 1 N 170
+preplace netloc gain_b1_Dout 1 1 1 N 190
+preplace netloc gain_b2_Dout 1 1 1 290 210n
+preplace netloc axis_red_pitaya_adc_0_adc_clk 1 0 2 20J 50 NJ
+preplace netloc decimator_0_enable 1 0 2 20J 70 260J
+preplace netloc decimator_0_output_o 1 0 2 NJ 90 250J
+preplace netloc biquadFilter_0_enable_out 1 2 1 590J 110n
+preplace netloc biquadFilter_0_output_o 1 2 1 NJ 140
+preplace netloc axi_cfg_register_0_cfg_data 1 0 1 NJ 200
+levelinfo -pg 1 0 140 450 620
+pagesize -pg 1 -db -bbox -sgen -130 -10 770 300
+"
+}
+
