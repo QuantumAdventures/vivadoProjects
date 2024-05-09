@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "decimator,Vivado 2020.1" *)
 (* CHECK_LICENSE_TYPE = "system_decimator_0_1,decimator,{}" *)
-(* CORE_GENERATION_INFO = "system_decimator_0_1,decimator,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=decimator,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,input_size=14,output_size=14,clock_size=7}" *)
+(* CORE_GENERATION_INFO = "system_decimator_0_1,decimator,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=decimator,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,input_size=14,output_size=14,clock_size=10}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module system_decimator_0_1 (
@@ -74,7 +74,7 @@ output wire clk_e;
   decimator #(
     .input_size(14),
     .output_size(14),
-    .clock_size(7)
+    .clock_size(10)
   ) inst (
     .clk_i(clk_i),
     .input_i(input_i),

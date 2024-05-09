@@ -1271,7 +1271,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.clock_size {7} \
+   CONFIG.clock_size {10} \
    CONFIG.input_size {14} \
    CONFIG.output_size {14} \
  ] $decimator_0

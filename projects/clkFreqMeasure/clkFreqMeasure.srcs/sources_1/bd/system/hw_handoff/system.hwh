@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May  9 14:42:41 2024" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May  9 15:21:14 2024" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -3756,7 +3756,7 @@
       <PARAMETERS>
         <PARAMETER NAME="input_size" VALUE="14"/>
         <PARAMETER NAME="output_size" VALUE="14"/>
-        <PARAMETER NAME="clock_size" VALUE="7"/>
+        <PARAMETER NAME="clock_size" VALUE="10"/>
         <PARAMETER NAME="Component_Name" VALUE="system_decimator_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>

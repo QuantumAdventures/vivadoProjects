@@ -73,7 +73,7 @@ output wire clk_e;
   decimator #(
     .input_size(14),
     .output_size(14),
-    .clock_size(7)
+    .clock_size(10)
   ) inst (
     .clk_i(clk_i),
     .input_i(input_i),

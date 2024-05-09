@@ -2727,7 +2727,7 @@
         "xci_name": "system_decimator_0_1",
         "parameters": {
           "clock_size": {
-            "value": "7"
+            "value": "10"
           },
           "input_size": {
             "value": "14"

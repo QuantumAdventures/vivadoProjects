@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu May  9 14:43:39 2024
+// Date        : Thu May  9 15:22:00 2024
 // Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/clkFreqMeasure/clkFreqMeasure.srcs/sources_1/bd/system/ip/system_decimator_0_1/system_decimator_0_1_sim_netlist.v
@@ -86,8 +86,11 @@ module system_decimator_0_1_decimator
   wire \counter[4]_i_1_n_0 ;
   wire \counter[5]_i_1_n_0 ;
   wire \counter[6]_i_1_n_0 ;
-  wire \counter[6]_i_2_n_0 ;
-  wire [6:0]counter_reg;
+  wire \counter[7]_i_1_n_0 ;
+  wire \counter[8]_i_1_n_0 ;
+  wire \counter[9]_i_1_n_0 ;
+  wire \counter[9]_i_2_n_0 ;
+  wire [9:0]counter_reg;
   wire enable;
   wire [13:0]input_i;
   wire [13:0]output_o;
@@ -131,7 +134,7 @@ module system_decimator_0_1_decimator
         .I2(counter_reg[2]),
         .I3(counter_reg[3]),
         .O(\counter[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \counter[4]_i_1 
@@ -152,23 +155,49 @@ module system_decimator_0_1_decimator
         .I5(counter_reg[5]),
         .O(\counter[5]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
+    \counter[6]_i_1 
+       (.I0(\counter[9]_i_2_n_0 ),
+        .I1(counter_reg[6]),
+        .O(\counter[6]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h78)) 
-    \counter[6]_i_1 
-       (.I0(\counter[6]_i_2_n_0 ),
-        .I1(counter_reg[5]),
-        .I2(counter_reg[6]),
-        .O(\counter[6]_i_1_n_0 ));
+    \counter[7]_i_1 
+       (.I0(\counter[9]_i_2_n_0 ),
+        .I1(counter_reg[6]),
+        .I2(counter_reg[7]),
+        .O(\counter[7]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT4 #(
+    .INIT(16'h7F80)) 
+    \counter[8]_i_1 
+       (.I0(counter_reg[6]),
+        .I1(\counter[9]_i_2_n_0 ),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[8]),
+        .O(\counter[8]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'h80000000)) 
-    \counter[6]_i_2 
-       (.I0(counter_reg[4]),
-        .I1(counter_reg[2]),
-        .I2(counter_reg[0]),
-        .I3(counter_reg[1]),
-        .I4(counter_reg[3]),
-        .O(\counter[6]_i_2_n_0 ));
+    .INIT(32'h7FFF8000)) 
+    \counter[9]_i_1 
+       (.I0(counter_reg[7]),
+        .I1(\counter[9]_i_2_n_0 ),
+        .I2(counter_reg[6]),
+        .I3(counter_reg[8]),
+        .I4(counter_reg[9]),
+        .O(\counter[9]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \counter[9]_i_2 
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[1]),
+        .I3(counter_reg[0]),
+        .I4(counter_reg[2]),
+        .I5(counter_reg[4]),
+        .O(\counter[9]_i_2_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[0] 
@@ -225,28 +254,54 @@ module system_decimator_0_1_decimator
         .D(\counter[6]_i_1_n_0 ),
         .Q(counter_reg[6]),
         .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \counter_reg[7] 
+       (.C(clk_i),
+        .CE(1'b1),
+        .D(\counter[7]_i_1_n_0 ),
+        .Q(counter_reg[7]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \counter_reg[8] 
+       (.C(clk_i),
+        .CE(1'b1),
+        .D(\counter[8]_i_1_n_0 ),
+        .Q(counter_reg[8]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \counter_reg[9] 
+       (.C(clk_i),
+        .CE(1'b1),
+        .D(\counter[9]_i_1_n_0 ),
+        .Q(counter_reg[9]),
+        .R(1'b0));
   FDRE enable_reg
        (.C(clk_i),
         .CE(1'b1),
         .D(\output_o[13]_i_1_n_0 ),
         .Q(enable),
         .R(1'b0));
-  LUT4 #(
-    .INIT(16'h0001)) 
+  LUT5 #(
+    .INIT(32'h00000004)) 
     \output_o[13]_i_1 
-       (.I0(\output_o[13]_i_2_n_0 ),
-        .I1(counter_reg[5]),
-        .I2(counter_reg[4]),
-        .I3(counter_reg[6]),
+       (.I0(counter_reg[6]),
+        .I1(\output_o[13]_i_2_n_0 ),
+        .I2(counter_reg[8]),
+        .I3(counter_reg[7]),
+        .I4(counter_reg[9]),
         .O(\output_o[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'hFFFE)) 
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
     \output_o[13]_i_2 
-       (.I0(counter_reg[2]),
-        .I1(counter_reg[3]),
-        .I2(counter_reg[0]),
-        .I3(counter_reg[1]),
+       (.I0(counter_reg[3]),
+        .I1(counter_reg[0]),
+        .I2(counter_reg[1]),
+        .I3(counter_reg[2]),
+        .I4(counter_reg[5]),
+        .I5(counter_reg[4]),
         .O(\output_o[13]_i_2_n_0 ));
   FDRE \output_o_reg[0] 
        (.C(clk_i),
@@ -332,11 +387,10 @@ module system_decimator_0_1_decimator
         .D(input_i[9]),
         .Q(output_o[9]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \squareDAC[9]_i_1 
-       (.I0(counter_reg[6]),
+       (.I0(counter_reg[9]),
         .O(\squareDAC[9]_i_1_n_0 ));
   FDRE \squareDAC_reg[9] 
        (.C(clk_i),

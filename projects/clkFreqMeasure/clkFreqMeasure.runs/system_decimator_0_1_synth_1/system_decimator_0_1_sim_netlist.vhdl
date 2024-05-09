@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Thu May  9 14:43:39 2024
+-- Date        : Thu May  9 15:22:00 2024
 -- Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ system_decimator_0_1_sim_netlist.vhdl
@@ -33,8 +33,11 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_decimator is
   signal \counter[4]_i_1_n_0\ : STD_LOGIC;
   signal \counter[5]_i_1_n_0\ : STD_LOGIC;
   signal \counter[6]_i_1_n_0\ : STD_LOGIC;
-  signal \counter[6]_i_2_n_0\ : STD_LOGIC;
-  signal counter_reg : STD_LOGIC_VECTOR ( 6 downto 0 );
+  signal \counter[7]_i_1_n_0\ : STD_LOGIC;
+  signal \counter[8]_i_1_n_0\ : STD_LOGIC;
+  signal \counter[9]_i_1_n_0\ : STD_LOGIC;
+  signal \counter[9]_i_2_n_0\ : STD_LOGIC;
+  signal counter_reg : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal \output_o[13]_i_1_n_0\ : STD_LOGIC;
   signal \output_o[13]_i_2_n_0\ : STD_LOGIC;
   signal \squareDAC[9]_i_1_n_0\ : STD_LOGIC;
@@ -42,11 +45,11 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_decimator is
   attribute SOFT_HLUTNM of \counter[1]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \counter[2]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \counter[3]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \counter[4]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \counter[4]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \counter[6]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \counter[6]_i_2\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \output_o[13]_i_2\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \squareDAC[9]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \counter[7]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \counter[8]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \counter[9]_i_1\ : label is "soft_lutpair0";
 begin
 clk_e_reg: unisim.vcomponents.FDRE
      port map (
@@ -119,27 +122,60 @@ clk_e_reg: unisim.vcomponents.FDRE
       I5 => counter_reg(5),
       O => \counter[5]_i_1_n_0\
     );
-\counter[6]_i_1\: unisim.vcomponents.LUT3
+\counter[6]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => \counter[9]_i_2_n_0\,
+      I1 => counter_reg(6),
+      O => \counter[6]_i_1_n_0\
+    );
+\counter[7]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"78"
     )
         port map (
-      I0 => \counter[6]_i_2_n_0\,
-      I1 => counter_reg(5),
-      I2 => counter_reg(6),
-      O => \counter[6]_i_1_n_0\
+      I0 => \counter[9]_i_2_n_0\,
+      I1 => counter_reg(6),
+      I2 => counter_reg(7),
+      O => \counter[7]_i_1_n_0\
     );
-\counter[6]_i_2\: unisim.vcomponents.LUT5
+\counter[8]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"80000000"
+      INIT => X"7F80"
     )
         port map (
-      I0 => counter_reg(4),
-      I1 => counter_reg(2),
-      I2 => counter_reg(0),
-      I3 => counter_reg(1),
-      I4 => counter_reg(3),
-      O => \counter[6]_i_2_n_0\
+      I0 => counter_reg(6),
+      I1 => \counter[9]_i_2_n_0\,
+      I2 => counter_reg(7),
+      I3 => counter_reg(8),
+      O => \counter[8]_i_1_n_0\
+    );
+\counter[9]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"7FFF8000"
+    )
+        port map (
+      I0 => counter_reg(7),
+      I1 => \counter[9]_i_2_n_0\,
+      I2 => counter_reg(6),
+      I3 => counter_reg(8),
+      I4 => counter_reg(9),
+      O => \counter[9]_i_1_n_0\
+    );
+\counter[9]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => counter_reg(5),
+      I1 => counter_reg(3),
+      I2 => counter_reg(1),
+      I3 => counter_reg(0),
+      I4 => counter_reg(2),
+      I5 => counter_reg(4),
+      O => \counter[9]_i_2_n_0\
     );
 \counter_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -218,6 +254,39 @@ clk_e_reg: unisim.vcomponents.FDRE
       Q => counter_reg(6),
       R => '0'
     );
+\counter_reg[7]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk_i,
+      CE => '1',
+      D => \counter[7]_i_1_n_0\,
+      Q => counter_reg(7),
+      R => '0'
+    );
+\counter_reg[8]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk_i,
+      CE => '1',
+      D => \counter[8]_i_1_n_0\,
+      Q => counter_reg(8),
+      R => '0'
+    );
+\counter_reg[9]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk_i,
+      CE => '1',
+      D => \counter[9]_i_1_n_0\,
+      Q => counter_reg(9),
+      R => '0'
+    );
 enable_reg: unisim.vcomponents.FDRE
      port map (
       C => clk_i,
@@ -226,26 +295,29 @@ enable_reg: unisim.vcomponents.FDRE
       Q => enable,
       R => '0'
     );
-\output_o[13]_i_1\: unisim.vcomponents.LUT4
+\output_o[13]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0001"
+      INIT => X"00000004"
     )
         port map (
-      I0 => \output_o[13]_i_2_n_0\,
-      I1 => counter_reg(5),
-      I2 => counter_reg(4),
-      I3 => counter_reg(6),
+      I0 => counter_reg(6),
+      I1 => \output_o[13]_i_2_n_0\,
+      I2 => counter_reg(8),
+      I3 => counter_reg(7),
+      I4 => counter_reg(9),
       O => \output_o[13]_i_1_n_0\
     );
-\output_o[13]_i_2\: unisim.vcomponents.LUT4
+\output_o[13]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFE"
+      INIT => X"0000000000000001"
     )
         port map (
-      I0 => counter_reg(2),
-      I1 => counter_reg(3),
-      I2 => counter_reg(0),
-      I3 => counter_reg(1),
+      I0 => counter_reg(3),
+      I1 => counter_reg(0),
+      I2 => counter_reg(1),
+      I3 => counter_reg(2),
+      I4 => counter_reg(5),
+      I5 => counter_reg(4),
       O => \output_o[13]_i_2_n_0\
     );
 \output_o_reg[0]\: unisim.vcomponents.FDRE
@@ -365,7 +437,7 @@ enable_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => counter_reg(6),
+      I0 => counter_reg(9),
       O => \squareDAC[9]_i_1_n_0\
     );
 \squareDAC_reg[9]\: unisim.vcomponents.FDRE
