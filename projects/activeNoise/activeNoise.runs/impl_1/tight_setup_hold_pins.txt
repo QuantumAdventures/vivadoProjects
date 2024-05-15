@@ -1,0 +1,31 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|                  adc_clk |                  adc_clk |                                         system_i/biquadFilter/biquadFilter_0/inst/i__carry__8_i_1_psdsp/D|
+|                  adc_clk |                  adc_clk |                                         system_i/biquadFilter/biquadFilter_0/inst/i__carry__8_i_3_psdsp/D|
+|                  adc_clk |                  adc_clk |                                         system_i/biquadFilter/biquadFilter_0/inst/i__carry__7_i_1_psdsp/D|
+|                  adc_clk |                  adc_clk |                                                  system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg[1]/D|
+|                  adc_clk |                  adc_clk |                                                 system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg[11]/D|
+|                  adc_clk |                  adc_clk |                                                 system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg[14]/D|
+|                  adc_clk |                  adc_clk |                                         system_i/biquadFilter/biquadFilter_0/inst/i__carry__7_i_3_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__2_i_2_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__1_i_3_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__2_i_3_psdsp/D|
+|                  adc_clk |                  adc_clk |                                                  system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg[9]/D|
+|                  adc_clk |                  adc_clk |                                                 system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg[12]/D|
+|               clk_fpga_0 |                  adc_clk |                                           system_i/biquadFilter/biquadFilter_0/inst/arg_carry_i_2_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__0_i_4_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__6_i_2_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                           system_i/biquadFilter/biquadFilter_0/inst/arg_carry_i_3_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__1_i_2_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__0_i_3_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__5_i_4_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__4_i_3_psdsp/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__0_i_2_psdsp/D|
+|                  adc_clk |                  adc_clk |                                                  system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg[4]/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__3_i_1_psdsp/D|
+|                  adc_clk |                  adc_clk |                                                  system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg[8]/D|
+|                  adc_clk |                  adc_clk |                                                  system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg[6]/D|
+|                  adc_clk |                  adc_clk |                                                  system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg[3]/D|
+|               clk_fpga_0 |                  adc_clk |                                        system_i/biquadFilter/biquadFilter_0/inst/arg_carry__7_i_4_psdsp/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

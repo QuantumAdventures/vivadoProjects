@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root MajorVersion="0" MinorVersion="39">
+  <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
+    <Description>Composite Fileset</Description>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1715778456"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1715778456"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1715778456"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1715778456"/>
+    <FileCollection Name="SOURCES" Type="SOURCES">
+      <File Name="ip\system_processing_system7_0_0\system_processing_system7_0_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/processing_system7_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_util_ds_buf_1_0\system_util_ds_buf_1_0.xci" Type="IP">
+        <Instance HierarchyPath="necessaryStuff/util_ds_buf_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_util_ds_buf_2_0\system_util_ds_buf_2_0.xci" Type="IP">
+        <Instance HierarchyPath="necessaryStuff/util_ds_buf_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_axis_red_pitaya_adc_0_0\system_axis_red_pitaya_adc_0_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/axis_red_pitaya_adc_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_axis_red_pitaya_dac_0_0\system_axis_red_pitaya_dac_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/axis_red_pitaya_dac_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_clk_wiz_0_0\system_clk_wiz_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/clk_wiz_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_ps7_0_axi_periph_0\system_ps7_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/ps7_0_axi_periph"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_rst_ps7_0_125M_0\system_rst_ps7_0_125M_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/rst_ps7_0_125M"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconstant_0_0\system_xlconstant_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/xlconstant_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconcat_0_0\system_xlconcat_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_axi_cfg_register_0_0\system_axi_cfg_register_0_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/axi_cfg_register_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconstant_0_1\system_xlconstant_0_1.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/xlconstant_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_1_3\system_LF_LFSR_4bit_1_3.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector/LF_LFSR_4bit_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_2_3\system_LF_LFSR_4bit_2_3.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector/LF_LFSR_4bit_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_3_3\system_LF_LFSR_4bit_3_3.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector/LF_LFSR_4bit_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_1bit_0_4\system_LF_LFSR_1bit_0_4.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector/LF_LFSR_1bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_0_8\system_LF_LFSR_4bit_0_8.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector/LF_LFSR_4bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_8bit_0_4\system_LF_LFSR_8bit_0_4.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector/LF_LFSR_8bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_addressSelector_0_0\system_addressSelector_0_0.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector/addressSelector_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_ROM_fValues_0_4\system_ROM_fValues_0_4.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/ROM_fValues_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_ROM_gValues_0_4\system_ROM_gValues_0_4.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/ROM_gValues_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_boxMullerMultiplier_0_4\system_boxMullerMultiplier_0_4.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/boxMullerMultiplier_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_1_4\system_LF_LFSR_4bit_1_4.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_1/LF_LFSR_4bit_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_2_4\system_LF_LFSR_4bit_2_4.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_1/LF_LFSR_4bit_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_3_4\system_LF_LFSR_4bit_3_4.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_1/LF_LFSR_4bit_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_1bit_0_5\system_LF_LFSR_1bit_0_5.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_1/LF_LFSR_1bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_0_9\system_LF_LFSR_4bit_0_9.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_1/LF_LFSR_4bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_8bit_0_5\system_LF_LFSR_8bit_0_5.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_1/LF_LFSR_8bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_addressSelector_0_1\system_addressSelector_0_1.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_1/addressSelector_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_boxMullerMultiplier_0_5\system_boxMullerMultiplier_0_5.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/boxMullerMultiplier_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_1_5\system_LF_LFSR_4bit_1_5.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_2/LF_LFSR_4bit_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_2_5\system_LF_LFSR_4bit_2_5.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_2/LF_LFSR_4bit_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_3_5\system_LF_LFSR_4bit_3_5.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_2/LF_LFSR_4bit_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_1bit_0_6\system_LF_LFSR_1bit_0_6.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_2/LF_LFSR_1bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_0_10\system_LF_LFSR_4bit_0_10.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_2/LF_LFSR_4bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_8bit_0_6\system_LF_LFSR_8bit_0_6.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_2/LF_LFSR_8bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_addressSelector_0_2\system_addressSelector_0_2.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_2/addressSelector_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_boxMullerMultiplier_1_0\system_boxMullerMultiplier_1_0.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/boxMullerMultiplier_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_1_6\system_LF_LFSR_4bit_1_6.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_3/LF_LFSR_4bit_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_2_6\system_LF_LFSR_4bit_2_6.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_3/LF_LFSR_4bit_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_3_6\system_LF_LFSR_4bit_3_6.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_3/LF_LFSR_4bit_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_1bit_0_7\system_LF_LFSR_1bit_0_7.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_3/LF_LFSR_1bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_4bit_0_11\system_LF_LFSR_4bit_0_11.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_3/LF_LFSR_4bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_LF_LFSR_8bit_0_7\system_LF_LFSR_8bit_0_7.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_3/LF_LFSR_8bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_addressSelector_0_3\system_addressSelector_0_3.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_3/addressSelector_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_boxMullerMultiplier_2_0\system_boxMullerMultiplier_2_0.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/boxMullerMultiplier_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_boxMullerAdder_0_1\system_boxMullerAdder_0_1.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/boxMullerAdder_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_util_reduced_logic_0_0\system_util_reduced_logic_0_0.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector/util_reduced_logic_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconcat_0_1\system_xlconcat_0_1.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector/xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconcat_0_2\system_xlconcat_0_2.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_1/xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_util_reduced_logic_0_1\system_util_reduced_logic_0_1.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_1/util_reduced_logic_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconcat_0_3\system_xlconcat_0_3.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_2/xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_util_reduced_logic_0_2\system_util_reduced_logic_0_2.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_2/util_reduced_logic_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconcat_0_4\system_xlconcat_0_4.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_3/xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_util_reduced_logic_0_3\system_util_reduced_logic_0_3.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/addressSelector_3/util_reduced_logic_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconstant_0_3\system_xlconstant_0_3.xci" Type="IP">
+        <Instance HierarchyPath="reset_AWGN"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_gainBrown_1\system_gainBrown_1.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/gainWhite"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_gainWhite_0_0\system_gainWhite_0_0.xci" Type="IP">
+        <Instance HierarchyPath="AWGN/gainWhite_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998694" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_signal_split_0_0_2\system_signal_split_0_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/signal_split_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1715775364" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_outputCalibration_0_0\system_outputCalibration_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/outputCalibration_A"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_outputCalibration_A_0\system_outputCalibration_A_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/outputCalibration_B"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_decimator_0_0\system_decimator_0_0.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter/decimator_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_biquadFilter_0_0\system_biquadFilter_0_0.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter/biquadFilter_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_7\system_xlslice_0_7.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter/extract_constants/gain_a2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_8\system_xlslice_0_8.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter/extract_constants/gain_b0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_9\system_xlslice_0_9.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter/extract_constants/gain_b1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_10\system_xlslice_0_10.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter/extract_constants/gain_b2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_11\system_xlslice_0_11.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter/extract_constants/gain_a1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_12\system_xlslice_0_12.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter/extract_constants/enable"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\system.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim\system.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_auto_pc_0\system_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/ps7_0_axi_periph/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="system_ooc.xdc" Type="XDC">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="OUT_OF_CONTEXT"/>
+      </File>
+      <File Name="hw_handoff\system.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hw_handoff\system_bd.tcl">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="synth\system.hwdef">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="sim\system.protoinst">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+    </FileCollection>
+  </CompositeFile>
+</Root>
