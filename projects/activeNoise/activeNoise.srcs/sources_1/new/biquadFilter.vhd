@@ -7,19 +7,22 @@ use ieee_proposed.fixed_float_types.all;
 use ieee_proposed.fixed_pkg.all;
 
 entity biquadFilter is
-    generic  (input_size  : positive;
-	          output_size : positive);
+    generic  (in_left_radix : positive;
+              in_right_radix : positive;
+              out_left_radix : positive;
+              out_right_radix : positive);
+              
 	port     (clk_i      : in  std_logic;
 			  enable     : in  std_logic;
 			  clkEnable  : in  std_logic;
-			  input_i    : in  std_logic_vector(input_size-1 downto 0);
+			  input_i    : in  std_logic_vector((in_left_radix+in_right_radix)-1 downto 0);
 			  gain_a1    : in  std_logic_vector(31 downto 0);
 			  gain_a2    : in  std_logic_vector(31 downto 0);
 			  gain_b0    : in  std_logic_vector(31 downto 0);
 			  gain_b1    : in  std_logic_vector(31 downto 0);
 			  gain_b2    : in  std_logic_vector(31 downto 0);
 			  enable_out : out std_logic;
-			  output_o   : out std_logic_vector(output_size-1 downto 0));
+			  output_o   : out std_logic_vector((out_left_radix+out_right_radix)-1 downto 0));
 end biquadFilter;
 
 architecture behav of biquadFilter is
@@ -33,17 +36,17 @@ signal gain_b0_sf : sfixed(3 downto -28) := (others => '0');
 signal gain_b1_sf : sfixed(3 downto -28) := (others => '0');
 signal gain_b2_sf : sfixed(3 downto -28) := (others => '0');
 
-signal y1_sf : sfixed(10 downto -59) := (others => '0'); -- 3 downto -28 x 6 downto -31
-signal y2_sf : sfixed(10 downto -59) := (others => '0');
-signal x0_sf : sfixed(4 downto -(28+input_size-1)) := (others => '0'); -- 3 downto -28 x 0 downto -(input_size-1)
-signal x1_sf : sfixed(4 downto -(28+input_size-1)) := (others => '0');
-signal x2_sf : sfixed(4 downto -(28+input_size-1)) := (others => '0');
+signal y1_sf : sfixed(11+in_left_radix downto -((28+in_right_radix)+28)) := (others => '0'); -- gain_a1_sf*output1_sf
+signal y2_sf : sfixed(11+in_left_radix downto -((28+in_right_radix)+28)) := (others => '0'); -- gain_a2_sf*output2_sf
+signal x0_sf : sfixed(3+in_left_radix downto -(28+in_right_radix)) := (others => '0'); -- gain_b0_sf*input0_sf
+signal x1_sf : sfixed(3+in_left_radix downto -(28+in_right_radix)) := (others => '0'); -- gain_b1_sf*input1_sf
+signal x2_sf : sfixed(3+in_left_radix downto -(28+in_right_radix)) := (others => '0'); -- gain_b2_sf*input2_sf
 
-signal input0_sf  : sfixed(0 downto -(input_size-1)) := (others => '0');
-signal input1_sf  : sfixed(0 downto -(input_size-1)) := (others => '0');
-signal input2_sf  : sfixed(0 downto -(input_size-1)) := (others => '0');
-signal output1_sf : sfixed(6 downto -31) := (others => '0');
-signal output2_sf : sfixed(6 downto -31) := (others => '0');
+signal input0_sf  : sfixed(in_left_radix-1 downto -in_right_radix) := (others => '0');
+signal input1_sf  : sfixed(in_left_radix-1 downto -in_right_radix) := (others => '0');
+signal input2_sf  : sfixed(in_left_radix-1 downto -in_right_radix) := (others => '0');
+signal output1_sf : sfixed(7+in_left_radix downto -(28+in_right_radix)) := (others => '0'); -- y1_sf+y2_sf+x0_sf+x1_sf+x2_sf
+signal output2_sf : sfixed(7+in_left_radix downto -(28+in_right_radix)) := (others => '0'); -- y1_sf+y2_sf+x0_sf+x1_sf+x2_sf
 
 
 begin
@@ -105,7 +108,7 @@ begin
                     
                 when ST3 => -- output to the world new output
                 
-                    output_o  <= std_logic_vector(unsigned(to_slv(resize(output1_sf,0,-13))));
+                    output_o  <= std_logic_vector(unsigned(to_slv(resize(output1_sf,out_left_radix-1,-out_right_radix))));
                     NS <= ST0;
                     enable_out <= '1';
                     

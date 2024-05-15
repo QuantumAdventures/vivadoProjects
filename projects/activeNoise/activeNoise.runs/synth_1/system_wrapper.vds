@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Wed May 15 10:07:56 2024
-# Process ID: 28892
+# Start of session at: Wed May 15 15:02:19 2024
+# Process ID: 13144
 # Current directory: C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1
 # Command line: vivado.exe -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
 # Log file: C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/system_wrapper.vds
@@ -15,7 +15,7 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/tandeitnik/Documents
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
 Current IP cache path is c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.cache/ip 
-add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1030.203 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 1031.754 ; gain = 0.000
 Command: synth_design -top system_wrapper -part xc7z010clg400-1 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -23,34 +23,34 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 31404
+INFO: [Synth 8-7075] Helper process launched with PID 29968
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
-INFO: [Synth 8-6157] synthesizing module 'system' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1345]
+INFO: [Synth 8-6157] synthesizing module 'system' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1344]
 INFO: [Synth 8-6157] synthesizing module 'AWGN_imp_NXZTWK' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:12]
-INFO: [Synth 8-6157] synthesizing module 'system_ROM_fValues_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_ROM_fValues_0_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_ROM_fValues_0_4' (1#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_ROM_fValues_0_4_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_ROM_gValues_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_ROM_gValues_0_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_ROM_gValues_0_4' (2#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_ROM_gValues_0_4_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'addressSelector_imp_ZGXW1Y' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:835]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_1bit_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_1bit_0_4' (3#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_4_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_0_8' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_8_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_0_8' (4#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_8_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_1_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_1_3' (5#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_3_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_2_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_2_3' (6#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_3_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_3_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_3_3' (7#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_3_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_8bit_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_8bit_0_4' (8#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_4_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_addressSelector_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_addressSelector_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_addressSelector_0_0' (9#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_addressSelector_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_util_reduced_logic_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_reduced_logic_0_0' (10#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_ROM_fValues_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_ROM_fValues_0_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_ROM_fValues_0_4' (1#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_ROM_fValues_0_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_ROM_gValues_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_ROM_gValues_0_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_ROM_gValues_0_4' (2#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_ROM_gValues_0_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'addressSelector_imp_ZGXW1Y' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:834]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_1bit_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_1bit_0_4' (3#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_0_8' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_8_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_0_8' (4#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_8_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_1_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_1_3' (5#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_2_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_2_3' (6#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_3_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_3_3' (7#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_8bit_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_8bit_0_4' (8#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_addressSelector_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_addressSelector_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_addressSelector_0_0' (9#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_addressSelector_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_util_reduced_logic_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_reduced_logic_0_0' (10#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_1' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_1/synth/system_xlconcat_0_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
@@ -89,77 +89,77 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/ta
 	Parameter NUM_PORTS bound to: 4 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (11#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_1' (12#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_1/synth/system_xlconcat_0_1.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'addressSelector_imp_ZGXW1Y' (13#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:835]
-INFO: [Synth 8-6157] synthesizing module 'addressSelector_1_imp_1FCUQ2U' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:595]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_1bit_0_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_1bit_0_5' (14#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_5_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_0_9' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_9_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_0_9' (15#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_9_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_1_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_1_4' (16#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_4_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_2_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_2_4' (17#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_4_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_3_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_3_4' (18#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_4_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_8bit_0_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_8bit_0_5' (19#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_5_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_addressSelector_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_addressSelector_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_addressSelector_0_1' (20#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_addressSelector_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_util_reduced_logic_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_reduced_logic_0_1' (21#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'addressSelector_imp_ZGXW1Y' (13#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:834]
+INFO: [Synth 8-6157] synthesizing module 'addressSelector_1_imp_1FCUQ2U' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:594]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_1bit_0_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_1bit_0_5' (14#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_5_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_0_9' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_9_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_0_9' (15#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_9_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_1_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_1_4' (16#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_2_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_2_4' (17#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_3_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_3_4' (18#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_8bit_0_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_8bit_0_5' (19#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_5_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_addressSelector_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_addressSelector_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_addressSelector_0_1' (20#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_addressSelector_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_util_reduced_logic_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_reduced_logic_0_1' (21#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_1_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_2' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_2/synth/system_xlconcat_0_2.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_2' (22#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_2/synth/system_xlconcat_0_2.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'addressSelector_1_imp_1FCUQ2U' (23#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:595]
-INFO: [Synth 8-6157] synthesizing module 'addressSelector_2_imp_11ZTYXN' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:675]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_1bit_0_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_1bit_0_6' (24#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_6_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_0_10' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_10_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_0_10' (25#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_10_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_1_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_1_5' (26#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_5_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_2_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_2_5' (27#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_5_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_3_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_3_5' (28#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_5_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_8bit_0_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_8bit_0_6' (29#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_6_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_addressSelector_0_2' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_addressSelector_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_addressSelector_0_2' (30#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_addressSelector_0_2_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_util_reduced_logic_0_2' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_reduced_logic_0_2' (31#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'addressSelector_1_imp_1FCUQ2U' (23#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:594]
+INFO: [Synth 8-6157] synthesizing module 'addressSelector_2_imp_11ZTYXN' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:674]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_1bit_0_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_1bit_0_6' (24#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_6_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_0_10' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_10_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_0_10' (25#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_10_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_1_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_1_5' (26#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_5_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_2_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_2_5' (27#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_5_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_3_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_3_5' (28#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_5_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_8bit_0_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_8bit_0_6' (29#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_6_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_addressSelector_0_2' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_addressSelector_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_addressSelector_0_2' (30#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_addressSelector_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_util_reduced_logic_0_2' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_reduced_logic_0_2' (31#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_2_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_3' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_3/synth/system_xlconcat_0_3.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_3' (32#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_3/synth/system_xlconcat_0_3.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'addressSelector_2_imp_11ZTYXN' (33#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:675]
-INFO: [Synth 8-6157] synthesizing module 'addressSelector_3_imp_CWQZLB' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:755]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_1bit_0_7' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_7_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_1bit_0_7' (34#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_7_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_0_11' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_11_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_0_11' (35#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_11_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_1_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_1_6' (36#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_6_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_2_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_2_6' (37#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_6_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_3_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_3_6' (38#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_6_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_8bit_0_7' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_7_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_8bit_0_7' (39#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_7_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_addressSelector_0_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_addressSelector_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_addressSelector_0_3' (40#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_addressSelector_0_3_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_util_reduced_logic_0_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_reduced_logic_0_3' (41#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'addressSelector_2_imp_11ZTYXN' (33#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:674]
+INFO: [Synth 8-6157] synthesizing module 'addressSelector_3_imp_CWQZLB' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:754]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_1bit_0_7' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_7_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_1bit_0_7' (34#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_1bit_0_7_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_0_11' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_11_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_0_11' (35#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_0_11_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_1_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_1_6' (36#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_1_6_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_2_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_2_6' (37#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_2_6_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_4bit_3_6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_4bit_3_6' (38#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_4bit_3_6_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_LF_LFSR_8bit_0_7' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_7_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_LF_LFSR_8bit_0_7' (39#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_LF_LFSR_8bit_0_7_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_addressSelector_0_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_addressSelector_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_addressSelector_0_3' (40#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_addressSelector_0_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_util_reduced_logic_0_3' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_reduced_logic_0_3' (41#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_reduced_logic_0_3_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_4' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_4/synth/system_xlconcat_0_4.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_4' (42#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_4/synth/system_xlconcat_0_4.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'addressSelector_3_imp_CWQZLB' (43#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:755]
-INFO: [Synth 8-6157] synthesizing module 'system_boxMullerAdder_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerAdder_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerAdder_0_1' (44#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerAdder_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_boxMullerMultiplier_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_0_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerMultiplier_0_4' (45#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_0_4_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_boxMullerMultiplier_0_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_0_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerMultiplier_0_5' (46#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_0_5_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_boxMullerMultiplier_1_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerMultiplier_1_0' (47#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_boxMullerMultiplier_2_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerMultiplier_2_0' (48#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'addressSelector_3_imp_CWQZLB' (43#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:754]
+INFO: [Synth 8-6157] synthesizing module 'system_boxMullerAdder_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerAdder_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerAdder_0_1' (44#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerAdder_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_boxMullerMultiplier_0_4' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_0_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerMultiplier_0_4' (45#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_0_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_boxMullerMultiplier_0_5' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_0_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerMultiplier_0_5' (46#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_0_5_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_boxMullerMultiplier_1_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerMultiplier_1_0' (47#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_boxMullerMultiplier_2_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_boxMullerMultiplier_2_0' (48#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_boxMullerMultiplier_2_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'system_gainBrown_1' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_gainBrown_1/synth/system_gainBrown_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 1024 - type: integer 
@@ -167,87 +167,93 @@ INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [c:/Users/tand
 	Parameter DIN_TO bound to: 192 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (49#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'system_gainBrown_1' (50#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_gainBrown_1/synth/system_gainBrown_1.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_gainWhite_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_gainWhite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_gainWhite_0_0' (51#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_gainWhite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AWGN_imp_NXZTWK' (52#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:12]
-INFO: [Synth 8-6157] synthesizing module 'DataAcquisition_imp_11FS564' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:142]
-INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_adc_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_adc_0_0' (53#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_signal_split_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_signal_split_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_signal_split_0_0' (54#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_signal_split_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'M_AXIS_PORT2_tdata' of module 'system_signal_split_0_0' is unconnected for instance 'signal_split_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:188]
-WARNING: [Synth 8-7071] port 'M_AXIS_PORT2_tvalid' of module 'system_signal_split_0_0' is unconnected for instance 'signal_split_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:188]
-WARNING: [Synth 8-7023] instance 'signal_split_0' of module 'system_signal_split_0_0' has 6 connections declared, but only 4 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:188]
-INFO: [Synth 8-6155] done synthesizing module 'DataAcquisition_imp_11FS564' (55#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:142]
-WARNING: [Synth 8-7071] port 'M_AXIS_PORT1_tdata' of module 'DataAcquisition_imp_11FS564' is unconnected for instance 'DataAcquisition' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1490]
-WARNING: [Synth 8-7023] instance 'DataAcquisition' of module 'DataAcquisition_imp_11FS564' has 8 connections declared, but only 7 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1490]
-INFO: [Synth 8-6157] synthesizing module 'PS7_imp_1QJPAX8' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:195]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_cfg_register_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_axi_cfg_register_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_cfg_register_0_0' (56#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_axi_cfg_register_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (57#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_SCLK_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_SCLK_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_MOSI_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_MOSI_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_MISO_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_MISO_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_SS_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_SS1_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_SS2_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'SPI0_SS_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARREADY' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_AWREADY' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BVALID' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RLAST' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RVALID' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WREADY' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BRESP' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RRESP' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RID' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RDATA' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'system_processing_system7_0_0' has 131 connections declared, but only 98 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:344]
-INFO: [Synth 8-6157] synthesizing module 'system_ps7_0_axi_periph_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1545]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_15HE6GA' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1049]
-INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (58#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_auto_pc_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'system_auto_pc_0' is unconnected for instance 'auto_pc' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1284]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'system_auto_pc_0' is unconnected for instance 'auto_pc' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1284]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_auto_pc_0' has 59 connections declared, but only 57 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1284]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_15HE6GA' (59#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1049]
-INFO: [Synth 8-6155] done synthesizing module 'system_ps7_0_axi_periph_0' (60#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1545]
-INFO: [Synth 8-6157] synthesizing module 'system_rst_ps7_0_125M_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_rst_ps7_0_125M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_rst_ps7_0_125M_0' (61#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_rst_ps7_0_125M_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:505]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:505]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:505]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:505]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_125M' of module 'system_rst_ps7_0_125M_0' has 10 connections declared, but only 6 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:505]
-INFO: [Synth 8-6155] done synthesizing module 'PS7_imp_1QJPAX8' (62#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:195]
-INFO: [Synth 8-6157] synthesizing module 'SignalGenerator_imp_XB4TXX' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:514]
-INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_dac_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (63#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 's_axis_tready' of module 'system_axis_red_pitaya_dac_0_0' is unconnected for instance 'axis_red_pitaya_dac_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:560]
-WARNING: [Synth 8-7023] instance 'axis_red_pitaya_dac_0' of module 'system_axis_red_pitaya_dac_0_0' has 11 connections declared, but only 10 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:560]
-INFO: [Synth 8-6157] synthesizing module 'system_clk_wiz_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'system_clk_wiz_0_0' (64#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'system_outputCalibration_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_outputCalibration_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_outputCalibration_0_0' (65#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_outputCalibration_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_outputCalibration_A_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_outputCalibration_A_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_outputCalibration_A_0' (66#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_outputCalibration_A_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_gainWhite_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_gainWhite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_gainWhite_0_0' (51#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_gainWhite_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_xlconstant_0_3' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_3/synth/system_xlconstant_0_3.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 0 - type: integer 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (52#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_3' (53#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_3/synth/system_xlconstant_0_3.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'AWGN_imp_NXZTWK' (54#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6157] synthesizing module 'DataAcquisition_imp_11FS564' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:141]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_adc_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_adc_0_0' (55#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_signal_split_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_signal_split_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_signal_split_0_0' (56#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_signal_split_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M_AXIS_PORT2_tdata' of module 'system_signal_split_0_0' is unconnected for instance 'signal_split_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:187]
+WARNING: [Synth 8-7071] port 'M_AXIS_PORT2_tvalid' of module 'system_signal_split_0_0' is unconnected for instance 'signal_split_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:187]
+WARNING: [Synth 8-7023] instance 'signal_split_0' of module 'system_signal_split_0_0' has 6 connections declared, but only 4 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:187]
+INFO: [Synth 8-6155] done synthesizing module 'DataAcquisition_imp_11FS564' (57#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:141]
+WARNING: [Synth 8-7071] port 'M_AXIS_PORT1_tdata' of module 'DataAcquisition_imp_11FS564' is unconnected for instance 'DataAcquisition' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1488]
+WARNING: [Synth 8-7023] instance 'DataAcquisition' of module 'DataAcquisition_imp_11FS564' has 8 connections declared, but only 7 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1488]
+INFO: [Synth 8-6157] synthesizing module 'PS7_imp_1QJPAX8' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:194]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_cfg_register_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_axi_cfg_register_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_cfg_register_0_0' (58#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_axi_cfg_register_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (59#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_SCLK_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_SCLK_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_MOSI_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_MOSI_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_MISO_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_MISO_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_SS_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_SS1_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_SS2_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'SPI0_SS_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARREADY' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_AWREADY' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_BVALID' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RLAST' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RVALID' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WREADY' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_BRESP' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RRESP' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RID' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RDATA' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'system_processing_system7_0_0' has 131 connections declared, but only 98 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:343]
+INFO: [Synth 8-6157] synthesizing module 'system_ps7_0_axi_periph_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1543]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_15HE6GA' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1048]
+INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (60#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_auto_pc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'system_auto_pc_0' is unconnected for instance 'auto_pc' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1283]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'system_auto_pc_0' is unconnected for instance 'auto_pc' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1283]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_auto_pc_0' has 59 connections declared, but only 57 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1283]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_15HE6GA' (61#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1048]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps7_0_axi_periph_0' (62#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1543]
+INFO: [Synth 8-6157] synthesizing module 'system_rst_ps7_0_125M_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_rst_ps7_0_125M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_rst_ps7_0_125M_0' (63#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_rst_ps7_0_125M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:504]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:504]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:504]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:504]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_125M' of module 'system_rst_ps7_0_125M_0' has 10 connections declared, but only 6 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:504]
+INFO: [Synth 8-6155] done synthesizing module 'PS7_imp_1QJPAX8' (64#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:194]
+INFO: [Synth 8-6157] synthesizing module 'SignalGenerator_imp_XB4TXX' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:513]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_dac_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (65#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 's_axis_tready' of module 'system_axis_red_pitaya_dac_0_0' is unconnected for instance 'axis_red_pitaya_dac_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:559]
+WARNING: [Synth 8-7023] instance 'axis_red_pitaya_dac_0' of module 'system_axis_red_pitaya_dac_0_0' has 11 connections declared, but only 10 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:559]
+INFO: [Synth 8-6157] synthesizing module 'system_clk_wiz_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'system_clk_wiz_0_0' (66#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'system_outputCalibration_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_outputCalibration_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_outputCalibration_0_0' (67#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_outputCalibration_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_outputCalibration_A_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_outputCalibration_A_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_outputCalibration_A_0' (68#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_outputCalibration_A_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_0' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 14 - type: integer 
@@ -284,98 +290,98 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterize
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 32 - type: integer 
 	Parameter NUM_PORTS bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (66#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_0' (67#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (68#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_0' (69#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconstant_0_0' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized0' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 0 - type: integer 
 	Parameter CONST_WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (68#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_0' (69#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized0' (69#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_0' (70#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconstant_0_1' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_1/synth/system_xlconstant_0_1.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_1' (70#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_1/synth/system_xlconstant_0_1.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'SignalGenerator_imp_XB4TXX' (71#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:514]
-INFO: [Synth 8-6157] synthesizing module 'biquadFilter_imp_1PDHNN6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:915]
-INFO: [Synth 8-6157] synthesizing module 'system_biquadFilter_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_biquadFilter_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_biquadFilter_0_0' (72#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_biquadFilter_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'enable_out' of module 'system_biquadFilter_0_0' is unconnected for instance 'biquadFilter_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:942]
-WARNING: [Synth 8-7023] instance 'biquadFilter_0' of module 'system_biquadFilter_0_0' has 11 connections declared, but only 10 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:942]
-INFO: [Synth 8-6157] synthesizing module 'system_decimator_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_decimator_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_decimator_0_0' (73#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_decimator_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'clk_e' of module 'system_decimator_0_0' is unconnected for instance 'decimator_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:953]
-WARNING: [Synth 8-7023] instance 'decimator_0' of module 'system_decimator_0_0' has 5 connections declared, but only 4 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:953]
-INFO: [Synth 8-6157] synthesizing module 'extract_constants_imp_1VA3B53' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:968]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_1' (71#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_1/synth/system_xlconstant_0_1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'SignalGenerator_imp_XB4TXX' (72#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:513]
+INFO: [Synth 8-6157] synthesizing module 'biquadFilter_imp_1PDHNN6' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:914]
+INFO: [Synth 8-6157] synthesizing module 'system_biquadFilter_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_biquadFilter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_biquadFilter_0_0' (73#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_biquadFilter_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'enable_out' of module 'system_biquadFilter_0_0' is unconnected for instance 'biquadFilter_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:941]
+WARNING: [Synth 8-7023] instance 'biquadFilter_0' of module 'system_biquadFilter_0_0' has 11 connections declared, but only 10 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:941]
+INFO: [Synth 8-6157] synthesizing module 'system_decimator_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_decimator_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_decimator_0_0' (74#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_decimator_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'clk_e' of module 'system_decimator_0_0' is unconnected for instance 'decimator_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:952]
+WARNING: [Synth 8-7023] instance 'decimator_0' of module 'system_decimator_0_0' has 5 connections declared, but only 4 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:952]
+INFO: [Synth 8-6157] synthesizing module 'extract_constants_imp_1VA3B53' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:967]
 INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_12' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_12/synth/system_xlslice_0_12.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 1024 - type: integer 
 	Parameter DIN_FROM bound to: 0 - type: integer 
 	Parameter DIN_TO bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (73#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_12' (74#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_12/synth/system_xlslice_0_12.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (74#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_12' (75#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_12/synth/system_xlslice_0_12.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_11' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_11/synth/system_xlslice_0_11.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 1024 - type: integer 
 	Parameter DIN_FROM bound to: 63 - type: integer 
 	Parameter DIN_TO bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (74#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_11' (75#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_11/synth/system_xlslice_0_11.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (75#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_11' (76#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_11/synth/system_xlslice_0_11.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_7' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_7/synth/system_xlslice_0_7.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 1024 - type: integer 
 	Parameter DIN_FROM bound to: 95 - type: integer 
 	Parameter DIN_TO bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' (75#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_7' (76#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_7/synth/system_xlslice_0_7.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' (76#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_7' (77#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_7/synth/system_xlslice_0_7.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_8' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_8/synth/system_xlslice_0_8.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 1024 - type: integer 
 	Parameter DIN_FROM bound to: 127 - type: integer 
 	Parameter DIN_TO bound to: 96 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' (76#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_8' (77#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_8/synth/system_xlslice_0_8.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' (77#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_8' (78#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_8/synth/system_xlslice_0_8.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_9' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_9/synth/system_xlslice_0_9.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 1024 - type: integer 
 	Parameter DIN_FROM bound to: 159 - type: integer 
 	Parameter DIN_TO bound to: 128 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' (77#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_9' (78#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_9/synth/system_xlslice_0_9.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' (78#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_9' (79#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_9/synth/system_xlslice_0_9.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_10' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_10/synth/system_xlslice_0_10.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized5' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 1024 - type: integer 
 	Parameter DIN_FROM bound to: 191 - type: integer 
 	Parameter DIN_TO bound to: 160 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized5' (78#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_10' (79#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_10/synth/system_xlslice_0_10.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'extract_constants_imp_1VA3B53' (80#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:968]
-INFO: [Synth 8-6155] done synthesizing module 'biquadFilter_imp_1PDHNN6' (81#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:915]
-INFO: [Synth 8-6157] synthesizing module 'necessaryStuff_imp_1HZM5WS' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1019]
-INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_1_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_ds_buf_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_1_0' (82#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_ds_buf_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_2_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_ds_buf_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_2_0' (83#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-28892-DESKTOP-40PU04J/realtime/system_util_ds_buf_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'necessaryStuff_imp_1HZM5WS' (84#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1019]
-INFO: [Synth 8-6157] synthesizing module 'system_xlconstant_0_3' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_3/synth/system_xlconstant_0_3.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized0' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized5' (79#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_10' (80#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlslice_0_10/synth/system_xlslice_0_10.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'extract_constants_imp_1VA3B53' (81#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:967]
+INFO: [Synth 8-6155] done synthesizing module 'biquadFilter_imp_1PDHNN6' (82#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:914]
+INFO: [Synth 8-6157] synthesizing module 'necessaryStuff_imp_1HZM5WS' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1018]
+INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_1_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_ds_buf_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_1_0' (83#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_ds_buf_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_2_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_ds_buf_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_2_0' (84#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/.Xil/Vivado-13144-DESKTOP-40PU04J/realtime/system_util_ds_buf_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'necessaryStuff_imp_1HZM5WS' (85#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1018]
+INFO: [Synth 8-6157] synthesizing module 'system_xlconstant_0_4' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_4/synth/system_xlconstant_0_4.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized1' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 0 - type: integer 
-	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized0' (84#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_3' (85#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_3/synth/system_xlconstant_0_3.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'system' (86#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1345]
-INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (87#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+	Parameter CONST_WIDTH bound to: 14 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized1' (85#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_4' (86#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_xlconstant_0_4/synth/system_xlconstant_0_4.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'system' (87#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/synth/system.v:1344]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (88#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.088 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 1031.754 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -535,21 +541,21 @@ Parsing XDC File [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/a
 Finished Parsing XDC File [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1031.754 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1031.754 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/necessaryStuff/util_ds_buf_1' at clock pin 'IBUF_DS_P[1]' is different from the actual clock period '4.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -890,7 +896,7 @@ Applied set_property DONT_TOUCH = true for system_i/AWGN/addressSelector_2/xlcon
 Applied set_property DONT_TOUCH = true for system_i/AWGN/addressSelector_2/util_reduced_logic_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/AWGN/addressSelector_3/xlconcat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/AWGN/addressSelector_3/util_reduced_logic_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for system_i/reset_AWGN. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/AWGN/reset_AWGN. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/AWGN/gainWhite. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/AWGN/gainWhite_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/DataAcquisition/signal_split_0. (constraint file  auto generated constraint, line ).
@@ -904,12 +910,13 @@ Applied set_property DONT_TOUCH = true for system_i/biquadFilter/extract_constan
 Applied set_property DONT_TOUCH = true for system_i/biquadFilter/extract_constants/gain_b2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/biquadFilter/extract_constants/gain_a1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/biquadFilter/extract_constants/enable. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/xlconstant_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/PS7/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -931,25 +938,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -967,37 +974,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1101,23 +1108,23 @@ Report Cell Usage:
 |57    |OBUFT                        |    14|
 +------+-----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1031.754 ; gain = 0.000
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1030.203 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1031.754 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1031.754 ; gain = 0.000
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1030.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1031.754 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1033.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1031.754 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-206 Infos, 92 Warnings, 0 Critical Warnings and 0 Errors encountered.
+210 Infos, 92 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1033.852 ; gain = 3.648
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1031.754 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed May 15 10:08:38 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed May 15 15:03:05 2024...

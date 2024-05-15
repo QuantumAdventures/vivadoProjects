@@ -63,14 +63,14 @@ module system_decimator_0_0 (
 );
 
 input wire clk_i;
-input wire [13 : 0] input_i;
-output wire [13 : 0] output_o;
+input wire [68 : 0] input_i;
+output wire [68 : 0] output_o;
 output wire enable;
 output wire clk_e;
 
   decimator #(
-    .input_size(14),
-    .output_size(14),
+    .input_size(69),
+    .output_size(69),
     .clock_size(3)
   ) inst (
     .clk_i(clk_i),

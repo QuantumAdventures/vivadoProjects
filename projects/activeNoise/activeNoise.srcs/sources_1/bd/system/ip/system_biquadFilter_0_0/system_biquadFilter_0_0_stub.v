@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Wed May 15 10:00:22 2024
+// Date        : Wed May 15 15:02:16 2024
 // Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_biquadFilter_0_0/system_biquadFilter_0_0_stub.v
@@ -16,11 +16,11 @@
 (* X_CORE_INFO = "biquadFilter,Vivado 2020.1" *)
 module system_biquadFilter_0_0(clk_i, enable, clkEnable, input_i, gain_a1, 
   gain_a2, gain_b0, gain_b1, gain_b2, enable_out, output_o)
-/* synthesis syn_black_box black_box_pad_pin="clk_i,enable,clkEnable,input_i[13:0],gain_a1[31:0],gain_a2[31:0],gain_b0[31:0],gain_b1[31:0],gain_b2[31:0],enable_out,output_o[13:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clk_i,enable,clkEnable,input_i[68:0],gain_a1[31:0],gain_a2[31:0],gain_b0[31:0],gain_b1[31:0],gain_b2[31:0],enable_out,output_o[13:0]" */;
   input clk_i;
   input enable;
   input clkEnable;
-  input [13:0]input_i;
+  input [68:0]input_i;
   input [31:0]gain_a1;
   input [31:0]gain_a2;
   input [31:0]gain_b0;

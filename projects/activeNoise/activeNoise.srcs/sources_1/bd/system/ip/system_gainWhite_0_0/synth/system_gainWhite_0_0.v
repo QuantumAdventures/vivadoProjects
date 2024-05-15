@@ -65,7 +65,7 @@ module system_gainWhite_0_0 (
 input wire clk_i;
 input wire [36 : 0] whiteInput;
 input wire [31 : 0] gain;
-output wire [13 : 0] output_o;
+output wire [68 : 0] output_o;
 
   gainWhite inst (
     .clk_i(clk_i),

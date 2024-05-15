@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Wed May 15 10:07:35 2024
+//Date        : Wed May 15 15:01:16 2024
 //Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -12,12 +12,10 @@
 module AWGN_imp_NXZTWK
    (clk_i,
     gain,
-    output_o,
-    reset);
+    output_o);
   input clk_i;
   input [1023:0]gain;
-  output [13:0]output_o;
-  input reset;
+  output [68:0]output_o;
 
   wire [1023:0]Din_1;
   wire [31:0]ROM_fValues_0_readOut_0;
@@ -46,14 +44,13 @@ module AWGN_imp_NXZTWK
   wire [31:0]boxMullerMultiplier_2_output_o;
   wire [31:0]boxMullerMultiplier_3_output_o;
   wire clk_i_1;
-  wire [13:0]gainWhite_0_output_o;
+  wire [68:0]gainWhite_0_output_o;
   wire [31:0]gainWhite_Dout;
-  wire xlconstant_1_dout;
+  wire [0:0]xlconstant_1_dout;
 
   assign Din_1 = gain[1023:0];
   assign clk_i_1 = clk_i;
-  assign output_o[13:0] = gainWhite_0_output_o;
-  assign xlconstant_1_dout = reset;
+  assign output_o[68:0] = gainWhite_0_output_o;
   system_ROM_fValues_0_4 ROM_fValues_0
        (.address_0(addressSelector_address_o),
         .address_1(addressSelector_1_address_o),
@@ -137,6 +134,8 @@ module AWGN_imp_NXZTWK
         .gain(gainWhite_Dout),
         .output_o(gainWhite_0_output_o),
         .whiteInput(boxMullerAdder_0_output_o));
+  system_xlconstant_0_3 reset_AWGN
+       (.dout(xlconstant_1_dout));
 endmodule
 
 module DataAcquisition_imp_11FS564
@@ -919,15 +918,15 @@ module biquadFilter_imp_1PDHNN6
     output_o);
   input clk_i;
   input [1023:0]constants;
-  input [13:0]input_i;
+  input [68:0]input_i;
   output [13:0]output_o;
 
   wire [1023:0]Din_1;
   wire axis_red_pitaya_adc_0_adc_clk;
   wire [13:0]biquadFilter_0_output_o;
   wire decimator_0_enable;
-  wire [13:0]decimator_0_output_o;
-  wire [13:0]gainWhite_0_output_o;
+  wire [68:0]decimator_0_output_o;
+  wire [68:0]input_i_1;
   wire [31:0]xlslice_0_Dout;
   wire [31:0]xlslice_1_Dout;
   wire [31:0]xlslice_2_Dout;
@@ -937,7 +936,7 @@ module biquadFilter_imp_1PDHNN6
 
   assign Din_1 = constants[1023:0];
   assign axis_red_pitaya_adc_0_adc_clk = clk_i;
-  assign gainWhite_0_output_o = input_i[13:0];
+  assign input_i_1 = input_i[68:0];
   assign output_o[13:0] = biquadFilter_0_output_o;
   system_biquadFilter_0_0 biquadFilter_0
        (.clkEnable(decimator_0_enable),
@@ -953,7 +952,7 @@ module biquadFilter_imp_1PDHNN6
   system_decimator_0_0 decimator_0
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
         .enable(decimator_0_enable),
-        .input_i(gainWhite_0_output_o),
+        .input_i(input_i_1),
         .output_o(decimator_0_output_o));
   extract_constants_imp_1VA3B53 extract_constants
        (.Dout(xlslice_0_Dout),
@@ -1341,7 +1340,7 @@ module s00_couplers_imp_15HE6GA
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=82,numReposBlks=69,numNonXlnxBlks=3,numHierBlks=13,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=41,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=83,numReposBlks=70,numNonXlnxBlks=3,numHierBlks=13,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=41,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1426,6 +1425,7 @@ module system
   inout [7:0]exp_p_tri_io;
   output [7:0]led_o;
 
+  wire [68:0]AWGN_output_o;
   wire DataAcquisition_M_AXIS_PORT1_tvalid;
   wire adc_clk_n_i_1;
   wire adc_clk_p_i_1;
@@ -1442,7 +1442,6 @@ module system
   wire [13:0]biquadFilter_0_output_o;
   wire [1:0]daisy_n_i_1;
   wire [1:0]daisy_p_i_1;
-  wire [13:0]input_i_1;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -1466,7 +1465,7 @@ module system
   wire processing_system7_0_FIXED_IO_PS_SRSTB;
   wire [1:0]util_ds_buf_2_OBUF_DS_N;
   wire [1:0]util_ds_buf_2_OBUF_DS_P;
-  wire [0:0]xlconstant_0_dout;
+  wire [13:0]xlconstant_0_dout1;
 
   assign adc_clk_n_i_1 = adc_clk_n_i;
   assign adc_clk_p_i_1 = adc_clk_p_i;
@@ -1485,8 +1484,7 @@ module system
   AWGN_imp_NXZTWK AWGN
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
         .gain(axi_cfg_register_0_cfg_data),
-        .output_o(input_i_1),
-        .reset(xlconstant_0_dout));
+        .output_o(AWGN_output_o));
   DataAcquisition_imp_11FS564 DataAcquisition
        (.M_AXIS_PORT1_tvalid(DataAcquisition_M_AXIS_PORT1_tvalid),
         .adc_clk(axis_red_pitaya_adc_0_adc_clk),
@@ -1526,20 +1524,20 @@ module system
         .dac_sel_o(axis_red_pitaya_dac_0_dac_sel),
         .dac_wrt_o(axis_red_pitaya_dac_0_dac_wrt),
         .output_CHA(biquadFilter_0_output_o),
-        .output_CHB(input_i_1),
+        .output_CHB(xlconstant_0_dout1),
         .s_axis_tvalid(DataAcquisition_M_AXIS_PORT1_tvalid));
   biquadFilter_imp_1PDHNN6 biquadFilter
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
         .constants(axi_cfg_register_0_cfg_data),
-        .input_i(input_i_1),
+        .input_i(AWGN_output_o),
         .output_o(biquadFilter_0_output_o));
   necessaryStuff_imp_1HZM5WS necessaryStuff
        (.daisy_n_i(daisy_n_i_1),
         .daisy_n_o(util_ds_buf_2_OBUF_DS_N),
         .daisy_p_i(daisy_p_i_1),
         .daisy_p_o(util_ds_buf_2_OBUF_DS_P));
-  system_xlconstant_0_3 reset_AWGN
-       (.dout(xlconstant_0_dout));
+  system_xlconstant_0_4 xlconstant_0
+       (.dout(xlconstant_0_dout1));
 endmodule
 
 module system_ps7_0_axi_periph_0

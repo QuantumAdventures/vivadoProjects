@@ -71,7 +71,7 @@ module system_biquadFilter_0_0 (
 input wire clk_i;
 input wire enable;
 input wire clkEnable;
-input wire [13 : 0] input_i;
+input wire [68 : 0] input_i;
 input wire [31 : 0] gain_a1;
 input wire [31 : 0] gain_a2;
 input wire [31 : 0] gain_b0;
@@ -81,8 +81,10 @@ output wire enable_out;
 output wire [13 : 0] output_o;
 
   biquadFilter #(
-    .input_size(14),
-    .output_size(14)
+    .in_left_radix(24),
+    .in_right_radix(45),
+    .out_left_radix(1),
+    .out_right_radix(13)
   ) inst (
     .clk_i(clk_i),
     .enable(enable),

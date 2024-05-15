@@ -215,6 +215,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlslice_
 # IP: bd/system/ip/system_xlslice_0_12/system_xlslice_0_12.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlslice_0_12 || ORIG_REF_NAME==system_xlslice_0_12} -quiet] -quiet
 
+# IP: bd/system/ip/system_xlconstant_0_4/system_xlconstant_0_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlconstant_0_4 || ORIG_REF_NAME==system_xlconstant_0_4} -quiet] -quiet
+
 # IP: bd/system/ip/system_auto_pc_0/system_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_pc_0 || ORIG_REF_NAME==system_auto_pc_0} -quiet] -quiet
 

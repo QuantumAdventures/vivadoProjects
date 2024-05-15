@@ -1026,7 +1026,7 @@ proc create_hier_cell_biquadFilter { parentCell nameHier } {
   # Create pins
   create_bd_pin -dir I clk_i
   create_bd_pin -dir I -from 1023 -to 0 constants
-  create_bd_pin -dir I -from 13 -to 0 input_i
+  create_bd_pin -dir I -from 68 -to 0 input_i
   create_bd_pin -dir O -from 13 -to 0 output_o
 
   # Create instance: biquadFilter_0, and set properties
@@ -1040,8 +1040,10 @@ proc create_hier_cell_biquadFilter { parentCell nameHier } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.input_size {14} \
-   CONFIG.output_size {14} \
+   CONFIG.in_left_radix {24} \
+   CONFIG.in_right_radix {45} \
+   CONFIG.out_left_radix {1} \
+   CONFIG.out_right_radix {13} \
  ] $biquadFilter_0
 
   # Create instance: decimator_0, and set properties
@@ -1056,8 +1058,8 @@ proc create_hier_cell_biquadFilter { parentCell nameHier } {
    }
     set_property -dict [ list \
    CONFIG.clock_size {3} \
-   CONFIG.input_size {14} \
-   CONFIG.output_size {14} \
+   CONFIG.input_size {69} \
+   CONFIG.output_size {69} \
  ] $decimator_0
 
   # Create instance: extract_constants
@@ -1069,7 +1071,7 @@ proc create_hier_cell_biquadFilter { parentCell nameHier } {
   connect_bd_net -net biquadFilter_0_output_o [get_bd_pins output_o] [get_bd_pins biquadFilter_0/output_o]
   connect_bd_net -net decimator_0_enable [get_bd_pins biquadFilter_0/clkEnable] [get_bd_pins decimator_0/enable]
   connect_bd_net -net decimator_0_output_o [get_bd_pins biquadFilter_0/input_i] [get_bd_pins decimator_0/output_o]
-  connect_bd_net -net gainWhite_0_output_o [get_bd_pins input_i] [get_bd_pins decimator_0/input_i]
+  connect_bd_net -net input_i_1 [get_bd_pins input_i] [get_bd_pins decimator_0/input_i]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins biquadFilter_0/gain_a2] [get_bd_pins extract_constants/Dout]
   connect_bd_net -net xlslice_1_Dout [get_bd_pins biquadFilter_0/gain_b0] [get_bd_pins extract_constants/Dout1]
   connect_bd_net -net xlslice_2_Dout [get_bd_pins biquadFilter_0/gain_b1] [get_bd_pins extract_constants/Dout2]
@@ -2063,8 +2065,7 @@ proc create_hier_cell_AWGN { parentCell nameHier } {
   # Create pins
   create_bd_pin -dir I clk_i
   create_bd_pin -dir I -from 1023 -to 0 gain
-  create_bd_pin -dir O -from 13 -to 0 output_o
-  create_bd_pin -dir I -type rst reset
+  create_bd_pin -dir O -from 68 -to 0 output_o
 
   # Create instance: ROM_fValues_0, and set properties
   set block_name ROM_fValues
@@ -2175,6 +2176,12 @@ proc create_hier_cell_AWGN { parentCell nameHier } {
      return 1
    }
   
+  # Create instance: reset_AWGN, and set properties
+  set reset_AWGN [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 reset_AWGN ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+ ] $reset_AWGN
+
   # Create port connections
   connect_bd_net -net Din_1 [get_bd_pins gain] [get_bd_pins gainWhite/Din]
   connect_bd_net -net ROM_fValues_0_readOut_0 [get_bd_pins ROM_fValues_0/readOut_0] [get_bd_pins boxMullerMultiplier_0/fValue]
@@ -2205,7 +2212,7 @@ proc create_hier_cell_AWGN { parentCell nameHier } {
   connect_bd_net -net clk_i_1 [get_bd_pins clk_i] [get_bd_pins ROM_fValues_0/clk_i] [get_bd_pins ROM_gValues_0/clk_i] [get_bd_pins addressSelector/clk_i] [get_bd_pins addressSelector_1/clk_i] [get_bd_pins addressSelector_2/clk_i] [get_bd_pins addressSelector_3/clk_i] [get_bd_pins boxMullerAdder_0/clk_i] [get_bd_pins boxMullerMultiplier_0/clk_i] [get_bd_pins boxMullerMultiplier_1/clk_i] [get_bd_pins boxMullerMultiplier_2/clk_i] [get_bd_pins boxMullerMultiplier_3/clk_i] [get_bd_pins gainWhite_0/clk_i]
   connect_bd_net -net gainWhite_0_output_o [get_bd_pins output_o] [get_bd_pins gainWhite_0/output_o]
   connect_bd_net -net gainWhite_Dout [get_bd_pins gainWhite/Dout] [get_bd_pins gainWhite_0/gain]
-  connect_bd_net -net xlconstant_1_dout [get_bd_pins reset] [get_bd_pins addressSelector/reset] [get_bd_pins addressSelector_1/reset] [get_bd_pins addressSelector_2/reset] [get_bd_pins addressSelector_3/reset]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins addressSelector/reset] [get_bd_pins addressSelector_1/reset] [get_bd_pins addressSelector_2/reset] [get_bd_pins addressSelector_3/reset] [get_bd_pins reset_AWGN/dout]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -2304,17 +2311,19 @@ proc create_root_design { parentCell } {
   # Create instance: necessaryStuff
   create_hier_cell_necessaryStuff [current_bd_instance .] necessaryStuff
 
-  # Create instance: reset_AWGN, and set properties
-  set reset_AWGN [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 reset_AWGN ]
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
    CONFIG.CONST_VAL {0} \
- ] $reset_AWGN
+   CONFIG.CONST_WIDTH {14} \
+ ] $xlconstant_0
 
   # Create interface connections
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins PS7/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins PS7/FIXED_IO]
 
   # Create port connections
+  connect_bd_net -net AWGN_output_o [get_bd_pins AWGN/output_o] [get_bd_pins biquadFilter/input_i]
   connect_bd_net -net DataAcquisition_M_AXIS_PORT1_tvalid [get_bd_pins DataAcquisition/M_AXIS_PORT1_tvalid] [get_bd_pins SignalGenerator/s_axis_tvalid]
   connect_bd_net -net adc_clk_n_i_1 [get_bd_ports adc_clk_n_i] [get_bd_pins DataAcquisition/adc_clk_n_i]
   connect_bd_net -net adc_clk_p_i_1 [get_bd_ports adc_clk_p_i] [get_bd_pins DataAcquisition/adc_clk_p_i]
@@ -2331,10 +2340,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net biquadFilter_0_output_o [get_bd_pins SignalGenerator/output_CHA] [get_bd_pins biquadFilter/output_o]
   connect_bd_net -net daisy_n_i_1 [get_bd_ports daisy_n_i] [get_bd_pins necessaryStuff/daisy_n_i]
   connect_bd_net -net daisy_p_i_1 [get_bd_ports daisy_p_i] [get_bd_pins necessaryStuff/daisy_p_i]
-  connect_bd_net -net input_i_1 [get_bd_pins AWGN/output_o] [get_bd_pins SignalGenerator/output_CHB] [get_bd_pins biquadFilter/input_i]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_N [get_bd_ports daisy_n_o] [get_bd_pins necessaryStuff/daisy_n_o]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_P [get_bd_ports daisy_p_o] [get_bd_pins necessaryStuff/daisy_p_o]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins AWGN/reset] [get_bd_pins reset_AWGN/dout]
+  connect_bd_net -net xlconstant_0_dout1 [get_bd_pins SignalGenerator/output_CHB] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments
   assign_bd_address -offset 0x40000000 -range 0x00000800 -target_address_space [get_bd_addr_spaces PS7/processing_system7_0/Data] [get_bd_addr_segs PS7/axi_cfg_register_0/s_axi/reg0] -force
