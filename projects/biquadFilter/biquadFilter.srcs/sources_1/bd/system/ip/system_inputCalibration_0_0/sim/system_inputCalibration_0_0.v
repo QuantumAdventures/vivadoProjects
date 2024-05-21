@@ -56,19 +56,22 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module system_inputCalibration_0_0 (
   clk_i,
+  intercept_correction,
+  slope_correction,
   input_i,
   output_o
 );
 
 input wire clk_i;
+input wire [31 : 0] intercept_correction;
+input wire [31 : 0] slope_correction;
 input wire [13 : 0] input_i;
 output wire [13 : 0] output_o;
 
-  inputCalibration #(
-    .intercept_correction(4253539279),
-    .slope_correction(602285017)
-  ) inst (
+  inputCalibration inst (
     .clk_i(clk_i),
+    .intercept_correction(intercept_correction),
+    .slope_correction(slope_correction),
     .input_i(input_i),
     .output_o(output_o)
   );

@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1714649184"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1714649184"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1714649184"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1714649184"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1716317548"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1716317548"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1716317548"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1716317548"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\system_processing_system7_0_0\system_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="PS7/processing_system7_0"/>
@@ -56,6 +56,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_ps7_0_axi_periph_0\system_ps7_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/ps7_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="1708447447" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -119,7 +120,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_xlslice_0_8\system_xlslice_0_8.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter0/extract_constants/gain_a1"/>
+        <Instance HierarchyPath="biquadFilter_CHA/extract_constants/gain_a1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584969" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -127,7 +128,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_a_0\system_gain_a_0.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter0/extract_constants/gain_a2"/>
+        <Instance HierarchyPath="biquadFilter_CHA/extract_constants/gain_a2"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584967" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -135,7 +136,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_biquadFilter_0_0\system_biquadFilter_0_0.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter0/biquadFilter_0"/>
+        <Instance HierarchyPath="biquadFilter_CHA/biquadFilter_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1712337399" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -143,7 +144,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_a2_0\system_gain_a2_0.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter0/extract_constants/gain_b0"/>
+        <Instance HierarchyPath="biquadFilter_CHA/extract_constants/gain_b0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584969" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -151,7 +152,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_b0_0\system_gain_b0_0.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter0/extract_constants/gain_b1"/>
+        <Instance HierarchyPath="biquadFilter_CHA/extract_constants/gain_b1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584969" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -159,7 +160,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_b0_1\system_gain_b0_1.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter0/extract_constants/gain_b2"/>
+        <Instance HierarchyPath="biquadFilter_CHA/extract_constants/gain_b2"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584969" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -167,7 +168,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_b2_0\system_gain_b2_0.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter0/extract_constants/enable"/>
+        <Instance HierarchyPath="biquadFilter_CHA/extract_constants/enable"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584969" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -215,7 +216,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_biquadFilter_0_1\system_biquadFilter_0_1.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter1/biquadFilter_0"/>
+        <Instance HierarchyPath="biquadFilter_CHB/biquadFilter_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714579056" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -223,7 +224,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_a2_1\system_gain_a2_1.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter1/extract_constants/gain_a2"/>
+        <Instance HierarchyPath="biquadFilter_CHB/extract_constants/gain_a2"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584969" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -231,7 +232,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_b0_2\system_gain_b0_2.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter1/extract_constants/gain_b0"/>
+        <Instance HierarchyPath="biquadFilter_CHB/extract_constants/gain_b0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584969" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -239,7 +240,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_b1_0\system_gain_b1_0.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter1/extract_constants/gain_b1"/>
+        <Instance HierarchyPath="biquadFilter_CHB/extract_constants/gain_b1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584971" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -247,7 +248,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_enable_0\system_enable_0.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter1/extract_constants/enable"/>
+        <Instance HierarchyPath="biquadFilter_CHB/extract_constants/enable"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584971" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -255,7 +256,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_b2_1\system_gain_b2_1.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter1/extract_constants/gain_b2"/>
+        <Instance HierarchyPath="biquadFilter_CHB/extract_constants/gain_b2"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584972" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -263,8 +264,104 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_gain_a1_0\system_gain_a1_0.xci" Type="IP">
-        <Instance HierarchyPath="biquadFilter1/extract_constants/gain_a1"/>
+        <Instance HierarchyPath="biquadFilter_CHB/extract_constants/gain_a1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1714584972" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_gain_0_0\system_gain_0_0.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter_CHA/gain_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_gain_0_1\system_gain_0_1.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter_CHB/gain_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_9\system_xlslice_0_9.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/calibrationConstants/inIntCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_inIntCorrCHA_0\system_inIntCorrCHA_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/calibrationConstants/inIntCorrCHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_intCorrCHA_0\system_intCorrCHA_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/calibrationConstants/inSlpCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_inSlpCorrCHA_0\system_inSlpCorrCHA_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/calibrationConstants/inSlpCorrCHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_outIntCorrCHA_0\system_outIntCorrCHA_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibConstants/outSlpCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_10\system_xlslice_0_10.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibConstants/outIntCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_outIntCorrCHA_1\system_outIntCorrCHA_1.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibConstants/outIntCorrCHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_outIntCorrCHA_2\system_outIntCorrCHA_2.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibConstants/outSlpCorrCHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_11\system_xlslice_0_11.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter_CHA/biquadGain_CHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_12\system_xlslice_0_12.xci" Type="IP">
+        <Instance HierarchyPath="biquadFilter_CHB/biquadGain_CHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>

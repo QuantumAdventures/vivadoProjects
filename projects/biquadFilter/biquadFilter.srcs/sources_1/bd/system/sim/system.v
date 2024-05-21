@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu May  2 08:26:20 2024
+//Date        : Tue May 21 15:52:27 2024
 //Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -10,7 +10,8 @@
 `timescale 1 ps / 1 ps
 
 module DataAcquisition_imp_11FS564
-   (adc_clk,
+   (Din,
+    adc_clk,
     adc_clk_n_i,
     adc_clk_p_i,
     adc_csn_o,
@@ -19,6 +20,7 @@ module DataAcquisition_imp_11FS564
     m_axis_tvalid,
     output_CHA,
     output_CHB);
+  input [1023:0]Din;
   output adc_clk;
   input adc_clk_n_i;
   input adc_clk_p_i;
@@ -29,6 +31,7 @@ module DataAcquisition_imp_11FS564
   output [13:0]output_CHA;
   output [13:0]output_CHB;
 
+  wire [1023:0]Din_1;
   wire adc_clk_n_i_1;
   wire adc_clk_p_i_1;
   wire [13:0]adc_dat_a_i_1;
@@ -39,9 +42,14 @@ module DataAcquisition_imp_11FS564
   wire axis_red_pitaya_adc_0_m_axis_tvalid;
   wire [13:0]dat_CHA_Dout;
   wire [13:0]dat_CHB_Dout;
+  wire [31:0]inIntCorrCHB_Dout;
+  wire [31:0]inSlpCorrCHA_Dout;
+  wire [31:0]inSlpCorrCHB_Dout;
   wire [13:0]inputCalibration_A_output_o;
   wire [13:0]inputCalibration_B_output_o;
+  wire [31:0]intCorrCHA_Dout;
 
+  assign Din_1 = Din[1023:0];
   assign adc_clk = axis_red_pitaya_adc_0_adc_clk;
   assign adc_clk_n_i_1 = adc_clk_n_i;
   assign adc_clk_p_i_1 = adc_clk_p_i;
@@ -60,6 +68,12 @@ module DataAcquisition_imp_11FS564
         .adc_dat_b(adc_dat_b_i_1),
         .m_axis_tdata(axis_red_pitaya_adc_0_m_axis_tdata),
         .m_axis_tvalid(axis_red_pitaya_adc_0_m_axis_tvalid));
+  calibrationConstants_imp_12EXTU8 calibrationConstants
+       (.Din(Din_1),
+        .Dout(intCorrCHA_Dout),
+        .Dout1(inIntCorrCHB_Dout),
+        .Dout2(inSlpCorrCHA_Dout),
+        .Dout3(inSlpCorrCHB_Dout));
   system_xlslice_0_7 dat_CHA
        (.Din(axis_red_pitaya_adc_0_m_axis_tdata),
         .Dout(dat_CHA_Dout));
@@ -69,11 +83,15 @@ module DataAcquisition_imp_11FS564
   system_inputCalibration_0_0 inputCalibration_A
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
         .input_i(dat_CHA_Dout),
-        .output_o(inputCalibration_A_output_o));
+        .intercept_correction(intCorrCHA_Dout),
+        .output_o(inputCalibration_A_output_o),
+        .slope_correction(inSlpCorrCHA_Dout));
   system_inputCalibration_A_0 inputCalibration_B
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
         .input_i(dat_CHB_Dout),
-        .output_o(inputCalibration_B_output_o));
+        .intercept_correction(inIntCorrCHB_Dout),
+        .output_o(inputCalibration_B_output_o),
+        .slope_correction(inSlpCorrCHB_Dout));
 endmodule
 
 module PS7_imp_1QJPAX8
@@ -396,7 +414,8 @@ module PS7_imp_1QJPAX8
 endmodule
 
 module SignalGenerator_imp_XB4TXX
-   (clk_in1,
+   (Din,
+    clk_in1,
     dac_clk_o,
     dac_dat_o,
     dac_rst_o,
@@ -405,6 +424,7 @@ module SignalGenerator_imp_XB4TXX
     output_CHA,
     output_CHB,
     s_axis_tvalid);
+  input [1023:0]Din;
   input clk_in1;
   output dac_clk_o;
   output [13:0]dac_dat_o;
@@ -415,6 +435,7 @@ module SignalGenerator_imp_XB4TXX
   input [13:0]output_CHB;
   input s_axis_tvalid;
 
+  wire [1023:0]Din_1;
   wire axis_red_pitaya_adc_0_adc_clk;
   wire axis_red_pitaya_dac_0_dac_clk;
   wire [13:0]axis_red_pitaya_dac_0_dac_dat;
@@ -424,6 +445,10 @@ module SignalGenerator_imp_XB4TXX
   wire clk_wiz_0_clk_out1;
   wire clk_wiz_0_locked;
   wire [13:0]input_i_1;
+  wire [31:0]outIntCorrCHA_Dout;
+  wire [31:0]outIntCorrCHB_Dout;
+  wire [31:0]outSlpCorrCHA_Dout;
+  wire [31:0]outSlpCorrCHB_Dout;
   wire [13:0]outputCalibration_A_output_o;
   wire [13:0]outputCalibration_b_output_o;
   wire [13:0]output_CHB_1;
@@ -432,6 +457,7 @@ module SignalGenerator_imp_XB4TXX
   wire [1:0]xlconstant_0_dout;
   wire [1:0]xlconstant_1_dout;
 
+  assign Din_1 = Din[1023:0];
   assign axis_red_pitaya_adc_0_adc_clk = clk_in1;
   assign dac_clk_o = axis_red_pitaya_dac_0_dac_clk;
   assign dac_dat_o[13:0] = axis_red_pitaya_dac_0_dac_dat;
@@ -452,6 +478,12 @@ module SignalGenerator_imp_XB4TXX
         .locked(clk_wiz_0_locked),
         .s_axis_tdata(xlconcat_0_dout),
         .s_axis_tvalid(s_axis_tvalid_1));
+  calibConstants_imp_QMNP09 calibConstants
+       (.Din(Din_1),
+        .Dout(outSlpCorrCHA_Dout),
+        .Dout1(outIntCorrCHA_Dout),
+        .Dout2(outIntCorrCHB_Dout),
+        .Dout3(outSlpCorrCHB_Dout));
   system_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(axis_red_pitaya_adc_0_adc_clk),
         .clk_out1(clk_wiz_0_clk_out1),
@@ -459,11 +491,15 @@ module SignalGenerator_imp_XB4TXX
   system_outputCalibration_0_0 outputCalibration_A
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
         .input_i(input_i_1),
-        .output_o(outputCalibration_A_output_o));
+        .intercept_correction(outIntCorrCHA_Dout),
+        .output_o(outputCalibration_A_output_o),
+        .slope_correction(outSlpCorrCHA_Dout));
   system_outputCalibration_A_0 outputCalibration_b
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
         .input_i(output_CHB_1),
-        .output_o(outputCalibration_b_output_o));
+        .intercept_correction(outIntCorrCHB_Dout),
+        .output_o(outputCalibration_b_output_o),
+        .slope_correction(outSlpCorrCHB_Dout));
   system_xlconcat_0_0 xlconcat_0
        (.In0(outputCalibration_A_output_o),
         .In1(xlconstant_0_dout),
@@ -476,27 +512,26 @@ module SignalGenerator_imp_XB4TXX
        (.dout(xlconstant_1_dout));
 endmodule
 
-module biquadFilter0_imp_RTW8KF
+module biquadFilter_CHA_imp_7O1VUV
    (Din,
     clkEnable,
     clk_i,
-    enable_out,
     input_i,
     output_o);
   input [1023:0]Din;
   input clkEnable;
   input clk_i;
-  output enable_out;
   input [13:0]input_i;
   output [13:0]output_o;
 
   wire [1023:0]axi_cfg_register_0_cfg_data;
   wire axis_red_pitaya_adc_0_adc_clk;
-  wire biquadFilter_0_enable_out;
   wire [13:0]biquadFilter_0_output_o;
+  wire [31:0]biquadGain_CHA_Dout;
   wire decimator_0_enable;
   wire [13:0]decimator_0_output_o;
   wire [0:0]enable_Dout;
+  wire [13:0]gain_0_output_o;
   wire [31:0]gain_a1_Dout;
   wire [31:0]gain_a2_Dout;
   wire [31:0]gain_b0_Dout;
@@ -507,13 +542,11 @@ module biquadFilter0_imp_RTW8KF
   assign axis_red_pitaya_adc_0_adc_clk = clk_i;
   assign decimator_0_enable = clkEnable;
   assign decimator_0_output_o = input_i[13:0];
-  assign enable_out = biquadFilter_0_enable_out;
-  assign output_o[13:0] = biquadFilter_0_output_o;
+  assign output_o[13:0] = gain_0_output_o;
   system_biquadFilter_0_0 biquadFilter_0
        (.clkEnable(decimator_0_enable),
         .clk_i(axis_red_pitaya_adc_0_adc_clk),
         .enable(enable_Dout),
-        .enable_out(biquadFilter_0_enable_out),
         .gain_a1(gain_a1_Dout),
         .gain_a2(gain_a2_Dout),
         .gain_b0(gain_b0_Dout),
@@ -521,7 +554,10 @@ module biquadFilter0_imp_RTW8KF
         .gain_b2(gain_b2_Dout),
         .input_i(decimator_0_output_o),
         .output_o(biquadFilter_0_output_o));
-  extract_constants_imp_10447OF extract_constants
+  system_xlslice_0_11 biquadGain_CHA
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(biquadGain_CHA_Dout));
+  extract_constants_imp_179OOLO extract_constants
        (.Din(axi_cfg_register_0_cfg_data),
         .Dout(gain_a2_Dout),
         .Dout1(gain_b0_Dout),
@@ -529,9 +565,14 @@ module biquadFilter0_imp_RTW8KF
         .Dout3(enable_Dout),
         .Dout4(gain_b2_Dout),
         .Dout5(gain_a1_Dout));
+  system_gain_0_0 gain_0
+       (.clk_i(axis_red_pitaya_adc_0_adc_clk),
+        .gain(biquadGain_CHA_Dout),
+        .input_i(biquadFilter_0_output_o),
+        .output_o(gain_0_output_o));
 endmodule
 
-module biquadFilter1_imp_1HW3CVF
+module biquadFilter_CHB_imp_BQG7Q2
    (Din,
     clkEnable,
     clk_i,
@@ -549,9 +590,11 @@ module biquadFilter1_imp_1HW3CVF
   wire axis_red_pitaya_adc_0_adc_clk;
   wire biquadFilter_0_enable_out;
   wire [13:0]biquadFilter_0_output_o;
+  wire [31:0]biquadGain_CHB_Dout;
   wire decimator_0_enable;
   wire [13:0]decimator_0_output_o;
   wire [0:0]enable_Dout;
+  wire [13:0]gain_0_output_o;
   wire [31:0]gain_a1_Dout;
   wire [31:0]gain_a2_Dout;
   wire [31:0]gain_b0_Dout;
@@ -563,7 +606,7 @@ module biquadFilter1_imp_1HW3CVF
   assign decimator_0_enable = clkEnable;
   assign decimator_0_output_o = input_i[13:0];
   assign enable_out = biquadFilter_0_enable_out;
-  assign output_o[13:0] = biquadFilter_0_output_o;
+  assign output_o[13:0] = gain_0_output_o;
   system_biquadFilter_0_1 biquadFilter_0
        (.clkEnable(decimator_0_enable),
         .clk_i(axis_red_pitaya_adc_0_adc_clk),
@@ -576,7 +619,10 @@ module biquadFilter1_imp_1HW3CVF
         .gain_b2(gain_b2_Dout),
         .input_i(decimator_0_output_o),
         .output_o(biquadFilter_0_output_o));
-  extract_constants_imp_AZX58X extract_constants
+  system_xlslice_0_12 biquadGain_CHB
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(biquadGain_CHB_Dout));
+  extract_constants_imp_1CB5AZJ extract_constants
        (.Din(axi_cfg_register_0_cfg_data),
         .Dout(gain_a2_Dout),
         .Dout1(gain_b0_Dout),
@@ -584,9 +630,88 @@ module biquadFilter1_imp_1HW3CVF
         .Dout3(enable_Dout),
         .Dout4(gain_b2_Dout),
         .Dout5(gain_a1_Dout));
+  system_gain_0_1 gain_0
+       (.clk_i(axis_red_pitaya_adc_0_adc_clk),
+        .gain(biquadGain_CHB_Dout),
+        .input_i(biquadFilter_0_output_o),
+        .output_o(gain_0_output_o));
 endmodule
 
-module extract_constants_imp_10447OF
+module calibConstants_imp_QMNP09
+   (Din,
+    Dout,
+    Dout1,
+    Dout2,
+    Dout3);
+  input [1023:0]Din;
+  output [31:0]Dout;
+  output [31:0]Dout1;
+  output [31:0]Dout2;
+  output [31:0]Dout3;
+
+  wire [1023:0]Din_1;
+  wire [31:0]outIntCorrCHA_Dout;
+  wire [31:0]outIntCorrCHB_Dout;
+  wire [31:0]outSlpCorrCHA_Dout;
+  wire [31:0]outSlpCorrCHB_Dout;
+
+  assign Din_1 = Din[1023:0];
+  assign Dout[31:0] = outSlpCorrCHA_Dout;
+  assign Dout1[31:0] = outIntCorrCHA_Dout;
+  assign Dout2[31:0] = outIntCorrCHB_Dout;
+  assign Dout3[31:0] = outSlpCorrCHB_Dout;
+  system_xlslice_0_10 outIntCorrCHA
+       (.Din(Din_1),
+        .Dout(outIntCorrCHA_Dout));
+  system_outIntCorrCHA_1 outIntCorrCHB
+       (.Din(Din_1),
+        .Dout(outIntCorrCHB_Dout));
+  system_outIntCorrCHA_0 outSlpCorrCHA
+       (.Din(Din_1),
+        .Dout(outSlpCorrCHA_Dout));
+  system_outIntCorrCHA_2 outSlpCorrCHB
+       (.Din(Din_1),
+        .Dout(outSlpCorrCHB_Dout));
+endmodule
+
+module calibrationConstants_imp_12EXTU8
+   (Din,
+    Dout,
+    Dout1,
+    Dout2,
+    Dout3);
+  input [1023:0]Din;
+  output [31:0]Dout;
+  output [31:0]Dout1;
+  output [31:0]Dout2;
+  output [31:0]Dout3;
+
+  wire [1023:0]Din_1;
+  wire [31:0]inIntCorrCHB_Dout;
+  wire [31:0]inSlpCorrCHA_Dout;
+  wire [31:0]inSlpCorrCHB_Dout;
+  wire [31:0]intCorrCHA_Dout;
+
+  assign Din_1 = Din[1023:0];
+  assign Dout[31:0] = intCorrCHA_Dout;
+  assign Dout1[31:0] = inIntCorrCHB_Dout;
+  assign Dout2[31:0] = inSlpCorrCHA_Dout;
+  assign Dout3[31:0] = inSlpCorrCHB_Dout;
+  system_xlslice_0_9 inIntCorrCHA
+       (.Din(Din_1),
+        .Dout(intCorrCHA_Dout));
+  system_inIntCorrCHA_0 inIntCorrCHB
+       (.Din(Din_1),
+        .Dout(inIntCorrCHB_Dout));
+  system_intCorrCHA_0 inSlpCorrCHA
+       (.Din(Din_1),
+        .Dout(inSlpCorrCHA_Dout));
+  system_inSlpCorrCHA_0 inSlpCorrCHB
+       (.Din(Din_1),
+        .Dout(inSlpCorrCHB_Dout));
+endmodule
+
+module extract_constants_imp_179OOLO
    (Din,
     Dout,
     Dout1,
@@ -637,7 +762,7 @@ module extract_constants_imp_10447OF
         .Dout(gain_b2_Dout));
 endmodule
 
-module extract_constants_imp_AZX58X
+module extract_constants_imp_1CB5AZJ
    (Din,
     Dout,
     Dout1,
@@ -1013,7 +1138,7 @@ module s00_couplers_imp_15HE6GA
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=43,numReposBlks=33,numNonXlnxBlks=3,numHierBlks=10,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=57,numReposBlks=45,numNonXlnxBlks=3,numHierBlks=12,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1112,12 +1237,13 @@ module system
   wire axis_red_pitaya_dac_0_dac_rst;
   wire axis_red_pitaya_dac_0_dac_sel;
   wire axis_red_pitaya_dac_0_dac_wrt;
-  wire [13:0]biquadFilter1_output_o;
-  wire [13:0]biquadFilter_output_o;
+  wire [13:0]biquadFilter_CHA_output_o;
+  wire [13:0]biquadFilter_CHB_output_o;
   wire [1:0]daisy_n_i_1;
   wire [1:0]daisy_p_i_1;
   wire decimator_DualChannel_0_enable;
   wire [13:0]decimator_DualChannel_0_output_0;
+  wire [13:0]decimator_DualChannel_0_output_1;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -1158,7 +1284,8 @@ module system
   assign daisy_p_i_1 = daisy_p_i[1:0];
   assign daisy_p_o[1:0] = util_ds_buf_2_OBUF_DS_P;
   DataAcquisition_imp_11FS564 DataAcquisition
-       (.adc_clk(DataAcquisition_adc_clk),
+       (.Din(axi_cfg_register_0_cfg_data),
+        .adc_clk(DataAcquisition_adc_clk),
         .adc_clk_n_i(adc_clk_n_i_1),
         .adc_clk_p_i(adc_clk_p_i_1),
         .adc_csn_o(axis_red_pitaya_adc_0_adc_csn),
@@ -1191,33 +1318,35 @@ module system
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .cfg_data(axi_cfg_register_0_cfg_data));
   SignalGenerator_imp_XB4TXX SignalGenerator
-       (.clk_in1(DataAcquisition_adc_clk),
+       (.Din(axi_cfg_register_0_cfg_data),
+        .clk_in1(DataAcquisition_adc_clk),
         .dac_clk_o(axis_red_pitaya_dac_0_dac_clk),
         .dac_dat_o(axis_red_pitaya_dac_0_dac_dat),
         .dac_rst_o(axis_red_pitaya_dac_0_dac_rst),
         .dac_sel_o(axis_red_pitaya_dac_0_dac_sel),
         .dac_wrt_o(axis_red_pitaya_dac_0_dac_wrt),
-        .output_CHA(biquadFilter1_output_o),
-        .output_CHB(DataAcquisition_output_CHA),
+        .output_CHA(biquadFilter_CHA_output_o),
+        .output_CHB(biquadFilter_CHB_output_o),
         .s_axis_tvalid(s_axis_tvalid_1));
-  biquadFilter0_imp_RTW8KF biquadFilter0
+  biquadFilter_CHA_imp_7O1VUV biquadFilter_CHA
        (.Din(axi_cfg_register_0_cfg_data),
         .clkEnable(decimator_DualChannel_0_enable),
         .clk_i(DataAcquisition_adc_clk),
         .input_i(decimator_DualChannel_0_output_0),
-        .output_o(biquadFilter_output_o));
-  biquadFilter1_imp_1HW3CVF biquadFilter1
+        .output_o(biquadFilter_CHA_output_o));
+  biquadFilter_CHB_imp_BQG7Q2 biquadFilter_CHB
        (.Din(axi_cfg_register_0_cfg_data),
         .clkEnable(decimator_DualChannel_0_enable),
         .clk_i(DataAcquisition_adc_clk),
-        .input_i(biquadFilter_output_o),
-        .output_o(biquadFilter1_output_o));
+        .input_i(decimator_DualChannel_0_output_1),
+        .output_o(biquadFilter_CHB_output_o));
   system_decimator_DualChannel_0_0 decimator_DualChannel_0
        (.clk_i(DataAcquisition_adc_clk),
         .enable(decimator_DualChannel_0_enable),
         .input_0(DataAcquisition_output_CHA),
         .input_1(DataAcquisition_output_CHB),
-        .output_0(decimator_DualChannel_0_output_0));
+        .output_0(decimator_DualChannel_0_output_0),
+        .output_1(decimator_DualChannel_0_output_1));
   necessaryStuff_imp_1HZM5WS necessaryStuff
        (.daisy_n_i(daisy_n_i_1),
         .daisy_n_o(util_ds_buf_2_OBUF_DS_N),

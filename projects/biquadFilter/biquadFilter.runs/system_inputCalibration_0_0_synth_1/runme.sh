@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='G:/Meu Drive/redpitaya_guide-master/projects/biquadFilter/biquadFilter.runs/system_inputCalibration_0_0_synth_1'
+HD_PWD='C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/system_inputCalibration_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

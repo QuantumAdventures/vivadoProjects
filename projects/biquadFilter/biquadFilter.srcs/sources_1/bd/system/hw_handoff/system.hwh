@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May  2 08:26:24 2024" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue May 21 15:52:28 2024" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -271,9 +271,11 @@
             <CONNECTION INSTANCE="SignalGenerator_axis_red_pitaya_dac_0" PORT="aclk"/>
             <CONNECTION INSTANCE="SignalGenerator_outputCalibration_A" PORT="clk_i"/>
             <CONNECTION INSTANCE="SignalGenerator_outputCalibration_b" PORT="clk_i"/>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="clk_i"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="clk_i"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_gain_0" PORT="clk_i"/>
             <CONNECTION INSTANCE="decimator_DualChannel_0" PORT="clk_i"/>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="clk_i"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="clk_i"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_gain_0" PORT="clk_i"/>
             <CONNECTION INSTANCE="DataAcquisition_inputCalibration_A" PORT="clk_i"/>
             <CONNECTION INSTANCE="DataAcquisition_inputCalibration_B" PORT="clk_i"/>
           </CONNECTIONS>
@@ -337,6 +339,102 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/calibrationConstants/inIntCorrCHA" HWVERSION="1.0" INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="383"/>
+        <PARAMETER NAME="DIN_TO" VALUE="352"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_9"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_inputCalibration_A" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/calibrationConstants/inIntCorrCHB" HWVERSION="1.0" INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="447"/>
+        <PARAMETER NAME="DIN_TO" VALUE="416"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_inIntCorrCHA_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_inputCalibration_B" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/calibrationConstants/inSlpCorrCHA" HWVERSION="1.0" INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="415"/>
+        <PARAMETER NAME="DIN_TO" VALUE="384"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_intCorrCHA_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_inputCalibration_A" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/calibrationConstants/inSlpCorrCHB" HWVERSION="1.0" INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="479"/>
+        <PARAMETER NAME="DIN_TO" VALUE="448"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_inSlpCorrCHA_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_inputCalibration_B" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/dat_CHA" HWVERSION="1.0" INSTANCE="DataAcquisition_dat_CHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -388,8 +486,6 @@
     <MODULE COREREVISION="1" FULLNAME="/DataAcquisition/inputCalibration_A" HWVERSION="1.0" INSTANCE="DataAcquisition_inputCalibration_A" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="inputCalibration" VLNV="xilinx.com:module_ref:inputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4253539279"/>
-        <PARAMETER NAME="slope_correction" VALUE="602285017"/>
         <PARAMETER NAME="Component_Name" VALUE="system_inputCalibration_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -397,6 +493,16 @@
         <PORT DIR="I" NAME="clk_i" SIGIS="undef" SIGNAME="DataAcquisition_axis_red_pitaya_adc_0_adc_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHA" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHA" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_dat_CHA_Dout">
@@ -407,7 +513,6 @@
         <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_inputCalibration_A_output_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="decimator_DualChannel_0" PORT="input_0"/>
-            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_b" PORT="input_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -416,8 +521,6 @@
     <MODULE COREREVISION="1" FULLNAME="/DataAcquisition/inputCalibration_B" HWVERSION="1.0" INSTANCE="DataAcquisition_inputCalibration_B" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="inputCalibration" VLNV="xilinx.com:module_ref:inputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4259497126"/>
-        <PARAMETER NAME="slope_correction" VALUE="600912919"/>
         <PARAMETER NAME="Component_Name" VALUE="system_inputCalibration_A_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -425,6 +528,16 @@
         <PORT DIR="I" NAME="clk_i" SIGIS="undef" SIGNAME="DataAcquisition_axis_red_pitaya_adc_0_adc_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHB" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHB" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_dat_CHB_Dout">
@@ -467,18 +580,28 @@
         </PORT>
         <PORT DIR="O" LEFT="1023" NAME="cfg_data" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_a1" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_b0" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_b1" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_b2" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_enable" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_a2" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_a1" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_b0" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_b1" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_b2" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_enable" PORT="Din"/>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_a2" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_a1" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_b0" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_b1" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_b2" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_enable" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_a2" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadGain_CHA" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_a1" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_b0" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_b1" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_b2" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_enable" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_a2" PORT="Din"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadGain_CHB" PORT="Din"/>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHB" PORT="Din"/>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHB" PORT="Din"/>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHA" PORT="Din"/>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHA" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibConstants_outSlpCorrCHB" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibConstants_outIntCorrCHB" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibConstants_outIntCorrCHA" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibConstants_outSlpCorrCHA" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awaddr">
@@ -3028,6 +3151,102 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibConstants/outIntCorrCHA" HWVERSION="1.0" INSTANCE="SignalGenerator_calibConstants_outIntCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="511"/>
+        <PARAMETER NAME="DIN_TO" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_10"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibConstants_outIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_A" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibConstants/outIntCorrCHB" HWVERSION="1.0" INSTANCE="SignalGenerator_calibConstants_outIntCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="575"/>
+        <PARAMETER NAME="DIN_TO" VALUE="544"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_outIntCorrCHA_1"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibConstants_outIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_b" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibConstants/outSlpCorrCHA" HWVERSION="1.0" INSTANCE="SignalGenerator_calibConstants_outSlpCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="543"/>
+        <PARAMETER NAME="DIN_TO" VALUE="512"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_outIntCorrCHA_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibConstants_outSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_A" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibConstants/outSlpCorrCHB" HWVERSION="1.0" INSTANCE="SignalGenerator_calibConstants_outSlpCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="607"/>
+        <PARAMETER NAME="DIN_TO" VALUE="576"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_outIntCorrCHA_2"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibConstants_outSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_b" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="5" FULLNAME="/SignalGenerator/clk_wiz_0" HWVERSION="6.0" INSTANCE="SignalGenerator_clk_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clk_wiz;v=v6_0;d=pg065-clk-wiz.pdf"/>
@@ -3627,8 +3846,6 @@
     <MODULE COREREVISION="1" FULLNAME="/SignalGenerator/outputCalibration_A" HWVERSION="1.0" INSTANCE="SignalGenerator_outputCalibration_A" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="outputCalibration" VLNV="xilinx.com:module_ref:outputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4292206559"/>
-        <PARAMETER NAME="slope_correction" VALUE="1894147383"/>
         <PARAMETER NAME="Component_Name" VALUE="system_outputCalibration_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -3638,9 +3855,19 @@
             <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_biquadFilter_0_output_o">
+        <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_gain_0_output_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="output_o"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_gain_0" PORT="output_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibConstants_outIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibConstants_outIntCorrCHA" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibConstants_outSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibConstants_outSlpCorrCHA" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_outputCalibration_A_output_o">
@@ -3654,8 +3881,6 @@
     <MODULE COREREVISION="1" FULLNAME="/SignalGenerator/outputCalibration_b" HWVERSION="1.0" INSTANCE="SignalGenerator_outputCalibration_b" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="outputCalibration" VLNV="xilinx.com:module_ref:outputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4278493492"/>
-        <PARAMETER NAME="slope_correction" VALUE="1900818898"/>
         <PARAMETER NAME="Component_Name" VALUE="system_outputCalibration_A_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -3665,9 +3890,19 @@
             <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_inputCalibration_A_output_o">
+        <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_gain_0_output_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DataAcquisition_inputCalibration_A" PORT="output_o"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_gain_0" PORT="output_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibConstants_outIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibConstants_outIntCorrCHB" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibConstants_outSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibConstants_outSlpCorrCHB" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_outputCalibration_b_output_o">
@@ -3781,11 +4016,13 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/biquadFilter0/biquadFilter_0" HWVERSION="1.0" INSTANCE="biquadFilter0_biquadFilter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="biquadFilter" VLNV="xilinx.com:module_ref:biquadFilter:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/biquadFilter_CHA/biquadFilter_0" HWVERSION="1.0" INSTANCE="biquadFilter_CHA_biquadFilter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="biquadFilter" VLNV="xilinx.com:module_ref:biquadFilter:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="input_size" VALUE="14"/>
-        <PARAMETER NAME="output_size" VALUE="14"/>
+        <PARAMETER NAME="in_left_radix" VALUE="1"/>
+        <PARAMETER NAME="in_right_radix" VALUE="13"/>
+        <PARAMETER NAME="out_left_radix" VALUE="1"/>
+        <PARAMETER NAME="out_right_radix" VALUE="13"/>
         <PARAMETER NAME="Component_Name" VALUE="system_biquadFilter_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -3795,9 +4032,9 @@
             <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_enable_Dout">
+        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_enable_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_enable" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_enable" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clkEnable" SIGIS="undef" SIGNAME="decimator_DualChannel_0_enable">
@@ -3810,41 +4047,65 @@
             <CONNECTION INSTANCE="decimator_DualChannel_0" PORT="output_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_a1" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_a1_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_a1" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_a1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_a1" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_a1" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_a2" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_a2_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_a2" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_a2_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_a2" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_a2" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_b0" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_b0_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_b0" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_b0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_b0" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_b0" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_b1" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_b1_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_b1" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_b1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_b1" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_b1" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_b2" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_b2_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_b2" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_b2_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_extract_constants_gain_b2" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_extract_constants_gain_b2" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="enable_out" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_biquadFilter_0_output_o">
+        <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_biquadFilter_0_output_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="input_i"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_gain_0" PORT="input_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter0/extract_constants/enable" HWVERSION="1.0" INSTANCE="biquadFilter0_extract_constants_enable" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHA/biquadGain_CHA" HWVERSION="1.0" INSTANCE="biquadFilter_CHA_biquadGain_CHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="639"/>
+        <PARAMETER NAME="DIN_TO" VALUE="608"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_11"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_biquadGain_CHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="biquadFilter_CHA_gain_0" PORT="gain"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHA/extract_constants/enable" HWVERSION="1.0" INSTANCE="biquadFilter_CHA_extract_constants_enable" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -3860,15 +4121,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_enable_Dout">
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_enable_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="enable"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="enable"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter0/extract_constants/gain_a1" HWVERSION="1.0" INSTANCE="biquadFilter0_extract_constants_gain_a1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHA/extract_constants/gain_a1" HWVERSION="1.0" INSTANCE="biquadFilter_CHA_extract_constants_gain_a1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -3884,15 +4145,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_a1_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_a1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="gain_a1"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="gain_a1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter0/extract_constants/gain_a2" HWVERSION="1.0" INSTANCE="biquadFilter0_extract_constants_gain_a2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHA/extract_constants/gain_a2" HWVERSION="1.0" INSTANCE="biquadFilter_CHA_extract_constants_gain_a2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -3908,15 +4169,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_a2_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_a2_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="gain_a2"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="gain_a2"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter0/extract_constants/gain_b0" HWVERSION="1.0" INSTANCE="biquadFilter0_extract_constants_gain_b0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHA/extract_constants/gain_b0" HWVERSION="1.0" INSTANCE="biquadFilter_CHA_extract_constants_gain_b0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -3932,15 +4193,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_b0_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_b0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="gain_b0"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="gain_b0"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter0/extract_constants/gain_b1" HWVERSION="1.0" INSTANCE="biquadFilter0_extract_constants_gain_b1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHA/extract_constants/gain_b1" HWVERSION="1.0" INSTANCE="biquadFilter_CHA_extract_constants_gain_b1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -3956,15 +4217,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_b1_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_b1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="gain_b1"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="gain_b1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter0/extract_constants/gain_b2" HWVERSION="1.0" INSTANCE="biquadFilter0_extract_constants_gain_b2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHA/extract_constants/gain_b2" HWVERSION="1.0" INSTANCE="biquadFilter_CHA_extract_constants_gain_b2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -3980,19 +4241,55 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_extract_constants_gain_b2_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_extract_constants_gain_b2_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="gain_b2"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="gain_b2"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/biquadFilter1/biquadFilter_0" HWVERSION="1.0" INSTANCE="biquadFilter1_biquadFilter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="biquadFilter" VLNV="xilinx.com:module_ref:biquadFilter:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/biquadFilter_CHA/gain_0" HWVERSION="1.0" INSTANCE="biquadFilter_CHA_gain_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="gain" VLNV="xilinx.com:module_ref:gain:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="input_size" VALUE="14"/>
-        <PARAMETER NAME="output_size" VALUE="14"/>
+        <PARAMETER NAME="in_left_radix" VALUE="1"/>
+        <PARAMETER NAME="in_right_radix" VALUE="13"/>
+        <PARAMETER NAME="out_left_radix" VALUE="1"/>
+        <PARAMETER NAME="out_right_radix" VALUE="13"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_gain_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_i" SIGIS="undef" SIGNAME="DataAcquisition_axis_red_pitaya_adc_0_adc_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_biquadFilter_0_output_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="output_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="gain" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_biquadGain_CHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadGain_CHA" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHA_gain_0_output_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_A" PORT="input_i"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/biquadFilter_CHB/biquadFilter_0" HWVERSION="1.0" INSTANCE="biquadFilter_CHB_biquadFilter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="biquadFilter" VLNV="xilinx.com:module_ref:biquadFilter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="in_left_radix" VALUE="1"/>
+        <PARAMETER NAME="in_right_radix" VALUE="13"/>
+        <PARAMETER NAME="out_left_radix" VALUE="1"/>
+        <PARAMETER NAME="out_right_radix" VALUE="13"/>
         <PARAMETER NAME="Component_Name" VALUE="system_biquadFilter_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -4002,9 +4299,9 @@
             <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_enable_Dout">
+        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_enable_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_enable" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_enable" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clkEnable" SIGIS="undef" SIGNAME="decimator_DualChannel_0_enable">
@@ -4012,46 +4309,70 @@
             <CONNECTION INSTANCE="decimator_DualChannel_0" PORT="enable"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter0_biquadFilter_0_output_o">
+        <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="decimator_DualChannel_0_output_1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="output_o"/>
+            <CONNECTION INSTANCE="decimator_DualChannel_0" PORT="output_1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_a1" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_a1_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_a1" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_a1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_a1" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_a1" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_a2" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_a2_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_a2" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_a2_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_a2" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_a2" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_b0" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_b0_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_b0" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_b0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_b0" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_b0" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_b1" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_b1_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_b1" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_b1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_b1" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_b1" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="gain_b2" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_b2_Dout">
+        <PORT DIR="I" LEFT="31" NAME="gain_b2" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_b2_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_extract_constants_gain_b2" PORT="Dout"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_extract_constants_gain_b2" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="enable_out" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_biquadFilter_0_output_o">
+        <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_biquadFilter_0_output_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_A" PORT="input_i"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_gain_0" PORT="input_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter1/extract_constants/enable" HWVERSION="1.0" INSTANCE="biquadFilter1_extract_constants_enable" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHB/biquadGain_CHB" HWVERSION="1.0" INSTANCE="biquadFilter_CHB_biquadGain_CHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="671"/>
+        <PARAMETER NAME="DIN_TO" VALUE="640"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_12"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_biquadGain_CHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="biquadFilter_CHB_gain_0" PORT="gain"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHB/extract_constants/enable" HWVERSION="1.0" INSTANCE="biquadFilter_CHB_extract_constants_enable" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -4067,15 +4388,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_enable_Dout">
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_enable_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="enable"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="enable"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter1/extract_constants/gain_a1" HWVERSION="1.0" INSTANCE="biquadFilter1_extract_constants_gain_a1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHB/extract_constants/gain_a1" HWVERSION="1.0" INSTANCE="biquadFilter_CHB_extract_constants_gain_a1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -4091,15 +4412,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_a1_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_a1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="gain_a1"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="gain_a1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter1/extract_constants/gain_a2" HWVERSION="1.0" INSTANCE="biquadFilter1_extract_constants_gain_a2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHB/extract_constants/gain_a2" HWVERSION="1.0" INSTANCE="biquadFilter_CHB_extract_constants_gain_a2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -4115,15 +4436,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_a2_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_a2_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="gain_a2"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="gain_a2"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter1/extract_constants/gain_b0" HWVERSION="1.0" INSTANCE="biquadFilter1_extract_constants_gain_b0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHB/extract_constants/gain_b0" HWVERSION="1.0" INSTANCE="biquadFilter_CHB_extract_constants_gain_b0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -4139,15 +4460,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_b0_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_b0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="gain_b0"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="gain_b0"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter1/extract_constants/gain_b1" HWVERSION="1.0" INSTANCE="biquadFilter1_extract_constants_gain_b1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHB/extract_constants/gain_b1" HWVERSION="1.0" INSTANCE="biquadFilter_CHB_extract_constants_gain_b1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -4163,15 +4484,15 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_b1_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_b1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="gain_b1"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="gain_b1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/biquadFilter1/extract_constants/gain_b2" HWVERSION="1.0" INSTANCE="biquadFilter1_extract_constants_gain_b2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/biquadFilter_CHB/extract_constants/gain_b2" HWVERSION="1.0" INSTANCE="biquadFilter_CHB_extract_constants_gain_b2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
@@ -4187,9 +4508,43 @@
             <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter1_extract_constants_gain_b2_Dout">
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_extract_constants_gain_b2_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="gain_b2"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="gain_b2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/biquadFilter_CHB/gain_0" HWVERSION="1.0" INSTANCE="biquadFilter_CHB_gain_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="gain" VLNV="xilinx.com:module_ref:gain:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="in_left_radix" VALUE="1"/>
+        <PARAMETER NAME="in_right_radix" VALUE="13"/>
+        <PARAMETER NAME="out_left_radix" VALUE="1"/>
+        <PARAMETER NAME="out_right_radix" VALUE="13"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_gain_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_i" SIGIS="undef" SIGNAME="DataAcquisition_axis_red_pitaya_adc_0_adc_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_biquadFilter_0_output_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="output_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="gain" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_biquadGain_CHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadGain_CHB" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_CHB_gain_0_output_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_b" PORT="input_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -4222,14 +4577,18 @@
         </PORT>
         <PORT DIR="O" LEFT="13" NAME="output_0" RIGHT="0" SIGIS="undef" SIGNAME="decimator_DualChannel_0_output_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="input_i"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="input_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="13" NAME="output_1" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="13" NAME="output_1" RIGHT="0" SIGIS="undef" SIGNAME="decimator_DualChannel_0_output_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="input_i"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="enable" SIGIS="undef" SIGNAME="decimator_DualChannel_0_enable">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="biquadFilter0_biquadFilter_0" PORT="clkEnable"/>
-            <CONNECTION INSTANCE="biquadFilter1_biquadFilter_0" PORT="clkEnable"/>
+            <CONNECTION INSTANCE="biquadFilter_CHA_biquadFilter_0" PORT="clkEnable"/>
+            <CONNECTION INSTANCE="biquadFilter_CHB_biquadFilter_0" PORT="clkEnable"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="clk_e" SIGIS="undef"/>

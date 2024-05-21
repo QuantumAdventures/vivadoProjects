@@ -52,25 +52,28 @@
 
 (* X_CORE_INFO = "outputCalibration,Vivado 2020.1" *)
 (* CHECK_LICENSE_TYPE = "system_outputCalibration_A_0,outputCalibration,{}" *)
-(* CORE_GENERATION_INFO = "system_outputCalibration_A_0,outputCalibration,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=outputCalibration,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,intercept_correction=4278493492,slope_correction=1900818898}" *)
+(* CORE_GENERATION_INFO = "system_outputCalibration_A_0,outputCalibration,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=outputCalibration,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module system_outputCalibration_A_0 (
   clk_i,
   input_i,
+  intercept_correction,
+  slope_correction,
   output_o
 );
 
 input wire clk_i;
 input wire [13 : 0] input_i;
+input wire [31 : 0] intercept_correction;
+input wire [31 : 0] slope_correction;
 output wire [13 : 0] output_o;
 
-  outputCalibration #(
-    .intercept_correction(4278493492),
-    .slope_correction(1900818898)
-  ) inst (
+  outputCalibration inst (
     .clk_i(clk_i),
     .input_i(input_i),
+    .intercept_correction(intercept_correction),
+    .slope_correction(slope_correction),
     .output_o(output_o)
   );
 endmodule

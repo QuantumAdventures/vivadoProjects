@@ -81,8 +81,10 @@ output wire enable_out;
 output wire [13 : 0] output_o;
 
   biquadFilter #(
-    .input_size(14),
-    .output_size(14)
+    .in_left_radix(1),
+    .in_right_radix(13),
+    .out_left_radix(1),
+    .out_right_radix(13)
   ) inst (
     .clk_i(clk_i),
     .enable(enable),

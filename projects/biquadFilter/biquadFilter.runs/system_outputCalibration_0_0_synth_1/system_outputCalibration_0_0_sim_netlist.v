@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu May  2 08:28:06 2024
+// Date        : Tue May 21 11:08:13 2024
 // Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ system_outputCalibration_0_0_sim_netlist.v
@@ -14,11 +14,15 @@
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
    (output_o,
+    intercept_correction,
     input_i,
-    clk_i);
+    clk_i,
+    slope_correction);
   output [13:0]output_o;
+  input [31:0]intercept_correction;
   input [13:0]input_i;
   input clk_i;
+  input [31:0]slope_correction;
 
   wire arg__0_n_100;
   wire arg__0_n_101;
@@ -74,36 +78,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
   wire arg__0_n_151;
   wire arg__0_n_152;
   wire arg__0_n_153;
-  wire arg__0_n_24;
-  wire arg__0_n_25;
-  wire arg__0_n_26;
-  wire arg__0_n_27;
-  wire arg__0_n_28;
-  wire arg__0_n_29;
-  wire arg__0_n_30;
-  wire arg__0_n_31;
-  wire arg__0_n_32;
-  wire arg__0_n_33;
-  wire arg__0_n_34;
-  wire arg__0_n_35;
-  wire arg__0_n_36;
-  wire arg__0_n_37;
-  wire arg__0_n_38;
-  wire arg__0_n_39;
-  wire arg__0_n_40;
-  wire arg__0_n_41;
-  wire arg__0_n_42;
-  wire arg__0_n_43;
-  wire arg__0_n_44;
-  wire arg__0_n_45;
-  wire arg__0_n_46;
-  wire arg__0_n_47;
-  wire arg__0_n_48;
-  wire arg__0_n_49;
-  wire arg__0_n_50;
-  wire arg__0_n_51;
-  wire arg__0_n_52;
-  wire arg__0_n_53;
   wire arg__0_n_58;
   wire arg__0_n_59;
   wire arg__0_n_60;
@@ -146,23 +120,52 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
   wire arg__0_n_97;
   wire arg__0_n_98;
   wire arg__0_n_99;
-  wire [32:18]arg__1;
-  wire arg_i_1_n_2;
-  wire arg_i_1_n_3;
-  wire arg_i_2_n_0;
-  wire arg_i_2_n_1;
-  wire arg_i_2_n_2;
-  wire arg_i_2_n_3;
-  wire arg_i_3_n_0;
-  wire arg_i_3_n_1;
-  wire arg_i_3_n_2;
-  wire arg_i_3_n_3;
-  wire arg_i_4_n_0;
-  wire arg_i_4_n_1;
-  wire arg_i_4_n_2;
-  wire arg_i_4_n_3;
-  wire arg_i_5_n_0;
-  wire arg_i_6_n_0;
+  wire [32:1]arg__1;
+  wire arg_carry__0_n_0;
+  wire arg_carry__0_n_1;
+  wire arg_carry__0_n_2;
+  wire arg_carry__0_n_3;
+  wire arg_carry__1_n_0;
+  wire arg_carry__1_n_1;
+  wire arg_carry__1_n_2;
+  wire arg_carry__1_n_3;
+  wire arg_carry__2_n_0;
+  wire arg_carry__2_n_1;
+  wire arg_carry__2_n_2;
+  wire arg_carry__2_n_3;
+  wire arg_carry__3_i_1_n_0;
+  wire arg_carry__3_i_2_n_0;
+  wire arg_carry__3_i_3_n_0;
+  wire arg_carry__3_n_0;
+  wire arg_carry__3_n_1;
+  wire arg_carry__3_n_2;
+  wire arg_carry__3_n_3;
+  wire arg_carry__4_i_1_n_0;
+  wire arg_carry__4_i_2_n_0;
+  wire arg_carry__4_i_3_n_0;
+  wire arg_carry__4_i_4_n_0;
+  wire arg_carry__4_n_0;
+  wire arg_carry__4_n_1;
+  wire arg_carry__4_n_2;
+  wire arg_carry__4_n_3;
+  wire arg_carry__5_i_1_n_0;
+  wire arg_carry__5_i_2_n_0;
+  wire arg_carry__5_i_3_n_0;
+  wire arg_carry__5_i_4_n_0;
+  wire arg_carry__5_n_0;
+  wire arg_carry__5_n_1;
+  wire arg_carry__5_n_2;
+  wire arg_carry__5_n_3;
+  wire arg_carry__6_i_1_n_0;
+  wire arg_carry__6_i_2_n_0;
+  wire arg_carry__6_i_3_n_0;
+  wire arg_carry__6_n_1;
+  wire arg_carry__6_n_2;
+  wire arg_carry__6_n_3;
+  wire arg_carry_n_0;
+  wire arg_carry_n_1;
+  wire arg_carry_n_2;
+  wire arg_carry_n_3;
   wire \arg_inferred__0/i__carry__0_n_0 ;
   wire \arg_inferred__0/i__carry__0_n_1 ;
   wire \arg_inferred__0/i__carry__0_n_2 ;
@@ -358,6 +361,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
   wire i__carry_i_2_n_0;
   wire i__carry_i_3_n_0;
   wire [13:0]input_i;
+  wire [31:0]intercept_correction;
   wire [13:0]output_o;
   wire \output_o[0]_i_1_n_0 ;
   wire \output_o[10]_i_1_n_0 ;
@@ -487,11 +491,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
   wire output_sf_reg_n_97;
   wire output_sf_reg_n_98;
   wire output_sf_reg_n_99;
-  wire p_0_in;
+  wire [17:0]p_0_in;
+  wire p_0_in_1;
   wire [12:0]p_0_out;
   wire [13:13]p_0_out_0;
   wire result;
-  wire [31:18]to_s;
+  wire [31:0]slope_correction;
+  wire [31:18]to_s0_in;
   wire NLW_arg_CARRYCASCOUT_UNCONNECTED;
   wire NLW_arg_MULTSIGNOUT_UNCONNECTED;
   wire NLW_arg_OVERFLOW_UNCONNECTED;
@@ -507,10 +513,10 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
   wire NLW_arg__0_PATTERNBDETECT_UNCONNECTED;
   wire NLW_arg__0_PATTERNDETECT_UNCONNECTED;
   wire NLW_arg__0_UNDERFLOW_UNCONNECTED;
+  wire [29:0]NLW_arg__0_ACOUT_UNCONNECTED;
   wire [17:0]NLW_arg__0_BCOUT_UNCONNECTED;
   wire [3:0]NLW_arg__0_CARRYOUT_UNCONNECTED;
-  wire [3:2]NLW_arg_i_1_CO_UNCONNECTED;
-  wire [3:3]NLW_arg_i_1_O_UNCONNECTED;
+  wire [3:3]NLW_arg_carry__6_CO_UNCONNECTED;
   wire [3:0]\NLW_arg_inferred__0/i__carry_O_UNCONNECTED ;
   wire [3:0]\NLW_arg_inferred__0/i__carry__0_O_UNCONNECTED ;
   wire [3:0]\NLW_arg_inferred__0/i__carry__1_O_UNCONNECTED ;
@@ -548,7 +554,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
     \__0/i_ 
        (.I0(\arg_inferred__0/i__carry__10_n_4 ),
         .I1(p_0_out_0),
-        .I2(p_0_in),
+        .I2(p_0_in_1),
         .O(result));
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-10 {cell *THIS*} {string 16x18 4}}" *) 
   DSP48E1 #(
@@ -578,11 +584,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
     .USE_PATTERN_DETECT("NO_PATDET"),
     .USE_SIMD("ONE48")) 
     arg
-       (.A({arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1,1'b1}),
+       (.A({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,slope_correction[16:0]}),
         .ACIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .ACOUT(NLW_arg_ACOUT_UNCONNECTED[29:0]),
         .ALUMODE({1'b0,1'b0,1'b0,1'b0}),
-        .B({1'b0,1'b0,1'b0,1'b1,1'b1,1'b0,1'b0,1'b1,1'b0,1'b1,1'b0,1'b0,1'b1,1'b1,1'b0,1'b1,1'b1,1'b1}),
+        .B({arg__1[32],arg__1[32],arg__1[32:17]}),
         .BCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .BCOUT(NLW_arg_BCOUT_UNCONNECTED[17:0]),
         .C({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
@@ -655,11 +661,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
     .USE_PATTERN_DETECT("NO_PATDET"),
     .USE_SIMD("ONE48")) 
     arg__0
-       (.A({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0,1'b0,1'b1}),
+       (.A({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,arg__1[16:1],intercept_correction[0]}),
         .ACIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .ACOUT({arg__0_n_24,arg__0_n_25,arg__0_n_26,arg__0_n_27,arg__0_n_28,arg__0_n_29,arg__0_n_30,arg__0_n_31,arg__0_n_32,arg__0_n_33,arg__0_n_34,arg__0_n_35,arg__0_n_36,arg__0_n_37,arg__0_n_38,arg__0_n_39,arg__0_n_40,arg__0_n_41,arg__0_n_42,arg__0_n_43,arg__0_n_44,arg__0_n_45,arg__0_n_46,arg__0_n_47,arg__0_n_48,arg__0_n_49,arg__0_n_50,arg__0_n_51,arg__0_n_52,arg__0_n_53}),
+        .ACOUT(NLW_arg__0_ACOUT_UNCONNECTED[29:0]),
         .ALUMODE({1'b0,1'b0,1'b0,1'b0}),
-        .B({1'b0,1'b0,1'b0,1'b1,1'b1,1'b0,1'b0,1'b1,1'b0,1'b1,1'b0,1'b0,1'b1,1'b1,1'b0,1'b1,1'b1,1'b1}),
+        .B({1'b0,slope_correction[16:0]}),
         .BCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .BCOUT(NLW_arg__0_BCOUT_UNCONNECTED[17:0]),
         .C({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
@@ -704,44 +710,236 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
         .RSTM(1'b0),
         .RSTP(1'b0),
         .UNDERFLOW(NLW_arg__0_UNDERFLOW_UNCONNECTED));
-  CARRY4 arg_i_1
-       (.CI(arg_i_2_n_0),
-        .CO({NLW_arg_i_1_CO_UNCONNECTED[3:2],arg_i_1_n_2,arg_i_1_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b1,1'b0}),
-        .O({NLW_arg_i_1_O_UNCONNECTED[3],arg__1[32:30]}),
-        .S({1'b0,1'b1,to_s[31:30]}));
-  CARRY4 arg_i_2
-       (.CI(arg_i_3_n_0),
-        .CO({arg_i_2_n_0,arg_i_2_n_1,arg_i_2_n_2,arg_i_2_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(arg__1[29:26]),
-        .S(to_s[29:26]));
-  CARRY4 arg_i_3
-       (.CI(arg_i_4_n_0),
-        .CO({arg_i_3_n_0,arg_i_3_n_1,arg_i_3_n_2,arg_i_3_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(arg__1[25:22]),
-        .S(to_s[25:22]));
-  CARRY4 arg_i_4
+  CARRY4 arg_carry
        (.CI(1'b0),
-        .CO({arg_i_4_n_0,arg_i_4_n_1,arg_i_4_n_2,arg_i_4_n_3}),
+        .CO({arg_carry_n_0,arg_carry_n_1,arg_carry_n_2,arg_carry_n_3}),
+        .CYINIT(p_0_in[0]),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(arg__1[4:1]),
+        .S(p_0_in[4:1]));
+  CARRY4 arg_carry__0
+       (.CI(arg_carry_n_0),
+        .CO({arg_carry__0_n_0,arg_carry__0_n_1,arg_carry__0_n_2,arg_carry__0_n_3}),
         .CYINIT(1'b0),
-        .DI({to_s[21],1'b0,to_s[19],1'b0}),
-        .O(arg__1[21:18]),
-        .S({arg_i_5_n_0,to_s[20],arg_i_6_n_0,to_s[18]}));
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(arg__1[8:5]),
+        .S(p_0_in[8:5]));
   LUT1 #(
     .INIT(2'h1)) 
-    arg_i_5
-       (.I0(to_s[21]),
-        .O(arg_i_5_n_0));
+    arg_carry__0_i_1
+       (.I0(intercept_correction[8]),
+        .O(p_0_in[8]));
   LUT1 #(
     .INIT(2'h1)) 
-    arg_i_6
-       (.I0(to_s[19]),
-        .O(arg_i_6_n_0));
+    arg_carry__0_i_2
+       (.I0(intercept_correction[7]),
+        .O(p_0_in[7]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__0_i_3
+       (.I0(intercept_correction[6]),
+        .O(p_0_in[6]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__0_i_4
+       (.I0(intercept_correction[5]),
+        .O(p_0_in[5]));
+  CARRY4 arg_carry__1
+       (.CI(arg_carry__0_n_0),
+        .CO({arg_carry__1_n_0,arg_carry__1_n_1,arg_carry__1_n_2,arg_carry__1_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(arg__1[12:9]),
+        .S(p_0_in[12:9]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__1_i_1
+       (.I0(intercept_correction[12]),
+        .O(p_0_in[12]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__1_i_2
+       (.I0(intercept_correction[11]),
+        .O(p_0_in[11]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__1_i_3
+       (.I0(intercept_correction[10]),
+        .O(p_0_in[10]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__1_i_4
+       (.I0(intercept_correction[9]),
+        .O(p_0_in[9]));
+  CARRY4 arg_carry__2
+       (.CI(arg_carry__1_n_0),
+        .CO({arg_carry__2_n_0,arg_carry__2_n_1,arg_carry__2_n_2,arg_carry__2_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(arg__1[16:13]),
+        .S(p_0_in[16:13]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__2_i_1
+       (.I0(intercept_correction[16]),
+        .O(p_0_in[16]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__2_i_2
+       (.I0(intercept_correction[15]),
+        .O(p_0_in[15]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__2_i_3
+       (.I0(intercept_correction[14]),
+        .O(p_0_in[14]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__2_i_4
+       (.I0(intercept_correction[13]),
+        .O(p_0_in[13]));
+  CARRY4 arg_carry__3
+       (.CI(arg_carry__2_n_0),
+        .CO({arg_carry__3_n_0,arg_carry__3_n_1,arg_carry__3_n_2,arg_carry__3_n_3}),
+        .CYINIT(1'b0),
+        .DI({to_s0_in[20:18],1'b0}),
+        .O(arg__1[20:17]),
+        .S({arg_carry__3_i_1_n_0,arg_carry__3_i_2_n_0,arg_carry__3_i_3_n_0,p_0_in[17]}));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__3_i_1
+       (.I0(to_s0_in[20]),
+        .I1(intercept_correction[20]),
+        .O(arg_carry__3_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__3_i_2
+       (.I0(to_s0_in[19]),
+        .I1(intercept_correction[19]),
+        .O(arg_carry__3_i_2_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__3_i_3
+       (.I0(to_s0_in[18]),
+        .I1(intercept_correction[18]),
+        .O(arg_carry__3_i_3_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry__3_i_4
+       (.I0(intercept_correction[17]),
+        .O(p_0_in[17]));
+  CARRY4 arg_carry__4
+       (.CI(arg_carry__3_n_0),
+        .CO({arg_carry__4_n_0,arg_carry__4_n_1,arg_carry__4_n_2,arg_carry__4_n_3}),
+        .CYINIT(1'b0),
+        .DI(to_s0_in[24:21]),
+        .O(arg__1[24:21]),
+        .S({arg_carry__4_i_1_n_0,arg_carry__4_i_2_n_0,arg_carry__4_i_3_n_0,arg_carry__4_i_4_n_0}));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__4_i_1
+       (.I0(to_s0_in[24]),
+        .I1(intercept_correction[24]),
+        .O(arg_carry__4_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__4_i_2
+       (.I0(to_s0_in[23]),
+        .I1(intercept_correction[23]),
+        .O(arg_carry__4_i_2_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__4_i_3
+       (.I0(to_s0_in[22]),
+        .I1(intercept_correction[22]),
+        .O(arg_carry__4_i_3_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__4_i_4
+       (.I0(to_s0_in[21]),
+        .I1(intercept_correction[21]),
+        .O(arg_carry__4_i_4_n_0));
+  CARRY4 arg_carry__5
+       (.CI(arg_carry__4_n_0),
+        .CO({arg_carry__5_n_0,arg_carry__5_n_1,arg_carry__5_n_2,arg_carry__5_n_3}),
+        .CYINIT(1'b0),
+        .DI(to_s0_in[28:25]),
+        .O(arg__1[28:25]),
+        .S({arg_carry__5_i_1_n_0,arg_carry__5_i_2_n_0,arg_carry__5_i_3_n_0,arg_carry__5_i_4_n_0}));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__5_i_1
+       (.I0(to_s0_in[28]),
+        .I1(intercept_correction[28]),
+        .O(arg_carry__5_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__5_i_2
+       (.I0(to_s0_in[27]),
+        .I1(intercept_correction[27]),
+        .O(arg_carry__5_i_2_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__5_i_3
+       (.I0(to_s0_in[26]),
+        .I1(intercept_correction[26]),
+        .O(arg_carry__5_i_3_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__5_i_4
+       (.I0(to_s0_in[25]),
+        .I1(intercept_correction[25]),
+        .O(arg_carry__5_i_4_n_0));
+  CARRY4 arg_carry__6
+       (.CI(arg_carry__5_n_0),
+        .CO({NLW_arg_carry__6_CO_UNCONNECTED[3],arg_carry__6_n_1,arg_carry__6_n_2,arg_carry__6_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,intercept_correction[31],to_s0_in[30:29]}),
+        .O(arg__1[32:29]),
+        .S({1'b1,arg_carry__6_i_1_n_0,arg_carry__6_i_2_n_0,arg_carry__6_i_3_n_0}));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__6_i_1
+       (.I0(to_s0_in[31]),
+        .I1(intercept_correction[31]),
+        .O(arg_carry__6_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__6_i_2
+       (.I0(to_s0_in[30]),
+        .I1(intercept_correction[30]),
+        .O(arg_carry__6_i_2_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    arg_carry__6_i_3
+       (.I0(to_s0_in[29]),
+        .I1(intercept_correction[29]),
+        .O(arg_carry__6_i_3_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry_i_1
+       (.I0(intercept_correction[0]),
+        .O(p_0_in[0]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry_i_2
+       (.I0(intercept_correction[4]),
+        .O(p_0_in[4]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry_i_3
+       (.I0(intercept_correction[3]),
+        .O(p_0_in[3]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry_i_4
+       (.I0(intercept_correction[2]),
+        .O(p_0_in[2]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    arg_carry_i_5
+       (.I0(intercept_correction[1]),
+        .O(p_0_in[1]));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \arg_inferred__0/i__carry 
        (.CI(1'b0),
@@ -780,7 +978,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
         .CO(\NLW_arg_inferred__0/i__carry__11_CO_UNCONNECTED [3:0]),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_arg_inferred__0/i__carry__11_O_UNCONNECTED [3:1],p_0_in}),
+        .O({\NLW_arg_inferred__0/i__carry__11_O_UNCONNECTED [3:1],p_0_in_1}),
         .S({1'b0,1'b0,1'b0,i__carry__11_i_1_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \arg_inferred__0/i__carry__2 
@@ -1138,85 +1336,85 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[3]),
-        .Q(to_s[21]),
+        .Q(to_s0_in[21]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-11] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[2]),
-        .Q(to_s[20]),
+        .Q(to_s0_in[20]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-12] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[1]),
-        .Q(to_s[19]),
+        .Q(to_s0_in[19]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-13] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[0]),
-        .Q(to_s[18]),
+        .Q(to_s0_in[18]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-1] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[12]),
-        .Q(to_s[30]),
+        .Q(to_s0_in[30]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-2] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[11]),
-        .Q(to_s[29]),
+        .Q(to_s0_in[29]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-3] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[10]),
-        .Q(to_s[28]),
+        .Q(to_s0_in[28]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-4] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[9]),
-        .Q(to_s[27]),
+        .Q(to_s0_in[27]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-5] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[8]),
-        .Q(to_s[26]),
+        .Q(to_s0_in[26]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-6] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[7]),
-        .Q(to_s[25]),
+        .Q(to_s0_in[25]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-7] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[6]),
-        .Q(to_s[24]),
+        .Q(to_s0_in[24]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-8] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[5]),
-        .Q(to_s[23]),
+        .Q(to_s0_in[23]),
         .R(1'b0));
   FDRE \input_i_sf_reg[-9] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[4]),
-        .Q(to_s[22]),
+        .Q(to_s0_in[22]),
         .R(1'b0));
   FDRE \input_i_sf_reg[0] 
        (.C(clk_i),
         .CE(1'b1),
         .D(input_i[13]),
-        .Q(to_s[31]),
+        .Q(to_s0_in[31]),
         .R(1'b0));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
@@ -1225,7 +1423,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[0]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[0]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
@@ -1234,7 +1432,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[10]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[10]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
@@ -1243,7 +1441,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[11]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[11]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'h80AA)) 
@@ -1251,13 +1449,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[12]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[12]_i_1_n_0 ));
   LUT2 #(
     .INIT(4'hE)) 
     \output_o[13]_i_1 
        (.I0(p_0_out_0),
-        .I1(p_0_in),
+        .I1(p_0_in_1),
         .O(\output_o[13]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
@@ -1266,7 +1464,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[1]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
@@ -1275,7 +1473,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[2]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[2]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
@@ -1284,7 +1482,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[3]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[3]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
@@ -1293,7 +1491,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[4]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[4]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
@@ -1302,7 +1500,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[5]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[5]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
@@ -1311,7 +1509,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[6]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[6]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
@@ -1320,7 +1518,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[7]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[7]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
@@ -1329,7 +1527,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[8]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[8]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
@@ -1338,7 +1536,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
        (.I0(p_0_out[9]),
         .I1(p_0_out_0),
         .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in),
+        .I3(p_0_in_1),
         .O(\output_o[9]_i_1_n_0 ));
   FDSE \output_o_reg[0] 
        (.C(clk_i),
@@ -1452,11 +1650,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
     .USE_PATTERN_DETECT("NO_PATDET"),
     .USE_SIMD("ONE48")) 
     output_sf_reg
-       (.A({arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1,1'b1}),
+       (.A({arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32],arg__1[32:17]}),
         .ACIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .ACOUT(NLW_output_sf_reg_ACOUT_UNCONNECTED[29:0]),
         .ALUMODE({1'b0,1'b0,1'b0,1'b0}),
-        .B({1'b0,1'b0,1'b0,1'b0,1'b1,1'b1,1'b1,1'b0,1'b0,1'b0,1'b0,1'b1,1'b1,1'b1,1'b0,1'b0,1'b1,1'b1}),
+        .B({slope_correction[31],slope_correction[31],slope_correction[31],slope_correction[31:17]}),
         .BCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .BCOUT(NLW_output_sf_reg_BCOUT_UNCONNECTED[17:0]),
         .C({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
@@ -1616,7 +1814,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
     .ALUMODEREG(0),
     .AREG(0),
     .AUTORESET_PATDET("NO_RESET"),
-    .A_INPUT("CASCADE"),
+    .A_INPUT("DIRECT"),
     .BCASCREG(0),
     .BREG(0),
     .B_INPUT("DIRECT"),
@@ -1637,11 +1835,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration
     .USE_PATTERN_DETECT("NO_PATDET"),
     .USE_SIMD("ONE48")) 
     output_sf_reg__0
-       (.A({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .ACIN({arg__0_n_24,arg__0_n_25,arg__0_n_26,arg__0_n_27,arg__0_n_28,arg__0_n_29,arg__0_n_30,arg__0_n_31,arg__0_n_32,arg__0_n_33,arg__0_n_34,arg__0_n_35,arg__0_n_36,arg__0_n_37,arg__0_n_38,arg__0_n_39,arg__0_n_40,arg__0_n_41,arg__0_n_42,arg__0_n_43,arg__0_n_44,arg__0_n_45,arg__0_n_46,arg__0_n_47,arg__0_n_48,arg__0_n_49,arg__0_n_50,arg__0_n_51,arg__0_n_52,arg__0_n_53}),
+       (.A({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,arg__1[16:1],intercept_correction[0]}),
+        .ACIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .ACOUT(NLW_output_sf_reg__0_ACOUT_UNCONNECTED[29:0]),
         .ALUMODE({1'b0,1'b0,1'b0,1'b0}),
-        .B({1'b0,1'b0,1'b0,1'b0,1'b1,1'b1,1'b1,1'b0,1'b0,1'b0,1'b0,1'b1,1'b1,1'b1,1'b0,1'b0,1'b1,1'b1}),
+        .B({slope_correction[31],slope_correction[31],slope_correction[31],slope_correction[31:17]}),
         .BCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .BCOUT(NLW_output_sf_reg__0_BCOUT_UNCONNECTED[17:0]),
         .C({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
@@ -1694,19 +1892,27 @@ endmodule
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (clk_i,
     input_i,
+    intercept_correction,
+    slope_correction,
     output_o);
   input clk_i;
   input [13:0]input_i;
+  input [31:0]intercept_correction;
+  input [31:0]slope_correction;
   output [13:0]output_o;
 
   wire clk_i;
   wire [13:0]input_i;
+  wire [31:0]intercept_correction;
   wire [13:0]output_o;
+  wire [31:0]slope_correction;
 
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_outputCalibration inst
        (.clk_i(clk_i),
         .input_i(input_i),
-        .output_o(output_o));
+        .intercept_correction(intercept_correction),
+        .output_o(output_o),
+        .slope_correction(slope_correction));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "biquadFilter,Vivado 2020.1" *)
 (* CHECK_LICENSE_TYPE = "system_biquadFilter_0_0,biquadFilter,{}" *)
-(* CORE_GENERATION_INFO = "system_biquadFilter_0_0,biquadFilter,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=biquadFilter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,input_size=14,output_size=14}" *)
+(* CORE_GENERATION_INFO = "system_biquadFilter_0_0,biquadFilter,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=biquadFilter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,in_left_radix=1,in_right_radix=13,out_left_radix=1,out_right_radix=13}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module system_biquadFilter_0_0 (
@@ -82,8 +82,10 @@ output wire enable_out;
 output wire [13 : 0] output_o;
 
   biquadFilter #(
-    .input_size(14),
-    .output_size(14)
+    .in_left_radix(1),
+    .in_right_radix(13),
+    .out_left_radix(1),
+    .out_right_radix(13)
   ) inst (
     .clk_i(clk_i),
     .enable(enable),
