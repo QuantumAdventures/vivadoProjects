@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May  3 10:23:08 2024" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May 22 13:51:47 2024" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -337,6 +337,102 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/calibrationConstants/inIntCorrCHA" HWVERSION="1.0" INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="415"/>
+        <PARAMETER NAME="DIN_TO" VALUE="384"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_13"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_inputCalibration_A" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/calibrationConstants/inIntCorrCHB" HWVERSION="1.0" INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="479"/>
+        <PARAMETER NAME="DIN_TO" VALUE="448"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_1_1"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_inputCalibration_B" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/calibrationConstants/inSlpCorrCHA" HWVERSION="1.0" INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="447"/>
+        <PARAMETER NAME="DIN_TO" VALUE="416"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_2_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_inputCalibration_A" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/calibrationConstants/inSlpCorrCHB" HWVERSION="1.0" INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="511"/>
+        <PARAMETER NAME="DIN_TO" VALUE="480"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_3_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_inputCalibration_B" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="2" FULLNAME="/DataAcquisition/dat_CHA" HWVERSION="1.0" INSTANCE="DataAcquisition_dat_CHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -388,8 +484,6 @@
     <MODULE COREREVISION="1" FULLNAME="/DataAcquisition/inputCalibration_A" HWVERSION="1.0" INSTANCE="DataAcquisition_inputCalibration_A" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="inputCalibration" VLNV="xilinx.com:module_ref:inputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4253539279"/>
-        <PARAMETER NAME="slope_correction" VALUE="602285017"/>
         <PARAMETER NAME="Component_Name" VALUE="system_inputCalibration_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -397,6 +491,16 @@
         <PORT DIR="I" NAME="clk_i" SIGIS="undef" SIGNAME="DataAcquisition_axis_red_pitaya_adc_0_adc_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHA" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHA" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_dat_CHA_Dout">
@@ -415,8 +519,6 @@
     <MODULE COREREVISION="1" FULLNAME="/DataAcquisition/inputCalibration_B" HWVERSION="1.0" INSTANCE="DataAcquisition_inputCalibration_B" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="inputCalibration" VLNV="xilinx.com:module_ref:inputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4259497126"/>
-        <PARAMETER NAME="slope_correction" VALUE="600912919"/>
         <PARAMETER NAME="Component_Name" VALUE="system_inputCalibration_A_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -424,6 +526,16 @@
         <PORT DIR="I" NAME="clk_i" SIGIS="undef" SIGNAME="DataAcquisition_axis_red_pitaya_adc_0_adc_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="DataAcquisition_axis_red_pitaya_adc_0" PORT="adc_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHB" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_calibrationConstants_inSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHB" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="DataAcquisition_dat_CHB_Dout">
@@ -749,6 +861,14 @@
             <CONNECTION INSTANCE="biquadFilter_extract_constants_gain_b2" PORT="Din"/>
             <CONNECTION INSTANCE="biquadFilter_extract_constants_enable" PORT="Din"/>
             <CONNECTION INSTANCE="biquadFilter_extract_constants_gain_a2" PORT="Din"/>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHA" PORT="Din"/>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHB" PORT="Din"/>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inSlpCorrCHA" PORT="Din"/>
+            <CONNECTION INSTANCE="DataAcquisition_calibrationConstants_inIntCorrCHB" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHA" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHA" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHB" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHB" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awaddr">
@@ -3298,6 +3418,102 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibrationConstants/outIntCorrCHA" HWVERSION="1.0" INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="543"/>
+        <PARAMETER NAME="DIN_TO" VALUE="512"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_1_2"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_A" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibrationConstants/outIntCorrCHB" HWVERSION="1.0" INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="607"/>
+        <PARAMETER NAME="DIN_TO" VALUE="576"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_2_1"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_b" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibrationConstants/outSlpCorrCHA" HWVERSION="1.0" INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="575"/>
+        <PARAMETER NAME="DIN_TO" VALUE="544"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_14"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_A" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibrationConstants/outSlpCorrCHB" HWVERSION="1.0" INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="639"/>
+        <PARAMETER NAME="DIN_TO" VALUE="608"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_3_1"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_b" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="5" FULLNAME="/SignalGenerator/clk_wiz_0" HWVERSION="6.0" INSTANCE="SignalGenerator_clk_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clk_wiz;v=v6_0;d=pg065-clk-wiz.pdf"/>
@@ -3897,8 +4113,6 @@
     <MODULE COREREVISION="1" FULLNAME="/SignalGenerator/outputCalibration_A" HWVERSION="1.0" INSTANCE="SignalGenerator_outputCalibration_A" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="outputCalibration" VLNV="xilinx.com:module_ref:outputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4292206559"/>
-        <PARAMETER NAME="slope_correction" VALUE="1894147383"/>
         <PARAMETER NAME="Component_Name" VALUE="system_outputCalibration_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -3913,6 +4127,16 @@
             <CONNECTION INSTANCE="PID_PID_0" PORT="control"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHA" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHA" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_outputCalibration_A_output_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="SignalGenerator_xlconcat_0" PORT="In0"/>
@@ -3924,8 +4148,6 @@
     <MODULE COREREVISION="1" FULLNAME="/SignalGenerator/outputCalibration_b" HWVERSION="1.0" INSTANCE="SignalGenerator_outputCalibration_b" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="outputCalibration" VLNV="xilinx.com:module_ref:outputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4278493492"/>
-        <PARAMETER NAME="slope_correction" VALUE="1900818898"/>
         <PARAMETER NAME="Component_Name" VALUE="system_outputCalibration_A_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -3938,6 +4160,16 @@
         <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="biquadFilter_biquadFilter_0_output_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="biquadFilter_biquadFilter_0" PORT="output_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHB" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHB" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_outputCalibration_b_output_o">

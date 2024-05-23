@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Wed May 15 15:01:16 2024
+//Date        : Wed May 22 14:49:54 2024
 //Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -511,7 +511,8 @@ module PS7_imp_1QJPAX8
 endmodule
 
 module SignalGenerator_imp_XB4TXX
-   (clk_in1,
+   (Din,
+    clk_in1,
     dac_clk_o,
     dac_dat_o,
     dac_rst_o,
@@ -520,6 +521,7 @@ module SignalGenerator_imp_XB4TXX
     output_CHA,
     output_CHB,
     s_axis_tvalid);
+  input [1023:0]Din;
   input clk_in1;
   output dac_clk_o;
   output [13:0]dac_dat_o;
@@ -531,12 +533,17 @@ module SignalGenerator_imp_XB4TXX
   input s_axis_tvalid;
 
   wire [13:0]Din_1;
+  wire [1023:0]Din_2;
   wire axis_red_pitaya_adc_0_adc_clk;
   wire axis_red_pitaya_dac_0_dac_clk;
   wire [13:0]axis_red_pitaya_dac_0_dac_dat;
   wire axis_red_pitaya_dac_0_dac_rst;
   wire axis_red_pitaya_dac_0_dac_sel;
   wire axis_red_pitaya_dac_0_dac_wrt;
+  wire [31:0]calibrationConstants_Dout;
+  wire [31:0]calibrationConstants_Dout1;
+  wire [31:0]calibrationConstants_Dout2;
+  wire [31:0]calibrationConstants_Dout3;
   wire clk_wiz_0_clk_out1;
   wire clk_wiz_0_locked;
   wire [13:0]input_i_1;
@@ -548,6 +555,7 @@ module SignalGenerator_imp_XB4TXX
   wire [1:0]xlconstant_1_dout;
 
   assign Din_1 = output_CHB[13:0];
+  assign Din_2 = Din[1023:0];
   assign axis_red_pitaya_adc_0_adc_clk = clk_in1;
   assign dac_clk_o = axis_red_pitaya_dac_0_dac_clk;
   assign dac_dat_o[13:0] = axis_red_pitaya_dac_0_dac_dat;
@@ -567,6 +575,12 @@ module SignalGenerator_imp_XB4TXX
         .locked(clk_wiz_0_locked),
         .s_axis_tdata(xlconcat_0_dout),
         .s_axis_tvalid(s_axis_tvalid_1));
+  calibrationConstants_imp_QG82YZ calibrationConstants
+       (.Din(Din_2),
+        .Dout(calibrationConstants_Dout),
+        .Dout1(calibrationConstants_Dout1),
+        .Dout2(calibrationConstants_Dout2),
+        .Dout3(calibrationConstants_Dout3));
   system_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(axis_red_pitaya_adc_0_adc_clk),
         .clk_out1(clk_wiz_0_clk_out1),
@@ -574,11 +588,15 @@ module SignalGenerator_imp_XB4TXX
   system_outputCalibration_0_0 outputCalibration_A
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
         .input_i(input_i_1),
-        .output_o(outputCalibration_A_output_o));
+        .intercept_correction(calibrationConstants_Dout1),
+        .output_o(outputCalibration_A_output_o),
+        .slope_correction(calibrationConstants_Dout3));
   system_outputCalibration_A_0 outputCalibration_B
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
         .input_i(Din_1),
-        .output_o(outputCalibration_B_output_o));
+        .intercept_correction(calibrationConstants_Dout2),
+        .output_o(outputCalibration_B_output_o),
+        .slope_correction(calibrationConstants_Dout));
   system_xlconcat_0_0 xlconcat_0
        (.In0(outputCalibration_A_output_o),
         .In1(xlconstant_0_dout),
@@ -964,6 +982,43 @@ module biquadFilter_imp_1PDHNN6
         .constants(Din_1));
 endmodule
 
+module calibrationConstants_imp_QG82YZ
+   (Din,
+    Dout,
+    Dout1,
+    Dout2,
+    Dout3);
+  input [1023:0]Din;
+  output [31:0]Dout;
+  output [31:0]Dout1;
+  output [31:0]Dout2;
+  output [31:0]Dout3;
+
+  wire [1023:0]Din_1;
+  wire [31:0]outIntCorrCHA_Dout;
+  wire [31:0]outIntCorrCHB_Dout;
+  wire [31:0]outSlpCorrCHA_Dout;
+  wire [31:0]outSlpCorrCHB_Dout;
+
+  assign Din_1 = Din[1023:0];
+  assign Dout[31:0] = outSlpCorrCHB_Dout;
+  assign Dout1[31:0] = outIntCorrCHA_Dout;
+  assign Dout2[31:0] = outIntCorrCHB_Dout;
+  assign Dout3[31:0] = outSlpCorrCHA_Dout;
+  system_xlslice_0_13 outIntCorrCHA
+       (.Din(Din_1),
+        .Dout(outIntCorrCHA_Dout));
+  system_xlslice_2_0 outIntCorrCHB
+       (.Din(Din_1),
+        .Dout(outIntCorrCHB_Dout));
+  system_xlslice_1_0 outSlpCorrCHA
+       (.Din(Din_1),
+        .Dout(outSlpCorrCHA_Dout));
+  system_xlslice_3_0 outSlpCorrCHB
+       (.Din(Din_1),
+        .Dout(outSlpCorrCHB_Dout));
+endmodule
+
 module extract_constants_imp_1VA3B53
    (Dout,
     Dout1,
@@ -1340,7 +1395,7 @@ module s00_couplers_imp_15HE6GA
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=83,numReposBlks=70,numNonXlnxBlks=3,numHierBlks=13,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=41,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=88,numReposBlks=74,numNonXlnxBlks=3,numHierBlks=14,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=41,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1517,7 +1572,8 @@ module system
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .cfg_data(axi_cfg_register_0_cfg_data));
   SignalGenerator_imp_XB4TXX SignalGenerator
-       (.clk_in1(axis_red_pitaya_adc_0_adc_clk),
+       (.Din(axi_cfg_register_0_cfg_data),
+        .clk_in1(axis_red_pitaya_adc_0_adc_clk),
         .dac_clk_o(axis_red_pitaya_dac_0_dac_clk),
         .dac_dat_o(axis_red_pitaya_dac_0_dac_dat),
         .dac_rst_o(axis_red_pitaya_dac_0_dac_rst),

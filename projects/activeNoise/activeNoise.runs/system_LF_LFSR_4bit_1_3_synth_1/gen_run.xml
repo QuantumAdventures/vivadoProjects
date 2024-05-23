@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="system_LF_LFSR_4bit_1_3_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1715777730">
   <File Type="PA-TCL" Name="system_LF_LFSR_4bit_1_3.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="system_LF_LFSR_4bit_1_3_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="system_LF_LFSR_4bit_1_3_reports.tcl"/>
   <File Type="RDS-RDS" Name="system_LF_LFSR_4bit_1_3.vds"/>
   <File Type="RDS-UTIL" Name="system_LF_LFSR_4bit_1_3_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="system_LF_LFSR_4bit_1_3_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="system_LF_LFSR_4bit_1_3.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="system_LF_LFSR_4bit_1_3_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="system_LF_LFSR_4bit_1_3_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/system_LF_LFSR_4bit_1_3">
     <File Path="$PSRCDIR/sources_1/bd/system/ip/system_LF_LFSR_4bit_1_3/system_LF_LFSR_4bit_1_3.xci">
       <FileInfo>

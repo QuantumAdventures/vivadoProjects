@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "system_outputCalibration_0_0_synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
@@ -96,7 +95,7 @@ read_vhdl -library ieee_proposed {
   C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/new/fixed_pkg_c.vhdl
 }
 read_vhdl -library xil_defaultlib C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/new/outputCalibration.vhd
-read_ip -quiet c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_outputCalibration_0_0/system_outputCalibration_0_0.xci
+read_ip -quiet C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/activeNoise/activeNoise.srcs/sources_1/bd/system/ip/system_outputCalibration_0_0/system_outputCalibration_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

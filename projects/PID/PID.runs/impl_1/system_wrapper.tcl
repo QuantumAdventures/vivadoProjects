@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "G:/Meu Drive/redpitaya_guide-master/projects/PID/PID.runs/impl_1/system_wrapper.tcl"
+  variable script "C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/PID/PID.runs/impl_1/system_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -124,7 +124,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 4
   open_checkpoint system_wrapper_routed.dcp
-  set_property webtalk.parent_dir {G:/Meu Drive/redpitaya_guide-master/projects/PID/PID.cache/wt} [current_project]
+  set_property webtalk.parent_dir C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/PID/PID.cache/wt [current_project]
 set_property TOP system_wrapper [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

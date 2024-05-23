@@ -18,9 +18,9 @@ end outputCalibration;
 
 architecture Behavioral of outputCalibration is
 signal input_i_sf                 : sfixed(0 downto -13);
-signal output_sf                  : sfixed(2 downto -62); -- (input_i_sf - intercept_correction_sf)/slope_correction_sf
+signal output_sf                  : sfixed(4 downto -60); -- (input_i_sf - intercept_correction_sf)/slope_correction_sf
 signal intercept_correction_sf    : sfixed(0 downto -31);
-signal slope_correction_sf        : sfixed(0 downto -31);
+signal slope_correction_sf        : sfixed(2 downto -29);
 
 begin
     

@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1715796077"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1715796077"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1715796077"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1715796077"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1716400195"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1716400195"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1716400195"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1716400195"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\system_processing_system7_0_0\system_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="PS7/processing_system7_0"/>
@@ -561,6 +561,38 @@
       </File>
       <File Name="ip\system_xlconstant_0_4\system_xlconstant_0_4.xci" Type="IP">
         <Instance HierarchyPath="xlconstant_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_13\system_xlslice_0_13.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibrationConstants/outIntCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_1_0\system_xlslice_1_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibrationConstants/outSlpCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_3_0\system_xlslice_3_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibrationConstants/outSlpCorrCHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_2_0\system_xlslice_2_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibrationConstants/outIntCorrCHB"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

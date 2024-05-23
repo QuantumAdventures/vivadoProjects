@@ -17,7 +17,13 @@
         "xlconcat_0": "",
         "xlconstant_1": "",
         "outputCalibration_A": "",
-        "outputCalibration_B": ""
+        "outputCalibration_B": "",
+        "calibrationConstants": {
+          "outIntCorrCHA": "",
+          "outSlpCorrCHA": "",
+          "outSlpCorrCHB": "",
+          "outIntCorrCHB": ""
+        }
       },
       "DataAcquisition": {
         "axis_red_pitaya_adc_0": "",
@@ -399,6 +405,11 @@
             "direction": "I",
             "left": "13",
             "right": "0"
+          },
+          "Din": {
+            "direction": "I",
+            "left": "1023",
+            "right": "0"
           }
         },
         "components": {
@@ -490,14 +501,6 @@
           "outputCalibration_A": {
             "vlnv": "xilinx.com:module_ref:outputCalibration:1.0",
             "xci_name": "system_outputCalibration_0_0",
-            "parameters": {
-              "intercept_correction": {
-                "value": "4292206559"
-              },
-              "slope_correction": {
-                "value": "1894147383"
-              }
-            },
             "reference_info": {
               "ref_type": "hdl",
               "ref_name": "outputCalibration",
@@ -524,6 +527,16 @@
               "input_i": {
                 "direction": "I",
                 "left": "13",
+                "right": "0"
+              },
+              "intercept_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "slope_correction": {
+                "direction": "I",
+                "left": "31",
                 "right": "0"
               },
               "output_o": {
@@ -536,14 +549,6 @@
           "outputCalibration_B": {
             "vlnv": "xilinx.com:module_ref:outputCalibration:1.0",
             "xci_name": "system_outputCalibration_A_0",
-            "parameters": {
-              "intercept_correction": {
-                "value": "4278493492"
-              },
-              "slope_correction": {
-                "value": "1900818898"
-              }
-            },
             "reference_info": {
               "ref_type": "hdl",
               "ref_name": "outputCalibration",
@@ -572,10 +577,158 @@
                 "left": "13",
                 "right": "0"
               },
+              "intercept_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "slope_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
               "output_o": {
                 "direction": "O",
                 "left": "13",
                 "right": "0"
+              }
+            }
+          },
+          "calibrationConstants": {
+            "ports": {
+              "Din": {
+                "direction": "I",
+                "left": "1023",
+                "right": "0"
+              },
+              "Dout": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout1": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout2": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout3": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              }
+            },
+            "components": {
+              "outIntCorrCHA": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_0_13",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "255"
+                  },
+                  "DIN_TO": {
+                    "value": "224"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "outSlpCorrCHA": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_1_0",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "287"
+                  },
+                  "DIN_TO": {
+                    "value": "256"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "outSlpCorrCHB": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_3_0",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "351"
+                  },
+                  "DIN_TO": {
+                    "value": "320"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "outIntCorrCHB": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_2_0",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "319"
+                  },
+                  "DIN_TO": {
+                    "value": "288"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              }
+            },
+            "nets": {
+              "Din_1": {
+                "ports": [
+                  "Din",
+                  "outIntCorrCHA/Din",
+                  "outSlpCorrCHA/Din",
+                  "outIntCorrCHB/Din",
+                  "outSlpCorrCHB/Din"
+                ]
+              },
+              "outSlpCorrCHB_Dout": {
+                "ports": [
+                  "outSlpCorrCHB/Dout",
+                  "Dout"
+                ]
+              },
+              "outIntCorrCHA_Dout": {
+                "ports": [
+                  "outIntCorrCHA/Dout",
+                  "Dout1"
+                ]
+              },
+              "outIntCorrCHB_Dout": {
+                "ports": [
+                  "outIntCorrCHB/Dout",
+                  "Dout2"
+                ]
+              },
+              "outSlpCorrCHA_Dout": {
+                "ports": [
+                  "outSlpCorrCHA/Dout",
+                  "Dout3"
+                ]
               }
             }
           }
@@ -678,6 +831,36 @@
             "ports": [
               "outputCalibration_B/output_o",
               "xlconcat_0/In2"
+            ]
+          },
+          "Din_2": {
+            "ports": [
+              "Din",
+              "calibrationConstants/Din"
+            ]
+          },
+          "calibrationConstants_Dout": {
+            "ports": [
+              "calibrationConstants/Dout",
+              "outputCalibration_B/slope_correction"
+            ]
+          },
+          "calibrationConstants_Dout1": {
+            "ports": [
+              "calibrationConstants/Dout1",
+              "outputCalibration_A/intercept_correction"
+            ]
+          },
+          "calibrationConstants_Dout2": {
+            "ports": [
+              "calibrationConstants/Dout2",
+              "outputCalibration_B/intercept_correction"
+            ]
+          },
+          "calibrationConstants_Dout3": {
+            "ports": [
+              "calibrationConstants/Dout3",
+              "outputCalibration_A/slope_correction"
             ]
           }
         }
@@ -2618,16 +2801,16 @@
               }
             },
             "interface_nets": {
-              "ps7_0_axi_periph_to_s00_couplers": {
-                "interface_ports": [
-                  "S00_AXI",
-                  "s00_couplers/S_AXI"
-                ]
-              },
               "s00_couplers_to_ps7_0_axi_periph": {
                 "interface_ports": [
                   "M00_AXI",
                   "s00_couplers/M_AXI"
+                ]
+              },
+              "ps7_0_axi_periph_to_s00_couplers": {
+                "interface_ports": [
+                  "S00_AXI",
+                  "s00_couplers/S_AXI"
                 ]
               }
             },
@@ -2664,10 +2847,10 @@
           }
         },
         "interface_nets": {
-          "ps7_0_axi_periph_M00_AXI": {
+          "processing_system7_0_M_AXI_GP0": {
             "interface_ports": [
-              "ps7_0_axi_periph/M00_AXI",
-              "axi_cfg_register_0/S_AXI"
+              "processing_system7_0/M_AXI_GP0",
+              "ps7_0_axi_periph/S00_AXI"
             ]
           },
           "processing_system7_0_DDR": {
@@ -2676,16 +2859,16 @@
               "processing_system7_0/DDR"
             ]
           },
+          "ps7_0_axi_periph_M00_AXI": {
+            "interface_ports": [
+              "ps7_0_axi_periph/M00_AXI",
+              "axi_cfg_register_0/S_AXI"
+            ]
+          },
           "processing_system7_0_FIXED_IO": {
             "interface_ports": [
               "FIXED_IO",
               "processing_system7_0/FIXED_IO"
-            ]
-          },
-          "processing_system7_0_M_AXI_GP0": {
-            "interface_ports": [
-              "processing_system7_0/M_AXI_GP0",
-              "ps7_0_axi_periph/S00_AXI"
             ]
           }
         },
@@ -5883,7 +6066,8 @@
         "ports": [
           "PS7/cfg_data",
           "AWGN/gain",
-          "biquadFilter/constants"
+          "biquadFilter/constants",
+          "SignalGenerator/Din"
         ]
       },
       "xlconstant_0_dout1": {

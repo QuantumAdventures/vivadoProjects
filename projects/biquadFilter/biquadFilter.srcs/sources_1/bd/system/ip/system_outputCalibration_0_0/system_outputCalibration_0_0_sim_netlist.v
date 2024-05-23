@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Tue May 21 11:08:14 2024
+// Date        : Wed May 22 13:33:30 2024
 // Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_outputCalibration_0_0/system_outputCalibration_0_0_sim_netlist.v
@@ -204,7 +204,8 @@ module system_outputCalibration_0_0_outputCalibration
   wire \arg_inferred__0/i__carry__10_n_1 ;
   wire \arg_inferred__0/i__carry__10_n_2 ;
   wire \arg_inferred__0/i__carry__10_n_3 ;
-  wire \arg_inferred__0/i__carry__10_n_4 ;
+  wire \arg_inferred__0/i__carry__10_n_5 ;
+  wire \arg_inferred__0/i__carry__10_n_6 ;
   wire \arg_inferred__0/i__carry__1_n_0 ;
   wire \arg_inferred__0/i__carry__1_n_1 ;
   wire \arg_inferred__0/i__carry__1_n_2 ;
@@ -525,6 +526,7 @@ module system_outputCalibration_0_0_outputCalibration
   wire p_0_in_1;
   wire [12:0]p_0_out;
   wire [13:13]p_0_out_0;
+  wire p_2_in;
   wire result;
   wire [31:0]slope_correction;
   wire [31:18]to_s0_in;
@@ -556,8 +558,7 @@ module system_outputCalibration_0_0_outputCalibration
   wire [3:0]\NLW_arg_inferred__0/i__carry__3_O_UNCONNECTED ;
   wire [3:0]\NLW_arg_inferred__0/i__carry__4_O_UNCONNECTED ;
   wire [3:0]\NLW_arg_inferred__0/i__carry__5_O_UNCONNECTED ;
-  wire [3:0]\NLW_arg_inferred__0/i__carry__6_O_UNCONNECTED ;
-  wire [0:0]\NLW_arg_inferred__0/i__carry__7_O_UNCONNECTED ;
+  wire [2:0]\NLW_arg_inferred__0/i__carry__6_O_UNCONNECTED ;
   wire NLW_output_sf_reg_CARRYCASCOUT_UNCONNECTED;
   wire NLW_output_sf_reg_MULTSIGNOUT_UNCONNECTED;
   wire NLW_output_sf_reg_OVERFLOW_UNCONNECTED;
@@ -579,12 +580,14 @@ module system_outputCalibration_0_0_outputCalibration
   wire [3:0]NLW_output_sf_reg__0_CARRYOUT_UNCONNECTED;
   wire [47:0]NLW_output_sf_reg__0_PCOUT_UNCONNECTED;
 
-  LUT3 #(
-    .INIT(8'h0E)) 
+  LUT5 #(
+    .INIT(32'h0000FFFE)) 
     \__0/i_ 
-       (.I0(\arg_inferred__0/i__carry__10_n_4 ),
-        .I1(p_0_out_0),
-        .I2(p_0_in_1),
+       (.I0(p_2_in),
+        .I1(\arg_inferred__0/i__carry__10_n_6 ),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(p_0_out_0),
+        .I4(p_0_in_1),
         .O(result));
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-10 {cell *THIS*} {string 16x18 4}}" *) 
   DSP48E1 #(
@@ -1000,7 +1003,7 @@ module system_outputCalibration_0_0_outputCalibration
         .CO({\arg_inferred__0/i__carry__10_n_0 ,\arg_inferred__0/i__carry__10_n_1 ,\arg_inferred__0/i__carry__10_n_2 ,\arg_inferred__0/i__carry__10_n_3 }),
         .CYINIT(1'b0),
         .DI({output_sf_reg__0_n_59,output_sf_reg__0_n_60,output_sf_reg__0_n_61,output_sf_reg__0_n_62}),
-        .O({\arg_inferred__0/i__carry__10_n_4 ,p_0_out_0,p_0_out[12:11]}),
+        .O({p_2_in,\arg_inferred__0/i__carry__10_n_5 ,\arg_inferred__0/i__carry__10_n_6 ,p_0_out_0}),
         .S({i__carry__10_i_1_n_0,i__carry__10_i_2_n_0,i__carry__10_i_3_n_0,i__carry__10_i_4_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \arg_inferred__0/i__carry__11 
@@ -1048,7 +1051,7 @@ module system_outputCalibration_0_0_outputCalibration
         .CO({\arg_inferred__0/i__carry__6_n_0 ,\arg_inferred__0/i__carry__6_n_1 ,\arg_inferred__0/i__carry__6_n_2 ,\arg_inferred__0/i__carry__6_n_3 }),
         .CYINIT(1'b0),
         .DI({output_sf_reg__0_n_75,output_sf_reg__0_n_76,output_sf_reg__0_n_77,output_sf_reg__0_n_78}),
-        .O(\NLW_arg_inferred__0/i__carry__6_O_UNCONNECTED [3:0]),
+        .O({p_0_out[0],\NLW_arg_inferred__0/i__carry__6_O_UNCONNECTED [2:0]}),
         .S({i__carry__6_i_1_n_0,i__carry__6_i_2_n_0,i__carry__6_i_3_n_0,i__carry__6_i_4_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \arg_inferred__0/i__carry__7 
@@ -1056,7 +1059,7 @@ module system_outputCalibration_0_0_outputCalibration
         .CO({\arg_inferred__0/i__carry__7_n_0 ,\arg_inferred__0/i__carry__7_n_1 ,\arg_inferred__0/i__carry__7_n_2 ,\arg_inferred__0/i__carry__7_n_3 }),
         .CYINIT(1'b0),
         .DI({output_sf_reg__0_n_71,output_sf_reg__0_n_72,output_sf_reg__0_n_73,output_sf_reg__0_n_74}),
-        .O({p_0_out[2:0],\NLW_arg_inferred__0/i__carry__7_O_UNCONNECTED [0]}),
+        .O(p_0_out[4:1]),
         .S({i__carry__7_i_1_n_0,i__carry__7_i_2_n_0,i__carry__7_i_3_n_0,i__carry__7_i_4_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \arg_inferred__0/i__carry__8 
@@ -1064,7 +1067,7 @@ module system_outputCalibration_0_0_outputCalibration
         .CO({\arg_inferred__0/i__carry__8_n_0 ,\arg_inferred__0/i__carry__8_n_1 ,\arg_inferred__0/i__carry__8_n_2 ,\arg_inferred__0/i__carry__8_n_3 }),
         .CYINIT(1'b0),
         .DI({output_sf_reg__0_n_67,output_sf_reg__0_n_68,output_sf_reg__0_n_69,output_sf_reg__0_n_70}),
-        .O(p_0_out[6:3]),
+        .O(p_0_out[8:5]),
         .S({i__carry__8_i_1_n_0,i__carry__8_i_2_n_0,i__carry__8_i_3_n_0,i__carry__8_i_4_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \arg_inferred__0/i__carry__9 
@@ -1072,7 +1075,7 @@ module system_outputCalibration_0_0_outputCalibration
         .CO({\arg_inferred__0/i__carry__9_n_0 ,\arg_inferred__0/i__carry__9_n_1 ,\arg_inferred__0/i__carry__9_n_2 ,\arg_inferred__0/i__carry__9_n_3 }),
         .CYINIT(1'b0),
         .DI({output_sf_reg__0_n_63,output_sf_reg__0_n_64,output_sf_reg__0_n_65,output_sf_reg__0_n_66}),
-        .O(p_0_out[10:7]),
+        .O(p_0_out[12:9]),
         .S({i__carry__9_i_1_n_0,i__carry__9_i_2_n_0,i__carry__9_i_3_n_0,i__carry__9_i_4_n_0}));
   LUT2 #(
     .INIT(4'h6)) 
@@ -1446,40 +1449,45 @@ module system_outputCalibration_0_0_outputCalibration
         .D(input_i[13]),
         .Q(to_s0_in[31]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[0]_i_1 
        (.I0(p_0_out[0]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[10]_i_1 
        (.I0(p_0_out[10]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[11]_i_1 
        (.I0(p_0_out[11]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[11]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[12]_i_1 
        (.I0(p_0_out[12]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[12]_i_1_n_0 ));
   LUT2 #(
     .INIT(4'hE)) 
@@ -1487,86 +1495,95 @@ module system_outputCalibration_0_0_outputCalibration
        (.I0(p_0_out_0),
         .I1(p_0_in_1),
         .O(\output_o[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[1]_i_1 
        (.I0(p_0_out[1]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[2]_i_1 
        (.I0(p_0_out[2]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[3]_i_1 
        (.I0(p_0_out[3]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[4]_i_1 
        (.I0(p_0_out[4]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[5]_i_1 
        (.I0(p_0_out[5]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[6]_i_1 
        (.I0(p_0_out[6]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[7]_i_1 
        (.I0(p_0_out[7]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[8]_i_1 
        (.I0(p_0_out[8]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT4 #(
-    .INIT(16'h80AA)) 
+  LUT6 #(
+    .INIT(64'h80000000AAAAAAAA)) 
     \output_o[9]_i_1 
        (.I0(p_0_out[9]),
         .I1(p_0_out_0),
-        .I2(\arg_inferred__0/i__carry__10_n_4 ),
-        .I3(p_0_in_1),
+        .I2(\arg_inferred__0/i__carry__10_n_5 ),
+        .I3(\arg_inferred__0/i__carry__10_n_6 ),
+        .I4(p_2_in),
+        .I5(p_0_in_1),
         .O(\output_o[9]_i_1_n_0 ));
   FDSE \output_o_reg[0] 
        (.C(clk_i),

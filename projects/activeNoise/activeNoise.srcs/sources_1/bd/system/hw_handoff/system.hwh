@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May 15 15:01:17 2024" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May 22 14:49:55 2024" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -2123,6 +2123,10 @@
             <CONNECTION INSTANCE="biquadFilter_extract_constants_gain_b1" PORT="Din"/>
             <CONNECTION INSTANCE="biquadFilter_extract_constants_gain_b0" PORT="Din"/>
             <CONNECTION INSTANCE="biquadFilter_extract_constants_gain_a2" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHA" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHA" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHB" PORT="Din"/>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHB" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awaddr">
@@ -4194,93 +4198,6 @@
             <CONNECTION INSTANCE="PS7_rst_ps7_0_125M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="PS7_processing_system7_0_M_AXI_GP0_AWID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="PS7_processing_system7_0" PORT="M_AXI_GP0_AWID"/>
@@ -4469,6 +4386,93 @@
         <PORT DIR="I" NAME="S00_AXI_rready" SIGIS="undef" SIGNAME="PS7_processing_system7_0_M_AXI_GP0_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="PS7_processing_system7_0" PORT="M_AXI_GP0_RREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -4667,6 +4671,102 @@
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibrationConstants/outIntCorrCHA" HWVERSION="1.0" INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="255"/>
+        <PARAMETER NAME="DIN_TO" VALUE="224"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_13"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_A" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibrationConstants/outIntCorrCHB" HWVERSION="1.0" INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="319"/>
+        <PARAMETER NAME="DIN_TO" VALUE="288"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_2_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_B" PORT="intercept_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibrationConstants/outSlpCorrCHA" HWVERSION="1.0" INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHA" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="287"/>
+        <PARAMETER NAME="DIN_TO" VALUE="256"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_1_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_A" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SignalGenerator/calibrationConstants/outSlpCorrCHB" HWVERSION="1.0" INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHB" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="351"/>
+        <PARAMETER NAME="DIN_TO" VALUE="320"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_3_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_outputCalibration_B" PORT="slope_correction"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
     </MODULE>
     <MODULE COREREVISION="5" FULLNAME="/SignalGenerator/clk_wiz_0" HWVERSION="6.0" INSTANCE="SignalGenerator_clk_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
       <DOCUMENTS>
@@ -5267,8 +5367,6 @@
     <MODULE COREREVISION="1" FULLNAME="/SignalGenerator/outputCalibration_A" HWVERSION="1.0" INSTANCE="SignalGenerator_outputCalibration_A" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="outputCalibration" VLNV="xilinx.com:module_ref:outputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4292206559"/>
-        <PARAMETER NAME="slope_correction" VALUE="1894147383"/>
         <PARAMETER NAME="Component_Name" VALUE="system_outputCalibration_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -5283,6 +5381,16 @@
             <CONNECTION INSTANCE="biquadFilter_biquadFilter_0" PORT="output_o"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outIntCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHA" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outSlpCorrCHA_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHA" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_outputCalibration_A_output_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="SignalGenerator_xlconcat_0" PORT="In0"/>
@@ -5294,8 +5402,6 @@
     <MODULE COREREVISION="1" FULLNAME="/SignalGenerator/outputCalibration_B" HWVERSION="1.0" INSTANCE="SignalGenerator_outputCalibration_B" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="outputCalibration" VLNV="xilinx.com:module_ref:outputCalibration:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="intercept_correction" VALUE="4278493492"/>
-        <PARAMETER NAME="slope_correction" VALUE="1900818898"/>
         <PARAMETER NAME="Component_Name" VALUE="system_outputCalibration_A_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -5308,6 +5414,16 @@
         <PORT DIR="I" LEFT="13" NAME="input_i" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="intercept_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outIntCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHB" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="slope_correction" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_calibrationConstants_outSlpCorrCHB_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHB" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="13" NAME="output_o" RIGHT="0" SIGIS="undef" SIGNAME="SignalGenerator_outputCalibration_B_output_o">

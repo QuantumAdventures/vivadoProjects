@@ -240,6 +240,96 @@ proc create_hier_cell_extract_constants_1 { parentCell nameHier } {
   current_bd_instance $oldCurInst
 }
 
+# Hierarchical cell: calibrationConstants
+proc create_hier_cell_calibrationConstants_1 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_calibrationConstants_1() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir I -from 1023 -to 0 Din
+  create_bd_pin -dir O -from 31 -to 0 Dout
+  create_bd_pin -dir O -from 31 -to 0 Dout1
+  create_bd_pin -dir O -from 31 -to 0 Dout2
+  create_bd_pin -dir O -from 31 -to 0 Dout3
+
+  # Create instance: outIntCorrCHA, and set properties
+  set outIntCorrCHA [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 outIntCorrCHA ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {543} \
+   CONFIG.DIN_TO {512} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $outIntCorrCHA
+
+  # Create instance: outIntCorrCHB, and set properties
+  set outIntCorrCHB [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 outIntCorrCHB ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {607} \
+   CONFIG.DIN_TO {576} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $outIntCorrCHB
+
+  # Create instance: outSlpCorrCHA, and set properties
+  set outSlpCorrCHA [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 outSlpCorrCHA ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {575} \
+   CONFIG.DIN_TO {544} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $outSlpCorrCHA
+
+  # Create instance: outSlpCorrCHB, and set properties
+  set outSlpCorrCHB [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 outSlpCorrCHB ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {639} \
+   CONFIG.DIN_TO {608} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $outSlpCorrCHB
+
+  # Create port connections
+  connect_bd_net -net Din_1 [get_bd_pins Din] [get_bd_pins outIntCorrCHA/Din] [get_bd_pins outIntCorrCHB/Din] [get_bd_pins outSlpCorrCHA/Din] [get_bd_pins outSlpCorrCHB/Din]
+  connect_bd_net -net outIntCorrCHA_Dout [get_bd_pins Dout3] [get_bd_pins outIntCorrCHA/Dout]
+  connect_bd_net -net outIntCorrCHB_Dout [get_bd_pins Dout2] [get_bd_pins outIntCorrCHB/Dout]
+  connect_bd_net -net outSlpCorrCHA_Dout [get_bd_pins Dout1] [get_bd_pins outSlpCorrCHA/Dout]
+  connect_bd_net -net outSlpCorrCHB_Dout [get_bd_pins Dout] [get_bd_pins outSlpCorrCHB/Dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
 # Hierarchical cell: extract_constants
 proc create_hier_cell_extract_constants { parentCell nameHier } {
 
@@ -369,6 +459,96 @@ proc create_hier_cell_extract_constants { parentCell nameHier } {
   connect_bd_net -net pid_enable_Dout [get_bd_pins Dout4] [get_bd_pins pid_enable/Dout]
   connect_bd_net -net set_point_RAM_Dout [get_bd_pins Dout] [get_bd_pins set_point_RAM/Dout]
   connect_bd_net -net set_point_sel_Dout [get_bd_pins Dout7] [get_bd_pins set_point_sel/Dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: calibrationConstants
+proc create_hier_cell_calibrationConstants { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_calibrationConstants() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir I -from 1023 -to 0 Din
+  create_bd_pin -dir O -from 31 -to 0 Dout
+  create_bd_pin -dir O -from 31 -to 0 Dout1
+  create_bd_pin -dir O -from 31 -to 0 Dout2
+  create_bd_pin -dir O -from 31 -to 0 Dout3
+
+  # Create instance: inIntCorrCHA, and set properties
+  set inIntCorrCHA [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 inIntCorrCHA ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {415} \
+   CONFIG.DIN_TO {384} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $inIntCorrCHA
+
+  # Create instance: inIntCorrCHB, and set properties
+  set inIntCorrCHB [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 inIntCorrCHB ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {479} \
+   CONFIG.DIN_TO {448} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $inIntCorrCHB
+
+  # Create instance: inSlpCorrCHA, and set properties
+  set inSlpCorrCHA [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 inSlpCorrCHA ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {447} \
+   CONFIG.DIN_TO {416} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $inSlpCorrCHA
+
+  # Create instance: inSlpCorrCHB, and set properties
+  set inSlpCorrCHB [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 inSlpCorrCHB ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {511} \
+   CONFIG.DIN_TO {480} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $inSlpCorrCHB
+
+  # Create port connections
+  connect_bd_net -net Din_1 [get_bd_pins Din] [get_bd_pins inIntCorrCHA/Din] [get_bd_pins inIntCorrCHB/Din] [get_bd_pins inSlpCorrCHA/Din] [get_bd_pins inSlpCorrCHB/Din]
+  connect_bd_net -net inIntCorrCHA_Dout [get_bd_pins Dout] [get_bd_pins inIntCorrCHA/Dout]
+  connect_bd_net -net inIntCorrCHB_Dout [get_bd_pins Dout1] [get_bd_pins inIntCorrCHB/Dout]
+  connect_bd_net -net inSlpCorrCHA_Dout [get_bd_pins Dout2] [get_bd_pins inSlpCorrCHA/Dout]
+  connect_bd_net -net inSlpCorrCHB_Dout [get_bd_pins Dout3] [get_bd_pins inSlpCorrCHB/Dout]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -557,6 +737,7 @@ proc create_hier_cell_SignalGenerator { parentCell nameHier } {
   # Create interface pins
 
   # Create pins
+  create_bd_pin -dir I -from 1023 -to 0 Din
   create_bd_pin -dir I -type clk clk_in1
   create_bd_pin -dir O -type clk dac_clk_o
   create_bd_pin -dir O -from 13 -to 0 dac_dat_o
@@ -569,6 +750,9 @@ proc create_hier_cell_SignalGenerator { parentCell nameHier } {
 
   # Create instance: axis_red_pitaya_dac_0, and set properties
   set axis_red_pitaya_dac_0 [ create_bd_cell -type ip -vlnv pavel-demin:user:axis_red_pitaya_dac:1.0 axis_red_pitaya_dac_0 ]
+
+  # Create instance: calibrationConstants
+  create_hier_cell_calibrationConstants_1 $hier_obj calibrationConstants
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
@@ -595,11 +779,7 @@ proc create_hier_cell_SignalGenerator { parentCell nameHier } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-    set_property -dict [ list \
-   CONFIG.intercept_correction {4292206559} \
-   CONFIG.slope_correction {1894147383} \
- ] $outputCalibration_A
-
+  
   # Create instance: outputCalibration_b, and set properties
   set block_name outputCalibration
   set block_cell_name outputCalibration_b
@@ -610,11 +790,7 @@ proc create_hier_cell_SignalGenerator { parentCell nameHier } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-    set_property -dict [ list \
-   CONFIG.intercept_correction {4278493492} \
-   CONFIG.slope_correction {1900818898} \
- ] $outputCalibration_b
-
+  
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
   set_property -dict [ list \
@@ -640,12 +816,17 @@ proc create_hier_cell_SignalGenerator { parentCell nameHier } {
  ] $xlconstant_1
 
   # Create port connections
+  connect_bd_net -net Din_1 [get_bd_pins Din] [get_bd_pins calibrationConstants/Din]
   connect_bd_net -net axis_red_pitaya_adc_0_adc_clk [get_bd_pins clk_in1] [get_bd_pins axis_red_pitaya_dac_0/aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins outputCalibration_A/clk_i] [get_bd_pins outputCalibration_b/clk_i]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_clk [get_bd_pins dac_clk_o] [get_bd_pins axis_red_pitaya_dac_0/dac_clk]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_dat [get_bd_pins dac_dat_o] [get_bd_pins axis_red_pitaya_dac_0/dac_dat]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_rst [get_bd_pins dac_rst_o] [get_bd_pins axis_red_pitaya_dac_0/dac_rst]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_sel [get_bd_pins dac_sel_o] [get_bd_pins axis_red_pitaya_dac_0/dac_sel]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_wrt [get_bd_pins dac_wrt_o] [get_bd_pins axis_red_pitaya_dac_0/dac_wrt]
+  connect_bd_net -net calibrationConstants_Dout [get_bd_pins calibrationConstants/Dout] [get_bd_pins outputCalibration_b/slope_correction]
+  connect_bd_net -net calibrationConstants_Dout1 [get_bd_pins calibrationConstants/Dout1] [get_bd_pins outputCalibration_A/slope_correction]
+  connect_bd_net -net calibrationConstants_Dout2 [get_bd_pins calibrationConstants/Dout2] [get_bd_pins outputCalibration_b/intercept_correction]
+  connect_bd_net -net calibrationConstants_Dout3 [get_bd_pins calibrationConstants/Dout3] [get_bd_pins outputCalibration_A/intercept_correction]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins axis_red_pitaya_dac_0/ddr_clk] [get_bd_pins clk_wiz_0/clk_out1]
   connect_bd_net -net clk_wiz_0_locked [get_bd_pins axis_red_pitaya_dac_0/locked] [get_bd_pins clk_wiz_0/locked]
   connect_bd_net -net input_i_1 [get_bd_pins output_CHA] [get_bd_pins outputCalibration_A/input_i]
@@ -1506,6 +1687,7 @@ proc create_hier_cell_DataAcquisition { parentCell nameHier } {
   # Create interface pins
 
   # Create pins
+  create_bd_pin -dir I -from 1023 -to 0 Din
   create_bd_pin -dir O -type clk adc_clk
   create_bd_pin -dir I adc_clk_n_i
   create_bd_pin -dir I adc_clk_p_i
@@ -1518,6 +1700,9 @@ proc create_hier_cell_DataAcquisition { parentCell nameHier } {
 
   # Create instance: axis_red_pitaya_adc_0, and set properties
   set axis_red_pitaya_adc_0 [ create_bd_cell -type ip -vlnv pavel-demin:user:axis_red_pitaya_adc:1.0 axis_red_pitaya_adc_0 ]
+
+  # Create instance: calibrationConstants
+  create_hier_cell_calibrationConstants $hier_obj calibrationConstants
 
   # Create instance: dat_CHA, and set properties
   set dat_CHA [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 dat_CHA ]
@@ -1544,11 +1729,7 @@ proc create_hier_cell_DataAcquisition { parentCell nameHier } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-    set_property -dict [ list \
-   CONFIG.intercept_correction {4253539279} \
-   CONFIG.slope_correction {602285017} \
- ] $inputCalibration_A
-
+  
   # Create instance: inputCalibration_B, and set properties
   set block_name inputCalibration
   set block_cell_name inputCalibration_B
@@ -1559,12 +1740,9 @@ proc create_hier_cell_DataAcquisition { parentCell nameHier } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-    set_property -dict [ list \
-   CONFIG.intercept_correction {4259497126} \
-   CONFIG.slope_correction {600912919} \
- ] $inputCalibration_B
-
+  
   # Create port connections
+  connect_bd_net -net Din_1 [get_bd_pins Din] [get_bd_pins calibrationConstants/Din]
   connect_bd_net -net adc_clk_n_i_1 [get_bd_pins adc_clk_n_i] [get_bd_pins axis_red_pitaya_adc_0/adc_clk_n]
   connect_bd_net -net adc_clk_p_i_1 [get_bd_pins adc_clk_p_i] [get_bd_pins axis_red_pitaya_adc_0/adc_clk_p]
   connect_bd_net -net adc_dat_a_i_1 [get_bd_pins adc_dat_a_i] [get_bd_pins axis_red_pitaya_adc_0/adc_dat_a]
@@ -1573,6 +1751,10 @@ proc create_hier_cell_DataAcquisition { parentCell nameHier } {
   connect_bd_net -net axis_red_pitaya_adc_0_adc_csn [get_bd_pins adc_csn_o] [get_bd_pins axis_red_pitaya_adc_0/adc_csn]
   connect_bd_net -net axis_red_pitaya_adc_0_m_axis_tdata [get_bd_pins axis_red_pitaya_adc_0/m_axis_tdata] [get_bd_pins dat_CHA/Din] [get_bd_pins dat_CHB/Din]
   connect_bd_net -net axis_red_pitaya_adc_0_m_axis_tvalid [get_bd_pins m_axis_tvalid] [get_bd_pins axis_red_pitaya_adc_0/m_axis_tvalid]
+  connect_bd_net -net calibrationConstants_Dout [get_bd_pins calibrationConstants/Dout] [get_bd_pins inputCalibration_A/intercept_correction]
+  connect_bd_net -net calibrationConstants_Dout1 [get_bd_pins calibrationConstants/Dout1] [get_bd_pins inputCalibration_B/intercept_correction]
+  connect_bd_net -net calibrationConstants_Dout2 [get_bd_pins calibrationConstants/Dout2] [get_bd_pins inputCalibration_A/slope_correction]
+  connect_bd_net -net calibrationConstants_Dout3 [get_bd_pins calibrationConstants/Dout3] [get_bd_pins inputCalibration_B/slope_correction]
   connect_bd_net -net dat_CHA_Dout [get_bd_pins dat_CHA/Dout] [get_bd_pins inputCalibration_A/input_i]
   connect_bd_net -net dat_CHB_Dout [get_bd_pins dat_CHB/Dout] [get_bd_pins inputCalibration_B/input_i]
   connect_bd_net -net inputCalibration_A_output_o [get_bd_pins output_CHA] [get_bd_pins inputCalibration_A/output_o]
@@ -1704,7 +1886,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net adc_clk_p_i_1 [get_bd_ports adc_clk_p_i] [get_bd_pins DataAcquisition/adc_clk_p_i]
   connect_bd_net -net adc_dat_a_i_1 [get_bd_ports adc_dat_a_i] [get_bd_pins DataAcquisition/adc_dat_a_i]
   connect_bd_net -net adc_dat_b_i_1 [get_bd_ports adc_dat_b_i] [get_bd_pins DataAcquisition/adc_dat_b_i]
-  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins PID/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins biquadFilter/Din]
+  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins DataAcquisition/Din] [get_bd_pins PID/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins SignalGenerator/Din] [get_bd_pins biquadFilter/Din]
   connect_bd_net -net axis_red_pitaya_adc_0_adc_csn [get_bd_ports adc_csn_o] [get_bd_pins DataAcquisition/adc_csn_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_clk [get_bd_ports dac_clk_o] [get_bd_pins SignalGenerator/dac_clk_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_dat [get_bd_ports dac_dat_o] [get_bd_pins SignalGenerator/dac_dat_o]
