@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1714149208">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1716489968">
   <File Type="BITSTR-BMM" Name="system_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="system_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="system_wrapper_timing_summary_init.rpt"/>
@@ -151,12 +151,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/signalSelector.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/bd/system/system.bd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../tmp/4_frequency_counter/4_frequency_counter.srcs/sources_1/bd/system/system.bd"/>
@@ -172,6 +166,13 @@
         <Attr Name="ImportTime" Val="1708447447"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/signalSelector.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -563,14 +564,12 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_cfg_register_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_decimator_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_comparator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_biquadFilter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_signalSelector_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_inputCalibration_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_outputCalibration_A_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_inputCalibration_A_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_outputCalibration_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_signalSelector_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_comparator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_phaseDetector_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_NCO_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_outputCalibration_A_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_inputCalibration_0_0"/>
 </GenRun>

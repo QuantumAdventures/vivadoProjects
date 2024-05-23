@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Apr 25 15:40:01 2024
+// Date        : Thu May 23 15:43:40 2024
 // Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ system_comparator_0_0_stub.v
@@ -15,12 +15,11 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "comparator,Vivado 2020.1" *)
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(clk_i, positive_offset, negative_offset, 
-  input_i, outputDAC, output_o)
-/* synthesis syn_black_box black_box_pad_pin="clk_i,positive_offset[13:0],negative_offset[13:0],input_i[13:0],outputDAC[13:0],output_o" */;
+  input_i, output_o)
+/* synthesis syn_black_box black_box_pad_pin="clk_i,positive_offset[13:0],negative_offset[13:0],input_i[13:0],output_o" */;
   input clk_i;
   input [13:0]positive_offset;
   input [13:0]negative_offset;
   input [13:0]input_i;
-  output [13:0]outputDAC;
   output output_o;
 endmodule

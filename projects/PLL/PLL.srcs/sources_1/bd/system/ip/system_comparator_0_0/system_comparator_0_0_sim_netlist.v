@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Apr 25 15:40:02 2024
+// Date        : Thu May 23 15:43:40 2024
 // Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {g:/Meu
-//               Drive/redpitaya_guide-master/projects/PLL/PLL.srcs/sources_1/bd/system/ip/system_comparator_0_0/system_comparator_0_0_sim_netlist.v}
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/PLL/PLL.srcs/sources_1/bd/system/ip/system_comparator_0_0/system_comparator_0_0_sim_netlist.v
 // Design      : system_comparator_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,79 +20,64 @@ module system_comparator_0_0
     positive_offset,
     negative_offset,
     input_i,
-    outputDAC,
     output_o);
   input clk_i;
   input [13:0]positive_offset;
   input [13:0]negative_offset;
   input [13:0]input_i;
-  output [13:0]outputDAC;
   output output_o;
 
-  wire \<const0> ;
   wire clk_i;
   wire [13:0]input_i;
   wire [13:0]negative_offset;
-  wire [8:8]\^outputDAC ;
+  wire output_o;
   wire [13:0]positive_offset;
 
-  assign outputDAC[13] = \<const0> ;
-  assign outputDAC[12] = \<const0> ;
-  assign outputDAC[11] = \<const0> ;
-  assign outputDAC[10] = \<const0> ;
-  assign outputDAC[9] = \^outputDAC [8];
-  assign outputDAC[8] = \^outputDAC [8];
-  assign outputDAC[7] = \<const0> ;
-  assign outputDAC[6] = \<const0> ;
-  assign outputDAC[5] = \^outputDAC [8];
-  assign outputDAC[4] = \^outputDAC [8];
-  assign outputDAC[3] = \<const0> ;
-  assign outputDAC[2] = \<const0> ;
-  assign outputDAC[1] = \^outputDAC [8];
-  assign outputDAC[0] = \^outputDAC [8];
-  assign output_o = \^outputDAC [8];
-  GND GND
-       (.G(\<const0> ));
   system_comparator_0_0_comparator inst
        (.clk_i(clk_i),
         .input_i(input_i),
         .negative_offset(negative_offset),
-        .outputDAC(\^outputDAC ),
+        .output_o(output_o),
         .positive_offset(positive_offset));
 endmodule
 
 (* ORIG_REF_NAME = "comparator" *) 
 module system_comparator_0_0_comparator
-   (outputDAC,
+   (output_o,
     negative_offset,
     input_i,
     positive_offset,
     clk_i);
-  output [0:0]outputDAC;
+  output output_o;
   input [13:0]negative_offset;
   input [13:0]input_i;
   input [13:0]positive_offset;
   input clk_i;
 
   wire clk_i;
-  wire i__carry__0_i_1_n_0;
-  wire i__carry__0_i_2_n_0;
-  wire i__carry__0_i_3_n_0;
-  wire i__carry__0_i_4_n_0;
-  wire i__carry__0_i_5_n_0;
-  wire i__carry__0_i_6_n_0;
-  wire i__carry_i_1_n_0;
-  wire i__carry_i_2_n_0;
-  wire i__carry_i_3_n_0;
-  wire i__carry_i_4_n_0;
-  wire i__carry_i_5_n_0;
-  wire i__carry_i_6_n_0;
-  wire i__carry_i_7_n_0;
-  wire i__carry_i_8_n_0;
   wire [13:0]input_i;
   wire [13:0]negative_offset;
-  wire [0:0]outputDAC;
-  wire \outputDAC[9]_i_1_n_0 ;
+  wire output_o;
+  wire output_o0__6_carry__0_i_1_n_0;
+  wire output_o0__6_carry__0_i_2_n_0;
+  wire output_o0__6_carry__0_i_3_n_0;
+  wire output_o0__6_carry__0_i_4_n_0;
+  wire output_o0__6_carry__0_i_5_n_0;
+  wire output_o0__6_carry__0_i_6_n_0;
+  wire output_o0__6_carry__0_n_2;
+  wire output_o0__6_carry__0_n_3;
+  wire output_o0__6_carry_i_1_n_0;
+  wire output_o0__6_carry_i_2_n_0;
+  wire output_o0__6_carry_i_3_n_0;
+  wire output_o0__6_carry_i_4_n_0;
+  wire output_o0__6_carry_i_5_n_0;
+  wire output_o0__6_carry_i_6_n_0;
+  wire output_o0__6_carry_i_7_n_0;
+  wire output_o0__6_carry_i_8_n_0;
+  wire output_o0__6_carry_n_0;
+  wire output_o0__6_carry_n_1;
+  wire output_o0__6_carry_n_2;
+  wire output_o0__6_carry_n_3;
   wire output_o0_carry__0_i_1_n_0;
   wire output_o0_carry__0_i_2_n_0;
   wire output_o0_carry__0_i_3_n_0;
@@ -113,147 +98,145 @@ module system_comparator_0_0_comparator
   wire output_o0_carry_n_1;
   wire output_o0_carry_n_2;
   wire output_o0_carry_n_3;
-  wire \output_o0_inferred__0/i__carry__0_n_2 ;
-  wire \output_o0_inferred__0/i__carry__0_n_3 ;
-  wire \output_o0_inferred__0/i__carry_n_0 ;
-  wire \output_o0_inferred__0/i__carry_n_1 ;
-  wire \output_o0_inferred__0/i__carry_n_2 ;
-  wire \output_o0_inferred__0/i__carry_n_3 ;
+  wire output_o_i_1_n_0;
   wire p_0_in;
   wire p_1_in;
   wire [13:0]positive_offset;
+  wire [3:0]NLW_output_o0__6_carry_O_UNCONNECTED;
+  wire [3:3]NLW_output_o0__6_carry__0_CO_UNCONNECTED;
+  wire [3:0]NLW_output_o0__6_carry__0_O_UNCONNECTED;
   wire [3:0]NLW_output_o0_carry_O_UNCONNECTED;
   wire [3:3]NLW_output_o0_carry__0_CO_UNCONNECTED;
   wire [3:0]NLW_output_o0_carry__0_O_UNCONNECTED;
-  wire [3:0]\NLW_output_o0_inferred__0/i__carry_O_UNCONNECTED ;
-  wire [3:3]\NLW_output_o0_inferred__0/i__carry__0_CO_UNCONNECTED ;
-  wire [3:0]\NLW_output_o0_inferred__0/i__carry__0_O_UNCONNECTED ;
 
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  CARRY4 output_o0__6_carry
+       (.CI(1'b0),
+        .CO({output_o0__6_carry_n_0,output_o0__6_carry_n_1,output_o0__6_carry_n_2,output_o0__6_carry_n_3}),
+        .CYINIT(1'b0),
+        .DI({output_o0__6_carry_i_1_n_0,output_o0__6_carry_i_2_n_0,output_o0__6_carry_i_3_n_0,output_o0__6_carry_i_4_n_0}),
+        .O(NLW_output_o0__6_carry_O_UNCONNECTED[3:0]),
+        .S({output_o0__6_carry_i_5_n_0,output_o0__6_carry_i_6_n_0,output_o0__6_carry_i_7_n_0,output_o0__6_carry_i_8_n_0}));
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  CARRY4 output_o0__6_carry__0
+       (.CI(output_o0__6_carry_n_0),
+        .CO({NLW_output_o0__6_carry__0_CO_UNCONNECTED[3],p_1_in,output_o0__6_carry__0_n_2,output_o0__6_carry__0_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,output_o0__6_carry__0_i_1_n_0,output_o0__6_carry__0_i_2_n_0,output_o0__6_carry__0_i_3_n_0}),
+        .O(NLW_output_o0__6_carry__0_O_UNCONNECTED[3:0]),
+        .S({1'b0,output_o0__6_carry__0_i_4_n_0,output_o0__6_carry__0_i_5_n_0,output_o0__6_carry__0_i_6_n_0}));
   LUT4 #(
     .INIT(16'h2F02)) 
-    i__carry__0_i_1
+    output_o0__6_carry__0_i_1
        (.I0(input_i[12]),
         .I1(positive_offset[12]),
         .I2(input_i[13]),
         .I3(positive_offset[13]),
-        .O(i__carry__0_i_1_n_0));
+        .O(output_o0__6_carry__0_i_1_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
-    i__carry__0_i_2
+    output_o0__6_carry__0_i_2
        (.I0(input_i[10]),
         .I1(positive_offset[10]),
         .I2(positive_offset[11]),
         .I3(input_i[11]),
-        .O(i__carry__0_i_2_n_0));
+        .O(output_o0__6_carry__0_i_2_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
-    i__carry__0_i_3
+    output_o0__6_carry__0_i_3
        (.I0(input_i[8]),
         .I1(positive_offset[8]),
         .I2(positive_offset[9]),
         .I3(input_i[9]),
-        .O(i__carry__0_i_3_n_0));
+        .O(output_o0__6_carry__0_i_3_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    i__carry__0_i_4
+    output_o0__6_carry__0_i_4
        (.I0(input_i[12]),
         .I1(positive_offset[12]),
         .I2(positive_offset[13]),
         .I3(input_i[13]),
-        .O(i__carry__0_i_4_n_0));
+        .O(output_o0__6_carry__0_i_4_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    i__carry__0_i_5
+    output_o0__6_carry__0_i_5
        (.I0(input_i[10]),
         .I1(positive_offset[10]),
         .I2(input_i[11]),
         .I3(positive_offset[11]),
-        .O(i__carry__0_i_5_n_0));
+        .O(output_o0__6_carry__0_i_5_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    i__carry__0_i_6
+    output_o0__6_carry__0_i_6
        (.I0(input_i[8]),
         .I1(positive_offset[8]),
         .I2(input_i[9]),
         .I3(positive_offset[9]),
-        .O(i__carry__0_i_6_n_0));
+        .O(output_o0__6_carry__0_i_6_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
-    i__carry_i_1
+    output_o0__6_carry_i_1
        (.I0(input_i[6]),
         .I1(positive_offset[6]),
         .I2(positive_offset[7]),
         .I3(input_i[7]),
-        .O(i__carry_i_1_n_0));
+        .O(output_o0__6_carry_i_1_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
-    i__carry_i_2
+    output_o0__6_carry_i_2
        (.I0(input_i[4]),
         .I1(positive_offset[4]),
         .I2(positive_offset[5]),
         .I3(input_i[5]),
-        .O(i__carry_i_2_n_0));
+        .O(output_o0__6_carry_i_2_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
-    i__carry_i_3
+    output_o0__6_carry_i_3
        (.I0(input_i[2]),
         .I1(positive_offset[2]),
         .I2(positive_offset[3]),
         .I3(input_i[3]),
-        .O(i__carry_i_3_n_0));
+        .O(output_o0__6_carry_i_3_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
-    i__carry_i_4
+    output_o0__6_carry_i_4
        (.I0(input_i[0]),
         .I1(positive_offset[0]),
         .I2(positive_offset[1]),
         .I3(input_i[1]),
-        .O(i__carry_i_4_n_0));
+        .O(output_o0__6_carry_i_4_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    i__carry_i_5
+    output_o0__6_carry_i_5
        (.I0(input_i[6]),
         .I1(positive_offset[6]),
         .I2(input_i[7]),
         .I3(positive_offset[7]),
-        .O(i__carry_i_5_n_0));
+        .O(output_o0__6_carry_i_5_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    i__carry_i_6
+    output_o0__6_carry_i_6
        (.I0(input_i[4]),
         .I1(positive_offset[4]),
         .I2(input_i[5]),
         .I3(positive_offset[5]),
-        .O(i__carry_i_6_n_0));
+        .O(output_o0__6_carry_i_6_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    i__carry_i_7
+    output_o0__6_carry_i_7
        (.I0(input_i[2]),
         .I1(positive_offset[2]),
         .I2(input_i[3]),
         .I3(positive_offset[3]),
-        .O(i__carry_i_7_n_0));
+        .O(output_o0__6_carry_i_7_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    i__carry_i_8
+    output_o0__6_carry_i_8
        (.I0(input_i[0]),
         .I1(positive_offset[0]),
         .I2(input_i[1]),
         .I3(positive_offset[1]),
-        .O(i__carry_i_8_n_0));
-  LUT3 #(
-    .INIT(8'hF4)) 
-    \outputDAC[9]_i_1 
-       (.I0(p_0_in),
-        .I1(outputDAC),
-        .I2(p_1_in),
-        .O(\outputDAC[9]_i_1_n_0 ));
-  FDRE \outputDAC_reg[9] 
-       (.C(clk_i),
-        .CE(1'b1),
-        .D(\outputDAC[9]_i_1_n_0 ),
-        .Q(outputDAC),
-        .R(1'b0));
+        .O(output_o0__6_carry_i_8_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 output_o0_carry
        (.CI(1'b0),
@@ -382,22 +365,19 @@ module system_comparator_0_0_comparator
         .I2(negative_offset[1]),
         .I3(input_i[1]),
         .O(output_o0_carry_i_8_n_0));
-  (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 \output_o0_inferred__0/i__carry 
-       (.CI(1'b0),
-        .CO({\output_o0_inferred__0/i__carry_n_0 ,\output_o0_inferred__0/i__carry_n_1 ,\output_o0_inferred__0/i__carry_n_2 ,\output_o0_inferred__0/i__carry_n_3 }),
-        .CYINIT(1'b0),
-        .DI({i__carry_i_1_n_0,i__carry_i_2_n_0,i__carry_i_3_n_0,i__carry_i_4_n_0}),
-        .O(\NLW_output_o0_inferred__0/i__carry_O_UNCONNECTED [3:0]),
-        .S({i__carry_i_5_n_0,i__carry_i_6_n_0,i__carry_i_7_n_0,i__carry_i_8_n_0}));
-  (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 \output_o0_inferred__0/i__carry__0 
-       (.CI(\output_o0_inferred__0/i__carry_n_0 ),
-        .CO({\NLW_output_o0_inferred__0/i__carry__0_CO_UNCONNECTED [3],p_1_in,\output_o0_inferred__0/i__carry__0_n_2 ,\output_o0_inferred__0/i__carry__0_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,i__carry__0_i_1_n_0,i__carry__0_i_2_n_0,i__carry__0_i_3_n_0}),
-        .O(\NLW_output_o0_inferred__0/i__carry__0_O_UNCONNECTED [3:0]),
-        .S({1'b0,i__carry__0_i_4_n_0,i__carry__0_i_5_n_0,i__carry__0_i_6_n_0}));
+  LUT3 #(
+    .INIT(8'hF4)) 
+    output_o_i_1
+       (.I0(p_0_in),
+        .I1(output_o),
+        .I2(p_1_in),
+        .O(output_o_i_1_n_0));
+  FDRE output_o_reg
+       (.C(clk_i),
+        .CE(1'b1),
+        .D(output_o_i_1_n_0),
+        .Q(output_o),
+        .R(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

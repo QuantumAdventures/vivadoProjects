@@ -59,21 +59,18 @@ module system_phaseDetector_0_0 (
   clk_i,
   clk_ref,
   clk_reg,
-  errorDAC,
   phaseError
 );
 
 input wire clk_i;
 input wire clk_ref;
 input wire clk_reg;
-output wire [13 : 0] errorDAC;
 output wire [1 : 0] phaseError;
 
   phaseDetector inst (
     .clk_i(clk_i),
     .clk_ref(clk_ref),
     .clk_reg(clk_reg),
-    .errorDAC(errorDAC),
     .phaseError(phaseError)
   );
 endmodule

@@ -57,19 +57,22 @@
 module system_outputCalibration_A_0 (
   clk_i,
   input_i,
+  intercept_correction,
+  slope_correction,
   output_o
 );
 
 input wire clk_i;
 input wire [13 : 0] input_i;
+input wire [31 : 0] intercept_correction;
+input wire [31 : 0] slope_correction;
 output wire [13 : 0] output_o;
 
-  outputCalibration #(
-    .intercept_correction(4278493492),
-    .slope_correction(1900818898)
-  ) inst (
+  outputCalibration inst (
     .clk_i(clk_i),
     .input_i(input_i),
+    .intercept_correction(intercept_correction),
+    .slope_correction(slope_correction),
     .output_o(output_o)
   );
 endmodule

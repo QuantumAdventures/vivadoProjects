@@ -6,7 +6,8 @@
       "name": "system",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2020.1"
+      "tool_version": "2020.1",
+      "validated": "true"
     },
     "design_tree": {
       "SignalGenerator": {
@@ -15,15 +16,27 @@
         "xlconstant_0": "",
         "xlconcat_0": "",
         "xlconstant_1": "",
+        "outputCalibration_b": "",
         "outputCalibration_A": "",
-        "outputCalibration_b": ""
+        "calibrationConstants": {
+          "outIntCorrCHA": "",
+          "outSlpCorrCHA": "",
+          "outIntCorrCHB": "",
+          "outSlpCorrCHB": ""
+        }
       },
       "DataAcquisition": {
         "axis_red_pitaya_adc_0": "",
         "dat_CHA": "",
-        "inputCalibration_A": "",
         "dat_CHB": "",
-        "inputCalibration_B": ""
+        "inputCalibration_A": "",
+        "inputCalibration_B": "",
+        "calibrationConstants": {
+          "inIntCorrCHA": "",
+          "inSlpCorrCHA": "",
+          "inIntCorrCHB": "",
+          "inSlpCorrCHB": ""
+        }
       },
       "PS7": {
         "processing_system7_0": "",
@@ -32,11 +45,10 @@
           "s00_couplers": {
             "auto_pc": ""
           }
-        }
+        },
+        "axi_cfg_register_0": ""
       },
-      "axi_cfg_register_0": "",
       "biquadFilter": {
-        "biquadFilter_0": "",
         "extract_constants": {
           "gain_a2": "",
           "gain_b0": "",
@@ -45,7 +57,8 @@
           "gain_b2": "",
           "gain_a1": ""
         },
-        "decimator_0": ""
+        "decimator_0": "",
+        "biquadFilter_0": ""
       },
       "PLL": {
         "comparator": {
@@ -62,14 +75,6 @@
           "NCO_0": ""
         },
         "phaseDetector_0": ""
-      },
-      "signalSelector_CHA": {
-        "selector_0": "",
-        "signalSelector_0": ""
-      },
-      "signalSelector_CHB": {
-        "selector_1": "",
-        "signalSelector_1": ""
       },
       "requiredStuff": {
         "util_ds_buf_1": "",
@@ -99,11 +104,67 @@
       },
       "DDR": {
         "mode": "Master",
-        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0"
+        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "TIMEPERIOD_PS": {
+            "value": "1250",
+            "value_src": "default"
+          },
+          "MEMORY_TYPE": {
+            "value": "COMPONENTS",
+            "value_src": "default"
+          },
+          "DATA_WIDTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "CS_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "DATA_MASK_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "SLOT": {
+            "value": "Single",
+            "value_src": "default"
+          },
+          "MEM_ADDR_MAP": {
+            "value": "ROW_COLUMN_BANK",
+            "value_src": "default"
+          },
+          "BURST_LENGTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "AXI_ARBITRATION_SCHEME": {
+            "value": "TDM",
+            "value_src": "default"
+          },
+          "CAS_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CAS_WRITE_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          }
+        }
       },
       "FIXED_IO": {
         "mode": "Master",
-        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0"
+        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
       },
       "gpio_rtl_0": {
         "mode": "Master",
@@ -126,10 +187,38 @@
         "right": "0"
       },
       "adc_clk_p_i": {
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "",
+            "value_src": "weak"
+          },
+          "FREQ_HZ": {
+            "value": "",
+            "value_src": "weak"
+          },
+          "PHASE": {
+            "value": "",
+            "value_src": "weak"
+          }
+        }
       },
       "adc_clk_n_i": {
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "",
+            "value_src": "weak"
+          },
+          "FREQ_HZ": {
+            "value": "",
+            "value_src": "weak"
+          },
+          "PHASE": {
+            "value": "",
+            "value_src": "weak"
+          }
+        }
       },
       "adc_enc_p_o": {
         "direction": "O"
@@ -146,10 +235,30 @@
         "right": "0"
       },
       "dac_clk_o": {
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "system_axis_red_pitaya_dac_0_0_dac_clk",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default_prop"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default_prop"
+          }
+        }
       },
       "dac_rst_o": {
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default_prop"
+          }
+        }
       },
       "dac_sel_o": {
         "direction": "O"
@@ -175,12 +284,40 @@
       "daisy_p_o": {
         "direction": "O",
         "left": "1",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "system_util_ds_buf_1_0_IBUF_OUT",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "ip_prop"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "ip_prop"
+          }
+        }
       },
       "daisy_n_o": {
         "direction": "O",
         "left": "1",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "system_util_ds_buf_1_0_IBUF_OUT",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "ip_prop"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "ip_prop"
+          }
+        }
       },
       "daisy_p_i": {
         "direction": "I",
@@ -235,6 +372,11 @@
           "output_CHA": {
             "direction": "I",
             "left": "13",
+            "right": "0"
+          },
+          "Din": {
+            "direction": "I",
+            "left": "1023",
             "right": "0"
           }
         },
@@ -324,17 +466,9 @@
               }
             }
           },
-          "outputCalibration_A": {
+          "outputCalibration_b": {
             "vlnv": "xilinx.com:module_ref:outputCalibration:1.0",
-            "xci_name": "system_outputCalibration_0_0",
-            "parameters": {
-              "intercept_correction": {
-                "value": "4292206559"
-              },
-              "slope_correction": {
-                "value": "1894147383"
-              }
-            },
+            "xci_name": "system_outputCalibration_A_0",
             "reference_info": {
               "ref_type": "hdl",
               "ref_name": "outputCalibration",
@@ -342,11 +476,35 @@
             },
             "ports": {
               "clk_i": {
-                "direction": "I"
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
               },
               "input_i": {
                 "direction": "I",
                 "left": "13",
+                "right": "0"
+              },
+              "intercept_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "slope_correction": {
+                "direction": "I",
+                "left": "31",
                 "right": "0"
               },
               "output_o": {
@@ -356,17 +514,9 @@
               }
             }
           },
-          "outputCalibration_b": {
+          "outputCalibration_A": {
             "vlnv": "xilinx.com:module_ref:outputCalibration:1.0",
-            "xci_name": "system_outputCalibration_A_0",
-            "parameters": {
-              "intercept_correction": {
-                "value": "4278493492"
-              },
-              "slope_correction": {
-                "value": "1900818898"
-              }
-            },
+            "xci_name": "system_outputCalibration_0_0",
             "reference_info": {
               "ref_type": "hdl",
               "ref_name": "outputCalibration",
@@ -374,17 +524,179 @@
             },
             "ports": {
               "clk_i": {
-                "direction": "I"
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
               },
               "input_i": {
                 "direction": "I",
                 "left": "13",
                 "right": "0"
               },
+              "intercept_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "slope_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
               "output_o": {
                 "direction": "O",
                 "left": "13",
                 "right": "0"
+              }
+            }
+          },
+          "calibrationConstants": {
+            "ports": {
+              "Dout": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout1": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout2": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout3": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Din": {
+                "direction": "I",
+                "left": "1023",
+                "right": "0"
+              }
+            },
+            "components": {
+              "outIntCorrCHA": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_0_19",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "543"
+                  },
+                  "DIN_TO": {
+                    "value": "512"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "outSlpCorrCHA": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_1_2",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "575"
+                  },
+                  "DIN_TO": {
+                    "value": "544"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "outIntCorrCHB": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_2_1",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "607"
+                  },
+                  "DIN_TO": {
+                    "value": "576"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "outSlpCorrCHB": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_3_1",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "639"
+                  },
+                  "DIN_TO": {
+                    "value": "608"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              }
+            },
+            "nets": {
+              "outSlpCorrCHB_Dout": {
+                "ports": [
+                  "outSlpCorrCHB/Dout",
+                  "Dout"
+                ]
+              },
+              "outSlpCorrCHA_Dout": {
+                "ports": [
+                  "outSlpCorrCHA/Dout",
+                  "Dout1"
+                ]
+              },
+              "outIntCorrCHA_Dout": {
+                "ports": [
+                  "outIntCorrCHA/Dout",
+                  "Dout2"
+                ]
+              },
+              "outIntCorrCHB_Dout": {
+                "ports": [
+                  "outIntCorrCHB/Dout",
+                  "Dout3"
+                ]
+              },
+              "Din_1": {
+                "ports": [
+                  "Din",
+                  "outIntCorrCHB/Din",
+                  "outIntCorrCHA/Din",
+                  "outSlpCorrCHA/Din",
+                  "outSlpCorrCHB/Din"
+                ]
               }
             }
           }
@@ -407,8 +719,8 @@
               "clk_in1",
               "clk_wiz_0/clk_in1",
               "axis_red_pitaya_dac_0/aclk",
-              "outputCalibration_A/clk_i",
-              "outputCalibration_b/clk_i"
+              "outputCalibration_b/clk_i",
+              "outputCalibration_A/clk_i"
             ]
           },
           "axis_red_pitaya_dac_0_dac_clk": {
@@ -488,6 +800,36 @@
               "output_CHB",
               "outputCalibration_b/input_i"
             ]
+          },
+          "calibrationConstants_Dout": {
+            "ports": [
+              "calibrationConstants/Dout",
+              "outputCalibration_b/slope_correction"
+            ]
+          },
+          "calibrationConstants_Dout1": {
+            "ports": [
+              "calibrationConstants/Dout1",
+              "outputCalibration_A/slope_correction"
+            ]
+          },
+          "calibrationConstants_Dout2": {
+            "ports": [
+              "calibrationConstants/Dout2",
+              "outputCalibration_A/intercept_correction"
+            ]
+          },
+          "calibrationConstants_Dout3": {
+            "ports": [
+              "calibrationConstants/Dout3",
+              "outputCalibration_b/intercept_correction"
+            ]
+          },
+          "Din_1": {
+            "ports": [
+              "Din",
+              "calibrationConstants/Din"
+            ]
           }
         }
       },
@@ -528,6 +870,11 @@
             "direction": "O",
             "left": "13",
             "right": "0"
+          },
+          "Din": {
+            "direction": "I",
+            "left": "1023",
+            "right": "0"
           }
         },
         "components": {
@@ -547,38 +894,6 @@
               }
             }
           },
-          "inputCalibration_A": {
-            "vlnv": "xilinx.com:module_ref:inputCalibration:1.0",
-            "xci_name": "system_inputCalibration_0_0",
-            "parameters": {
-              "intercept_correction": {
-                "value": "4253539279"
-              },
-              "slope_correction": {
-                "value": "602285017"
-              }
-            },
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "inputCalibration",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk_i": {
-                "direction": "I"
-              },
-              "input_i": {
-                "direction": "I",
-                "left": "13",
-                "right": "0"
-              },
-              "output_o": {
-                "direction": "O",
-                "left": "13",
-                "right": "0"
-              }
-            }
-          },
           "dat_CHB": {
             "vlnv": "xilinx.com:ip:xlslice:1.0",
             "xci_name": "system_dat_CHA_0",
@@ -594,17 +909,9 @@
               }
             }
           },
-          "inputCalibration_B": {
+          "inputCalibration_A": {
             "vlnv": "xilinx.com:module_ref:inputCalibration:1.0",
-            "xci_name": "system_inputCalibration_A_0",
-            "parameters": {
-              "intercept_correction": {
-                "value": "4259497126"
-              },
-              "slope_correction": {
-                "value": "600912919"
-              }
-            },
+            "xci_name": "system_inputCalibration_0_0",
             "reference_info": {
               "ref_type": "hdl",
               "ref_name": "inputCalibration",
@@ -612,7 +919,31 @@
             },
             "ports": {
               "clk_i": {
-                "direction": "I"
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "intercept_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "slope_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
               },
               "input_i": {
                 "direction": "I",
@@ -623,6 +954,192 @@
                 "direction": "O",
                 "left": "13",
                 "right": "0"
+              }
+            }
+          },
+          "inputCalibration_B": {
+            "vlnv": "xilinx.com:module_ref:inputCalibration:1.0",
+            "xci_name": "system_inputCalibration_A_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "inputCalibration",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk_i": {
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "intercept_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "slope_correction": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "input_i": {
+                "direction": "I",
+                "left": "13",
+                "right": "0"
+              },
+              "output_o": {
+                "direction": "O",
+                "left": "13",
+                "right": "0"
+              }
+            }
+          },
+          "calibrationConstants": {
+            "ports": {
+              "Dout": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout1": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout2": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout3": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Din": {
+                "direction": "I",
+                "left": "1023",
+                "right": "0"
+              }
+            },
+            "components": {
+              "inIntCorrCHA": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_0_18",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "415"
+                  },
+                  "DIN_TO": {
+                    "value": "384"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "inSlpCorrCHA": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_1_1",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "447"
+                  },
+                  "DIN_TO": {
+                    "value": "416"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "inIntCorrCHB": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_2_0",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "479"
+                  },
+                  "DIN_TO": {
+                    "value": "448"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "inSlpCorrCHB": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_xlslice_3_0",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "511"
+                  },
+                  "DIN_TO": {
+                    "value": "480"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              }
+            },
+            "nets": {
+              "inIntCorrCHB_Dout": {
+                "ports": [
+                  "inIntCorrCHB/Dout",
+                  "Dout"
+                ]
+              },
+              "inSlpCorrCHB_Dout": {
+                "ports": [
+                  "inSlpCorrCHB/Dout",
+                  "Dout1"
+                ]
+              },
+              "inSlpCorrCHA_Dout": {
+                "ports": [
+                  "inSlpCorrCHA/Dout",
+                  "Dout2"
+                ]
+              },
+              "inIntCorrCHA_Dout": {
+                "ports": [
+                  "inIntCorrCHA/Dout",
+                  "Dout3"
+                ]
+              },
+              "Din_1": {
+                "ports": [
+                  "Din",
+                  "inIntCorrCHA/Din",
+                  "inSlpCorrCHA/Din",
+                  "inIntCorrCHB/Din",
+                  "inSlpCorrCHB/Din"
+                ]
               }
             }
           }
@@ -702,6 +1219,36 @@
               "inputCalibration_B/output_o",
               "output_CHB"
             ]
+          },
+          "calibrationConstants_Dout": {
+            "ports": [
+              "calibrationConstants/Dout",
+              "inputCalibration_B/intercept_correction"
+            ]
+          },
+          "calibrationConstants_Dout1": {
+            "ports": [
+              "calibrationConstants/Dout1",
+              "inputCalibration_B/slope_correction"
+            ]
+          },
+          "calibrationConstants_Dout2": {
+            "ports": [
+              "calibrationConstants/Dout2",
+              "inputCalibration_A/slope_correction"
+            ]
+          },
+          "calibrationConstants_Dout3": {
+            "ports": [
+              "calibrationConstants/Dout3",
+              "inputCalibration_A/intercept_correction"
+            ]
+          },
+          "Din_1": {
+            "ports": [
+              "Din",
+              "calibrationConstants/Din"
+            ]
           }
         }
       },
@@ -714,21 +1261,12 @@
           "FIXED_IO": {
             "mode": "Master",
             "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0"
-          },
-          "M00_AXI": {
-            "mode": "Master",
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           }
         },
         "ports": {
-          "FCLK_CLK0": {
-            "type": "clk",
-            "direction": "O"
-          },
-          "S00_ARESETN": {
-            "type": "rst",
+          "cfg_data": {
             "direction": "O",
-            "left": "0",
+            "left": "1023",
             "right": "0"
           }
         },
@@ -2356,16 +2894,16 @@
                   }
                 },
                 "interface_nets": {
-                  "auto_pc_to_s00_couplers": {
-                    "interface_ports": [
-                      "M_AXI",
-                      "auto_pc/M_AXI"
-                    ]
-                  },
                   "s00_couplers_to_auto_pc": {
                     "interface_ports": [
                       "S_AXI",
                       "auto_pc/S_AXI"
+                    ]
+                  },
+                  "auto_pc_to_s00_couplers": {
+                    "interface_ports": [
+                      "M_AXI",
+                      "auto_pc/M_AXI"
                     ]
                   }
                 },
@@ -2425,19 +2963,23 @@
                 ]
               }
             }
+          },
+          "axi_cfg_register_0": {
+            "vlnv": "pavel-demin:user:axi_cfg_register:1.0",
+            "xci_name": "system_axi_cfg_register_0_0"
           }
         },
         "interface_nets": {
-          "ps7_0_axi_periph_M00_AXI": {
-            "interface_ports": [
-              "M00_AXI",
-              "ps7_0_axi_periph/M00_AXI"
-            ]
-          },
           "processing_system7_0_FIXED_IO": {
             "interface_ports": [
               "FIXED_IO",
               "processing_system7_0/FIXED_IO"
+            ]
+          },
+          "processing_system7_0_DDR": {
+            "interface_ports": [
+              "DDR",
+              "processing_system7_0/DDR"
             ]
           },
           "processing_system7_0_M_AXI_GP0": {
@@ -2446,10 +2988,10 @@
               "ps7_0_axi_periph/S00_AXI"
             ]
           },
-          "processing_system7_0_DDR": {
+          "ps7_0_axi_periph_M00_AXI": {
             "interface_ports": [
-              "DDR",
-              "processing_system7_0/DDR"
+              "ps7_0_axi_periph/M00_AXI",
+              "axi_cfg_register_0/S_AXI"
             ]
           }
         },
@@ -2463,37 +3005,36 @@
           "processing_system7_0_FCLK_CLK0": {
             "ports": [
               "processing_system7_0/FCLK_CLK0",
-              "FCLK_CLK0",
               "processing_system7_0/S_AXI_HP0_ACLK",
               "ps7_0_axi_periph/S00_ACLK",
               "rst_ps7_0_125M/slowest_sync_clk",
               "ps7_0_axi_periph/M00_ACLK",
               "ps7_0_axi_periph/ACLK",
-              "processing_system7_0/M_AXI_GP0_ACLK"
+              "processing_system7_0/M_AXI_GP0_ACLK",
+              "axi_cfg_register_0/aclk"
             ]
           },
           "rst_ps7_0_125M_peripheral_aresetn": {
             "ports": [
               "rst_ps7_0_125M/peripheral_aresetn",
-              "S00_ARESETN",
               "ps7_0_axi_periph/S00_ARESETN",
               "ps7_0_axi_periph/M00_ARESETN",
-              "ps7_0_axi_periph/ARESETN"
+              "ps7_0_axi_periph/ARESETN",
+              "axi_cfg_register_0/aresetn"
+            ]
+          },
+          "axi_cfg_register_0_cfg_data": {
+            "ports": [
+              "axi_cfg_register_0/cfg_data",
+              "cfg_data"
             ]
           }
         }
-      },
-      "axi_cfg_register_0": {
-        "vlnv": "pavel-demin:user:axi_cfg_register:1.0",
-        "xci_name": "system_axi_cfg_register_0_0"
       },
       "biquadFilter": {
         "ports": {
           "clk_i": {
             "direction": "I"
-          },
-          "enable_out": {
-            "direction": "O"
           },
           "output_o": {
             "direction": "O",
@@ -2512,72 +3053,6 @@
           }
         },
         "components": {
-          "biquadFilter_0": {
-            "vlnv": "xilinx.com:module_ref:biquadFilter:1.0",
-            "xci_name": "system_biquadFilter_0_0",
-            "parameters": {
-              "input_size": {
-                "value": "14"
-              },
-              "output_size": {
-                "value": "14"
-              }
-            },
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "biquadFilter",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk_i": {
-                "direction": "I"
-              },
-              "enable": {
-                "direction": "I"
-              },
-              "clkEnable": {
-                "direction": "I"
-              },
-              "input_i": {
-                "direction": "I",
-                "left": "13",
-                "right": "0"
-              },
-              "gain_a1": {
-                "direction": "I",
-                "left": "31",
-                "right": "0"
-              },
-              "gain_a2": {
-                "direction": "I",
-                "left": "31",
-                "right": "0"
-              },
-              "gain_b0": {
-                "direction": "I",
-                "left": "31",
-                "right": "0"
-              },
-              "gain_b1": {
-                "direction": "I",
-                "left": "31",
-                "right": "0"
-              },
-              "gain_b2": {
-                "direction": "I",
-                "left": "31",
-                "right": "0"
-              },
-              "enable_out": {
-                "direction": "O"
-              },
-              "output_o": {
-                "direction": "O",
-                "left": "13",
-                "right": "0"
-              }
-            }
-          },
           "extract_constants": {
             "ports": {
               "Din": {
@@ -2622,24 +3097,6 @@
                 "xci_name": "system_gain_a_0",
                 "parameters": {
                   "DIN_FROM": {
-                    "value": "63"
-                  },
-                  "DIN_TO": {
-                    "value": "32"
-                  },
-                  "DIN_WIDTH": {
-                    "value": "1024"
-                  },
-                  "DOUT_WIDTH": {
-                    "value": "32"
-                  }
-                }
-              },
-              "gain_b0": {
-                "vlnv": "xilinx.com:ip:xlslice:1.0",
-                "xci_name": "system_gain_a2_0",
-                "parameters": {
-                  "DIN_FROM": {
                     "value": "95"
                   },
                   "DIN_TO": {
@@ -2653,9 +3110,9 @@
                   }
                 }
               },
-              "gain_b1": {
+              "gain_b0": {
                 "vlnv": "xilinx.com:ip:xlslice:1.0",
-                "xci_name": "system_gain_b0_0",
+                "xci_name": "system_gain_a2_0",
                 "parameters": {
                   "DIN_FROM": {
                     "value": "127"
@@ -2671,27 +3128,9 @@
                   }
                 }
               },
-              "enable": {
+              "gain_b1": {
                 "vlnv": "xilinx.com:ip:xlslice:1.0",
-                "xci_name": "system_gain_b2_0",
-                "parameters": {
-                  "DIN_FROM": {
-                    "value": "160"
-                  },
-                  "DIN_TO": {
-                    "value": "160"
-                  },
-                  "DIN_WIDTH": {
-                    "value": "1024"
-                  },
-                  "DOUT_WIDTH": {
-                    "value": "1"
-                  }
-                }
-              },
-              "gain_b2": {
-                "vlnv": "xilinx.com:ip:xlslice:1.0",
-                "xci_name": "system_gain_b0_1",
+                "xci_name": "system_gain_b0_0",
                 "parameters": {
                   "DIN_FROM": {
                     "value": "159"
@@ -2707,12 +3146,51 @@
                   }
                 }
               },
+              "enable": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_gain_b2_0",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "0"
+                  },
+                  "DIN_TO": {
+                    "value": "0"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "1"
+                  }
+                }
+              },
+              "gain_b2": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_gain_b0_1",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "191"
+                  },
+                  "DIN_TO": {
+                    "value": "160"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
               "gain_a1": {
                 "vlnv": "xilinx.com:ip:xlslice:1.0",
                 "xci_name": "system_xlslice_0_8",
                 "parameters": {
                   "DIN_FROM": {
-                    "value": "31"
+                    "value": "63"
+                  },
+                  "DIN_TO": {
+                    "value": "32"
                   },
                   "DIN_WIDTH": {
                     "value": "1024"
@@ -2794,7 +3272,21 @@
             },
             "ports": {
               "clk_i": {
-                "direction": "I"
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
               },
               "input_i": {
                 "direction": "I",
@@ -2811,6 +3303,86 @@
               },
               "clk_e": {
                 "direction": "O"
+              }
+            }
+          },
+          "biquadFilter_0": {
+            "vlnv": "xilinx.com:module_ref:biquadFilter:1.0",
+            "xci_name": "system_biquadFilter_0_0",
+            "parameters": {
+              "input_size": {
+                "value": "14"
+              },
+              "output_size": {
+                "value": "14"
+              }
+            },
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "biquadFilter",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk_i": {
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "enable": {
+                "direction": "I"
+              },
+              "clkEnable": {
+                "direction": "I"
+              },
+              "input_i": {
+                "direction": "I",
+                "left": "13",
+                "right": "0"
+              },
+              "gain_a1": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "gain_a2": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "gain_b0": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "gain_b1": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "gain_b2": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "enable_out": {
+                "direction": "O"
+              },
+              "output_o": {
+                "direction": "O",
+                "left": "13",
+                "right": "0"
               }
             }
           }
@@ -2855,14 +3427,8 @@
           "axis_red_pitaya_adc_0_adc_clk": {
             "ports": [
               "clk_i",
-              "biquadFilter_0/clk_i",
-              "decimator_0/clk_i"
-            ]
-          },
-          "biquadFilter_0_enable_out": {
-            "ports": [
-              "biquadFilter_0/enable_out",
-              "enable_out"
+              "decimator_0/clk_i",
+              "biquadFilter_0/clk_i"
             ]
           },
           "biquadFilter_0_output_o": {
@@ -2902,11 +3468,6 @@
           "clk_i": {
             "direction": "I"
           },
-          "errorDAC": {
-            "direction": "O",
-            "left": "13",
-            "right": "0"
-          },
           "Din": {
             "direction": "I",
             "left": "1023",
@@ -2914,16 +3475,6 @@
           },
           "input_i": {
             "direction": "I",
-            "left": "13",
-            "right": "0"
-          },
-          "comparator": {
-            "direction": "O",
-            "left": "13",
-            "right": "0"
-          },
-          "squareTest": {
-            "direction": "O",
             "left": "13",
             "right": "0"
           },
@@ -2949,11 +3500,6 @@
                 "left": "13",
                 "right": "0"
               },
-              "outputDAC": {
-                "direction": "O",
-                "left": "13",
-                "right": "0"
-              },
               "output_o": {
                 "direction": "O"
               }
@@ -2964,10 +3510,10 @@
                 "xci_name": "system_xlslice_0_14",
                 "parameters": {
                   "DIN_FROM": {
-                    "value": "525"
+                    "value": "205"
                   },
                   "DIN_TO": {
-                    "value": "512"
+                    "value": "192"
                   },
                   "DIN_WIDTH": {
                     "value": "1024"
@@ -2982,10 +3528,10 @@
                 "xci_name": "system_xlslice_0_13",
                 "parameters": {
                   "DIN_FROM": {
-                    "value": "493"
+                    "value": "237"
                   },
                   "DIN_TO": {
-                    "value": "480"
+                    "value": "224"
                   },
                   "DIN_WIDTH": {
                     "value": "1024"
@@ -3010,7 +3556,21 @@
                 },
                 "ports": {
                   "clk_i": {
-                    "direction": "I"
+                    "direction": "I",
+                    "parameters": {
+                      "CLK_DOMAIN": {
+                        "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                        "value_src": "default_prop"
+                      },
+                      "FREQ_HZ": {
+                        "value": "125000000",
+                        "value_src": "const_prop"
+                      },
+                      "PHASE": {
+                        "value": "0.000",
+                        "value_src": "default_prop"
+                      }
+                    }
                   },
                   "positive_offset": {
                     "direction": "I",
@@ -3024,11 +3584,6 @@
                   },
                   "input_i": {
                     "direction": "I",
-                    "left": "13",
-                    "right": "0"
-                  },
-                  "outputDAC": {
-                    "direction": "O",
                     "left": "13",
                     "right": "0"
                   },
@@ -3070,12 +3625,6 @@
                   "comparator_0/input_i"
                 ]
               },
-              "comparator_0_outputTest": {
-                "ports": [
-                  "comparator_0/outputDAC",
-                  "outputDAC"
-                ]
-              },
               "comparator_0_output_o": {
                 "ports": [
                   "comparator_0/output_o",
@@ -3102,11 +3651,6 @@
               "square_output": {
                 "direction": "O"
               },
-              "squareDAC": {
-                "direction": "O",
-                "left": "13",
-                "right": "0"
-              },
               "sine_output": {
                 "direction": "O",
                 "left": "13",
@@ -3119,10 +3663,10 @@
                 "xci_name": "system_positive_offset_0",
                 "parameters": {
                   "DIN_FROM": {
-                    "value": "575"
+                    "value": "287"
                   },
                   "DIN_TO": {
-                    "value": "544"
+                    "value": "256"
                   },
                   "DIN_WIDTH": {
                     "value": "1024"
@@ -3137,10 +3681,10 @@
                 "xci_name": "system_xlslice_0_15",
                 "parameters": {
                   "DIN_FROM": {
-                    "value": "671"
+                    "value": "351"
                   },
                   "DIN_TO": {
-                    "value": "640"
+                    "value": "320"
                   },
                   "DIN_WIDTH": {
                     "value": "1024"
@@ -3155,10 +3699,10 @@
                 "xci_name": "system_xlslice_0_16",
                 "parameters": {
                   "DIN_FROM": {
-                    "value": "704"
+                    "value": "1"
                   },
                   "DIN_TO": {
-                    "value": "704"
+                    "value": "1"
                   },
                   "DIN_WIDTH": {
                     "value": "1024"
@@ -3173,10 +3717,10 @@
                 "xci_name": "system_xlslice_1_0",
                 "parameters": {
                   "DIN_FROM": {
-                    "value": "679"
+                    "value": "295"
                   },
                   "DIN_TO": {
-                    "value": "672"
+                    "value": "288"
                   },
                   "DIN_WIDTH": {
                     "value": "1024"
@@ -3191,10 +3735,10 @@
                 "xci_name": "system_xlslice_0_17",
                 "parameters": {
                   "DIN_FROM": {
-                    "value": "767"
+                    "value": "383"
                   },
                   "DIN_TO": {
-                    "value": "736"
+                    "value": "352"
                   },
                   "DIN_WIDTH": {
                     "value": "1024"
@@ -3214,7 +3758,21 @@
                 },
                 "ports": {
                   "clk_i": {
-                    "direction": "I"
+                    "direction": "I",
+                    "parameters": {
+                      "CLK_DOMAIN": {
+                        "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                        "value_src": "default_prop"
+                      },
+                      "FREQ_HZ": {
+                        "value": "125000000",
+                        "value_src": "const_prop"
+                      },
+                      "PHASE": {
+                        "value": "0.000",
+                        "value_src": "default_prop"
+                      }
+                    }
                   },
                   "freq": {
                     "direction": "I",
@@ -3246,11 +3804,6 @@
                   },
                   "square_output": {
                     "direction": "O"
-                  },
-                  "squareDAC": {
-                    "direction": "O",
-                    "left": "13",
-                    "right": "0"
                   },
                   "sine_output": {
                     "direction": "O",
@@ -3287,12 +3840,6 @@
                 "ports": [
                   "NCO_0/square_output",
                   "square_output"
-                ]
-              },
-              "NCO_0_squareTest": {
-                "ports": [
-                  "NCO_0/squareDAC",
-                  "squareDAC"
                 ]
               },
               "NCO_0_sine_output": {
@@ -3343,18 +3890,27 @@
             },
             "ports": {
               "clk_i": {
-                "direction": "I"
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
               },
               "clk_ref": {
                 "direction": "I"
               },
               "clk_reg": {
                 "direction": "I"
-              },
-              "errorDAC": {
-                "direction": "O",
-                "left": "13",
-                "right": "0"
               },
               "phaseError": {
                 "direction": "O",
@@ -3391,12 +3947,6 @@
               "phaseDetector_0/clk_i"
             ]
           },
-          "phaseDetector_0_outputTest": {
-            "ports": [
-              "phaseDetector_0/errorDAC",
-              "errorDAC"
-            ]
-          },
           "axi_cfg_register_0_cfg_data": {
             "ports": [
               "Din",
@@ -3410,256 +3960,10 @@
               "comparator/input_i"
             ]
           },
-          "comparator_0_outputTest": {
-            "ports": [
-              "comparator/outputDAC",
-              "comparator"
-            ]
-          },
-          "NCO_0_squareTest": {
-            "ports": [
-              "numericallyControledOscillator/squareDAC",
-              "squareTest"
-            ]
-          },
           "NCO_0_sine_output": {
             "ports": [
               "numericallyControledOscillator/sine_output",
               "sine_output"
-            ]
-          }
-        }
-      },
-      "signalSelector_CHA": {
-        "ports": {
-          "Din": {
-            "direction": "I",
-            "left": "1023",
-            "right": "0"
-          },
-          "clk_i": {
-            "direction": "I"
-          },
-          "input_0": {
-            "direction": "I",
-            "left": "13",
-            "right": "0"
-          },
-          "input_1": {
-            "direction": "I",
-            "left": "13",
-            "right": "0"
-          },
-          "output_o": {
-            "direction": "O",
-            "left": "13",
-            "right": "0"
-          }
-        },
-        "components": {
-          "selector_0": {
-            "vlnv": "xilinx.com:ip:xlslice:1.0",
-            "xci_name": "system_freqNCO_0",
-            "parameters": {
-              "DIN_FROM": {
-                "value": "576"
-              },
-              "DIN_TO": {
-                "value": "576"
-              },
-              "DIN_WIDTH": {
-                "value": "1024"
-              },
-              "DOUT_WIDTH": {
-                "value": "1"
-              }
-            }
-          },
-          "signalSelector_0": {
-            "vlnv": "xilinx.com:module_ref:signalSelector:1.0",
-            "xci_name": "system_signalSelector_0_0",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "signalSelector",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk_i": {
-                "direction": "I"
-              },
-              "selector": {
-                "direction": "I"
-              },
-              "input_0": {
-                "direction": "I",
-                "left": "13",
-                "right": "0"
-              },
-              "input_1": {
-                "direction": "I",
-                "left": "13",
-                "right": "0"
-              },
-              "output_o": {
-                "direction": "O",
-                "left": "13",
-                "right": "0"
-              }
-            }
-          }
-        },
-        "nets": {
-          "selector_0_Dout": {
-            "ports": [
-              "selector_0/Dout",
-              "signalSelector_0/selector"
-            ]
-          },
-          "axi_cfg_register_0_cfg_data": {
-            "ports": [
-              "Din",
-              "selector_0/Din"
-            ]
-          },
-          "DataAcquisition_adc_clk": {
-            "ports": [
-              "clk_i",
-              "signalSelector_0/clk_i"
-            ]
-          },
-          "NCO_0_sine_output": {
-            "ports": [
-              "input_0",
-              "signalSelector_0/input_0"
-            ]
-          },
-          "comparator_0_outputTest": {
-            "ports": [
-              "input_1",
-              "signalSelector_0/input_1"
-            ]
-          },
-          "signalSelector_0_output_o": {
-            "ports": [
-              "signalSelector_0/output_o",
-              "output_o"
-            ]
-          }
-        }
-      },
-      "signalSelector_CHB": {
-        "ports": {
-          "Din": {
-            "direction": "I",
-            "left": "1023",
-            "right": "0"
-          },
-          "clk_i": {
-            "direction": "I"
-          },
-          "input_0": {
-            "direction": "I",
-            "left": "13",
-            "right": "0"
-          },
-          "input_1": {
-            "direction": "I",
-            "left": "13",
-            "right": "0"
-          },
-          "output_o": {
-            "direction": "O",
-            "left": "13",
-            "right": "0"
-          }
-        },
-        "components": {
-          "selector_1": {
-            "vlnv": "xilinx.com:ip:xlslice:1.0",
-            "xci_name": "system_selector_0_0",
-            "parameters": {
-              "DIN_FROM": {
-                "value": "608"
-              },
-              "DIN_TO": {
-                "value": "608"
-              },
-              "DIN_WIDTH": {
-                "value": "1024"
-              },
-              "DOUT_WIDTH": {
-                "value": "1"
-              }
-            }
-          },
-          "signalSelector_1": {
-            "vlnv": "xilinx.com:module_ref:signalSelector:1.0",
-            "xci_name": "system_signalSelector_0_1",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "signalSelector",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk_i": {
-                "direction": "I"
-              },
-              "selector": {
-                "direction": "I"
-              },
-              "input_0": {
-                "direction": "I",
-                "left": "13",
-                "right": "0"
-              },
-              "input_1": {
-                "direction": "I",
-                "left": "13",
-                "right": "0"
-              },
-              "output_o": {
-                "direction": "O",
-                "left": "13",
-                "right": "0"
-              }
-            }
-          }
-        },
-        "nets": {
-          "selector_1_Dout": {
-            "ports": [
-              "selector_1/Dout",
-              "signalSelector_1/selector"
-            ]
-          },
-          "axi_cfg_register_0_cfg_data": {
-            "ports": [
-              "Din",
-              "selector_1/Din"
-            ]
-          },
-          "DataAcquisition_adc_clk": {
-            "ports": [
-              "clk_i",
-              "signalSelector_1/clk_i"
-            ]
-          },
-          "NCO_0_squareTest": {
-            "ports": [
-              "input_0",
-              "signalSelector_1/input_0"
-            ]
-          },
-          "phaseDetector_0_outputTest": {
-            "ports": [
-              "input_1",
-              "signalSelector_1/input_1"
-            ]
-          },
-          "signalSelector_1_output_o": {
-            "ports": [
-              "signalSelector_1/output_o",
-              "output_o"
             ]
           }
         }
@@ -3758,12 +4062,6 @@
           "DDR",
           "PS7/DDR"
         ]
-      },
-      "PS7_M00_AXI": {
-        "interface_ports": [
-          "PS7/M00_AXI",
-          "axi_cfg_register_0/S_AXI"
-        ]
       }
     },
     "nets": {
@@ -3851,18 +4149,6 @@
           "dac_dat_o"
         ]
       },
-      "PS7_S00_ARESETN": {
-        "ports": [
-          "PS7/S00_ARESETN",
-          "axi_cfg_register_0/aresetn"
-        ]
-      },
-      "PS7_FCLK_CLK0": {
-        "ports": [
-          "PS7/FCLK_CLK0",
-          "axi_cfg_register_0/aclk"
-        ]
-      },
       "s_axis_tvalid_1": {
         "ports": [
           "DataAcquisition/m_axis_tvalid",
@@ -3871,11 +4157,11 @@
       },
       "axi_cfg_register_0_cfg_data": {
         "ports": [
-          "axi_cfg_register_0/cfg_data",
+          "PS7/cfg_data",
           "biquadFilter/Din",
           "PLL/Din",
-          "signalSelector_CHA/Din",
-          "signalSelector_CHB/Din"
+          "DataAcquisition/Din",
+          "SignalGenerator/Din"
         ]
       },
       "DataAcquisition_adc_clk": {
@@ -3883,51 +4169,14 @@
           "DataAcquisition/adc_clk",
           "SignalGenerator/clk_in1",
           "biquadFilter/clk_i",
-          "PLL/clk_i",
-          "signalSelector_CHA/clk_i",
-          "signalSelector_CHB/clk_i"
+          "PLL/clk_i"
         ]
       },
       "biquadFilter_output_o": {
         "ports": [
           "biquadFilter/output_o",
-          "PLL/input_i"
-        ]
-      },
-      "signalSelector_0_output_o": {
-        "ports": [
-          "signalSelector_CHA/output_o",
-          "SignalGenerator/output_CHA"
-        ]
-      },
-      "signalSelector_1_output_o": {
-        "ports": [
-          "signalSelector_CHB/output_o",
+          "PLL/input_i",
           "SignalGenerator/output_CHB"
-        ]
-      },
-      "NCO_0_sine_output": {
-        "ports": [
-          "PLL/sine_output",
-          "signalSelector_CHA/input_0"
-        ]
-      },
-      "comparator_0_outputTest": {
-        "ports": [
-          "PLL/comparator",
-          "signalSelector_CHA/input_1"
-        ]
-      },
-      "NCO_0_squareTest": {
-        "ports": [
-          "PLL/squareTest",
-          "signalSelector_CHB/input_0"
-        ]
-      },
-      "phaseDetector_0_outputTest": {
-        "ports": [
-          "PLL/errorDAC",
-          "signalSelector_CHB/input_1"
         ]
       },
       "DataAcquisition_output_CHA": {
@@ -3935,6 +4184,17 @@
           "DataAcquisition/output_CHA",
           "biquadFilter/input_i"
         ]
+      },
+      "PLL_sine_output": {
+        "ports": [
+          "PLL/sine_output",
+          "SignalGenerator/output_CHA"
+        ]
+      }
+    },
+    "comments": {
+      "/": {
+        "comment_0": "PLL"
       }
     },
     "addressing": {
@@ -3945,7 +4205,7 @@
             "width": "32",
             "segments": {
               "SEG_axi_cfg_register_0_reg0": {
-                "address_block": "/axi_cfg_register_0/s_axi/reg0",
+                "address_block": "/PS7/axi_cfg_register_0/s_axi/reg0",
                 "offset": "0x40000000",
                 "range": "2K"
               }

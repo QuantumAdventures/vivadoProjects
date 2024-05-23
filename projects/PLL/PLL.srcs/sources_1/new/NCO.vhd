@@ -12,7 +12,6 @@ entity NCO is
 			  enable          : in  std_logic;
 			  delay           : in  std_logic_vector(7 downto 0);
 			  square_output   : out std_logic;
-			  squareDAC       : out std_logic_vector(13 downto 0);
 			  sine_output     : out std_logic_vector(13 downto 0));
 end NCO;
 
@@ -67,19 +66,12 @@ begin
 			if (enable = '0')  then
 				accumPhase <= (others => '0');
 				square_output <= '0';
-				squareDAC <= (others => '0');
 				sine_output <= (others => '0');
 				
 			elsif (enable = '1') then
 			
 				sine_output <= ROM_sine(to_integer(accumPhase(31 downto 24)) + to_integer(unsigned(delay)));
 				square_output <= NOT(accumPhase(31));
-				
-				if NOT(accumPhase(31)) = '1' then
-				    squareDAC <= "00001100110011";
-				else
-				    squareDAC <= "00000000000000";
-				end if;
 				
 				if error = "01" then
 				    accumPhase <= accumPhase+phaseStep+unsigned(phaseCorrection);

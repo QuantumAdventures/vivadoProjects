@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Thu Apr 25 15:40:02 2024
+-- Date        : Thu May 23 15:43:41 2024
 -- Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub {g:/Meu
---               Drive/redpitaya_guide-master/projects/PLL/PLL.srcs/sources_1/bd/system/ip/system_phaseDetector_0_0/system_phaseDetector_0_0_stub.vhdl}
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/PLL/PLL.srcs/sources_1/bd/system/ip/system_phaseDetector_0_0/system_phaseDetector_0_0_stub.vhdl
 -- Design      : system_phaseDetector_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1
@@ -17,7 +17,6 @@ entity system_phaseDetector_0_0 is
     clk_i : in STD_LOGIC;
     clk_ref : in STD_LOGIC;
     clk_reg : in STD_LOGIC;
-    errorDAC : out STD_LOGIC_VECTOR ( 13 downto 0 );
     phaseError : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
 
@@ -27,7 +26,7 @@ architecture stub of system_phaseDetector_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk_i,clk_ref,clk_reg,errorDAC[13:0],phaseError[1:0]";
+attribute black_box_pad_pin of stub : architecture is "clk_i,clk_ref,clk_reg,phaseError[1:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "phaseDetector,Vivado 2020.1";
 begin

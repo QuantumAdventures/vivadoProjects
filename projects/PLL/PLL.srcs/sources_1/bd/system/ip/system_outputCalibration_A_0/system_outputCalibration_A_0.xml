@@ -14,7 +14,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0a2605ff</spirit:value>
+            <spirit:value>9:935c89ed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -25,7 +25,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0a2605ff</spirit:value>
+            <spirit:value>9:935c89ed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -41,11 +41,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Apr 10 18:19:52 UTC 2024</spirit:value>
+            <spirit:value>Thu May 23 18:38:24 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0a2605ff</spirit:value>
+            <spirit:value>9:935c89ed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -57,7 +57,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4fd16888</spirit:value>
+            <spirit:value>9:30c947ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -73,11 +73,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Apr 10 18:19:52 UTC 2024</spirit:value>
+            <spirit:value>Thu May 23 18:38:24 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4fd16888</spirit:value>
+            <spirit:value>9:30c947ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -91,11 +91,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Apr 10 18:20:48 UTC 2024</spirit:value>
+            <spirit:value>Thu May 23 18:43:46 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0a2605ff</spirit:value>
+            <spirit:value>9:935c89ed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -132,6 +132,40 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>intercept_correction</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>slope_correction</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>output_o</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
@@ -149,18 +183,6 @@
         </spirit:wire>
       </spirit:port>
     </spirit:ports>
-    <spirit:modelParameters>
-      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="std_logic_vector(31 downto 0)">
-        <spirit:name>intercept_correction</spirit:name>
-        <spirit:displayName>Intercept Correction</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.intercept_correction">4278493492</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="std_logic_vector(31 downto 0)">
-        <spirit:name>slope_correction</spirit:name>
-        <spirit:displayName>Slope Correction</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.slope_correction">1900818898</spirit:value>
-      </spirit:modelParameter>
-    </spirit:modelParameters>
   </spirit:model>
   <spirit:fileSets>
     <spirit:fileSet>
@@ -219,16 +241,6 @@
   <spirit:description>xilinx.com:module_ref:outputCalibration:1.0</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
-      <spirit:name>intercept_correction</spirit:name>
-      <spirit:displayName>Intercept Correction</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.intercept_correction">4278493492</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>slope_correction</spirit:name>
-      <spirit:displayName>Slope Correction</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.slope_correction">1900818898</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">system_outputCalibration_A_0</spirit:value>
     </spirit:parameter>
@@ -238,10 +250,6 @@
       <xilinx:displayName>outputCalibration_v1_0</xilinx:displayName>
       <xilinx:definitionSource>module_ref</xilinx:definitionSource>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:configElementInfos>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.intercept_correction" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.slope_correction" xilinx:valueSource="user"/>
-      </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>

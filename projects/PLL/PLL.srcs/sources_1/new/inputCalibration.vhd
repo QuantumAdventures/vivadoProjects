@@ -8,10 +8,9 @@ use ieee_proposed.fixed_pkg.all;
 
 
 entity inputCalibration is
-	generic(
-			intercept_correction : std_logic_vector(31 downto 0);
-			slope_correction     : std_logic_vector(31 downto 0));
     port(clk_i   : in  std_logic;
+        intercept_correction : std_logic_vector(31 downto 0);
+        slope_correction     : std_logic_vector(31 downto 0);
         input_i  : in  std_logic_vector(13 downto 0);
         output_o    : out STD_LOGIC_VECTOR(13 downto 0)
     );

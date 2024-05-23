@@ -60,7 +60,6 @@ module system_comparator_0_0 (
   positive_offset,
   negative_offset,
   input_i,
-  outputDAC,
   output_o
 );
 
@@ -68,7 +67,6 @@ input wire clk_i;
 input wire [13 : 0] positive_offset;
 input wire [13 : 0] negative_offset;
 input wire [13 : 0] input_i;
-output wire [13 : 0] outputDAC;
 output wire output_o;
 
   comparator #(
@@ -78,7 +76,6 @@ output wire output_o;
     .positive_offset(positive_offset),
     .negative_offset(negative_offset),
     .input_i(input_i),
-    .outputDAC(outputDAC),
     .output_o(output_o)
   );
 endmodule

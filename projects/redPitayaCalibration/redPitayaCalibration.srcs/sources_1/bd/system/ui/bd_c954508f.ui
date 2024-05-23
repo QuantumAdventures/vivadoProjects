@@ -1,8 +1,11 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.10814",
-   "Default View_TopLeft":"-115,15",
+   "Default View_ScaleFactor":"0.682143",
+   "Default View_TopLeft":"-148,-126",
    "ExpandedHierarchyInLayout":"",
+   "comment_0":"Red Pitaya Calibration",
+   "commentid":"comment_0|",
+   "font_comment_0":"37",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
 preplace port Vp_Vn -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
@@ -73,6 +76,7 @@ preplace netloc DataAcquisition_output_CHB 1 1 1 330 140n
 preplace netloc DataAcquisition_output_CHA 1 1 1 310 120n
 preplace netloc processing_system7_0_DDR 1 2 2 610J 130 NJ
 preplace netloc processing_system7_0_FIXED_IO 1 2 2 NJ 160 NJ
+preplace cgraphic comment_0 place top 365 -47 textcolor 4 linecolor 3 linewidth 2
 levelinfo -pg 1 0 170 480 780 940
 pagesize -pg 1 -db -bbox -sgen -160 0 1100 840
 "
@@ -81,4 +85,7 @@ pagesize -pg 1 -db -bbox -sgen -160 0 1100 840
    "da_axi4_cnt":"1",
    "da_board_cnt":"2",
    "da_ps7_cnt":"1"
+}
+{
+   "/comment_0":"comment_0"
 }
