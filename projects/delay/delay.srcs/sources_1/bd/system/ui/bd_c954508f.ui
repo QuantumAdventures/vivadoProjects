@@ -1,0 +1,77 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.991022",
+   "Default View_TopLeft":"242,-135",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port Vp_Vn -pg 1 -lvl 0 -x -250 -y 270 -defaultsOSRD
+preplace port Vaux0 -pg 1 -lvl 0 -x -250 -y 20 -defaultsOSRD
+preplace port Vaux1 -pg 1 -lvl 0 -x -250 -y 50 -defaultsOSRD
+preplace port Vaux9 -pg 1 -lvl 0 -x -250 -y 110 -defaultsOSRD
+preplace port Vaux8 -pg 1 -lvl 0 -x -250 -y 80 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1490 -y 350 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1490 -y 380 -defaultsOSRD
+preplace port gpio_rtl_0 -pg 1 -lvl 6 -x 1490 -y 200 -defaultsOSRD
+preplace port gpio_rtl_1 -pg 1 -lvl 6 -x 1490 -y 230 -defaultsOSRD
+preplace port adc_clk_p_i -pg 1 -lvl 0 -x -250 -y 150 -defaultsOSRD
+preplace port adc_clk_n_i -pg 1 -lvl 0 -x -250 -y 180 -defaultsOSRD
+preplace port adc_enc_p_o -pg 1 -lvl 6 -x 1490 -y 80 -defaultsOSRD
+preplace port adc_enc_n_o -pg 1 -lvl 6 -x 1490 -y 50 -defaultsOSRD
+preplace port adc_csn_o -pg 1 -lvl 6 -x 1490 -y 20 -defaultsOSRD
+preplace port dac_clk_o -pg 1 -lvl 6 -x 1490 -y 420 -defaultsOSRD
+preplace port dac_rst_o -pg 1 -lvl 6 -x 1490 -y 450 -defaultsOSRD
+preplace port dac_sel_o -pg 1 -lvl 6 -x 1490 -y 480 -defaultsOSRD
+preplace port dac_wrt_o -pg 1 -lvl 6 -x 1490 -y 510 -defaultsOSRD
+preplace portBus adc_dat_a_i -pg 1 -lvl 0 -x -250 -y 210 -defaultsOSRD
+preplace portBus adc_dat_b_i -pg 1 -lvl 0 -x -250 -y 240 -defaultsOSRD
+preplace portBus dac_dat_o -pg 1 -lvl 6 -x 1490 -y 540 -defaultsOSRD
+preplace portBus dac_pwm_o -pg 1 -lvl 6 -x 1490 -y 110 -defaultsOSRD
+preplace portBus exp_p_tri_io -pg 1 -lvl 6 -x 1490 -y 170 -defaultsOSRD
+preplace portBus exp_n_tri_io -pg 1 -lvl 6 -x 1490 -y 140 -defaultsOSRD
+preplace portBus daisy_p_o -pg 1 -lvl 6 -x 1490 -y 600 -defaultsOSRD
+preplace portBus daisy_n_o -pg 1 -lvl 6 -x 1490 -y 630 -defaultsOSRD
+preplace portBus daisy_p_i -pg 1 -lvl 0 -x -250 -y 600 -defaultsOSRD
+preplace portBus daisy_n_i -pg 1 -lvl 0 -x -250 -y 630 -defaultsOSRD
+preplace portBus led_o -pg 1 -lvl 6 -x 1490 -y 260 -defaultsOSRD
+preplace inst SignalGenerator -pg 1 -lvl 5 -x 1330 -y 480 -defaultsOSRD
+preplace inst DataAcquisition -pg 1 -lvl 1 -x 70 -y 210 -defaultsOSRD
+preplace inst PS7 -pg 1 -lvl 3 -x 730 -y 380 -defaultsOSRD
+preplace inst necessaryStuff -pg 1 -lvl 5 -x 1330 -y 628 -defaultsOSRD
+preplace inst decimator_DualChannel_0 -pg 1 -lvl 2 -x 407 -y 230 -defaultsOSRD
+preplace inst delay -pg 1 -lvl 2 -x 407 -y 360 -defaultsOSRD
+preplace inst delay_0 -pg 1 -lvl 3 -x 730 -y 210 -defaultsOSRD
+preplace netloc daisy_p_i_1 1 0 5 NJ 600 NJ 600 NJ 600 NJ 600 1090
+preplace netloc daisy_n_i_1 1 0 5 NJ 630 NJ 630 NJ 630 NJ 630 1090
+preplace netloc util_ds_buf_2_OBUF_DS_P 1 5 1 1470J 600n
+preplace netloc util_ds_buf_2_OBUF_DS_N 1 5 1 1470J 630n
+preplace netloc adc_clk_p_i_1 1 0 1 -230J 150n
+preplace netloc adc_clk_n_i_1 1 0 1 -230J 180n
+preplace netloc adc_dat_a_i_1 1 0 1 NJ 210
+preplace netloc adc_dat_b_i_1 1 0 1 -230J 230n
+preplace netloc axis_red_pitaya_adc_0_adc_csn 1 1 5 220J 130 550J 20 NJ 20 N 20 NJ
+preplace netloc axis_red_pitaya_dac_0_dac_clk 1 5 1 1470J 420n
+preplace netloc axis_red_pitaya_dac_0_dac_rst 1 5 1 1470J 450n
+preplace netloc axis_red_pitaya_dac_0_dac_sel 1 5 1 NJ 480
+preplace netloc axis_red_pitaya_dac_0_dac_wrt 1 5 1 1470J 500n
+preplace netloc axis_red_pitaya_dac_0_dac_dat 1 5 1 1470J 520n
+preplace netloc s_axis_tvalid_1 1 1 4 210 110 NJ 110 NJ 110 1110
+preplace netloc axi_cfg_register_0_cfg_data 1 0 5 -230 300 220 450 NJ 450 870 520 N
+preplace netloc DataAcquisition_adc_clk 1 1 4 230 140 550 300 N 300 1090
+preplace netloc DataAcquisition_output_CHA 1 1 1 N 230
+preplace netloc decimator_DualChannel_0_enable 1 2 1 570 200n
+preplace netloc decimator_DualChannel_0_output_0 1 2 3 560 120 N 120 1100
+preplace netloc delay_Dout 1 2 1 580J 240n
+preplace netloc DataAcquisition_output_CHB 1 1 1 N 250
+preplace netloc delay_0_output_0 1 3 2 NJ 210 1070
+preplace netloc processing_system7_0_DDR 1 3 3 NJ 360 1080 350 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 3 3 NJ 380 N 380 NJ
+levelinfo -pg 1 -250 70 407 730 1050 1330 1490
+pagesize -pg 1 -db -bbox -sgen -410 -60 1650 1400
+"
+}
+{
+   "da_axi4_cnt":"1",
+   "da_board_cnt":"2",
+   "da_ps7_cnt":"1"
+}

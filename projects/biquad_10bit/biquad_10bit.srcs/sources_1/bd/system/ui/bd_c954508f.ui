@@ -1,0 +1,103 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.868182",
+   "Default View_TopLeft":"-279,162",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port Vp_Vn -pg 1 -lvl 0 -x -130 -y 140 -defaultsOSRD
+preplace port Vaux0 -pg 1 -lvl 0 -x -130 -y 20 -defaultsOSRD
+preplace port Vaux1 -pg 1 -lvl 0 -x -130 -y 50 -defaultsOSRD
+preplace port Vaux9 -pg 1 -lvl 0 -x -130 -y 110 -defaultsOSRD
+preplace port Vaux8 -pg 1 -lvl 0 -x -130 -y 80 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 2080 -y 60 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 2080 -y 90 -defaultsOSRD
+preplace port gpio_rtl_0 -pg 1 -lvl 5 -x 2080 -y 520 -defaultsOSRD
+preplace port gpio_rtl_1 -pg 1 -lvl 5 -x 2080 -y 550 -defaultsOSRD
+preplace port adc_clk_p_i -pg 1 -lvl 0 -x -130 -y 210 -defaultsOSRD
+preplace port adc_clk_n_i -pg 1 -lvl 0 -x -130 -y 240 -defaultsOSRD
+preplace port adc_enc_p_o -pg 1 -lvl 5 -x 2080 -y 120 -defaultsOSRD
+preplace port adc_enc_n_o -pg 1 -lvl 5 -x 2080 -y 20 -defaultsOSRD
+preplace port adc_csn_o -pg 1 -lvl 5 -x 2080 -y 160 -defaultsOSRD
+preplace port dac_clk_o -pg 1 -lvl 5 -x 2080 -y 230 -defaultsOSRD
+preplace port dac_rst_o -pg 1 -lvl 5 -x 2080 -y 260 -defaultsOSRD
+preplace port dac_sel_o -pg 1 -lvl 5 -x 2080 -y 290 -defaultsOSRD
+preplace port dac_wrt_o -pg 1 -lvl 5 -x 2080 -y 320 -defaultsOSRD
+preplace portBus adc_dat_a_i -pg 1 -lvl 0 -x -130 -y 270 -defaultsOSRD
+preplace portBus adc_dat_b_i -pg 1 -lvl 0 -x -130 -y 300 -defaultsOSRD
+preplace portBus dac_dat_o -pg 1 -lvl 5 -x 2080 -y 350 -defaultsOSRD
+preplace portBus dac_pwm_o -pg 1 -lvl 5 -x 2080 -y 190 -defaultsOSRD
+preplace portBus exp_p_tri_io -pg 1 -lvl 5 -x 2080 -y 410 -defaultsOSRD
+preplace portBus exp_n_tri_io -pg 1 -lvl 5 -x 2080 -y 380 -defaultsOSRD
+preplace portBus daisy_p_o -pg 1 -lvl 5 -x 2080 -y 460 -defaultsOSRD
+preplace portBus daisy_n_o -pg 1 -lvl 5 -x 2080 -y 490 -defaultsOSRD
+preplace portBus daisy_p_i -pg 1 -lvl 0 -x -130 -y 470 -defaultsOSRD
+preplace portBus daisy_n_i -pg 1 -lvl 0 -x -130 -y 640 -defaultsOSRD
+preplace portBus led_o -pg 1 -lvl 5 -x 2080 -y 580 -defaultsOSRD
+preplace inst SignalGenerator -pg 1 -lvl 4 -x 1920 -y 290 -defaultsOSRD
+preplace inst DataAcquisition -pg 1 -lvl 1 -x 170 -y 272 -defaultsOSRD
+preplace inst PS7 -pg 1 -lvl 3 -x 1510 -y 80 -defaultsOSRD
+preplace inst biquadFilter_CHA -pg 1 -lvl 3 -x 1510 -y 560 -defaultsOSRD
+preplace inst necessaryStuff -pg 1 -lvl 4 -x 1920 -y 480 -defaultsOSRD
+preplace inst decimator_DualChannel_0 -pg 1 -lvl 2 -x 1150 -y 380 -defaultsOSRD
+preplace inst biquadFilter_CHB -pg 1 -lvl 3 -x 1510 -y 360 -defaultsOSRD
+preplace inst DataAcquisition|axis_red_pitaya_adc_0 -pg 1 -lvl 1 -x 250 -y 672 -defaultsOSRD
+preplace inst DataAcquisition|dat_CHA -pg 1 -lvl 1 -x 250 -y 412 -defaultsOSRD
+preplace inst DataAcquisition|dat_CHB -pg 1 -lvl 1 -x 250 -y 512 -defaultsOSRD
+preplace inst DataAcquisition|calibrationConstants -pg 1 -lvl 1 -x 250 -y 292 -defaultsOSRD
+preplace inst DataAcquisition|inputCalibration_A -pg 1 -lvl 2 -x 600 -y 292 -defaultsOSRD
+preplace inst DataAcquisition|inputCalibration_B -pg 1 -lvl 2 -x 600 -y 482 -defaultsOSRD
+preplace netloc daisy_p_i_1 1 0 4 -80J 172 NJ 172 NJ 172 1660J
+preplace netloc daisy_n_i_1 1 0 4 -110J 792 NJ 792 1320J 468 1640J
+preplace netloc util_ds_buf_2_OBUF_DS_P 1 4 1 2060J 460n
+preplace netloc util_ds_buf_2_OBUF_DS_N 1 4 1 NJ 490
+preplace netloc adc_clk_p_i_1 1 0 1 -60J 210n
+preplace netloc adc_clk_n_i_1 1 0 1 -70J 240n
+preplace netloc adc_dat_a_i_1 1 0 1 -90J 270n
+preplace netloc adc_dat_b_i_1 1 0 1 -100J 300n
+preplace netloc axis_red_pitaya_adc_0_adc_csn 1 1 4 940J 160 NJ 160 NJ 160 NJ
+preplace netloc axis_red_pitaya_dac_0_dac_clk 1 4 1 2060J 230n
+preplace netloc axis_red_pitaya_dac_0_dac_rst 1 4 1 2060J 260n
+preplace netloc axis_red_pitaya_dac_0_dac_sel 1 4 1 NJ 290
+preplace netloc axis_red_pitaya_dac_0_dac_wrt 1 4 1 2060J 310n
+preplace netloc axis_red_pitaya_dac_0_dac_dat 1 4 1 2060J 330n
+preplace netloc s_axis_tvalid_1 1 1 3 960J 248 NJ 248 1630
+preplace netloc axi_cfg_register_0_cfg_data 1 0 4 -80 802 NJ 802 1300 258 1640
+preplace netloc DataAcquisition_adc_clk 1 1 3 950 470 1310 268 1650J
+preplace netloc DataAcquisition_output_CHB 1 1 1 980 400n
+preplace netloc decimator_DualChannel_0_enable 1 2 1 1290 350n
+preplace netloc decimator_DualChannel_0_output_0 1 2 1 1280 350n
+preplace netloc decimator_DualChannel_0_output_1 1 2 1 N 370
+preplace netloc DataAcquisition_output_CHA 1 1 1 970 380n
+preplace netloc biquadFilter_CHB_output_o 1 3 1 1670 290n
+preplace netloc biquadFilter_CHA_output_o 1 3 1 1680 310n
+preplace netloc processing_system7_0_DDR 1 3 2 NJ 60 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 3 2 1630J 90 NJ
+preplace netloc DataAcquisition|axis_red_pitaya_adc_0_adc_clk 1 1 2 420 572 NJ
+preplace netloc DataAcquisition|axis_red_pitaya_adc_0_adc_csn 1 1 2 430 652 NJ
+preplace netloc DataAcquisition|adc_clk_p_i_1 1 0 1 N 642
+preplace netloc DataAcquisition|adc_clk_n_i_1 1 0 1 N 662
+preplace netloc DataAcquisition|adc_dat_a_i_1 1 0 1 N 682
+preplace netloc DataAcquisition|adc_dat_b_i_1 1 0 1 N 702
+preplace netloc DataAcquisition|axis_red_pitaya_adc_0_m_axis_tvalid 1 1 2 N 672 NJ
+preplace netloc DataAcquisition|axis_red_pitaya_adc_0_m_axis_tdata 1 0 2 100 572 400
+preplace netloc DataAcquisition|inputCalibration_A_output_o 1 2 1 780 292n
+preplace netloc DataAcquisition|dat_CHA_Dout 1 1 1 430J 322n
+preplace netloc DataAcquisition|dat_CHB_Dout 1 1 1 NJ 512
+preplace netloc DataAcquisition|inputCalibration_B_output_o 1 2 1 770 482n
+preplace netloc DataAcquisition|intCorrCHA_Dout 1 1 1 410 262n
+preplace netloc DataAcquisition|inSlpCorrCHA_Dout 1 1 1 N 302
+preplace netloc DataAcquisition|inIntCorrCHB_Dout 1 1 1 400 282n
+preplace netloc DataAcquisition|inSlpCorrCHB_Dout 1 1 1 410 322n
+preplace netloc DataAcquisition|Din_1 1 0 1 90 292n
+levelinfo -pg 1 -130 170 1150 1510 1920 2080
+levelinfo -hier DataAcquisition * 250 600 *
+pagesize -pg 1 -db -bbox -sgen -280 0 2240 1220
+pagesize -hier DataAcquisition -db -bbox -sgen 60 202 810 772
+"
+}
+{
+   "da_axi4_cnt":"1",
+   "da_board_cnt":"2",
+   "da_ps7_cnt":"1"
+}
