@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# decimator_DualChannel, delay, inputCalibration, inputCalibration, outputCalibration, outputCalibration
+# decimator_DualChannel, inputCalibration, inputCalibration, outputCalibration, outputCalibration, delay
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -369,6 +369,140 @@ proc create_hier_cell_necessaryStuff { parentCell nameHier } {
   connect_bd_net -net util_ds_buf_1_IBUF_OUT [get_bd_pins util_ds_buf_1/IBUF_OUT] [get_bd_pins util_ds_buf_2/OBUF_IN]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_N [get_bd_pins daisy_n_o] [get_bd_pins util_ds_buf_2/OBUF_DS_N]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_P [get_bd_pins daisy_p_o] [get_bd_pins util_ds_buf_2/OBUF_DS_P]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: delay
+proc create_hier_cell_delay { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_delay() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir I -from 1023 -to 0 Din
+  create_bd_pin -dir O -from 13 -to 0 Dout
+  create_bd_pin -dir I clkEnable
+  create_bd_pin -dir I -type clk clka
+  create_bd_pin -dir I -from 13 -to 0 input_0
+
+  # Create instance: blk_mem_gen_0, and set properties
+  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
+  set_property -dict [ list \
+   CONFIG.Assume_Synchronous_Clk {true} \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Read_Width_A {16} \
+   CONFIG.Read_Width_B {16} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Width_A {16} \
+   CONFIG.Write_Width_B {16} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_0
+
+  # Create instance: delayEnable, and set properties
+  set delayEnable [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 delayEnable ]
+  set_property -dict [ list \
+   CONFIG.DIN_WIDTH {1024} \
+ ] $delayEnable
+
+  # Create instance: delaySize, and set properties
+  set delaySize [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 delaySize ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {44} \
+   CONFIG.DIN_TO {32} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {13} \
+ ] $delaySize
+
+  # Create instance: delay_0, and set properties
+  set block_name delay
+  set block_cell_name delay_0
+  if { [catch {set delay_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $delay_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.input_size {14} \
+ ] $delay_0
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+ ] $xlconstant_1
+
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {13} \
+   CONFIG.DIN_WIDTH {16} \
+   CONFIG.DOUT_WIDTH {14} \
+ ] $xlslice_0
+
+  # Create port connections
+  connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins clka] [get_bd_pins blk_mem_gen_0/clka] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins delay_0/clk_i]
+  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins Din] [get_bd_pins delayEnable/Din] [get_bd_pins delaySize/Din]
+  connect_bd_net -net blk_mem_gen_0_doutb [get_bd_pins blk_mem_gen_0/doutb] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net decimator_DualChannel_0_enable [get_bd_pins clkEnable] [get_bd_pins delay_0/clkEnable]
+  connect_bd_net -net decimator_DualChannel_0_output_0 [get_bd_pins input_0] [get_bd_pins delay_0/input_0]
+  connect_bd_net -net delay_0_address_rd [get_bd_pins blk_mem_gen_0/addrb] [get_bd_pins delay_0/address_rd]
+  connect_bd_net -net delay_0_address_wr [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins delay_0/address_wr]
+  connect_bd_net -net delay_0_output_0 [get_bd_pins blk_mem_gen_0/dina] [get_bd_pins delay_0/output_0]
+  connect_bd_net -net delay_Dout [get_bd_pins delaySize/Dout] [get_bd_pins delay_0/delay]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins blk_mem_gen_0/wea] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins blk_mem_gen_0/web] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins Dout] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlslice_1_Dout [get_bd_pins delayEnable/Dout] [get_bd_pins delay_0/enable]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -1456,28 +1590,8 @@ proc create_root_design { parentCell } {
    CONFIG.output_size {14} \
  ] $decimator_DualChannel_0
 
-  # Create instance: delay, and set properties
-  set delay [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 delay ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {42} \
-   CONFIG.DIN_TO {32} \
-   CONFIG.DIN_WIDTH {1024} \
-   CONFIG.DOUT_WIDTH {11} \
- ] $delay
-
-  # Create instance: delay_0, and set properties
-  set block_name delay
-  set block_cell_name delay_0
-  if { [catch {set delay_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $delay_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.input_size {14} \
- ] $delay_0
+  # Create instance: delay
+  create_hier_cell_delay [current_bd_instance .] delay
 
   # Create instance: necessaryStuff
   create_hier_cell_necessaryStuff [current_bd_instance .] necessaryStuff
@@ -1487,7 +1601,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins PS7/FIXED_IO]
 
   # Create port connections
-  connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins DataAcquisition/adc_clk] [get_bd_pins SignalGenerator/clk_in1] [get_bd_pins decimator_DualChannel_0/clk_i] [get_bd_pins delay_0/clk_i]
+  connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins DataAcquisition/adc_clk] [get_bd_pins SignalGenerator/clk_in1] [get_bd_pins decimator_DualChannel_0/clk_i] [get_bd_pins delay/clka]
   connect_bd_net -net DataAcquisition_output_CHA [get_bd_pins DataAcquisition/output_CHA] [get_bd_pins decimator_DualChannel_0/input_0]
   connect_bd_net -net DataAcquisition_output_CHB [get_bd_pins DataAcquisition/output_CHB] [get_bd_pins decimator_DualChannel_0/input_1]
   connect_bd_net -net adc_clk_n_i_1 [get_bd_ports adc_clk_n_i] [get_bd_pins DataAcquisition/adc_clk_n_i]
@@ -1503,13 +1617,12 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axis_red_pitaya_dac_0_dac_wrt [get_bd_ports dac_wrt_o] [get_bd_pins SignalGenerator/dac_wrt_o]
   connect_bd_net -net daisy_n_i_1 [get_bd_ports daisy_n_i] [get_bd_pins necessaryStuff/daisy_n_i]
   connect_bd_net -net daisy_p_i_1 [get_bd_ports daisy_p_i] [get_bd_pins necessaryStuff/daisy_p_i]
-  connect_bd_net -net decimator_DualChannel_0_enable [get_bd_pins decimator_DualChannel_0/enable] [get_bd_pins delay_0/clkEnable]
-  connect_bd_net -net decimator_DualChannel_0_output_0 [get_bd_pins SignalGenerator/output_CHB] [get_bd_pins decimator_DualChannel_0/output_0] [get_bd_pins delay_0/input_0]
-  connect_bd_net -net delay_0_output_0 [get_bd_pins SignalGenerator/output_CHA] [get_bd_pins delay_0/output_0]
-  connect_bd_net -net delay_Dout [get_bd_pins delay/Dout] [get_bd_pins delay_0/delay]
+  connect_bd_net -net decimator_DualChannel_0_enable [get_bd_pins decimator_DualChannel_0/enable] [get_bd_pins delay/clkEnable]
+  connect_bd_net -net decimator_DualChannel_0_output_0 [get_bd_pins SignalGenerator/output_CHB] [get_bd_pins decimator_DualChannel_0/output_0] [get_bd_pins delay/input_0]
   connect_bd_net -net s_axis_tvalid_1 [get_bd_pins DataAcquisition/m_axis_tvalid] [get_bd_pins SignalGenerator/s_axis_tvalid]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_N [get_bd_ports daisy_n_o] [get_bd_pins necessaryStuff/daisy_n_o]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_P [get_bd_ports daisy_p_o] [get_bd_pins necessaryStuff/daisy_p_o]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins SignalGenerator/output_CHA] [get_bd_pins delay/Dout]
 
   # Create address segments
   assign_bd_address -offset 0x40000000 -range 0x00000800 -target_address_space [get_bd_addr_spaces PS7/processing_system7_0/Data] [get_bd_addr_segs PS7/axi_cfg_register_0/s_axi/reg0] -force

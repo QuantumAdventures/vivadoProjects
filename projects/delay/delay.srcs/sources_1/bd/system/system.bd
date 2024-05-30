@@ -53,8 +53,15 @@
         "util_ds_buf_2": ""
       },
       "decimator_DualChannel_0": "",
-      "delay": "",
-      "delay_0": ""
+      "delay": {
+        "delaySize": "",
+        "delayEnable": "",
+        "xlconstant_0": "",
+        "xlconstant_1": "",
+        "blk_mem_gen_0": "",
+        "xlslice_0": "",
+        "delay_0": ""
+      }
     },
     "interface_ports": {
       "Vp_Vn": {
@@ -2869,16 +2876,16 @@
                   }
                 },
                 "interface_nets": {
-                  "s00_couplers_to_auto_pc": {
-                    "interface_ports": [
-                      "S_AXI",
-                      "auto_pc/S_AXI"
-                    ]
-                  },
                   "auto_pc_to_s00_couplers": {
                     "interface_ports": [
                       "M_AXI",
                       "auto_pc/M_AXI"
+                    ]
+                  },
+                  "s00_couplers_to_auto_pc": {
+                    "interface_ports": [
+                      "S_AXI",
+                      "auto_pc/S_AXI"
                     ]
                   }
                 },
@@ -2945,6 +2952,12 @@
           }
         },
         "interface_nets": {
+          "processing_system7_0_DDR": {
+            "interface_ports": [
+              "DDR",
+              "processing_system7_0/DDR"
+            ]
+          },
           "processing_system7_0_FIXED_IO": {
             "interface_ports": [
               "FIXED_IO",
@@ -2961,12 +2974,6 @@
             "interface_ports": [
               "ps7_0_axi_periph/M00_AXI",
               "axi_cfg_register_0/S_AXI"
-            ]
-          },
-          "processing_system7_0_DDR": {
-            "interface_ports": [
-              "DDR",
-              "processing_system7_0/DDR"
             ]
           }
         },
@@ -3153,53 +3160,15 @@
         }
       },
       "delay": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "system_xlslice_0_14",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "42"
-          },
-          "DIN_TO": {
-            "value": "32"
-          },
-          "DIN_WIDTH": {
-            "value": "1024"
-          },
-          "DOUT_WIDTH": {
-            "value": "11"
-          }
-        }
-      },
-      "delay_0": {
-        "vlnv": "xilinx.com:module_ref:delay:1.0",
-        "xci_name": "system_delay_0_0",
-        "parameters": {
-          "input_size": {
-            "value": "14"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "delay",
-          "boundary_crc": "0x0"
-        },
         "ports": {
-          "clk_i": {
+          "Din": {
             "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "125000000",
-                "value_src": "const_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
+            "left": "1023",
+            "right": "0"
+          },
+          "clka": {
+            "type": "clk",
+            "direction": "I"
           },
           "clkEnable": {
             "direction": "I"
@@ -3209,30 +3178,292 @@
             "left": "13",
             "right": "0"
           },
-          "delay": {
-            "direction": "I",
-            "left": "10",
-            "right": "0"
-          },
-          "output_0": {
+          "Dout": {
             "direction": "O",
             "left": "13",
             "right": "0"
+          }
+        },
+        "components": {
+          "delaySize": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "xci_name": "system_xlslice_0_14",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "44"
+              },
+              "DIN_TO": {
+                "value": "32"
+              },
+              "DIN_WIDTH": {
+                "value": "1024"
+              },
+              "DOUT_WIDTH": {
+                "value": "13"
+              }
+            }
+          },
+          "delayEnable": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "xci_name": "system_xlslice_1_0",
+            "parameters": {
+              "DIN_WIDTH": {
+                "value": "1024"
+              }
+            }
+          },
+          "xlconstant_0": {
+            "vlnv": "xilinx.com:ip:xlconstant:1.1",
+            "xci_name": "system_xlconstant_0_2"
+          },
+          "xlconstant_1": {
+            "vlnv": "xilinx.com:ip:xlconstant:1.1",
+            "xci_name": "system_xlconstant_0_3",
+            "parameters": {
+              "CONST_VAL": {
+                "value": "0"
+              }
+            }
+          },
+          "blk_mem_gen_0": {
+            "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+            "xci_name": "system_blk_mem_gen_0_0",
+            "parameters": {
+              "Assume_Synchronous_Clk": {
+                "value": "true"
+              },
+              "Enable_32bit_Address": {
+                "value": "false"
+              },
+              "Enable_A": {
+                "value": "Always_Enabled"
+              },
+              "Enable_B": {
+                "value": "Always_Enabled"
+              },
+              "Memory_Type": {
+                "value": "True_Dual_Port_RAM"
+              },
+              "Operating_Mode_B": {
+                "value": "READ_FIRST"
+              },
+              "Port_B_Clock": {
+                "value": "100"
+              },
+              "Port_B_Enable_Rate": {
+                "value": "100"
+              },
+              "Port_B_Write_Rate": {
+                "value": "50"
+              },
+              "Read_Width_A": {
+                "value": "16"
+              },
+              "Read_Width_B": {
+                "value": "16"
+              },
+              "Register_PortA_Output_of_Memory_Primitives": {
+                "value": "true"
+              },
+              "Register_PortB_Output_of_Memory_Primitives": {
+                "value": "true"
+              },
+              "Use_Byte_Write_Enable": {
+                "value": "false"
+              },
+              "Use_RSTA_Pin": {
+                "value": "false"
+              },
+              "Use_RSTB_Pin": {
+                "value": "false"
+              },
+              "Write_Width_A": {
+                "value": "16"
+              },
+              "Write_Width_B": {
+                "value": "16"
+              },
+              "use_bram_block": {
+                "value": "Stand_Alone"
+              }
+            }
+          },
+          "xlslice_0": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "xci_name": "system_xlslice_0_15",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "13"
+              },
+              "DIN_WIDTH": {
+                "value": "16"
+              },
+              "DOUT_WIDTH": {
+                "value": "14"
+              }
+            }
+          },
+          "delay_0": {
+            "vlnv": "xilinx.com:module_ref:delay:1.0",
+            "xci_name": "system_delay_0_0",
+            "parameters": {
+              "input_size": {
+                "value": "14"
+              }
+            },
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "delay",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk_i": {
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "enable": {
+                "direction": "I"
+              },
+              "clkEnable": {
+                "direction": "I"
+              },
+              "input_0": {
+                "direction": "I",
+                "left": "13",
+                "right": "0"
+              },
+              "delay": {
+                "direction": "I",
+                "left": "12",
+                "right": "0"
+              },
+              "address_wr": {
+                "direction": "O",
+                "left": "12",
+                "right": "0"
+              },
+              "address_rd": {
+                "direction": "O",
+                "left": "12",
+                "right": "0"
+              },
+              "output_0": {
+                "direction": "O",
+                "left": "15",
+                "right": "0"
+              }
+            }
+          }
+        },
+        "nets": {
+          "delay_Dout": {
+            "ports": [
+              "delaySize/Dout",
+              "delay_0/delay"
+            ]
+          },
+          "xlslice_1_Dout": {
+            "ports": [
+              "delayEnable/Dout",
+              "delay_0/enable"
+            ]
+          },
+          "delay_0_address_wr": {
+            "ports": [
+              "delay_0/address_wr",
+              "blk_mem_gen_0/addra"
+            ]
+          },
+          "delay_0_address_rd": {
+            "ports": [
+              "delay_0/address_rd",
+              "blk_mem_gen_0/addrb"
+            ]
+          },
+          "delay_0_output_0": {
+            "ports": [
+              "delay_0/output_0",
+              "blk_mem_gen_0/dina"
+            ]
+          },
+          "xlconstant_0_dout": {
+            "ports": [
+              "xlconstant_0/dout",
+              "blk_mem_gen_0/wea"
+            ]
+          },
+          "xlconstant_1_dout": {
+            "ports": [
+              "xlconstant_1/dout",
+              "blk_mem_gen_0/web"
+            ]
+          },
+          "blk_mem_gen_0_doutb": {
+            "ports": [
+              "blk_mem_gen_0/doutb",
+              "xlslice_0/Din"
+            ]
+          },
+          "axi_cfg_register_0_cfg_data": {
+            "ports": [
+              "Din",
+              "delayEnable/Din",
+              "delaySize/Din"
+            ]
+          },
+          "DataAcquisition_adc_clk": {
+            "ports": [
+              "clka",
+              "blk_mem_gen_0/clka",
+              "blk_mem_gen_0/clkb",
+              "delay_0/clk_i"
+            ]
+          },
+          "decimator_DualChannel_0_enable": {
+            "ports": [
+              "clkEnable",
+              "delay_0/clkEnable"
+            ]
+          },
+          "decimator_DualChannel_0_output_0": {
+            "ports": [
+              "input_0",
+              "delay_0/input_0"
+            ]
+          },
+          "xlslice_0_Dout": {
+            "ports": [
+              "xlslice_0/Dout",
+              "Dout"
+            ]
           }
         }
       }
     },
     "interface_nets": {
-      "processing_system7_0_DDR": {
-        "interface_ports": [
-          "DDR",
-          "PS7/DDR"
-        ]
-      },
       "processing_system7_0_FIXED_IO": {
         "interface_ports": [
           "FIXED_IO",
           "PS7/FIXED_IO"
+        ]
+      },
+      "processing_system7_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "PS7/DDR"
         ]
       }
     },
@@ -3340,7 +3571,7 @@
           "DataAcquisition/adc_clk",
           "SignalGenerator/clk_in1",
           "decimator_DualChannel_0/clk_i",
-          "delay_0/clk_i"
+          "delay/clka"
         ]
       },
       "DataAcquisition_output_CHA": {
@@ -3352,20 +3583,14 @@
       "decimator_DualChannel_0_enable": {
         "ports": [
           "decimator_DualChannel_0/enable",
-          "delay_0/clkEnable"
+          "delay/clkEnable"
         ]
       },
       "decimator_DualChannel_0_output_0": {
         "ports": [
           "decimator_DualChannel_0/output_0",
           "SignalGenerator/output_CHB",
-          "delay_0/input_0"
-        ]
-      },
-      "delay_Dout": {
-        "ports": [
-          "delay/Dout",
-          "delay_0/delay"
+          "delay/input_0"
         ]
       },
       "DataAcquisition_output_CHB": {
@@ -3374,9 +3599,9 @@
           "decimator_DualChannel_0/input_1"
         ]
       },
-      "delay_0_output_0": {
+      "xlslice_0_Dout": {
         "ports": [
-          "delay_0/output_0",
+          "delay/Dout",
           "SignalGenerator/output_CHA"
         ]
       }

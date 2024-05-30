@@ -57,25 +57,34 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module system_delay_0_0 (
   clk_i,
+  enable,
   clkEnable,
   input_0,
   delay,
+  address_wr,
+  address_rd,
   output_0
 );
 
 input wire clk_i;
+input wire enable;
 input wire clkEnable;
 input wire [13 : 0] input_0;
-input wire [10 : 0] delay;
-output wire [13 : 0] output_0;
+input wire [12 : 0] delay;
+output wire [12 : 0] address_wr;
+output wire [12 : 0] address_rd;
+output wire [15 : 0] output_0;
 
   delay #(
     .input_size(14)
   ) inst (
     .clk_i(clk_i),
+    .enable(enable),
     .clkEnable(clkEnable),
     .input_0(input_0),
     .delay(delay),
+    .address_wr(address_wr),
+    .address_rd(address_rd),
     .output_0(output_0)
   );
 endmodule

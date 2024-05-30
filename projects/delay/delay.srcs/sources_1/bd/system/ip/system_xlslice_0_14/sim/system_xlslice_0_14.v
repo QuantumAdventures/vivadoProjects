@@ -59,11 +59,11 @@ module system_xlslice_0_14 (
 );
 
 input wire [1023 : 0] Din;
-output wire [10 : 0] Dout;
+output wire [12 : 0] Dout;
 
   xlslice_v1_0_2_xlslice #(
     .DIN_WIDTH(1024),
-    .DIN_FROM(42),
+    .DIN_FROM(44),
     .DIN_TO(32)
   ) inst (
     .Din(Din),

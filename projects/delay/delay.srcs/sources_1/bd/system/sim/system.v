@@ -1,8 +1,8 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Wed May 29 18:30:51 2024
-//Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
+//Date        : Wed May 29 21:15:56 2024
+//Host        : DESKTOP-30LH77J running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
 //Purpose     : IP block netlist
@@ -586,6 +586,71 @@ module calibrationConstants_imp_12EXTU8
         .Dout(inSlpCorrCHB_Dout));
 endmodule
 
+module delay_imp_R5FCQ5
+   (Din,
+    Dout,
+    clkEnable,
+    clka,
+    input_0);
+  input [1023:0]Din;
+  output [13:0]Dout;
+  input clkEnable;
+  input clka;
+  input [13:0]input_0;
+
+  wire DataAcquisition_adc_clk;
+  wire [1023:0]axi_cfg_register_0_cfg_data;
+  wire [15:0]blk_mem_gen_0_doutb;
+  wire decimator_DualChannel_0_enable;
+  wire [13:0]decimator_DualChannel_0_output_0;
+  wire [12:0]delay_0_address_rd;
+  wire [12:0]delay_0_address_wr;
+  wire [15:0]delay_0_output_0;
+  wire [12:0]delay_Dout;
+  wire [0:0]xlconstant_0_dout;
+  wire [0:0]xlconstant_1_dout;
+  wire [13:0]xlslice_0_Dout;
+  wire [0:0]xlslice_1_Dout;
+
+  assign DataAcquisition_adc_clk = clka;
+  assign Dout[13:0] = xlslice_0_Dout;
+  assign axi_cfg_register_0_cfg_data = Din[1023:0];
+  assign decimator_DualChannel_0_enable = clkEnable;
+  assign decimator_DualChannel_0_output_0 = input_0[13:0];
+  system_blk_mem_gen_0_0 blk_mem_gen_0
+       (.addra(delay_0_address_wr),
+        .addrb(delay_0_address_rd),
+        .clka(DataAcquisition_adc_clk),
+        .clkb(DataAcquisition_adc_clk),
+        .dina(delay_0_output_0),
+        .dinb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b0,1'b0}),
+        .doutb(blk_mem_gen_0_doutb),
+        .wea(xlconstant_0_dout),
+        .web(xlconstant_1_dout));
+  system_xlslice_1_0 delayEnable
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(xlslice_1_Dout));
+  system_xlslice_0_14 delaySize
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(delay_Dout));
+  system_delay_0_0 delay_0
+       (.address_rd(delay_0_address_rd),
+        .address_wr(delay_0_address_wr),
+        .clkEnable(decimator_DualChannel_0_enable),
+        .clk_i(DataAcquisition_adc_clk),
+        .delay(delay_Dout),
+        .enable(xlslice_1_Dout),
+        .input_0(decimator_DualChannel_0_output_0),
+        .output_0(delay_0_output_0));
+  system_xlconstant_0_2 xlconstant_0
+       (.dout(xlconstant_0_dout));
+  system_xlconstant_0_3 xlconstant_1
+       (.dout(xlconstant_1_dout));
+  system_xlslice_0_15 xlslice_0
+       (.Din(blk_mem_gen_0_doutb),
+        .Dout(xlslice_0_Dout));
+endmodule
+
 module necessaryStuff_imp_1HZM5WS
    (daisy_n_i,
     daisy_n_o,
@@ -911,7 +976,7 @@ module s00_couplers_imp_15HE6GA
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=37,numReposBlks=29,numNonXlnxBlks=3,numHierBlks=8,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=43,numReposBlks=34,numNonXlnxBlks=3,numHierBlks=9,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1014,8 +1079,6 @@ module system
   wire [1:0]daisy_p_i_1;
   wire decimator_DualChannel_0_enable;
   wire [13:0]decimator_DualChannel_0_output_0;
-  wire [13:0]delay_0_output_0;
-  wire [10:0]delay_Dout;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -1040,6 +1103,7 @@ module system
   wire s_axis_tvalid_1;
   wire [1:0]util_ds_buf_2_OBUF_DS_N;
   wire [1:0]util_ds_buf_2_OBUF_DS_P;
+  wire [13:0]xlslice_0_Dout;
 
   assign adc_clk_n_i_1 = adc_clk_n_i;
   assign adc_clk_p_i_1 = adc_clk_p_i;
@@ -1097,7 +1161,7 @@ module system
         .dac_rst_o(axis_red_pitaya_dac_0_dac_rst),
         .dac_sel_o(axis_red_pitaya_dac_0_dac_sel),
         .dac_wrt_o(axis_red_pitaya_dac_0_dac_wrt),
-        .output_CHA(delay_0_output_0),
+        .output_CHA(xlslice_0_Dout),
         .output_CHB(decimator_DualChannel_0_output_0),
         .s_axis_tvalid(s_axis_tvalid_1));
   system_decimator_DualChannel_0_0 decimator_DualChannel_0
@@ -1106,15 +1170,12 @@ module system
         .input_0(DataAcquisition_output_CHA),
         .input_1(DataAcquisition_output_CHB),
         .output_0(decimator_DualChannel_0_output_0));
-  system_xlslice_0_14 delay
+  delay_imp_R5FCQ5 delay
        (.Din(axi_cfg_register_0_cfg_data),
-        .Dout(delay_Dout));
-  system_delay_0_0 delay_0
-       (.clkEnable(decimator_DualChannel_0_enable),
-        .clk_i(DataAcquisition_adc_clk),
-        .delay(delay_Dout),
-        .input_0(decimator_DualChannel_0_output_0),
-        .output_0(delay_0_output_0));
+        .Dout(xlslice_0_Dout),
+        .clkEnable(decimator_DualChannel_0_enable),
+        .clka(DataAcquisition_adc_clk),
+        .input_0(decimator_DualChannel_0_output_0));
   necessaryStuff_imp_1HZM5WS necessaryStuff
        (.daisy_n_i(daisy_n_i_1),
         .daisy_n_o(util_ds_buf_2_OBUF_DS_N),
