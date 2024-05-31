@@ -1,0 +1,38 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+library ieee_proposed;
+use ieee_proposed.fixed_float_types.all;
+use ieee_proposed.fixed_pkg.all;
+
+
+entity inputCalibration is
+    port(clk_i   : in  std_logic;
+        intercept_correction : std_logic_vector(31 downto 0);
+        slope_correction     : std_logic_vector(31 downto 0);
+        input_i  : in  std_logic_vector(9 downto 0);
+        output_o    : out STD_LOGIC_VECTOR(9 downto 0)
+    );
+end inputCalibration;
+
+architecture Behavioral of inputCalibration is
+signal input_i_sf                 : sfixed(0 downto -9);
+signal output_sf                  : sfixed(4 downto -60); -- (input_i_sf - intercept_correction_sf)/slope_correction_sf
+signal intercept_correction_sf    : sfixed(0 downto -31);
+signal slope_correction_sf        : sfixed(2 downto -29);
+
+begin
+    
+	intercept_correction_sf <= to_sfixed(intercept_correction, intercept_correction_sf);
+	slope_correction_sf     <= to_sfixed(slope_correction, slope_correction_sf);
+	
+	process(clk_i)
+	begin
+	   if (rising_edge(clk_i)) then
+            input_i_sf <= to_sfixed(input_i,input_i_sf);
+            output_sf <= (input_i_sf - intercept_correction_sf)*slope_correction_sf;
+            output_o <= std_logic_vector(unsigned(to_slv(resize(output_sf, 0, -9))));
+       end if;
+	end process;
+end Behavioral;
