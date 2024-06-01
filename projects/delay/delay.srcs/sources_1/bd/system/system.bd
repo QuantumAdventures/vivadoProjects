@@ -61,6 +61,19 @@
         "blk_mem_gen_0": "",
         "xlslice_0": "",
         "delay_0": ""
+      },
+      "biquadFilter": {
+        "biquadGain": "",
+        "biquadFilter_0": "",
+        "gain_0": "",
+        "extractConstants": {
+          "gain_b0": "",
+          "gain_b2": "",
+          "gain_a1": "",
+          "gain_a2": "",
+          "biquadEnable": "",
+          "gain_b1": ""
+        }
       }
     },
     "interface_ports": {
@@ -2876,16 +2889,16 @@
                   }
                 },
                 "interface_nets": {
-                  "auto_pc_to_s00_couplers": {
-                    "interface_ports": [
-                      "M_AXI",
-                      "auto_pc/M_AXI"
-                    ]
-                  },
                   "s00_couplers_to_auto_pc": {
                     "interface_ports": [
                       "S_AXI",
                       "auto_pc/S_AXI"
+                    ]
+                  },
+                  "auto_pc_to_s00_couplers": {
+                    "interface_ports": [
+                      "M_AXI",
+                      "auto_pc/M_AXI"
                     ]
                   }
                 },
@@ -2952,18 +2965,6 @@
           }
         },
         "interface_nets": {
-          "processing_system7_0_DDR": {
-            "interface_ports": [
-              "DDR",
-              "processing_system7_0/DDR"
-            ]
-          },
-          "processing_system7_0_FIXED_IO": {
-            "interface_ports": [
-              "FIXED_IO",
-              "processing_system7_0/FIXED_IO"
-            ]
-          },
           "processing_system7_0_M_AXI_GP0": {
             "interface_ports": [
               "processing_system7_0/M_AXI_GP0",
@@ -2974,6 +2975,18 @@
             "interface_ports": [
               "ps7_0_axi_periph/M00_AXI",
               "axi_cfg_register_0/S_AXI"
+            ]
+          },
+          "processing_system7_0_DDR": {
+            "interface_ports": [
+              "DDR",
+              "processing_system7_0/DDR"
+            ]
+          },
+          "processing_system7_0_FIXED_IO": {
+            "interface_ports": [
+              "FIXED_IO",
+              "processing_system7_0/FIXED_IO"
             ]
           }
         },
@@ -3451,6 +3464,474 @@
             ]
           }
         }
+      },
+      "biquadFilter": {
+        "ports": {
+          "Din": {
+            "direction": "I",
+            "left": "1023",
+            "right": "0"
+          },
+          "clk_i": {
+            "direction": "I"
+          },
+          "clkEnable": {
+            "direction": "I"
+          },
+          "input_i": {
+            "direction": "I",
+            "left": "13",
+            "right": "0"
+          },
+          "output_o": {
+            "direction": "O",
+            "left": "13",
+            "right": "0"
+          }
+        },
+        "components": {
+          "biquadGain": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "xci_name": "system_xlslice_0_16",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "511"
+              },
+              "DIN_TO": {
+                "value": "480"
+              },
+              "DIN_WIDTH": {
+                "value": "1024"
+              },
+              "DOUT_WIDTH": {
+                "value": "32"
+              }
+            }
+          },
+          "biquadFilter_0": {
+            "vlnv": "xilinx.com:module_ref:biquadFilter:1.0",
+            "xci_name": "system_biquadFilter_0_0",
+            "parameters": {
+              "in_left_radix": {
+                "value": "1"
+              },
+              "in_right_radix": {
+                "value": "13"
+              },
+              "out_left_radix": {
+                "value": "1"
+              },
+              "out_right_radix": {
+                "value": "13"
+              }
+            },
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "biquadFilter",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk_i": {
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "enable": {
+                "direction": "I"
+              },
+              "clkEnable": {
+                "direction": "I"
+              },
+              "input_i": {
+                "direction": "I",
+                "left": "13",
+                "right": "0"
+              },
+              "gain_a1": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "gain_a2": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "gain_b0": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "gain_b1": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "gain_b2": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "enable_out": {
+                "direction": "O"
+              },
+              "output_o": {
+                "direction": "O",
+                "left": "13",
+                "right": "0"
+              }
+            }
+          },
+          "gain_0": {
+            "vlnv": "xilinx.com:module_ref:gain:1.0",
+            "xci_name": "system_gain_0_0",
+            "parameters": {
+              "in_left_radix": {
+                "value": "1"
+              },
+              "in_right_radix": {
+                "value": "13"
+              },
+              "out_left_radix": {
+                "value": "1"
+              },
+              "out_right_radix": {
+                "value": "13"
+              }
+            },
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "gain",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk_i": {
+                "direction": "I",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "system_axis_red_pitaya_adc_0_0_adc_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "125000000",
+                    "value_src": "const_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.000",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "input_i": {
+                "direction": "I",
+                "left": "13",
+                "right": "0"
+              },
+              "gain": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "output_o": {
+                "direction": "O",
+                "left": "13",
+                "right": "0"
+              }
+            }
+          },
+          "extractConstants": {
+            "ports": {
+              "Din": {
+                "direction": "I",
+                "left": "1023",
+                "right": "0"
+              },
+              "Dout": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout1": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout2": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout3": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout4": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "Dout5": {
+                "direction": "O",
+                "left": "0",
+                "right": "0"
+              }
+            },
+            "components": {
+              "gain_b0": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_biquadGain_2",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "415"
+                  },
+                  "DIN_TO": {
+                    "value": "384"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "gain_b2": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_biquadGain_0",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "479"
+                  },
+                  "DIN_TO": {
+                    "value": "448"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "gain_a1": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_biquadGain_3",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "351"
+                  },
+                  "DIN_TO": {
+                    "value": "320"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "gain_a2": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_biquadGain_4",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "383"
+                  },
+                  "DIN_TO": {
+                    "value": "352"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              },
+              "biquadEnable": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_biquadGain_5",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "1"
+                  },
+                  "DIN_TO": {
+                    "value": "1"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "1"
+                  }
+                }
+              },
+              "gain_b1": {
+                "vlnv": "xilinx.com:ip:xlslice:1.0",
+                "xci_name": "system_biquadGain_1",
+                "parameters": {
+                  "DIN_FROM": {
+                    "value": "447"
+                  },
+                  "DIN_TO": {
+                    "value": "416"
+                  },
+                  "DIN_WIDTH": {
+                    "value": "1024"
+                  },
+                  "DOUT_WIDTH": {
+                    "value": "32"
+                  }
+                }
+              }
+            },
+            "nets": {
+              "axi_cfg_register_0_cfg_data": {
+                "ports": [
+                  "Din",
+                  "gain_a1/Din",
+                  "gain_b1/Din",
+                  "gain_b2/Din",
+                  "gain_a2/Din",
+                  "biquadEnable/Din",
+                  "gain_b0/Din"
+                ]
+              },
+              "gain_b2_Dout": {
+                "ports": [
+                  "gain_b2/Dout",
+                  "Dout"
+                ]
+              },
+              "gain_b1_Dout": {
+                "ports": [
+                  "gain_b1/Dout",
+                  "Dout1"
+                ]
+              },
+              "gain_b0_Dout": {
+                "ports": [
+                  "gain_b0/Dout",
+                  "Dout2"
+                ]
+              },
+              "gain_a2_Dout": {
+                "ports": [
+                  "gain_a2/Dout",
+                  "Dout3"
+                ]
+              },
+              "gain_a1_Dout": {
+                "ports": [
+                  "gain_a1/Dout",
+                  "Dout4"
+                ]
+              },
+              "biquadEnable_Dout": {
+                "ports": [
+                  "biquadEnable/Dout",
+                  "Dout5"
+                ]
+              }
+            }
+          }
+        },
+        "nets": {
+          "xlslice_0_Dout1": {
+            "ports": [
+              "biquadGain/Dout",
+              "gain_0/gain"
+            ]
+          },
+          "biquadFilter_0_output_o": {
+            "ports": [
+              "biquadFilter_0/output_o",
+              "gain_0/input_i"
+            ]
+          },
+          "axi_cfg_register_0_cfg_data": {
+            "ports": [
+              "Din",
+              "biquadGain/Din",
+              "extractConstants/Din"
+            ]
+          },
+          "DataAcquisition_adc_clk": {
+            "ports": [
+              "clk_i",
+              "gain_0/clk_i",
+              "biquadFilter_0/clk_i"
+            ]
+          },
+          "decimator_DualChannel_0_enable": {
+            "ports": [
+              "clkEnable",
+              "biquadFilter_0/clkEnable"
+            ]
+          },
+          "decimator_DualChannel_0_output_0": {
+            "ports": [
+              "input_i",
+              "biquadFilter_0/input_i"
+            ]
+          },
+          "gain_0_output_o": {
+            "ports": [
+              "gain_0/output_o",
+              "output_o"
+            ]
+          },
+          "extractConstants_Dout": {
+            "ports": [
+              "extractConstants/Dout",
+              "biquadFilter_0/gain_b2"
+            ]
+          },
+          "extractConstants_Dout1": {
+            "ports": [
+              "extractConstants/Dout1",
+              "biquadFilter_0/gain_b1"
+            ]
+          },
+          "extractConstants_Dout2": {
+            "ports": [
+              "extractConstants/Dout2",
+              "biquadFilter_0/gain_b0"
+            ]
+          },
+          "extractConstants_Dout3": {
+            "ports": [
+              "extractConstants/Dout3",
+              "biquadFilter_0/gain_a2"
+            ]
+          },
+          "extractConstants_Dout4": {
+            "ports": [
+              "extractConstants/Dout4",
+              "biquadFilter_0/gain_a1"
+            ]
+          },
+          "extractConstants_Dout5": {
+            "ports": [
+              "extractConstants/Dout5",
+              "biquadFilter_0/enable"
+            ]
+          }
+        }
       }
     },
     "interface_nets": {
@@ -3563,7 +4044,8 @@
           "PS7/cfg_data",
           "DataAcquisition/Din",
           "SignalGenerator/Din",
-          "delay/Din"
+          "delay/Din",
+          "biquadFilter/Din"
         ]
       },
       "DataAcquisition_adc_clk": {
@@ -3571,7 +4053,8 @@
           "DataAcquisition/adc_clk",
           "SignalGenerator/clk_in1",
           "decimator_DualChannel_0/clk_i",
-          "delay/clka"
+          "delay/clka",
+          "biquadFilter/clk_i"
         ]
       },
       "DataAcquisition_output_CHA": {
@@ -3583,14 +4066,8 @@
       "decimator_DualChannel_0_enable": {
         "ports": [
           "decimator_DualChannel_0/enable",
-          "delay/clkEnable"
-        ]
-      },
-      "decimator_DualChannel_0_output_0": {
-        "ports": [
-          "decimator_DualChannel_0/output_0",
-          "SignalGenerator/output_CHB",
-          "delay/input_0"
+          "delay/clkEnable",
+          "biquadFilter/clkEnable"
         ]
       },
       "DataAcquisition_output_CHB": {
@@ -3603,6 +4080,19 @@
         "ports": [
           "delay/Dout",
           "SignalGenerator/output_CHA"
+        ]
+      },
+      "decimator_DualChannel_0_output_0": {
+        "ports": [
+          "decimator_DualChannel_0/output_0",
+          "biquadFilter/input_i"
+        ]
+      },
+      "gain_0_output_o": {
+        "ports": [
+          "biquadFilter/output_o",
+          "delay/input_0",
+          "SignalGenerator/output_CHB"
         ]
       }
     },

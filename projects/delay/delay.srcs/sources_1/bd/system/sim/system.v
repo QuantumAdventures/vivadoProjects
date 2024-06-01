@@ -1,8 +1,8 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Wed May 29 21:15:56 2024
-//Host        : DESKTOP-30LH77J running 64-bit major release  (build 9200)
+//Date        : Sat Jun  1 14:38:29 2024
+//Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
 //Purpose     : IP block netlist
@@ -512,6 +512,66 @@ module SignalGenerator_imp_XB4TXX
        (.dout(xlconstant_1_dout));
 endmodule
 
+module biquadFilter_imp_1PDHNN6
+   (Din,
+    clkEnable,
+    clk_i,
+    input_i,
+    output_o);
+  input [1023:0]Din;
+  input clkEnable;
+  input clk_i;
+  input [13:0]input_i;
+  output [13:0]output_o;
+
+  wire DataAcquisition_adc_clk;
+  wire [1023:0]axi_cfg_register_0_cfg_data;
+  wire [13:0]biquadFilter_0_output_o;
+  wire decimator_DualChannel_0_enable;
+  wire [13:0]decimator_DualChannel_0_output_0;
+  wire [31:0]extractConstants_Dout;
+  wire [31:0]extractConstants_Dout1;
+  wire [31:0]extractConstants_Dout2;
+  wire [31:0]extractConstants_Dout3;
+  wire [31:0]extractConstants_Dout4;
+  wire [0:0]extractConstants_Dout5;
+  wire [13:0]gain_0_output_o;
+  wire [31:0]xlslice_0_Dout1;
+
+  assign DataAcquisition_adc_clk = clk_i;
+  assign axi_cfg_register_0_cfg_data = Din[1023:0];
+  assign decimator_DualChannel_0_enable = clkEnable;
+  assign decimator_DualChannel_0_output_0 = input_i[13:0];
+  assign output_o[13:0] = gain_0_output_o;
+  system_biquadFilter_0_0 biquadFilter_0
+       (.clkEnable(decimator_DualChannel_0_enable),
+        .clk_i(DataAcquisition_adc_clk),
+        .enable(extractConstants_Dout5),
+        .gain_a1(extractConstants_Dout4),
+        .gain_a2(extractConstants_Dout3),
+        .gain_b0(extractConstants_Dout2),
+        .gain_b1(extractConstants_Dout1),
+        .gain_b2(extractConstants_Dout),
+        .input_i(decimator_DualChannel_0_output_0),
+        .output_o(biquadFilter_0_output_o));
+  system_xlslice_0_16 biquadGain
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(xlslice_0_Dout1));
+  extractConstants_imp_4H4A9K extractConstants
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(extractConstants_Dout),
+        .Dout1(extractConstants_Dout1),
+        .Dout2(extractConstants_Dout2),
+        .Dout3(extractConstants_Dout3),
+        .Dout4(extractConstants_Dout4),
+        .Dout5(extractConstants_Dout5));
+  system_gain_0_0 gain_0
+       (.clk_i(DataAcquisition_adc_clk),
+        .gain(xlslice_0_Dout1),
+        .input_i(biquadFilter_0_output_o),
+        .output_o(gain_0_output_o));
+endmodule
+
 module calibConstants_imp_QMNP09
    (Din,
     Dout,
@@ -649,6 +709,57 @@ module delay_imp_R5FCQ5
   system_xlslice_0_15 xlslice_0
        (.Din(blk_mem_gen_0_doutb),
         .Dout(xlslice_0_Dout));
+endmodule
+
+module extractConstants_imp_4H4A9K
+   (Din,
+    Dout,
+    Dout1,
+    Dout2,
+    Dout3,
+    Dout4,
+    Dout5);
+  input [1023:0]Din;
+  output [31:0]Dout;
+  output [31:0]Dout1;
+  output [31:0]Dout2;
+  output [31:0]Dout3;
+  output [31:0]Dout4;
+  output [0:0]Dout5;
+
+  wire [1023:0]axi_cfg_register_0_cfg_data;
+  wire [0:0]biquadEnable_Dout;
+  wire [31:0]gain_a1_Dout;
+  wire [31:0]gain_a2_Dout;
+  wire [31:0]gain_b0_Dout;
+  wire [31:0]gain_b1_Dout;
+  wire [31:0]gain_b2_Dout;
+
+  assign Dout[31:0] = gain_b2_Dout;
+  assign Dout1[31:0] = gain_b1_Dout;
+  assign Dout2[31:0] = gain_b0_Dout;
+  assign Dout3[31:0] = gain_a2_Dout;
+  assign Dout4[31:0] = gain_a1_Dout;
+  assign Dout5[0] = biquadEnable_Dout;
+  assign axi_cfg_register_0_cfg_data = Din[1023:0];
+  system_biquadGain_5 biquadEnable
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(biquadEnable_Dout));
+  system_biquadGain_3 gain_a1
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(gain_a1_Dout));
+  system_biquadGain_4 gain_a2
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(gain_a2_Dout));
+  system_biquadGain_2 gain_b0
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(gain_b0_Dout));
+  system_biquadGain_1 gain_b1
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(gain_b1_Dout));
+  system_biquadGain_0 gain_b2
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(gain_b2_Dout));
 endmodule
 
 module necessaryStuff_imp_1HZM5WS
@@ -976,7 +1087,7 @@ module s00_couplers_imp_15HE6GA
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=43,numReposBlks=34,numNonXlnxBlks=3,numHierBlks=9,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=54,numReposBlks=43,numNonXlnxBlks=3,numHierBlks=11,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=8,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1079,6 +1190,7 @@ module system
   wire [1:0]daisy_p_i_1;
   wire decimator_DualChannel_0_enable;
   wire [13:0]decimator_DualChannel_0_output_0;
+  wire [13:0]gain_0_output_o;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -1162,8 +1274,14 @@ module system
         .dac_sel_o(axis_red_pitaya_dac_0_dac_sel),
         .dac_wrt_o(axis_red_pitaya_dac_0_dac_wrt),
         .output_CHA(xlslice_0_Dout),
-        .output_CHB(decimator_DualChannel_0_output_0),
+        .output_CHB(gain_0_output_o),
         .s_axis_tvalid(s_axis_tvalid_1));
+  biquadFilter_imp_1PDHNN6 biquadFilter
+       (.Din(axi_cfg_register_0_cfg_data),
+        .clkEnable(decimator_DualChannel_0_enable),
+        .clk_i(DataAcquisition_adc_clk),
+        .input_i(decimator_DualChannel_0_output_0),
+        .output_o(gain_0_output_o));
   system_decimator_DualChannel_0_0 decimator_DualChannel_0
        (.clk_i(DataAcquisition_adc_clk),
         .enable(decimator_DualChannel_0_enable),
@@ -1175,7 +1293,7 @@ module system
         .Dout(xlslice_0_Dout),
         .clkEnable(decimator_DualChannel_0_enable),
         .clka(DataAcquisition_adc_clk),
-        .input_0(decimator_DualChannel_0_output_0));
+        .input_0(gain_0_output_o));
   necessaryStuff_imp_1HZM5WS necessaryStuff
        (.daisy_n_i(daisy_n_i_1),
         .daisy_n_o(util_ds_buf_2_OBUF_DS_N),

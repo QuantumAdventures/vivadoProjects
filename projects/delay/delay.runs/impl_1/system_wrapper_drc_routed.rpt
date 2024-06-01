@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Wed May 29 21:22:27 2024
-| Host         : DESKTOP-30LH77J running 64-bit major release  (build 9200)
+| Date         : Sat Jun  1 14:52:32 2024
+| Host         : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 | Command      : report_drc -file system_wrapper_drc_routed.rpt -pb system_wrapper_drc_routed.pb -rpx system_wrapper_drc_routed.rpx
 | Design       : system_wrapper
 | Device       : xc7z010clg400-1
@@ -24,16 +24,18 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 63
-+-----------+----------+----------------------------+------------+
-| Rule      | Severity | Description                | Violations |
-+-----------+----------+----------------------------+------------+
-| CHECK-3   | Warning  | Report rule limit reached  | 1          |
-| DPIP-1    | Warning  | Input pipelining           | 24         |
-| DPOP-1    | Warning  | PREG Output pipelining     | 6          |
-| DPOP-2    | Warning  | MREG Output pipelining     | 12         |
-| REQP-1839 | Warning  | RAMB36 async control check | 20         |
-+-----------+----------+----------------------------+------------+
+             Violations found: 131
++-----------+----------+-------------------------------------------------+------------+
+| Rule      | Severity | Description                                     | Violations |
++-----------+----------+-------------------------------------------------+------------+
+| CHECK-3   | Warning  | Report rule limit reached                       | 1          |
+| DPIP-1    | Warning  | Input pipelining                                | 50         |
+| DPOP-1    | Warning  | PREG Output pipelining                          | 22         |
+| DPOP-2    | Warning  | MREG Output pipelining                          | 32         |
+| REQP-1839 | Warning  | RAMB36 async control check                      | 20         |
+| REQP-20   | Advisory | enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND | 3          |
+| REQP-24   | Advisory | enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND | 3          |
++-----------+----------+-------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -162,6 +164,136 @@ Input pipelining
 DSP system_i/SignalGenerator/outputCalibration_b/inst/output_sf_reg__0 input system_i/SignalGenerator/outputCalibration_b/inst/output_sf_reg__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
+DPIP-1#25 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg input system_i/biquadFilter/biquadFilter_0/inst/arg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#26 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__0 input system_i/biquadFilter/biquadFilter_0/inst/arg__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#27 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__1 input system_i/biquadFilter/biquadFilter_0/inst/arg__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#28 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__2 input system_i/biquadFilter/biquadFilter_0/inst/arg__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#29 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__2 input system_i/biquadFilter/biquadFilter_0/inst/arg__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#30 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__3 input system_i/biquadFilter/biquadFilter_0/inst/arg__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#31 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__3 input system_i/biquadFilter/biquadFilter_0/inst/arg__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#32 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__4 input system_i/biquadFilter/biquadFilter_0/inst/arg__4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#33 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__4 input system_i/biquadFilter/biquadFilter_0/inst/arg__4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#34 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__5 input system_i/biquadFilter/biquadFilter_0/inst/arg__5/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#35 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__6 input system_i/biquadFilter/biquadFilter_0/inst/arg__6/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#36 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__7 input system_i/biquadFilter/biquadFilter_0/inst/arg__7/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#37 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/x0_sf_reg input system_i/biquadFilter/biquadFilter_0/inst/x0_sf_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#38 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/x1_sf_reg input system_i/biquadFilter/biquadFilter_0/inst/x1_sf_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#39 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/x2_sf_reg input system_i/biquadFilter/biquadFilter_0/inst/x2_sf_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#40 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg input system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#41 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg input system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#42 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__0 input system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#43 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__0 input system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#44 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__1 input system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#45 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__1 input system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#46 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg input system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#47 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__0 input system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#48 Warning
+Input pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__1 input system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#49 Warning
+Input pipelining  
+DSP system_i/biquadFilter/gain_0/inst/arg input system_i/biquadFilter/gain_0/inst/arg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#50 Warning
+Input pipelining  
+DSP system_i/biquadFilter/gain_0/inst/output_sf_reg input system_i/biquadFilter/gain_0/inst/output_sf_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
 DPOP-1#1 Warning
 PREG Output pipelining  
 DSP system_i/DataAcquisition/inputCalibration_A/inst/arg output system_i/DataAcquisition/inputCalibration_A/inst/arg/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
@@ -190,6 +322,86 @@ Related violations: <none>
 DPOP-1#6 Warning
 PREG Output pipelining  
 DSP system_i/SignalGenerator/outputCalibration_b/inst/arg__0 output system_i/SignalGenerator/outputCalibration_b/inst/arg__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#7 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg output system_i/biquadFilter/biquadFilter_0/inst/arg/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#8 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__0 output system_i/biquadFilter/biquadFilter_0/inst/arg__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#9 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__1 output system_i/biquadFilter/biquadFilter_0/inst/arg__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#10 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__2 output system_i/biquadFilter/biquadFilter_0/inst/arg__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#11 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__3 output system_i/biquadFilter/biquadFilter_0/inst/arg__3/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#12 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__4 output system_i/biquadFilter/biquadFilter_0/inst/arg__4/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#13 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__5 output system_i/biquadFilter/biquadFilter_0/inst/arg__5/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#14 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__6 output system_i/biquadFilter/biquadFilter_0/inst/arg__6/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#15 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__7 output system_i/biquadFilter/biquadFilter_0/inst/arg__7/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#16 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg output system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#17 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__0 output system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#18 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__1 output system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#19 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg output system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#20 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__0 output system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#21 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__1 output system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#22 Warning
+PREG Output pipelining  
+DSP system_i/biquadFilter/gain_0/inst/arg output system_i/biquadFilter/gain_0/inst/arg/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-2#1 Warning
@@ -250,6 +462,106 @@ Related violations: <none>
 DPOP-2#12 Warning
 MREG Output pipelining  
 DSP system_i/SignalGenerator/outputCalibration_b/inst/output_sf_reg__0 multiplier stage system_i/SignalGenerator/outputCalibration_b/inst/output_sf_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#13 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg multiplier stage system_i/biquadFilter/biquadFilter_0/inst/arg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#14 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__0 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/arg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#15 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__1 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/arg__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#16 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__2 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/arg__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#17 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__3 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/arg__3/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#18 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__4 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/arg__4/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#19 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__5 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/arg__5/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#20 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__6 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/arg__6/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#21 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/arg__7 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/arg__7/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#22 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/x0_sf_reg multiplier stage system_i/biquadFilter/biquadFilter_0/inst/x0_sf_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#23 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/x1_sf_reg multiplier stage system_i/biquadFilter/biquadFilter_0/inst/x1_sf_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#24 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/x2_sf_reg multiplier stage system_i/biquadFilter/biquadFilter_0/inst/x2_sf_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#25 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg multiplier stage system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#26 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__0 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#27 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__1 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#28 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg multiplier stage system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#29 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__0 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#30 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__1 multiplier stage system_i/biquadFilter/biquadFilter_0/inst/y2_sf_reg__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#31 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/gain_0/inst/arg multiplier stage system_i/biquadFilter/gain_0/inst/arg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#32 Warning
+MREG Output pipelining  
+DSP system_i/biquadFilter/gain_0/inst/output_sf_reg multiplier stage system_i/biquadFilter/gain_0/inst/output_sf_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 REQP-1839#1 Warning
@@ -350,6 +662,36 @@ Related violations: <none>
 REQP-1839#20 Warning
 RAMB36 async control check  
 The RAMB36E1 system_i/delay/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram has an input control pin system_i/delay/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/ADDRBWRADDR[9] (net: system_i/delay/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[6]) which is driven by a register (system_i/delay/delay_0/inst/address_rd_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-20#1 Advisory
+enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
+system_i/biquadFilter/biquadFilter_0/inst/arg__2: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-20#2 Advisory
+enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
+system_i/biquadFilter/biquadFilter_0/inst/arg__3: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-20#3 Advisory
+enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
+system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-24#1 Advisory
+enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND  
+system_i/biquadFilter/biquadFilter_0/inst/arg__4: When DSP48E1 attribute BREG is set to 0, the CEB1 and CEB2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-24#2 Advisory
+enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND  
+system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__0: When DSP48E1 attribute BREG is set to 0, the CEB1 and CEB2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-24#3 Advisory
+enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND  
+system_i/biquadFilter/biquadFilter_0/inst/y1_sf_reg__1: When DSP48E1 attribute BREG is set to 0, the CEB1 and CEB2 pins should be tied to GND to save power.
 Related violations: <none>
 
 

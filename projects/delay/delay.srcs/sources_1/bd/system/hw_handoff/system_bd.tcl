@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# decimator_DualChannel, inputCalibration, inputCalibration, outputCalibration, outputCalibration, delay
+# decimator_DualChannel, inputCalibration, inputCalibration, outputCalibration, outputCalibration, biquadFilter, gain, delay
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -127,6 +127,118 @@ if { $nRet != 0 } {
 # DESIGN PROCs
 ##################################################################
 
+
+# Hierarchical cell: extractConstants
+proc create_hier_cell_extractConstants { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_extractConstants() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir I -from 1023 -to 0 Din
+  create_bd_pin -dir O -from 31 -to 0 Dout
+  create_bd_pin -dir O -from 31 -to 0 Dout1
+  create_bd_pin -dir O -from 31 -to 0 Dout2
+  create_bd_pin -dir O -from 31 -to 0 Dout3
+  create_bd_pin -dir O -from 31 -to 0 Dout4
+  create_bd_pin -dir O -from 0 -to 0 Dout5
+
+  # Create instance: biquadEnable, and set properties
+  set biquadEnable [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 biquadEnable ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {1} \
+   CONFIG.DIN_TO {1} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $biquadEnable
+
+  # Create instance: gain_a1, and set properties
+  set gain_a1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 gain_a1 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {351} \
+   CONFIG.DIN_TO {320} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $gain_a1
+
+  # Create instance: gain_a2, and set properties
+  set gain_a2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 gain_a2 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {383} \
+   CONFIG.DIN_TO {352} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $gain_a2
+
+  # Create instance: gain_b0, and set properties
+  set gain_b0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 gain_b0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {415} \
+   CONFIG.DIN_TO {384} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $gain_b0
+
+  # Create instance: gain_b1, and set properties
+  set gain_b1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 gain_b1 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {447} \
+   CONFIG.DIN_TO {416} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $gain_b1
+
+  # Create instance: gain_b2, and set properties
+  set gain_b2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 gain_b2 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {479} \
+   CONFIG.DIN_TO {448} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $gain_b2
+
+  # Create port connections
+  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins Din] [get_bd_pins biquadEnable/Din] [get_bd_pins gain_a1/Din] [get_bd_pins gain_a2/Din] [get_bd_pins gain_b0/Din] [get_bd_pins gain_b1/Din] [get_bd_pins gain_b2/Din]
+  connect_bd_net -net biquadEnable_Dout [get_bd_pins Dout5] [get_bd_pins biquadEnable/Dout]
+  connect_bd_net -net gain_a1_Dout [get_bd_pins Dout4] [get_bd_pins gain_a1/Dout]
+  connect_bd_net -net gain_a2_Dout [get_bd_pins Dout3] [get_bd_pins gain_a2/Dout]
+  connect_bd_net -net gain_b0_Dout [get_bd_pins Dout2] [get_bd_pins gain_b0/Dout]
+  connect_bd_net -net gain_b1_Dout [get_bd_pins Dout1] [get_bd_pins gain_b1/Dout]
+  connect_bd_net -net gain_b2_Dout [get_bd_pins Dout] [get_bd_pins gain_b2/Dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
 
 # Hierarchical cell: calibConstants
 proc create_hier_cell_calibConstants { parentCell nameHier } {
@@ -503,6 +615,114 @@ proc create_hier_cell_delay { parentCell nameHier } {
   connect_bd_net -net xlconstant_1_dout [get_bd_pins blk_mem_gen_0/web] [get_bd_pins xlconstant_1/dout]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins Dout] [get_bd_pins xlslice_0/Dout]
   connect_bd_net -net xlslice_1_Dout [get_bd_pins delayEnable/Dout] [get_bd_pins delay_0/enable]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: biquadFilter
+proc create_hier_cell_biquadFilter { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_biquadFilter() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir I -from 1023 -to 0 Din
+  create_bd_pin -dir I clkEnable
+  create_bd_pin -dir I clk_i
+  create_bd_pin -dir I -from 13 -to 0 input_i
+  create_bd_pin -dir O -from 13 -to 0 output_o
+
+  # Create instance: biquadFilter_0, and set properties
+  set block_name biquadFilter
+  set block_cell_name biquadFilter_0
+  if { [catch {set biquadFilter_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $biquadFilter_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.in_left_radix {1} \
+   CONFIG.in_right_radix {13} \
+   CONFIG.out_left_radix {1} \
+   CONFIG.out_right_radix {13} \
+ ] $biquadFilter_0
+
+  # Create instance: biquadGain, and set properties
+  set biquadGain [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 biquadGain ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {511} \
+   CONFIG.DIN_TO {480} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {32} \
+ ] $biquadGain
+
+  # Create instance: extractConstants
+  create_hier_cell_extractConstants $hier_obj extractConstants
+
+  # Create instance: gain_0, and set properties
+  set block_name gain
+  set block_cell_name gain_0
+  if { [catch {set gain_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $gain_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.in_left_radix {1} \
+   CONFIG.in_right_radix {13} \
+   CONFIG.out_left_radix {1} \
+   CONFIG.out_right_radix {13} \
+ ] $gain_0
+
+  # Create port connections
+  connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins clk_i] [get_bd_pins biquadFilter_0/clk_i] [get_bd_pins gain_0/clk_i]
+  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins Din] [get_bd_pins biquadGain/Din] [get_bd_pins extractConstants/Din]
+  connect_bd_net -net biquadFilter_0_output_o [get_bd_pins biquadFilter_0/output_o] [get_bd_pins gain_0/input_i]
+  connect_bd_net -net decimator_DualChannel_0_enable [get_bd_pins clkEnable] [get_bd_pins biquadFilter_0/clkEnable]
+  connect_bd_net -net decimator_DualChannel_0_output_0 [get_bd_pins input_i] [get_bd_pins biquadFilter_0/input_i]
+  connect_bd_net -net extractConstants_Dout [get_bd_pins biquadFilter_0/gain_b2] [get_bd_pins extractConstants/Dout]
+  connect_bd_net -net extractConstants_Dout1 [get_bd_pins biquadFilter_0/gain_b1] [get_bd_pins extractConstants/Dout1]
+  connect_bd_net -net extractConstants_Dout2 [get_bd_pins biquadFilter_0/gain_b0] [get_bd_pins extractConstants/Dout2]
+  connect_bd_net -net extractConstants_Dout3 [get_bd_pins biquadFilter_0/gain_a2] [get_bd_pins extractConstants/Dout3]
+  connect_bd_net -net extractConstants_Dout4 [get_bd_pins biquadFilter_0/gain_a1] [get_bd_pins extractConstants/Dout4]
+  connect_bd_net -net extractConstants_Dout5 [get_bd_pins biquadFilter_0/enable] [get_bd_pins extractConstants/Dout5]
+  connect_bd_net -net gain_0_output_o [get_bd_pins output_o] [get_bd_pins gain_0/output_o]
+  connect_bd_net -net xlslice_0_Dout1 [get_bd_pins biquadGain/Dout] [get_bd_pins gain_0/gain]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -1574,6 +1794,9 @@ proc create_root_design { parentCell } {
   # Create instance: SignalGenerator
   create_hier_cell_SignalGenerator [current_bd_instance .] SignalGenerator
 
+  # Create instance: biquadFilter
+  create_hier_cell_biquadFilter [current_bd_instance .] biquadFilter
+
   # Create instance: decimator_DualChannel_0, and set properties
   set block_name decimator_DualChannel
   set block_cell_name decimator_DualChannel_0
@@ -1601,14 +1824,14 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins PS7/FIXED_IO]
 
   # Create port connections
-  connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins DataAcquisition/adc_clk] [get_bd_pins SignalGenerator/clk_in1] [get_bd_pins decimator_DualChannel_0/clk_i] [get_bd_pins delay/clka]
+  connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins DataAcquisition/adc_clk] [get_bd_pins SignalGenerator/clk_in1] [get_bd_pins biquadFilter/clk_i] [get_bd_pins decimator_DualChannel_0/clk_i] [get_bd_pins delay/clka]
   connect_bd_net -net DataAcquisition_output_CHA [get_bd_pins DataAcquisition/output_CHA] [get_bd_pins decimator_DualChannel_0/input_0]
   connect_bd_net -net DataAcquisition_output_CHB [get_bd_pins DataAcquisition/output_CHB] [get_bd_pins decimator_DualChannel_0/input_1]
   connect_bd_net -net adc_clk_n_i_1 [get_bd_ports adc_clk_n_i] [get_bd_pins DataAcquisition/adc_clk_n_i]
   connect_bd_net -net adc_clk_p_i_1 [get_bd_ports adc_clk_p_i] [get_bd_pins DataAcquisition/adc_clk_p_i]
   connect_bd_net -net adc_dat_a_i_1 [get_bd_ports adc_dat_a_i] [get_bd_pins DataAcquisition/adc_dat_a_i]
   connect_bd_net -net adc_dat_b_i_1 [get_bd_ports adc_dat_b_i] [get_bd_pins DataAcquisition/adc_dat_b_i]
-  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins DataAcquisition/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins SignalGenerator/Din] [get_bd_pins delay/Din]
+  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins DataAcquisition/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins SignalGenerator/Din] [get_bd_pins biquadFilter/Din] [get_bd_pins delay/Din]
   connect_bd_net -net axis_red_pitaya_adc_0_adc_csn [get_bd_ports adc_csn_o] [get_bd_pins DataAcquisition/adc_csn_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_clk [get_bd_ports dac_clk_o] [get_bd_pins SignalGenerator/dac_clk_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_dat [get_bd_ports dac_dat_o] [get_bd_pins SignalGenerator/dac_dat_o]
@@ -1617,8 +1840,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axis_red_pitaya_dac_0_dac_wrt [get_bd_ports dac_wrt_o] [get_bd_pins SignalGenerator/dac_wrt_o]
   connect_bd_net -net daisy_n_i_1 [get_bd_ports daisy_n_i] [get_bd_pins necessaryStuff/daisy_n_i]
   connect_bd_net -net daisy_p_i_1 [get_bd_ports daisy_p_i] [get_bd_pins necessaryStuff/daisy_p_i]
-  connect_bd_net -net decimator_DualChannel_0_enable [get_bd_pins decimator_DualChannel_0/enable] [get_bd_pins delay/clkEnable]
-  connect_bd_net -net decimator_DualChannel_0_output_0 [get_bd_pins SignalGenerator/output_CHB] [get_bd_pins decimator_DualChannel_0/output_0] [get_bd_pins delay/input_0]
+  connect_bd_net -net decimator_DualChannel_0_enable [get_bd_pins biquadFilter/clkEnable] [get_bd_pins decimator_DualChannel_0/enable] [get_bd_pins delay/clkEnable]
+  connect_bd_net -net decimator_DualChannel_0_output_0 [get_bd_pins biquadFilter/input_i] [get_bd_pins decimator_DualChannel_0/output_0]
+  connect_bd_net -net gain_0_output_o [get_bd_pins SignalGenerator/output_CHB] [get_bd_pins biquadFilter/output_o] [get_bd_pins delay/input_0]
   connect_bd_net -net s_axis_tvalid_1 [get_bd_pins DataAcquisition/m_axis_tvalid] [get_bd_pins SignalGenerator/s_axis_tvalid]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_N [get_bd_ports daisy_n_o] [get_bd_pins necessaryStuff/daisy_n_o]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_P [get_bd_ports daisy_p_o] [get_bd_pins necessaryStuff/daisy_p_o]
