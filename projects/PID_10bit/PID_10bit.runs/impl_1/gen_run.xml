@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1717181075">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1717419014">
   <File Type="BITSTR-BMM" Name="system_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="system_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="system_wrapper_timing_summary_init.rpt"/>
@@ -593,14 +593,14 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="system_PID_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axis_red_pitaya_adc_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_cfg_register_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_decimator_DualChannel_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_inputCalibration_A_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_outputCalibration_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axis_red_pitaya_dac_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_outputCalibration_A_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_inputCalibration_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_biquadFilter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_PID_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_decimator_DualChannel_0_0"/>
 </GenRun>

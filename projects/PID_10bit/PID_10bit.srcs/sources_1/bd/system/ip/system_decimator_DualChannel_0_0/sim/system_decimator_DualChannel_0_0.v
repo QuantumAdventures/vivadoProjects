@@ -58,6 +58,7 @@ module system_decimator_DualChannel_0_0 (
   clk_i,
   input_0,
   input_1,
+  diff,
   output_0,
   output_1,
   enable,
@@ -67,6 +68,7 @@ module system_decimator_DualChannel_0_0 (
 input wire clk_i;
 input wire [9 : 0] input_0;
 input wire [9 : 0] input_1;
+input wire diff;
 output wire [9 : 0] output_0;
 output wire [9 : 0] output_1;
 output wire enable;
@@ -80,6 +82,7 @@ output wire clk_e;
     .clk_i(clk_i),
     .input_0(input_0),
     .input_1(input_1),
+    .diff(diff),
     .output_0(output_0),
     .output_1(output_1),
     .enable(enable),

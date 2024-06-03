@@ -1699,9 +1699,9 @@ proc create_hier_cell_DataAcquisition { parentCell nameHier } {
   create_bd_pin -dir O adc_csn_o
   create_bd_pin -dir I -from 9 -to 0 adc_dat_a_i
   create_bd_pin -dir I -from 9 -to 0 adc_dat_b_i
+  create_bd_pin -dir O -from 9 -to 0 input_CHA
+  create_bd_pin -dir O -from 9 -to 0 input_CHB
   create_bd_pin -dir O m_axis_tvalid
-  create_bd_pin -dir O -from 9 -to 0 output_o
-  create_bd_pin -dir O -from 9 -to 0 output_o1
 
   # Create instance: axis_red_pitaya_adc_0, and set properties
   set axis_red_pitaya_adc_0 [ create_bd_cell -type ip -vlnv pavel-demin:user:axis_red_pitaya_adc:1.0 axis_red_pitaya_adc_0 ]
@@ -1765,8 +1765,8 @@ proc create_hier_cell_DataAcquisition { parentCell nameHier } {
   connect_bd_net -net calibrationConstants_Dout3 [get_bd_pins calibrationConstants/Dout3] [get_bd_pins inputCalibration_B/slope_correction]
   connect_bd_net -net dat_CHA_Dout [get_bd_pins dat_CHA/Dout] [get_bd_pins inputCalibration_A/input_i]
   connect_bd_net -net dat_CHB_Dout [get_bd_pins dat_CHB/Dout] [get_bd_pins inputCalibration_B/input_i]
-  connect_bd_net -net inputCalibration_A_output_o [get_bd_pins output_o1] [get_bd_pins inputCalibration_A/output_o]
-  connect_bd_net -net inputCalibration_B_output_o [get_bd_pins output_o] [get_bd_pins inputCalibration_B/output_o]
+  connect_bd_net -net inputCalibration_A_output_o [get_bd_pins input_CHA] [get_bd_pins inputCalibration_A/output_o]
+  connect_bd_net -net inputCalibration_B_output_o [get_bd_pins input_CHB] [get_bd_pins inputCalibration_B/output_o]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -1878,6 +1878,15 @@ proc create_root_design { parentCell } {
    CONFIG.output_size {10} \
  ] $decimator_DualChannel_0
 
+  # Create instance: diff_selector, and set properties
+  set diff_selector [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 diff_selector ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {3} \
+   CONFIG.DIN_TO {3} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $diff_selector
+
   # Create instance: necessaryStuff
   create_hier_cell_necessaryStuff [current_bd_instance .] necessaryStuff
 
@@ -1887,14 +1896,14 @@ proc create_root_design { parentCell } {
 
   # Create port connections
   connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins DataAcquisition/adc_clk] [get_bd_pins PID/clk_i] [get_bd_pins SignalGenerator/clk_in1] [get_bd_pins biquadFilter/clk_i] [get_bd_pins decimator_DualChannel_0/clk_i]
-  connect_bd_net -net DataAcquisition_output_o [get_bd_pins DataAcquisition/output_o] [get_bd_pins decimator_DualChannel_0/input_1]
-  connect_bd_net -net DataAcquisition_output_o1 [get_bd_pins DataAcquisition/output_o1] [get_bd_pins decimator_DualChannel_0/input_0]
+  connect_bd_net -net DataAcquisition_output_o [get_bd_pins DataAcquisition/input_CHB] [get_bd_pins decimator_DualChannel_0/input_1]
+  connect_bd_net -net DataAcquisition_output_o1 [get_bd_pins DataAcquisition/input_CHA] [get_bd_pins decimator_DualChannel_0/input_0]
   connect_bd_net -net PID_control [get_bd_pins PID/control] [get_bd_pins SignalGenerator/input_i]
   connect_bd_net -net adc_clk_n_i_1 [get_bd_ports adc_clk_n_i] [get_bd_pins DataAcquisition/adc_clk_n_i]
   connect_bd_net -net adc_clk_p_i_1 [get_bd_ports adc_clk_p_i] [get_bd_pins DataAcquisition/adc_clk_p_i]
   connect_bd_net -net adc_dat_a_i_1 [get_bd_ports adc_dat_a_i] [get_bd_pins DataAcquisition/adc_dat_a_i]
   connect_bd_net -net adc_dat_b_i_1 [get_bd_ports adc_dat_b_i] [get_bd_pins DataAcquisition/adc_dat_b_i]
-  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins DataAcquisition/Din] [get_bd_pins PID/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins SignalGenerator/Din] [get_bd_pins biquadFilter/Din]
+  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins DataAcquisition/Din] [get_bd_pins PID/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins SignalGenerator/Din] [get_bd_pins biquadFilter/Din] [get_bd_pins diff_selector/Din]
   connect_bd_net -net axis_red_pitaya_adc_0_adc_csn [get_bd_ports adc_csn_o] [get_bd_pins DataAcquisition/adc_csn_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_clk [get_bd_ports dac_clk_o] [get_bd_pins SignalGenerator/dac_clk_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_dat [get_bd_ports dac_dat_o] [get_bd_pins SignalGenerator/dac_dat_o]
@@ -1907,6 +1916,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net decimator_DualChannel_0_enable [get_bd_pins PID/clkEnable] [get_bd_pins biquadFilter/clkEnable] [get_bd_pins decimator_DualChannel_0/enable]
   connect_bd_net -net decimator_DualChannel_0_output_0 [get_bd_pins biquadFilter/input_i] [get_bd_pins decimator_DualChannel_0/output_0]
   connect_bd_net -net decimator_DualChannel_0_output_1 [get_bd_pins PID/set_point_ADC] [get_bd_pins decimator_DualChannel_0/output_1]
+  connect_bd_net -net diff_selector_Dout [get_bd_pins decimator_DualChannel_0/diff] [get_bd_pins diff_selector/Dout]
   connect_bd_net -net s_axis_tvalid_1 [get_bd_pins DataAcquisition/m_axis_tvalid] [get_bd_pins SignalGenerator/s_axis_tvalid]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_N [get_bd_ports daisy_n_o] [get_bd_pins necessaryStuff/daisy_n_o]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_P [get_bd_ports daisy_p_o] [get_bd_pins necessaryStuff/daisy_p_o]

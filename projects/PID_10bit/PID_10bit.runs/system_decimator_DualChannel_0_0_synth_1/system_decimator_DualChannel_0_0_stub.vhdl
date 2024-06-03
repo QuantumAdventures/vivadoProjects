@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Fri May 31 15:35:34 2024
+-- Date        : Mon Jun  3 09:48:41 2024
 -- Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ system_decimator_DualChannel_0_0_stub.vhdl
@@ -17,6 +17,7 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
     clk_i : in STD_LOGIC;
     input_0 : in STD_LOGIC_VECTOR ( 9 downto 0 );
     input_1 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    diff : in STD_LOGIC;
     output_0 : out STD_LOGIC_VECTOR ( 9 downto 0 );
     output_1 : out STD_LOGIC_VECTOR ( 9 downto 0 );
     enable : out STD_LOGIC;
@@ -29,7 +30,7 @@ architecture stub of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk_i,input_0[9:0],input_1[9:0],output_0[9:0],output_1[9:0],enable,clk_e";
+attribute black_box_pad_pin of stub : architecture is "clk_i,input_0[9:0],input_1[9:0],diff,output_0[9:0],output_1[9:0],enable,clk_e";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "decimator_DualChannel,Vivado 2020.1";
 begin

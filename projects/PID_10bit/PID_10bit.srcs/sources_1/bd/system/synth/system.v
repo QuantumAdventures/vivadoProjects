@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Fri May 31 15:43:07 2024
+//Date        : Mon Jun  3 09:48:03 2024
 //Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -17,9 +17,9 @@ module DataAcquisition_imp_11FS564
     adc_csn_o,
     adc_dat_a_i,
     adc_dat_b_i,
-    m_axis_tvalid,
-    output_o,
-    output_o1);
+    input_CHA,
+    input_CHB,
+    m_axis_tvalid);
   input [1023:0]Din;
   output adc_clk;
   input adc_clk_n_i;
@@ -27,9 +27,9 @@ module DataAcquisition_imp_11FS564
   output adc_csn_o;
   input [9:0]adc_dat_a_i;
   input [9:0]adc_dat_b_i;
+  output [9:0]input_CHA;
+  output [9:0]input_CHB;
   output m_axis_tvalid;
-  output [9:0]output_o;
-  output [9:0]output_o1;
 
   wire [1023:0]Din_1;
   wire adc_clk_n_i_1;
@@ -56,9 +56,9 @@ module DataAcquisition_imp_11FS564
   assign adc_csn_o = axis_red_pitaya_adc_0_adc_csn;
   assign adc_dat_a_i_1 = adc_dat_a_i[9:0];
   assign adc_dat_b_i_1 = adc_dat_b_i[9:0];
+  assign input_CHA[9:0] = inputCalibration_A_output_o;
+  assign input_CHB[9:0] = inputCalibration_B_output_o;
   assign m_axis_tvalid = axis_red_pitaya_adc_0_m_axis_tvalid;
-  assign output_o[9:0] = inputCalibration_B_output_o;
-  assign output_o1[9:0] = inputCalibration_A_output_o;
   system_axis_red_pitaya_adc_0_0 axis_red_pitaya_adc_0
        (.adc_clk(axis_red_pitaya_adc_0_adc_clk),
         .adc_clk_n(adc_clk_n_i_1),
@@ -1143,7 +1143,7 @@ module s00_couplers_imp_15HE6GA
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=55,numReposBlks=43,numNonXlnxBlks=3,numHierBlks=12,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=56,numReposBlks=44,numNonXlnxBlks=3,numHierBlks=12,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1249,6 +1249,7 @@ module system
   wire decimator_DualChannel_0_enable;
   wire [9:0]decimator_DualChannel_0_output_0;
   wire [9:0]decimator_DualChannel_0_output_1;
+  wire [0:0]diff_selector_Dout;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -1296,9 +1297,9 @@ module system
         .adc_csn_o(axis_red_pitaya_adc_0_adc_csn),
         .adc_dat_a_i(adc_dat_a_i_1),
         .adc_dat_b_i(adc_dat_b_i_1),
-        .m_axis_tvalid(s_axis_tvalid_1),
-        .output_o(DataAcquisition_output_o),
-        .output_o1(DataAcquisition_output_o1));
+        .input_CHA(DataAcquisition_output_o1),
+        .input_CHB(DataAcquisition_output_o),
+        .m_axis_tvalid(s_axis_tvalid_1));
   PID_imp_1M5JNBT PID
        (.Din(axi_cfg_register_0_cfg_data),
         .clkEnable(decimator_DualChannel_0_enable),
@@ -1348,11 +1349,15 @@ module system
         .output_o(biquadFilter_output_o));
   system_decimator_DualChannel_0_0 decimator_DualChannel_0
        (.clk_i(DataAcquisition_adc_clk),
+        .diff(diff_selector_Dout),
         .enable(decimator_DualChannel_0_enable),
         .input_0(DataAcquisition_output_o1),
         .input_1(DataAcquisition_output_o),
         .output_0(decimator_DualChannel_0_output_0),
         .output_1(decimator_DualChannel_0_output_1));
+  system_xlslice_0_15 diff_selector
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(diff_selector_Dout));
   necessaryStuff_imp_1HZM5WS necessaryStuff
        (.daisy_n_i(daisy_n_i_1),
         .daisy_n_o(util_ds_buf_2_OBUF_DS_N),

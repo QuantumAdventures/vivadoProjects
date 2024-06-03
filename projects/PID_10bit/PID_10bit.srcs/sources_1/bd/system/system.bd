@@ -76,7 +76,8 @@
         "util_ds_buf_1": "",
         "util_ds_buf_2": ""
       },
-      "decimator_DualChannel_0": ""
+      "decimator_DualChannel_0": "",
+      "diff_selector": ""
     },
     "interface_ports": {
       "Vp_Vn": {
@@ -868,12 +869,12 @@
             "left": "1023",
             "right": "0"
           },
-          "output_o": {
+          "input_CHB": {
             "direction": "O",
             "left": "9",
             "right": "0"
           },
-          "output_o1": {
+          "input_CHA": {
             "direction": "O",
             "left": "9",
             "right": "0"
@@ -1248,13 +1249,13 @@
           "inputCalibration_B_output_o": {
             "ports": [
               "inputCalibration_B/output_o",
-              "output_o"
+              "input_CHB"
             ]
           },
           "inputCalibration_A_output_o": {
             "ports": [
               "inputCalibration_A/output_o",
-              "output_o1"
+              "input_CHA"
             ]
           }
         }
@@ -2983,6 +2984,12 @@
               "processing_system7_0/FIXED_IO"
             ]
           },
+          "processing_system7_0_M_AXI_GP0": {
+            "interface_ports": [
+              "processing_system7_0/M_AXI_GP0",
+              "ps7_0_axi_periph/S00_AXI"
+            ]
+          },
           "ps7_0_axi_periph_M00_AXI": {
             "interface_ports": [
               "ps7_0_axi_periph/M00_AXI",
@@ -2993,12 +3000,6 @@
             "interface_ports": [
               "DDR",
               "processing_system7_0/DDR"
-            ]
-          },
-          "processing_system7_0_M_AXI_GP0": {
-            "interface_ports": [
-              "processing_system7_0/M_AXI_GP0",
-              "ps7_0_axi_periph/S00_AXI"
             ]
           }
         },
@@ -4020,6 +4021,9 @@
             "left": "9",
             "right": "0"
           },
+          "diff": {
+            "direction": "I"
+          },
           "output_0": {
             "direction": "O",
             "left": "9",
@@ -4037,19 +4041,37 @@
             "direction": "O"
           }
         }
+      },
+      "diff_selector": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "system_xlslice_0_15",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "3"
+          },
+          "DIN_TO": {
+            "value": "3"
+          },
+          "DIN_WIDTH": {
+            "value": "1024"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
       }
     },
     "interface_nets": {
-      "processing_system7_0_DDR": {
-        "interface_ports": [
-          "DDR",
-          "PS7/DDR"
-        ]
-      },
       "processing_system7_0_FIXED_IO": {
         "interface_ports": [
           "FIXED_IO",
           "PS7/FIXED_IO"
+        ]
+      },
+      "processing_system7_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "PS7/DDR"
         ]
       }
     },
@@ -4150,7 +4172,8 @@
           "PID/Din",
           "biquadFilter/Din",
           "DataAcquisition/Din",
-          "SignalGenerator/Din"
+          "SignalGenerator/Din",
+          "diff_selector/Din"
         ]
       },
       "DataAcquisition_adc_clk": {
@@ -4190,13 +4213,13 @@
       },
       "DataAcquisition_output_o": {
         "ports": [
-          "DataAcquisition/output_o",
+          "DataAcquisition/input_CHB",
           "decimator_DualChannel_0/input_1"
         ]
       },
       "DataAcquisition_output_o1": {
         "ports": [
-          "DataAcquisition/output_o1",
+          "DataAcquisition/input_CHA",
           "decimator_DualChannel_0/input_0"
         ]
       },
@@ -4204,6 +4227,12 @@
         "ports": [
           "PID/control",
           "SignalGenerator/input_i"
+        ]
+      },
+      "diff_selector_Dout": {
+        "ports": [
+          "diff_selector/Dout",
+          "decimator_DualChannel_0/diff"
         ]
       }
     },

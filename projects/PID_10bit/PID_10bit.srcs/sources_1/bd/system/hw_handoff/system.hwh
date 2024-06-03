@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May 31 15:43:08 2024" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jun  3 09:48:04 2024" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -869,6 +869,7 @@
             <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHA" PORT="Din"/>
             <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outIntCorrCHB" PORT="Din"/>
             <CONNECTION INSTANCE="SignalGenerator_calibrationConstants_outSlpCorrCHB" PORT="Din"/>
+            <CONNECTION INSTANCE="diff_selector" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_s_axi_awaddr">
@@ -4518,6 +4519,11 @@
             <CONNECTION INSTANCE="DataAcquisition_inputCalibration_B" PORT="output_o"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="diff" SIGIS="undef" SIGNAME="diff_selector_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="diff_selector" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="9" NAME="output_0" RIGHT="0" SIGIS="undef" SIGNAME="decimator_DualChannel_0_output_0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="biquadFilter_biquadFilter_0" PORT="input_i"/>
@@ -4535,6 +4541,30 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="clk_e" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/diff_selector" HWVERSION="1.0" INSTANCE="diff_selector" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="3"/>
+        <PARAMETER NAME="DIN_TO" VALUE="3"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlslice_0_15"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="1023" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="PS7_axi_cfg_register_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PS7_axi_cfg_register_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="diff_selector_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="decimator_DualChannel_0" PORT="diff"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
