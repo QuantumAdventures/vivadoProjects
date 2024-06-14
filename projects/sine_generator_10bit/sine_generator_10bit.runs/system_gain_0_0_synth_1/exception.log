@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file C:\Users\tandeitnik\Documents\GitHub\vivadoProjects\projects\sine_generator_10bit\sine_generator_10bit.runs\system_gain_0_0_synth_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: Permissão negada

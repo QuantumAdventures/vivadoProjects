@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl ieee_proposed  \
+"../../../../randomGaussianGenerator.srcs/sources_1/new/fixed_float_types_c.vhdl" \
+"../../../../randomGaussianGenerator.srcs/sources_1/new/fixed_pkg_c.vhdl" \
+
+vhdl xil_defaultlib  \
+"../../../../randomGaussianGenerator.srcs/sources_1/new/integrator.vhd" \
+"../../../../randomGaussianGenerator.srcs/sim_1/new/integrator_TB.vhd" \
+
+# Do not sort compile order
+nosort

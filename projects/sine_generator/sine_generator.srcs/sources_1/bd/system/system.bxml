@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root MajorVersion="0" MinorVersion="39">
+  <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
+    <Description>Composite Fileset</Description>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1718391045"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1718391045"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1718391045"/>
+    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1718391248"/>
+    <FileCollection Name="SOURCES" Type="SOURCES">
+      <File Name="ip\system_processing_system7_0_0\system_processing_system7_0_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/processing_system7_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998691" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_util_ds_buf_1_0\system_util_ds_buf_1_0.xci" Type="IP">
+        <Instance HierarchyPath="requiredStuff/util_ds_buf_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998692" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_util_ds_buf_2_0\system_util_ds_buf_2_0.xci" Type="IP">
+        <Instance HierarchyPath="requiredStuff/util_ds_buf_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998692" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_axis_red_pitaya_adc_0_0\system_axis_red_pitaya_adc_0_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/axis_red_pitaya_adc_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998691" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_axis_red_pitaya_dac_0_0\system_axis_red_pitaya_dac_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/axis_red_pitaya_dac_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998691" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_clk_wiz_0_0\system_clk_wiz_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/clk_wiz_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489497" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_ps7_0_axi_periph_0\system_ps7_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/ps7_0_axi_periph"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="1714998691" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_rst_ps7_0_125M_0\system_rst_ps7_0_125M_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/rst_ps7_0_125M"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998691" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconstant_0_0\system_xlconstant_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/xlconstant_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998692" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconcat_0_0\system_xlconcat_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998692" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_axi_cfg_register_0_0\system_axi_cfg_register_0_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/axi_cfg_register_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998691" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlconstant_0_1\system_xlconstant_0_1.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/xlconstant_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998692" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_7\system_xlslice_0_7.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/dat_CHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998692" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_dat_CHA_0\system_dat_CHA_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/dat_CHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1714998691" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_outputCalibration_0_0\system_outputCalibration_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/outputCalibration_A"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716479686" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_outputCalibration_A_0\system_outputCalibration_A_0.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/outputCalibration_b"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716479676" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_inputCalibration_0_0\system_inputCalibration_0_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/inputCalibration_A"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716479681" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_inputCalibration_A_0\system_inputCalibration_A_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/inputCalibration_B"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716479682" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_NCO_0_0\system_NCO_0_0.xci" Type="IP">
+        <Instance HierarchyPath="NCO/NCO_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716487905" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_positive_offset_0\system_positive_offset_0.xci" Type="IP">
+        <Instance HierarchyPath="NCO/freqNCO"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489496" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_16\system_xlslice_0_16.xci" Type="IP">
+        <Instance HierarchyPath="NCO/enable"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489496" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_18\system_xlslice_0_18.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/calibrationConstants/inIntCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489756" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_1_1\system_xlslice_1_1.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/calibrationConstants/inSlpCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489756" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_2_0\system_xlslice_2_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/calibrationConstants/inIntCorrCHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489756" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_3_0\system_xlslice_3_0.xci" Type="IP">
+        <Instance HierarchyPath="DataAcquisition/calibrationConstants/inSlpCorrCHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489756" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_19\system_xlslice_0_19.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibrationConstants/outIntCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489756" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_1_2\system_xlslice_1_2.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibrationConstants/outSlpCorrCHA"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489756" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_2_1\system_xlslice_2_1.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibrationConstants/outIntCorrCHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489756" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_3_1\system_xlslice_3_1.xci" Type="IP">
+        <Instance HierarchyPath="SignalGenerator/calibrationConstants/outSlpCorrCHB"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1716489756" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_gain_0_0\system_gain_0_0.xci" Type="IP">
+        <Instance HierarchyPath="NCO/gain_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_xlslice_0_20\system_xlslice_0_20.xci" Type="IP">
+        <Instance HierarchyPath="NCO/gain"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\system.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim\system.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_blk_mem_gen_0_1\system_blk_mem_gen_0_1.xci" Type="IP">
+        <Instance HierarchyPath="NCO/blk_mem_gen_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_auto_pc_0\system_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="PS7/ps7_0_axi_periph/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="system_ooc.xdc" Type="XDC">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="OUT_OF_CONTEXT"/>
+      </File>
+      <File Name="hw_handoff\system.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hw_handoff\system_bd.tcl">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="synth\system.hwdef">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="sim\system.protoinst">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+    </FileCollection>
+  </CompositeFile>
+</Root>

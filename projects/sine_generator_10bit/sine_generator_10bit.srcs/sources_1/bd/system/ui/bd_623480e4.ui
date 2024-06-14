@@ -1,0 +1,27 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.25",
+   "Default View_TopLeft":"-282,-112",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk_i -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace port output_o -pg 1 -lvl 3 -x 630 -y 100 -defaultsOSRD
+preplace portBus Din -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace portBus input_i -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace portBus outputDAC -pg 1 -lvl 3 -x 630 -y 20 -defaultsOSRD
+preplace inst negative_offset -pg 1 -lvl 1 -x 130 -y 180 -defaultsOSRD
+preplace inst positive_offset -pg 1 -lvl 1 -x 130 -y 80 -defaultsOSRD
+preplace inst comparator_0 -pg 1 -lvl 2 -x 430 -y 90 -defaultsOSRD
+preplace netloc negative_offset_Dout 1 1 1 240J 100n
+preplace netloc positive_offset_Dout 1 1 1 NJ 80
+preplace netloc axi_cfg_register_0_cfg_data 1 0 1 20 80n
+preplace netloc DataAcquisition_adc_clk 1 0 2 NJ 20 240J
+preplace netloc biquadFilter_output_o 1 0 2 NJ 240 250J
+preplace netloc comparator_0_outputTest 1 2 1 N 20
+preplace netloc comparator_0_output_o 1 2 1 N 100
+levelinfo -pg 1 0 130 430 630
+pagesize -pg 1 -db -bbox -sgen -130 0 790 260
+"
+}
+

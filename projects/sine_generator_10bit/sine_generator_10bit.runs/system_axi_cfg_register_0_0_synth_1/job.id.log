@@ -1,0 +1,5 @@
+ERROR: Exception caught trying to open file C:\Users\tandeitnik\Documents\GitHub\vivadoProjects\projects\sine_generator_10bit\sine_generator_10bit.runs\system_axi_cfg_register_0_0_synth_1/runme.log
+See file C:\Users\tandeitnik\Documents\GitHub\vivadoProjects\projects\sine_generator_10bit\sine_generator_10bit.runs\system_axi_cfg_register_0_0_synth_1/exception.log for details.
+C:\Users\tandeitnik\Documents\GitHub\vivadoProjects\projects\sine_generator_10bit\sine_generator_10bit.runs\system_axi_cfg_register_0_0_synth_1\rundef.js(22, 1) Erro em tempo de execuá∆o do Microsoft JScript: Permiss∆o negada
+
+Erro do CScript: Falha na execuá∆o do Windows Script Host. (0x80020102)
