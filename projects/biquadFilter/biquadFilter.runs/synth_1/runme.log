@@ -15,7 +15,7 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/tandeitnik/Documents
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
 Current IP cache path is c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.cache/ip 
-add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1012.727 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1012.301 ; gain = 0.000
 Command: synth_design -top system_wrapper -part xc7z010clg400-1 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -23,15 +23,15 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20412
+INFO: [Synth 8-7075] Helper process launched with PID 27304
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'system' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1142]
 INFO: [Synth 8-6157] synthesizing module 'DataAcquisition_imp_11FS564' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:12]
-INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_adc_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_adc_0_0' (1#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_adc_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_adc_0_0' (1#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_adc_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'calibrationConstants_imp_12EXTU8' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:677]
 INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_9' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_xlslice_0_9/synth/system_xlslice_0_9.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
@@ -76,16 +76,16 @@ INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4
 	Parameter DIN_TO bound to: 16 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' (8#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'system_dat_CHA_0' (9#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_dat_CHA_0/synth/system_dat_CHA_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_inputCalibration_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_inputCalibration_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_inputCalibration_0_0' (10#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_inputCalibration_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_inputCalibration_A_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_inputCalibration_A_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_inputCalibration_A_0' (11#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_inputCalibration_A_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_inputCalibration_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_inputCalibration_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_inputCalibration_0_0' (10#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_inputCalibration_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_inputCalibration_A_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_inputCalibration_A_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_inputCalibration_A_0' (11#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_inputCalibration_A_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'DataAcquisition_imp_11FS564' (12#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:12]
 INFO: [Synth 8-6157] synthesizing module 'PS7_imp_1QJPAX8' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:97]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_cfg_register_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_axi_cfg_register_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_cfg_register_0_0' (13#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_axi_cfg_register_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (14#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_cfg_register_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_axi_cfg_register_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_cfg_register_0_0' (13#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_axi_cfg_register_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (14#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_processing_system7_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:246]
 WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:246]
 WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:246]
@@ -120,17 +120,17 @@ WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'system_processing_sys
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:246]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'system_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:246]
 WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'system_processing_system7_0_0' has 131 connections declared, but only 98 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:246]
-INFO: [Synth 8-6157] synthesizing module 'system_ps7_0_axi_periph_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1357]
+INFO: [Synth 8-6157] synthesizing module 'system_ps7_0_axi_periph_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1370]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_15HE6GA' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:846]
-INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (15#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (15#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_auto_pc_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'system_auto_pc_0' is unconnected for instance 'auto_pc' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1081]
 WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'system_auto_pc_0' is unconnected for instance 'auto_pc' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1081]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_auto_pc_0' has 59 connections declared, but only 57 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1081]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_15HE6GA' (16#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:846]
-INFO: [Synth 8-6155] done synthesizing module 'system_ps7_0_axi_periph_0' (17#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1357]
-INFO: [Synth 8-6157] synthesizing module 'system_rst_ps7_0_125M_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_rst_ps7_0_125M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_rst_ps7_0_125M_0' (18#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_rst_ps7_0_125M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps7_0_axi_periph_0' (17#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1370]
+INFO: [Synth 8-6157] synthesizing module 'system_rst_ps7_0_125M_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_rst_ps7_0_125M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_rst_ps7_0_125M_0' (18#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_rst_ps7_0_125M_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:407]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:407]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'system_rst_ps7_0_125M_0' is unconnected for instance 'rst_ps7_0_125M' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:407]
@@ -138,8 +138,8 @@ WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'system_rst_ps7_0_
 WARNING: [Synth 8-7023] instance 'rst_ps7_0_125M' of module 'system_rst_ps7_0_125M_0' has 10 connections declared, but only 6 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:407]
 INFO: [Synth 8-6155] done synthesizing module 'PS7_imp_1QJPAX8' (19#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:97]
 INFO: [Synth 8-6157] synthesizing module 'SignalGenerator_imp_XB4TXX' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:416]
-INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_dac_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (20#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_dac_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (20#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_axis_red_pitaya_dac_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 's_axis_tready' of module 'system_axis_red_pitaya_dac_0_0' is unconnected for instance 'axis_red_pitaya_dac_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:470]
 WARNING: [Synth 8-7023] instance 'axis_red_pitaya_dac_0' of module 'system_axis_red_pitaya_dac_0_0' has 11 connections declared, but only 10 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:470]
 INFO: [Synth 8-6157] synthesizing module 'calibConstants_imp_QMNP09' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:640]
@@ -172,12 +172,12 @@ INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized8
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized8' (23#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'system_outIntCorrCHA_2' (24#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_outIntCorrCHA_2/synth/system_outIntCorrCHA_2.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'calibConstants_imp_QMNP09' (25#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:640]
-INFO: [Synth 8-6157] synthesizing module 'system_clk_wiz_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'system_clk_wiz_0_0' (26#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'system_outputCalibration_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_outputCalibration_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_outputCalibration_0_0' (27#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_outputCalibration_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_outputCalibration_A_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_outputCalibration_A_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_outputCalibration_A_0' (28#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_outputCalibration_A_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_clk_wiz_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'system_clk_wiz_0_0' (26#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'system_outputCalibration_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_outputCalibration_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_outputCalibration_0_0' (27#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_outputCalibration_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_outputCalibration_A_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_outputCalibration_A_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_outputCalibration_A_0' (28#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_outputCalibration_A_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_0' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 14 - type: integer 
@@ -226,8 +226,8 @@ INFO: [Synth 8-6157] synthesizing module 'system_xlconstant_0_1' [c:/Users/tande
 INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_1' (33#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_xlconstant_0_1/synth/system_xlconstant_0_1.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'SignalGenerator_imp_XB4TXX' (34#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:416]
 INFO: [Synth 8-6157] synthesizing module 'biquadFilter_CHA_imp_7O1VUV' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:515]
-INFO: [Synth 8-6157] synthesizing module 'system_biquadFilter_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_biquadFilter_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_biquadFilter_0_0' (35#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_biquadFilter_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_biquadFilter_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_biquadFilter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_biquadFilter_0_0' (35#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_biquadFilter_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'enable_out' of module 'system_biquadFilter_0_0' is unconnected for instance 'biquadFilter_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:546]
 WARNING: [Synth 8-7023] instance 'biquadFilter_0' of module 'system_biquadFilter_0_0' has 11 connections declared, but only 10 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:546]
 INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_11' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_xlslice_0_11/synth/system_xlslice_0_11.v:57]
@@ -281,12 +281,12 @@ INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized15' (41#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'system_gain_b0_1' (42#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_gain_b0_1/synth/system_gain_b0_1.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'extract_constants_imp_179OOLO' (43#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:714]
-INFO: [Synth 8-6157] synthesizing module 'system_gain_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_gain_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_gain_0_0' (44#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_gain_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_gain_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_gain_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_gain_0_0' (44#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_gain_0_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'biquadFilter_CHA_imp_7O1VUV' (45#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:515]
 INFO: [Synth 8-6157] synthesizing module 'biquadFilter_CHB_imp_BQG7Q2' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:575]
-INFO: [Synth 8-6157] synthesizing module 'system_biquadFilter_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_biquadFilter_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_biquadFilter_0_1' (46#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_biquadFilter_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_biquadFilter_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_biquadFilter_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_biquadFilter_0_1' (46#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_biquadFilter_0_1_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_12' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_xlslice_0_12/synth/system_xlslice_0_12.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized16' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 1024 - type: integer 
@@ -338,36 +338,45 @@ INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized22' (52#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'system_gain_b2_1' (53#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_gain_b2_1/synth/system_gain_b2_1.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'extract_constants_imp_1CB5AZJ' (54#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:765]
-INFO: [Synth 8-6157] synthesizing module 'system_gain_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_gain_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_gain_0_1' (55#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_gain_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_gain_0_1' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_gain_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_gain_0_1' (55#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_gain_0_1_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'biquadFilter_CHB_imp_BQG7Q2' (56#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:575]
-WARNING: [Synth 8-7071] port 'enable_out' of module 'biquadFilter_CHB_imp_BQG7Q2' is unconnected for instance 'biquadFilter_CHB' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1337]
-WARNING: [Synth 8-7023] instance 'biquadFilter_CHB' of module 'biquadFilter_CHB_imp_BQG7Q2' has 6 connections declared, but only 5 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1337]
-INFO: [Synth 8-6157] synthesizing module 'system_decimator_DualChannel_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_decimator_DualChannel_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_decimator_DualChannel_0_0' (57#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_decimator_DualChannel_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'clk_e' of module 'system_decimator_DualChannel_0_0' is unconnected for instance 'decimator_DualChannel_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1343]
-WARNING: [Synth 8-7023] instance 'decimator_DualChannel_0' of module 'system_decimator_DualChannel_0_0' has 7 connections declared, but only 6 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1343]
+WARNING: [Synth 8-7071] port 'enable_out' of module 'biquadFilter_CHB_imp_BQG7Q2' is unconnected for instance 'biquadFilter_CHB' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1340]
+WARNING: [Synth 8-7023] instance 'biquadFilter_CHB' of module 'biquadFilter_CHB_imp_BQG7Q2' has 6 connections declared, but only 5 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1340]
+INFO: [Synth 8-6157] synthesizing module 'system_decimator_DualChannel_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_decimator_DualChannel_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_decimator_DualChannel_0_0' (57#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_decimator_DualChannel_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'clk_e' of module 'system_decimator_DualChannel_0_0' is unconnected for instance 'decimator_DualChannel_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1346]
+WARNING: [Synth 8-7023] instance 'decimator_DualChannel_0' of module 'system_decimator_DualChannel_0_0' has 7 connections declared, but only 6 given [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1346]
+INFO: [Synth 8-6157] synthesizing module 'system_xlslice_0_13' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_xlslice_0_13/synth/system_xlslice_0_13.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized23' [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 1024 - type: integer 
+	Parameter DIN_FROM bound to: 3 - type: integer 
+	Parameter DIN_TO bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized23' (57#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlslice_0_13' (58#1) [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_xlslice_0_13/synth/system_xlslice_0_13.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_modeSelector_0_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_modeSelector_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_modeSelector_0_0' (59#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_modeSelector_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'necessaryStuff_imp_1HZM5WS' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:816]
-INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_1_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_util_ds_buf_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_1_0' (58#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_util_ds_buf_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_2_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_util_ds_buf_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_2_0' (59#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-23136-DESKTOP-40PU04J/realtime/system_util_ds_buf_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'necessaryStuff_imp_1HZM5WS' (60#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:816]
-INFO: [Synth 8-6155] done synthesizing module 'system' (61#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1142]
-INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (62#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_1_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_util_ds_buf_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_1_0' (60#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_util_ds_buf_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_util_ds_buf_2_0' [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_util_ds_buf_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_util_ds_buf_2_0' (61#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/.Xil/Vivado-3320-DESKTOP-40PU04J/realtime/system_util_ds_buf_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'necessaryStuff_imp_1HZM5WS' (62#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:816]
+INFO: [Synth 8-6155] done synthesizing module 'system' (63#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/synth/system.v:1142]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (64#1) [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.210 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.208 . Memory (MB): peak = 1012.301 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -411,6 +420,8 @@ Parsing XDC File [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/b
 Finished Parsing XDC File [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_gain_0_0/system_gain_0_0/system_gain_0_0_in_context.xdc] for cell 'system_i/biquadFilter_CHA/gain_0'
 Parsing XDC File [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_gain_0_1/system_gain_0_1/system_gain_0_1_in_context.xdc] for cell 'system_i/biquadFilter_CHB/gain_0'
 Finished Parsing XDC File [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_gain_0_1/system_gain_0_1/system_gain_0_1_in_context.xdc] for cell 'system_i/biquadFilter_CHB/gain_0'
+Parsing XDC File [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_modeSelector_0_0/system_modeSelector_0_0/system_modeSelector_0_0_in_context.xdc] for cell 'system_i/modeSelector_0'
+Finished Parsing XDC File [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_modeSelector_0_0/system_modeSelector_0_0/system_modeSelector_0_0_in_context.xdc] for cell 'system_i/modeSelector_0'
 Parsing XDC File [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0/system_auto_pc_0_in_context.xdc] for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/auto_pc'
 Finished Parsing XDC File [c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0/system_auto_pc_0_in_context.xdc] for cell 'system_i/PS7/ps7_0_axi_periph/s00_couplers/auto_pc'
 Parsing XDC File [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/cfg/clocks.xdc]
@@ -455,21 +466,21 @@ Parsing XDC File [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/b
 Finished Parsing XDC File [C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1012.301 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1012.301 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/necessaryStuff/util_ds_buf_1' at clock pin 'IBUF_DS_P[1]' is different from the actual clock period '4.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -800,12 +811,14 @@ Applied set_property DONT_TOUCH = true for system_i/SignalGenerator/calibConstan
 Applied set_property DONT_TOUCH = true for system_i/SignalGenerator/calibConstants/outSlpCorrCHB. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/biquadFilter_CHA/biquadGain_CHA. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/biquadFilter_CHB/biquadGain_CHB. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/modeSelector_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/modeSel. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/PS7/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -827,25 +840,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -863,37 +876,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -904,23 +917,24 @@ Report BlackBoxes:
 |      |BlackBox name                    |Instances |
 +------+---------------------------------+----------+
 |1     |system_decimator_DualChannel_0_0 |         1|
-|2     |system_axis_red_pitaya_adc_0_0   |         1|
-|3     |system_inputCalibration_0_0      |         1|
-|4     |system_inputCalibration_A_0      |         1|
-|5     |system_auto_pc_0                 |         1|
-|6     |system_axi_cfg_register_0_0      |         1|
-|7     |system_processing_system7_0_0    |         1|
-|8     |system_rst_ps7_0_125M_0          |         1|
-|9     |system_axis_red_pitaya_dac_0_0   |         1|
-|10    |system_clk_wiz_0_0               |         1|
-|11    |system_outputCalibration_0_0     |         1|
-|12    |system_outputCalibration_A_0     |         1|
-|13    |system_biquadFilter_0_0          |         1|
-|14    |system_gain_0_0                  |         1|
-|15    |system_biquadFilter_0_1          |         1|
-|16    |system_gain_0_1                  |         1|
-|17    |system_util_ds_buf_1_0           |         1|
-|18    |system_util_ds_buf_2_0           |         1|
+|2     |system_modeSelector_0_0          |         1|
+|3     |system_axis_red_pitaya_adc_0_0   |         1|
+|4     |system_inputCalibration_0_0      |         1|
+|5     |system_inputCalibration_A_0      |         1|
+|6     |system_auto_pc_0                 |         1|
+|7     |system_axi_cfg_register_0_0      |         1|
+|8     |system_processing_system7_0_0    |         1|
+|9     |system_rst_ps7_0_125M_0          |         1|
+|10    |system_axis_red_pitaya_dac_0_0   |         1|
+|11    |system_clk_wiz_0_0               |         1|
+|12    |system_outputCalibration_0_0     |         1|
+|13    |system_outputCalibration_A_0     |         1|
+|14    |system_biquadFilter_0_0          |         1|
+|15    |system_gain_0_0                  |         1|
+|16    |system_biquadFilter_0_1          |         1|
+|17    |system_gain_0_1                  |         1|
+|18    |system_util_ds_buf_1_0           |         1|
+|19    |system_util_ds_buf_2_0           |         1|
 +------+---------------------------------+----------+
 
 Report Cell Usage: 
@@ -937,34 +951,35 @@ Report Cell Usage:
 |9     |system_gain_0                  |     2|
 |11    |system_inputCalibration_0      |     1|
 |12    |system_inputCalibration_A      |     1|
-|13    |system_outputCalibration_0     |     1|
-|14    |system_outputCalibration_A     |     1|
-|15    |system_processing_system7_0    |     1|
-|16    |system_rst_ps7_0_125M          |     1|
-|17    |system_util_ds_buf_1           |     1|
-|18    |system_util_ds_buf_2           |     1|
-|19    |IBUF                           |    44|
-|20    |OBUF                           |    19|
-|21    |OBUFT                          |    14|
+|13    |system_modeSelector_0          |     1|
+|14    |system_outputCalibration_0     |     1|
+|15    |system_outputCalibration_A     |     1|
+|16    |system_processing_system7_0    |     1|
+|17    |system_rst_ps7_0_125M          |     1|
+|18    |system_util_ds_buf_1           |     1|
+|19    |system_util_ds_buf_2           |     1|
+|20    |IBUF                           |    44|
+|21    |OBUF                           |    19|
+|22    |OBUFT                          |    14|
 +------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1012.301 ; gain = 0.000
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1012.727 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1012.301 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1012.301 ; gain = 0.000
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1012.727 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1012.301 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1033.227 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1025.531 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-186 Infos, 89 Warnings, 0 Critical Warnings and 0 Errors encountered.
+192 Infos, 89 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1033.227 ; gain = 20.500
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1025.531 ; gain = 13.230
 INFO: [Common 17-1381] The checkpoint 'C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/biquadFilter/biquadFilter.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed May 22 13:34:13 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 19 16:43:03 2024...

@@ -77,7 +77,8 @@
         "util_ds_buf_2": ""
       },
       "decimator_DualChannel_0": "",
-      "diff_selector": ""
+      "diff_selector": "",
+      "xlslice_0": ""
     },
     "interface_ports": {
       "Vp_Vn": {
@@ -2984,16 +2985,16 @@
               "processing_system7_0/FIXED_IO"
             ]
           },
-          "processing_system7_0_M_AXI_GP0": {
-            "interface_ports": [
-              "processing_system7_0/M_AXI_GP0",
-              "ps7_0_axi_periph/S00_AXI"
-            ]
-          },
           "ps7_0_axi_periph_M00_AXI": {
             "interface_ports": [
               "ps7_0_axi_periph/M00_AXI",
               "axi_cfg_register_0/S_AXI"
+            ]
+          },
+          "processing_system7_0_M_AXI_GP0": {
+            "interface_ports": [
+              "processing_system7_0/M_AXI_GP0",
+              "ps7_0_axi_periph/S00_AXI"
             ]
           },
           "processing_system7_0_DDR": {
@@ -4059,6 +4060,24 @@
             "value": "1"
           }
         }
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "system_xlslice_0_16",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "649"
+          },
+          "DIN_TO": {
+            "value": "640"
+          },
+          "DIN_WIDTH": {
+            "value": "1024"
+          },
+          "DOUT_WIDTH": {
+            "value": "10"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -4173,7 +4192,8 @@
           "biquadFilter/Din",
           "DataAcquisition/Din",
           "SignalGenerator/Din",
-          "diff_selector/Din"
+          "diff_selector/Din",
+          "xlslice_0/Din"
         ]
       },
       "DataAcquisition_adc_clk": {
@@ -4204,13 +4224,6 @@
           "PID/set_point_ADC"
         ]
       },
-      "biquadFilter_output_o": {
-        "ports": [
-          "biquadFilter/output_o",
-          "PID/input_i",
-          "SignalGenerator/output_CHB"
-        ]
-      },
       "DataAcquisition_output_o": {
         "ports": [
           "DataAcquisition/input_CHB",
@@ -4233,6 +4246,18 @@
         "ports": [
           "diff_selector/Dout",
           "decimator_DualChannel_0/diff"
+        ]
+      },
+      "biquadFilter_output_o": {
+        "ports": [
+          "biquadFilter/output_o",
+          "PID/input_i"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "SignalGenerator/output_CHB"
         ]
       }
     },

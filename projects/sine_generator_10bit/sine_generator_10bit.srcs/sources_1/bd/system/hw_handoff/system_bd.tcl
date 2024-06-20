@@ -419,7 +419,6 @@ proc create_hier_cell_SignalGenerator { parentCell nameHier } {
   create_bd_pin -dir O dac_sel_o
   create_bd_pin -dir O dac_wrt_o
   create_bd_pin -dir I -from 9 -to 0 output_CHA
-  create_bd_pin -dir I -from 9 -to 0 output_CHB
   create_bd_pin -dir I s_axis_tvalid
 
   # Create instance: axis_red_pitaya_dac_0, and set properties
@@ -492,8 +491,17 @@ proc create_hier_cell_SignalGenerator { parentCell nameHier } {
    CONFIG.CONST_WIDTH {6} \
  ] $xlconstant_1
 
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {361} \
+   CONFIG.DIN_TO {352} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {10} \
+ ] $xlslice_0
+
   # Create port connections
-  connect_bd_net -net Din_1 [get_bd_pins Din] [get_bd_pins calibrationConstants/Din]
+  connect_bd_net -net Din_1 [get_bd_pins Din] [get_bd_pins calibrationConstants/Din] [get_bd_pins xlslice_0/Din]
   connect_bd_net -net axis_red_pitaya_adc_0_adc_clk [get_bd_pins clk_in1] [get_bd_pins axis_red_pitaya_dac_0/aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins outputCalibration_A/clk_i] [get_bd_pins outputCalibration_b/clk_i]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_clk [get_bd_pins dac_clk_o] [get_bd_pins axis_red_pitaya_dac_0/dac_clk]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_dat [get_bd_pins dac_dat_o] [get_bd_pins axis_red_pitaya_dac_0/dac_dat]
@@ -509,11 +517,11 @@ proc create_hier_cell_SignalGenerator { parentCell nameHier } {
   connect_bd_net -net input_i_1 [get_bd_pins output_CHA] [get_bd_pins outputCalibration_A/input_i]
   connect_bd_net -net outputCalibration_A_output_o [get_bd_pins outputCalibration_A/output_o] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net outputCalibration_b_output_o [get_bd_pins outputCalibration_b/output_o] [get_bd_pins xlconcat_0/In2]
-  connect_bd_net -net output_CHB_1 [get_bd_pins output_CHB] [get_bd_pins outputCalibration_b/input_i]
   connect_bd_net -net s_axis_tvalid_1 [get_bd_pins s_axis_tvalid] [get_bd_pins axis_red_pitaya_dac_0/s_axis_tvalid]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins axis_red_pitaya_dac_0/s_axis_tdata] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins xlconcat_0/In1] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_pins xlconcat_0/In3] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins outputCalibration_b/input_i] [get_bd_pins xlslice_0/Dout]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -1590,7 +1598,7 @@ proc create_root_design { parentCell } {
 
   # Create port connections
   connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins DataAcquisition/adc_clk] [get_bd_pins NCO/clka] [get_bd_pins SignalGenerator/clk_in1]
-  connect_bd_net -net NCO_douta [get_bd_pins NCO/douta] [get_bd_pins SignalGenerator/output_CHA] [get_bd_pins SignalGenerator/output_CHB]
+  connect_bd_net -net NCO_douta [get_bd_pins NCO/douta] [get_bd_pins SignalGenerator/output_CHA]
   connect_bd_net -net adc_clk_n_i_1 [get_bd_ports adc_clk_n_i] [get_bd_pins DataAcquisition/adc_clk_n_i]
   connect_bd_net -net adc_clk_p_i_1 [get_bd_ports adc_clk_p_i] [get_bd_pins DataAcquisition/adc_clk_p_i]
   connect_bd_net -net adc_dat_a_i_1 [get_bd_ports adc_dat_a_i] [get_bd_pins DataAcquisition/adc_dat_a_i]

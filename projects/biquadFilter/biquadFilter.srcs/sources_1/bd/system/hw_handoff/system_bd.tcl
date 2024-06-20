@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# decimator_DualChannel, inputCalibration, inputCalibration, outputCalibration, outputCalibration, biquadFilter, gain, biquadFilter, gain
+# decimator_DualChannel, modeSelector, inputCalibration, inputCalibration, outputCalibration, outputCalibration, biquadFilter, gain, biquadFilter, gain
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -1904,6 +1904,29 @@ proc create_root_design { parentCell } {
    CONFIG.output_size {14} \
  ] $decimator_DualChannel_0
 
+  # Create instance: modeSel, and set properties
+  set modeSel [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 modeSel ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {3} \
+   CONFIG.DIN_TO {2} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {2} \
+ ] $modeSel
+
+  # Create instance: modeSelector_0, and set properties
+  set block_name modeSelector
+  set block_cell_name modeSelector_0
+  if { [catch {set modeSelector_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $modeSelector_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.width {14} \
+ ] $modeSelector_0
+
   # Create instance: necessaryStuff
   create_hier_cell_necessaryStuff [current_bd_instance .] necessaryStuff
 
@@ -1912,14 +1935,14 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins PS7/FIXED_IO]
 
   # Create port connections
-  connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins DataAcquisition/adc_clk] [get_bd_pins SignalGenerator/clk_in1] [get_bd_pins biquadFilter_CHA/clk_i] [get_bd_pins biquadFilter_CHB/clk_i] [get_bd_pins decimator_DualChannel_0/clk_i]
+  connect_bd_net -net DataAcquisition_adc_clk [get_bd_pins DataAcquisition/adc_clk] [get_bd_pins SignalGenerator/clk_in1] [get_bd_pins biquadFilter_CHA/clk_i] [get_bd_pins biquadFilter_CHB/clk_i] [get_bd_pins decimator_DualChannel_0/clk_i] [get_bd_pins modeSelector_0/clk_i]
   connect_bd_net -net DataAcquisition_output_CHA [get_bd_pins DataAcquisition/output_CHA] [get_bd_pins decimator_DualChannel_0/input_0]
   connect_bd_net -net DataAcquisition_output_CHB [get_bd_pins DataAcquisition/output_CHB] [get_bd_pins decimator_DualChannel_0/input_1]
   connect_bd_net -net adc_clk_n_i_1 [get_bd_ports adc_clk_n_i] [get_bd_pins DataAcquisition/adc_clk_n_i]
   connect_bd_net -net adc_clk_p_i_1 [get_bd_ports adc_clk_p_i] [get_bd_pins DataAcquisition/adc_clk_p_i]
   connect_bd_net -net adc_dat_a_i_1 [get_bd_ports adc_dat_a_i] [get_bd_pins DataAcquisition/adc_dat_a_i]
   connect_bd_net -net adc_dat_b_i_1 [get_bd_ports adc_dat_b_i] [get_bd_pins DataAcquisition/adc_dat_b_i]
-  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins DataAcquisition/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins SignalGenerator/Din] [get_bd_pins biquadFilter_CHA/Din] [get_bd_pins biquadFilter_CHB/Din]
+  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins DataAcquisition/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins SignalGenerator/Din] [get_bd_pins biquadFilter_CHA/Din] [get_bd_pins biquadFilter_CHB/Din] [get_bd_pins modeSel/Din]
   connect_bd_net -net axis_red_pitaya_adc_0_adc_csn [get_bd_ports adc_csn_o] [get_bd_pins DataAcquisition/adc_csn_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_clk [get_bd_ports dac_clk_o] [get_bd_pins SignalGenerator/dac_clk_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_dat [get_bd_ports dac_dat_o] [get_bd_pins SignalGenerator/dac_dat_o]
@@ -1931,8 +1954,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net daisy_n_i_1 [get_bd_ports daisy_n_i] [get_bd_pins necessaryStuff/daisy_n_i]
   connect_bd_net -net daisy_p_i_1 [get_bd_ports daisy_p_i] [get_bd_pins necessaryStuff/daisy_p_i]
   connect_bd_net -net decimator_DualChannel_0_enable [get_bd_pins biquadFilter_CHA/clkEnable] [get_bd_pins biquadFilter_CHB/clkEnable] [get_bd_pins decimator_DualChannel_0/enable]
-  connect_bd_net -net decimator_DualChannel_0_output_0 [get_bd_pins biquadFilter_CHA/input_i] [get_bd_pins decimator_DualChannel_0/output_0]
-  connect_bd_net -net decimator_DualChannel_0_output_1 [get_bd_pins biquadFilter_CHB/input_i] [get_bd_pins decimator_DualChannel_0/output_1]
+  connect_bd_net -net decimator_DualChannel_0_output_0 [get_bd_pins decimator_DualChannel_0/output_0] [get_bd_pins modeSelector_0/input_0]
+  connect_bd_net -net decimator_DualChannel_0_output_1 [get_bd_pins decimator_DualChannel_0/output_1] [get_bd_pins modeSelector_0/input_1]
+  connect_bd_net -net modeSel_Dout [get_bd_pins modeSel/Dout] [get_bd_pins modeSelector_0/selector]
+  connect_bd_net -net modeSelector_0_output_0 [get_bd_pins biquadFilter_CHA/input_i] [get_bd_pins modeSelector_0/output_0]
+  connect_bd_net -net modeSelector_0_output_1 [get_bd_pins biquadFilter_CHB/input_i] [get_bd_pins modeSelector_0/output_1]
   connect_bd_net -net s_axis_tvalid_1 [get_bd_pins DataAcquisition/m_axis_tvalid] [get_bd_pins SignalGenerator/s_axis_tvalid]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_N [get_bd_ports daisy_n_o] [get_bd_pins necessaryStuff/daisy_n_o]
   connect_bd_net -net util_ds_buf_2_OBUF_DS_P [get_bd_ports daisy_p_o] [get_bd_pins necessaryStuff/daisy_p_o]

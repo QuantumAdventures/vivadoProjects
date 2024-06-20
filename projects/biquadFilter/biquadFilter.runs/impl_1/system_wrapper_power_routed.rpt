@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Wed May 22 14:01:57 2024
+| Date             : Wed Jun 19 17:11:58 2024
 | Host             : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
 | Design           : system_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.841        |
+| Total On-Chip Power (W)  | 1.842        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.712        |
+| Dynamic (W)              | 1.713        |
 | Device Static (W)        | 0.129        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 63.8         |
@@ -52,21 +52,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.016 |        8 |       --- |             --- |
-| Slice Logic             |     0.014 |     6433 |       --- |             --- |
-|   LUT as Logic          |     0.012 |     2368 |     17600 |           13.45 |
+| Clocks                  |     0.017 |        8 |       --- |             --- |
+| Slice Logic             |     0.014 |     6521 |       --- |             --- |
+|   LUT as Logic          |     0.012 |     2376 |     17600 |           13.50 |
 |   CARRY4                |     0.002 |      296 |      4400 |            6.73 |
-|   Register              |    <0.001 |     3120 |     35200 |            8.86 |
+|   Register              |    <0.001 |     3184 |     35200 |            9.05 |
 |   F7/F8 Muxes           |    <0.001 |      128 |     17600 |            0.73 |
 |   LUT as Shift Register |    <0.001 |       60 |      6000 |            1.00 |
-|   Others                |     0.000 |      257 |       --- |             --- |
-| Signals                 |     0.033 |     8237 |       --- |             --- |
+|   Others                |     0.000 |      259 |       --- |             --- |
+| Signals                 |     0.033 |     8294 |       --- |             --- |
 | MMCM                    |     0.107 |        1 |         2 |           50.00 |
 | DSPs                    |     0.053 |       56 |        80 |           70.00 |
 | I/O                     |     0.207 |       71 |       100 |           71.00 |
 | PS7                     |     1.282 |        1 |       --- |             --- |
 | Static Power            |     0.129 |          |           |                 |
-| Total                   |     1.841 |          |           |                 |
+| Total                   |     1.842 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.128 |       0.120 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.128 |       0.121 |      0.008 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.075 |       0.066 |      0.008 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.052 |       0.051 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -157,9 +157,9 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| system_wrapper              |     1.712 |
-|   system_i                  |     1.537 |
-|     DataAcquisition         |     0.012 |
+| system_wrapper              |     1.713 |
+|   system_i                  |     1.538 |
+|     DataAcquisition         |     0.013 |
 |       inputCalibration_A    |     0.006 |
 |       inputCalibration_B    |     0.006 |
 |     PS7                     |     1.299 |
@@ -170,12 +170,12 @@ Table of Contents
 |       axis_red_pitaya_dac_0 |     0.003 |
 |       clk_wiz_0             |     0.107 |
 |       outputCalibration_A   |     0.006 |
-|       outputCalibration_b   |     0.006 |
-|     biquadFilter_CHA        |     0.036 |
+|       outputCalibration_b   |     0.005 |
+|     biquadFilter_CHA        |     0.037 |
 |       biquadFilter_0        |     0.034 |
 |       gain_0                |     0.003 |
-|     biquadFilter_CHB        |     0.038 |
-|       biquadFilter_0        |     0.035 |
+|     biquadFilter_CHB        |     0.037 |
+|       biquadFilter_0        |     0.034 |
 |       gain_0                |     0.003 |
 |     necessaryStuff          |     0.031 |
 |       util_ds_buf_2         |     0.030 |

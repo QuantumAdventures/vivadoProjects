@@ -1851,6 +1851,15 @@ proc create_root_design { parentCell } {
   # Create instance: SignalGenerator
   create_hier_cell_SignalGenerator [current_bd_instance .] SignalGenerator
 
+  # Create instance: bias_CHB, and set properties
+  set bias_CHB [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 bias_CHB ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {653} \
+   CONFIG.DIN_TO {640} \
+   CONFIG.DIN_WIDTH {1024} \
+   CONFIG.DOUT_WIDTH {14} \
+ ] $bias_CHB
+
   # Create instance: biquadFilter
   create_hier_cell_biquadFilter [current_bd_instance .] biquadFilter
 
@@ -1886,14 +1895,15 @@ proc create_root_design { parentCell } {
   connect_bd_net -net adc_clk_p_i_1 [get_bd_ports adc_clk_p_i] [get_bd_pins DataAcquisition/adc_clk_p_i]
   connect_bd_net -net adc_dat_a_i_1 [get_bd_ports adc_dat_a_i] [get_bd_pins DataAcquisition/adc_dat_a_i]
   connect_bd_net -net adc_dat_b_i_1 [get_bd_ports adc_dat_b_i] [get_bd_pins DataAcquisition/adc_dat_b_i]
-  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins DataAcquisition/Din] [get_bd_pins PID/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins SignalGenerator/Din] [get_bd_pins biquadFilter/Din]
+  connect_bd_net -net axi_cfg_register_0_cfg_data [get_bd_pins DataAcquisition/Din] [get_bd_pins PID/Din] [get_bd_pins PS7/cfg_data] [get_bd_pins SignalGenerator/Din] [get_bd_pins bias_CHB/Din] [get_bd_pins biquadFilter/Din]
   connect_bd_net -net axis_red_pitaya_adc_0_adc_csn [get_bd_ports adc_csn_o] [get_bd_pins DataAcquisition/adc_csn_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_clk [get_bd_ports dac_clk_o] [get_bd_pins SignalGenerator/dac_clk_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_dat [get_bd_ports dac_dat_o] [get_bd_pins SignalGenerator/dac_dat_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_rst [get_bd_ports dac_rst_o] [get_bd_pins SignalGenerator/dac_rst_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_sel [get_bd_ports dac_sel_o] [get_bd_pins SignalGenerator/dac_sel_o]
   connect_bd_net -net axis_red_pitaya_dac_0_dac_wrt [get_bd_ports dac_wrt_o] [get_bd_pins SignalGenerator/dac_wrt_o]
-  connect_bd_net -net biquadFilter_output_o [get_bd_pins PID/input_i] [get_bd_pins SignalGenerator/output_CHB] [get_bd_pins biquadFilter/output_o]
+  connect_bd_net -net bias_CHB_Dout [get_bd_pins SignalGenerator/output_CHB] [get_bd_pins bias_CHB/Dout]
+  connect_bd_net -net biquadFilter_output_o [get_bd_pins PID/input_i] [get_bd_pins biquadFilter/output_o]
   connect_bd_net -net daisy_n_i_1 [get_bd_ports daisy_n_i] [get_bd_pins necessaryStuff/daisy_n_i]
   connect_bd_net -net daisy_p_i_1 [get_bd_ports daisy_p_i] [get_bd_pins necessaryStuff/daisy_p_i]
   connect_bd_net -net decimator_DualChannel_0_enable [get_bd_pins PID/clkEnable] [get_bd_pins biquadFilter/clkEnable] [get_bd_pins decimator_DualChannel_0/enable]

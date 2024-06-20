@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Wed May 22 13:32:28 2024
+//Date        : Wed Jun 19 16:41:39 2024
 //Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -1138,7 +1138,7 @@ module s00_couplers_imp_15HE6GA
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=57,numReposBlks=45,numNonXlnxBlks=3,numHierBlks=12,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=59,numReposBlks=47,numNonXlnxBlks=3,numHierBlks=12,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=10,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1244,6 +1244,9 @@ module system
   wire decimator_DualChannel_0_enable;
   wire [13:0]decimator_DualChannel_0_output_0;
   wire [13:0]decimator_DualChannel_0_output_1;
+  wire [1:0]modeSel_Dout;
+  wire [13:0]modeSelector_0_output_0;
+  wire [13:0]modeSelector_0_output_1;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -1332,13 +1335,13 @@ module system
        (.Din(axi_cfg_register_0_cfg_data),
         .clkEnable(decimator_DualChannel_0_enable),
         .clk_i(DataAcquisition_adc_clk),
-        .input_i(decimator_DualChannel_0_output_0),
+        .input_i(modeSelector_0_output_0),
         .output_o(biquadFilter_CHA_output_o));
   biquadFilter_CHB_imp_BQG7Q2 biquadFilter_CHB
        (.Din(axi_cfg_register_0_cfg_data),
         .clkEnable(decimator_DualChannel_0_enable),
         .clk_i(DataAcquisition_adc_clk),
-        .input_i(decimator_DualChannel_0_output_1),
+        .input_i(modeSelector_0_output_1),
         .output_o(biquadFilter_CHB_output_o));
   system_decimator_DualChannel_0_0 decimator_DualChannel_0
        (.clk_i(DataAcquisition_adc_clk),
@@ -1347,6 +1350,16 @@ module system
         .input_1(DataAcquisition_output_CHB),
         .output_0(decimator_DualChannel_0_output_0),
         .output_1(decimator_DualChannel_0_output_1));
+  system_xlslice_0_13 modeSel
+       (.Din(axi_cfg_register_0_cfg_data),
+        .Dout(modeSel_Dout));
+  system_modeSelector_0_0 modeSelector_0
+       (.clk_i(DataAcquisition_adc_clk),
+        .input_0(decimator_DualChannel_0_output_0),
+        .input_1(decimator_DualChannel_0_output_1),
+        .output_0(modeSelector_0_output_0),
+        .output_1(modeSelector_0_output_1),
+        .selector(modeSel_Dout));
   necessaryStuff_imp_1HZM5WS necessaryStuff
        (.daisy_n_i(daisy_n_i_1),
         .daisy_n_o(util_ds_buf_2_OBUF_DS_N),

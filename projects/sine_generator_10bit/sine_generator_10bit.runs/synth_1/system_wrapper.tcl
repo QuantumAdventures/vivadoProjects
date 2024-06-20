@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -91,8 +90,8 @@ set_property verilog_define TOOL_VIVADO [current_fileset]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files C:/Users/tandeitnik/Documents/GitHub/LabScripts/redPitaya/bitPython/sine.coe
-add_files c:/Users/tandeitnik/Documents/GitHub/LabScripts/redPitaya/sine.coe
-add_files c:/Users/tandeitnik/Desktop/sine.coe
+add_files C:/Users/tandeitnik/Documents/GitHub/LabScripts/redPitaya/sine.coe
+add_files C:/Users/tandeitnik/Desktop/sine.coe
 read_verilog -library xil_defaultlib C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/sine_generator_10bit/sine_generator_10bit.srcs/sources_1/bd/system/hdl/system_wrapper.v
 add_files C:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/sine_generator_10bit/sine_generator_10bit.srcs/sources_1/bd/system/system.bd
 set_property used_in_implementation false [get_files -all c:/Users/tandeitnik/Documents/GitHub/vivadoProjects/projects/sine_generator_10bit/sine_generator_10bit.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]

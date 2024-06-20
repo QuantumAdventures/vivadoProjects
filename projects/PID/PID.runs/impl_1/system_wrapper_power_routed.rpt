@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Wed May 22 14:11:30 2024
+| Date             : Wed Jun 19 16:43:24 2024
 | Host             : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
 | Design           : system_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 1.807        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.679        |
+| Dynamic (W)              | 1.678        |
 | Device Static (W)        | 0.128        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 64.2         |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.014 |        8 |       --- |             --- |
-| Slice Logic             |     0.012 |     5365 |       --- |             --- |
-|   LUT as Logic          |     0.010 |     1980 |     17600 |           11.25 |
+| Slice Logic             |     0.012 |     5385 |       --- |             --- |
+|   LUT as Logic          |     0.010 |     2001 |     17600 |           11.37 |
 |   CARRY4                |     0.001 |      236 |      4400 |            5.36 |
 |   Register              |    <0.001 |     2477 |     35200 |            7.04 |
 |   F7/F8 Muxes           |    <0.001 |      128 |     17600 |            0.73 |
 |   LUT as Shift Register |    <0.001 |       60 |      6000 |            1.00 |
 |   Others                |     0.000 |      249 |       --- |             --- |
-| Signals                 |     0.023 |     6112 |       --- |             --- |
+| Signals                 |     0.023 |     6136 |       --- |             --- |
 | MMCM                    |     0.107 |        1 |         2 |           50.00 |
-| DSPs                    |     0.034 |       36 |        80 |           45.00 |
+| DSPs                    |     0.033 |       36 |        80 |           45.00 |
 | I/O                     |     0.207 |       71 |       100 |           71.00 |
 | PS7                     |     1.282 |        1 |       --- |             --- |
 | Static Power            |     0.128 |          |           |                 |
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.094 |       0.087 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.094 |       0.086 |      0.007 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.075 |       0.066 |      0.008 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.052 |       0.051 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -157,13 +157,13 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| system_wrapper              |     1.679 |
-|   system_i                  |     1.504 |
+| system_wrapper              |     1.678 |
+|   system_i                  |     1.503 |
 |     DataAcquisition         |     0.013 |
 |       inputCalibration_A    |     0.006 |
 |       inputCalibration_B    |     0.006 |
-|     PID                     |     0.013 |
-|       PID_0                 |     0.013 |
+|     PID                     |     0.012 |
+|       PID_0                 |     0.012 |
 |     PS7                     |     1.299 |
 |       axi_cfg_register_0    |     0.007 |
 |       processing_system7_0  |     1.284 |

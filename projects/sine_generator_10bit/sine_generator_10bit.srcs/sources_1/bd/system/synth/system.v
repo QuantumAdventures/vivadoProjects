@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Fri Jun 14 16:39:17 2024
+//Date        : Tue Jun 18 10:56:27 2024
 //Host        : DESKTOP-40PU04J running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -467,7 +467,6 @@ module SignalGenerator_imp_XB4TXX
     dac_sel_o,
     dac_wrt_o,
     output_CHA,
-    output_CHB,
     s_axis_tvalid);
   input [1023:0]Din;
   input clk_in1;
@@ -477,7 +476,6 @@ module SignalGenerator_imp_XB4TXX
   output dac_sel_o;
   output dac_wrt_o;
   input [9:0]output_CHA;
-  input [9:0]output_CHB;
   input s_axis_tvalid;
 
   wire [1023:0]Din_1;
@@ -496,11 +494,11 @@ module SignalGenerator_imp_XB4TXX
   wire [9:0]input_i_1;
   wire [9:0]outputCalibration_A_output_o;
   wire [9:0]outputCalibration_b_output_o;
-  wire [9:0]output_CHB_1;
   wire s_axis_tvalid_1;
   wire [31:0]xlconcat_0_dout;
   wire [5:0]xlconstant_0_dout;
   wire [5:0]xlconstant_1_dout;
+  wire [9:0]xlslice_0_Dout;
 
   assign Din_1 = Din[1023:0];
   assign axis_red_pitaya_adc_0_adc_clk = clk_in1;
@@ -510,7 +508,6 @@ module SignalGenerator_imp_XB4TXX
   assign dac_sel_o = axis_red_pitaya_dac_0_dac_sel;
   assign dac_wrt_o = axis_red_pitaya_dac_0_dac_wrt;
   assign input_i_1 = output_CHA[9:0];
-  assign output_CHB_1 = output_CHB[9:0];
   assign s_axis_tvalid_1 = s_axis_tvalid;
   system_axis_red_pitaya_dac_0_0 axis_red_pitaya_dac_0
        (.aclk(axis_red_pitaya_adc_0_adc_clk),
@@ -541,7 +538,7 @@ module SignalGenerator_imp_XB4TXX
         .slope_correction(calibrationConstants_Dout1));
   system_outputCalibration_A_0 outputCalibration_b
        (.clk_i(axis_red_pitaya_adc_0_adc_clk),
-        .input_i(output_CHB_1),
+        .input_i(xlslice_0_Dout),
         .intercept_correction(calibrationConstants_Dout3),
         .output_o(outputCalibration_b_output_o),
         .slope_correction(calibrationConstants_Dout));
@@ -555,6 +552,9 @@ module SignalGenerator_imp_XB4TXX
        (.dout(xlconstant_0_dout));
   system_xlconstant_0_1 xlconstant_1
        (.dout(xlconstant_1_dout));
+  system_xlslice_0_21 xlslice_0
+       (.Din(Din_1),
+        .Dout(xlslice_0_Dout));
 endmodule
 
 module calibrationConstants_imp_12EXTU8
@@ -956,7 +956,7 @@ module s00_couplers_imp_15HE6GA
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=41,numReposBlks=32,numNonXlnxBlks=3,numHierBlks=9,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,\"\"da_axi4_cnt\"\"=1,\"\"da_board_cnt\"\"=2,\"\"da_ps7_cnt\"\"=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=42,numReposBlks=33,numNonXlnxBlks=3,numHierBlks=9,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,\"\"\"da_axi4_cnt\"\"\"=1,\"\"\"da_board_cnt\"\"\"=2,\"\"\"da_ps7_cnt\"\"\"=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1140,7 +1140,6 @@ module system
         .dac_sel_o(axis_red_pitaya_dac_0_dac_sel),
         .dac_wrt_o(axis_red_pitaya_dac_0_dac_wrt),
         .output_CHA(NCO_douta),
-        .output_CHB(NCO_douta),
         .s_axis_tvalid(s_axis_tvalid_1));
   requiredStuff_imp_1KX1CW requiredStuff
        (.daisy_n_i(daisy_n_i_1),
